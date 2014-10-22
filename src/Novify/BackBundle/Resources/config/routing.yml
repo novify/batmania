@@ -1,3 +1,3 @@
-novify_back_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: NovifyBackBundle:Default:index }
+# novify_back_homepage:
+#     path:     /hello/{name}
+#     defaults: { _controller: NovifyBackBundle:Default:index }
