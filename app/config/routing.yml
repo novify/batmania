@@ -1,0 +1,12 @@
+novify_model:
+    resource: "@NovifyModelBundle/Resources/config/routing.yml"
+    prefix:   /
+
+novify_back:
+    resource: "@NovifyBackBundle/Resources/config/routing.yml"
+    prefix:   /
+
+novify_front:
+    resource: "@NovifyFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+

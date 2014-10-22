@@ -8,10 +8,12 @@ Pour le récupérer :
 ```bash
 git clone git@github.com:novify/batmania.git
 ```
-ou passez par votre client git
-- Ensuite, après vous être placé dans le dossier du projet (`cd batmania/`), exécutez la commande suivante pour mettre les dépendances à jour :
+- ou passez par votre client git (genre SourceTree)
+- Ensuite, après vous être placé dans le dossier du projet (`cd batmania/`), exécutez les commande suivante pour mettre les dépendances à jour :
 
 ```bash
-php bin/vendors install
+curl -sS https://getcomposer.org/installer | php
+php composer.phar install
+
 ```
 - C'est fini ! Rendez vous sur `http://localhost(:8888 sur MAMP)/batmania/web/app_dev.php`

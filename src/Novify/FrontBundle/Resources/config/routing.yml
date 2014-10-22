@@ -1,0 +1,7 @@
+novify_front_homepage:
+    path:     /
+    defaults: { _controller: NovifyFrontBundle:Front:index }
+
+novify_front_hello:
+    path:     /hello/{name}
+    defaults: { _controller: NovifyFrontBundle:Front:hello }

@@ -1,0 +1,4 @@
+services:
+#    novify_model.example:
+#        class: Novify\ModelBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
