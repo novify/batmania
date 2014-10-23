@@ -4,7 +4,7 @@ body {
 	background-size: cover;
 }
 
-.header {
+header {
 	background-color: #000000;
 }
 
@@ -85,7 +85,7 @@ nav ul li a {
 	background-color: #f94cff;
 }
 
-.footer {
+footer {
 	width: 100%;
 	text-align: center;
 }
