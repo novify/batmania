@@ -1,7 +1,8 @@
 <html lang="fr">
 	<head>
 		
-		
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<!--[if lt IE 9]>
 	    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -16,7 +17,7 @@
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/style.css')}}"/>
 
 		<!-- Js -->
-		<script src="{{ asset('js/jquery.min.js')}}"></script>
+		<script src="{{ asset('bundles/novifyfront/#')}}"></script>
 
 		<!-- Favicon -->
 		<link rel="icon" href="#" sizes="32x32">
@@ -33,6 +34,8 @@
 
 		<!-- Header -->
 		<div class="container">
+
+			<header id="header"></header>
 
 			<header>
 
@@ -51,52 +54,53 @@
 					</div>
 				</div>
 
-			<!-- Nav -->
-				<nav>
+				<!-- Nav -->
+				<nav id="nav" class="skel-layers-fixed">
 					<ul>
-						<li><a href="#">Accueil</a></li>
+						<li class="current"><a href="#">Accueil</a></li>
 						<li>
 							<a href="#">Livres</a>
-							<!-- <ul>
+							<ul>
 								<li><a href="#">Comics</a></li>
 								<li><a href="#">BD</a></li>
 								<li><a href="#">Manga</a></li>
 								<li><a href="#">Hors Série</a></li>
 								<li><a href="#">Roman</a></li>
-							</ul> -->
+							</ul>
 						</li>
 
 						<li>
 							<a href="#">Vidéos</a>
-							<!-- <ul>
+							<ul>
 								<li><a href="#">Films</a></li>
 								<li><a href="#">Série TV</a></li>
 								<li><a href="#">Déssins animés</a></li>
-							</ul> -->
+							</ul>
 						</li>
 
 						<li>
 							<a href="#">Jeux-Vidéos</a>
-							<!-- <ul>
+							<ul>
 								<li><a href="#">PC</a></li>
 								<li><a href="#">Playstation</a></li>
 								<li><a href="#">Xbox</a></li>
 								<li><a href="#">Nintendo</a></li>
-							</ul> -->
+							</ul>
 						</li>
 
 						<li>
 							<a href="#">Goodies</a>
-							<!-- <ul>
+							<ul>
 								<li><a href="#">Accessoires</a></li>
 								<li><a href="#">Figurines</a></li>
 								<li><a href="#">Cosplays</a></li>
-							</ul> -->
+							</ul>
 						</li>
 
 						<li><a href="#">Contact</a></li>
 					</ul>
 				</nav>
+				<!-- Fin Nav -->
 			</header>
 		<!-- Fin Header -->
 
@@ -224,4 +228,4 @@
 
 	<!-- Body -->
 	</body>
-</html>		
+</html>
