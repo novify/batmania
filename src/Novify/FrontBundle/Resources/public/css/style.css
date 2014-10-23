@@ -67,6 +67,12 @@ header {
 	color: #FFFFFF;
 }
 
+nav ul{
+
+	margin:0;
+	padding-bottom:20px;
+}
+
 nav ul li {
 	padding-right: 10px;
 	display: inline;
