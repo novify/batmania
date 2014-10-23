@@ -148,6 +148,16 @@ class Articles
     private $artDuree;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Categories", cascade={"persist"})
+     */
+    private $categorie;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Souscategories", cascade={"persist"})
+     */
+    private $sousCategorie;
+
+    /**
      * Get id
      *
      * @return integer
