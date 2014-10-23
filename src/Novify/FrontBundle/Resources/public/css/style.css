@@ -31,6 +31,17 @@ p{
 	text-align: left;
 }
 
+
+a{
+	color: inherit;
+}
+
+a:hover{
+
+	color:inherit;
+	text-decoration: none;
+}
+
 /*---*/
 
 header {
@@ -65,6 +76,11 @@ nav ul li a {
 	color: #FFFFFF;
 }
 
+
+.carousel{
+	margin-bottom: 50px;
+}
+
 .carousel img {
 	width: 100%;
 }
@@ -94,25 +110,29 @@ nav ul li a {
 .news {
 	border: 1px solid #FFFFFF;
 	height: 200px;
-	background-color: #d5433c;
+	background: url('../images/news.png');
+	background-size: cover;
 }
 
 .top_ventes {
 	border: 1px solid #FFFFFF;
 	height: 415px;
-	background-color: #3cb6d5;
+	background: url('../images/top.png');
+	background-size: cover;
 }
 
-.comics {
+.coupcoeur {
 	border: 1px solid #FFFFFF;
 	height: 200px;
-	background-color: #3cd55d;
+	background: url('../images/coeur.png');
+	background-size: cover;
 }
 
-.film {
+.promo {
 	border: 1px solid #FFFFFF;
 	height: 200px;
-	background-color: #f94cff;
+	background: url('../images/promos2.png');
+	background-size: cover;
 }
 
 footer {
@@ -125,10 +145,12 @@ footer {
 	color:white;
 	font-size: 13px;
 
+	margin-top: 50px;
+	
 }
  
 footer .container{
-	padding-top: 20px;
+	padding-top: 50px;
 /*	background: url('../images/footer.png') no-repeat;*/
 }
 
@@ -137,12 +159,62 @@ footer .container h6{
 	text-transform: uppercase;
 }
 
+footer .container a:hover{
+
+	color: rgb(200,200,200);
+}
+
+
+footer .container .rs{
+
+	width: 50px;
+	height: 50px;
+	border-radius: 4px;
+	background-color: rgb(170,170,170);
+	float: left;
+
+	margin-top: 20px;
+	margin-right: 20px;
+
+	-webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+footer .container .facebook:hover{
+	background-color: #43609c;
+}
+
+footer .container .twitter:hover{
+	background-color: #55acee;
+}
+
+footer .container .pinterest:hover{
+	background-color: #cd1f28;
+}
+
+footer .container .instagram:hover{
+	background-color: #48769c;
+}
+
 
 footer .newsletter{
 	background-color: gray;
 	height: 150px;
 }
 
+footer .newsletter h6{
+	padding-top: 15px;
+}
+footer .newsletter input{
+
+	color:gray;
+}
+
+footer .newsletter input{
+	color: rgb(20,20,20);
+}
 
 footer .container #mentionslegales{
 	
@@ -151,5 +223,5 @@ footer .container #mentionslegales{
 	margin:0;
 	padding:0;
 
-	margin-top: 20px;
+	margin-top: 50px;
 }
