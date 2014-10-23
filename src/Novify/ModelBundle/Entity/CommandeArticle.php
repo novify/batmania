@@ -29,13 +29,13 @@ class CommandeArticle
     private $achQte;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Commandes", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Commandes")
      * @ORM\JoinColumn(nullable=false)
      */
     private $commande;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Articles", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Articles")
      * @ORM\JoinColumn(nullable=false)
      */
     private $article;
@@ -71,5 +71,51 @@ class CommandeArticle
     public function getAchQte()
     {
         return $this->achQte;
+    }
+
+    /**
+     * Set commande
+     *
+     * @param  \Novify\ModelBundle\Entity\Commandes $commande
+     * @return CommandeArticle
+     */
+    public function setCommande(\Novify\ModelBundle\Entity\Commandes $commande)
+    {
+        $this->commande = $commande;
+
+        return $this;
+    }
+
+    /**
+     * Get commande
+     *
+     * @return \Novify\ModelBundle\Entity\Commandes
+     */
+    public function getCommande()
+    {
+        return $this->commande;
+    }
+
+    /**
+     * Set article
+     *
+     * @param  \Novify\ModelBundle\Entity\Articles $article
+     * @return CommandeArticle
+     */
+    public function setArticle(\Novify\ModelBundle\Entity\Articles $article)
+    {
+        $this->article = $article;
+
+        return $this;
+    }
+
+    /**
+     * Get article
+     *
+     * @return \Novify\ModelBundle\Entity\Articles
+     */
+    public function getArticle()
+    {
+        return $this->article;
     }
 }

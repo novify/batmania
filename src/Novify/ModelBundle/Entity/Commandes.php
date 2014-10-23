@@ -95,4 +95,27 @@ class Commandes
     {
         return $this->comPrix;
     }
+
+    /**
+     * Set utilisateur
+     *
+     * @param \Novify\ModelBundle\Entity\Utilisateurs $utilisateur
+     * @return Commandes
+     */
+    public function setUtilisateur(\Novify\ModelBundle\Entity\Utilisateurs $utilisateur = null)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \Novify\ModelBundle\Entity\Utilisateurs 
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
 }

@@ -421,29 +421,6 @@ class Articles
     }
 
     /**
-     * Set artQte
-     *
-     * @param  integer  $artQte
-     * @return Articles
-     */
-    public function setArtQte($artQte)
-    {
-        $this->artQte = $artQte;
-
-        return $this;
-    }
-
-    /**
-     * Get artQte
-     *
-     * @return integer
-     */
-    public function getArtQte()
-    {
-        return $this->artQte;
-    }
-
-    /**
      * Set artGenre
      *
      * @param  string   $artGenre
@@ -579,5 +556,74 @@ class Articles
     public function getArtDuree()
     {
         return $this->artDuree;
+    }
+
+    /**
+     * Set artStock
+     *
+     * @param  integer  $artStock
+     * @return Articles
+     */
+    public function setArtStock($artStock)
+    {
+        $this->artStock = $artStock;
+
+        return $this;
+    }
+
+    /**
+     * Get artStock
+     *
+     * @return integer
+     */
+    public function getArtStock()
+    {
+        return $this->artStock;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param  \Novify\ModelBundle\Entity\Categories $categorie
+     * @return Articles
+     */
+    public function setCategorie(\Novify\ModelBundle\Entity\Categories $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \Novify\ModelBundle\Entity\Categories
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * Set sousCategorie
+     *
+     * @param  \Novify\ModelBundle\Entity\Souscategories $sousCategorie
+     * @return Articles
+     */
+    public function setSousCategorie(\Novify\ModelBundle\Entity\Souscategories $sousCategorie = null)
+    {
+        $this->sousCategorie = $sousCategorie;
+
+        return $this;
+    }
+
+    /**
+     * Get sousCategorie
+     *
+     * @return \Novify\ModelBundle\Entity\Souscategories
+     */
+    public function getSousCategorie()
+    {
+        return $this->sousCategorie;
     }
 }

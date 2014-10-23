@@ -112,4 +112,73 @@ class Commentaires
     {
         return $this->commentNote;
     }
+
+    /**
+     * Set commentDate
+     *
+     * @param integer $commentDate
+     * @return Commentaires
+     */
+    public function setCommentDate($commentDate)
+    {
+        $this->commentDate = $commentDate;
+
+        return $this;
+    }
+
+    /**
+     * Get commentDate
+     *
+     * @return integer 
+     */
+    public function getCommentDate()
+    {
+        return $this->commentDate;
+    }
+
+    /**
+     * Set utilisateur
+     *
+     * @param \Novify\ModelBundle\Entity\Utilisateurs $utilisateur
+     * @return Commentaires
+     */
+    public function setUtilisateur(\Novify\ModelBundle\Entity\Utilisateurs $utilisateur = null)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \Novify\ModelBundle\Entity\Utilisateurs 
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+
+    /**
+     * Set article
+     *
+     * @param \Novify\ModelBundle\Entity\Articles $article
+     * @return Commentaires
+     */
+    public function setArticle(\Novify\ModelBundle\Entity\Articles $article = null)
+    {
+        $this->article = $article;
+
+        return $this;
+    }
+
+    /**
+     * Get article
+     *
+     * @return \Novify\ModelBundle\Entity\Articles 
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
 }

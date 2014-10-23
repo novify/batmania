@@ -3,5 +3,9 @@ novify_front_homepage:
     defaults: { _controller: NovifyFrontBundle:Front:index }
 
 novify_front_hello:
+    path:     /{id}
+    defaults: { _controller: NovifyFrontBundle:Front:view }
+
+novify_front_hello:
     path:     /hello/{name}
     defaults: { _controller: NovifyFrontBundle:Front:hello }
