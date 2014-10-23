@@ -49,11 +49,12 @@ a:hover {
 **************************/
 
 header {
-	background-color: #000000;
+	margin-top: 50px;
+	background-color: #095273;
 }
 
 
-#header
+/* #header
 {
 	text-align: center;
 	font-size: 2em;
@@ -61,7 +62,7 @@ header {
 	font-weight: 700;
 	text-transform: uppercase;
 	margin: 0 auto;
-}
+} */
 
 .logo img {
 	width: 10%;
@@ -84,22 +85,22 @@ header {
 /***************************
 	NAV
 **************************/
-
 #nav
 	{
-		position: fixed;
 		top: 0;
 		left: 0;
 		z-index: 1000;
+		background-color: rgba(255,255,255,0.95);
 		background-image: url('images/overlay.png');
 		width: 100%;
 		height: 3.25em;
 		line-height: 3.25em;
-		text-align: center;
+		text-align: left;
 		font-family: 'Open Sans Condensed', sans-serif;
 		font-weight: 700;
 		text-transform: uppercase;
 		cursor: default;
+		padding-left: 120px;
 	}
 
 		#nav ul
@@ -173,7 +174,7 @@ header {
 /*-FIN NAV-*/
 
 /*********************************************************************************/
-/* Apparition du sous menu au survol de la souris */
+/* Apparition du sous menu au survol de la souris                                                                          */
 /*********************************************************************************/
 
 	.dropotron
