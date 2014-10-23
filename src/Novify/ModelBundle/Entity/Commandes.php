@@ -35,11 +35,15 @@ class Commandes
      */
     private $comPrix;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Utilisateurs", cascade={"persist"})
+     */
+    private $utilisateur;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -49,7 +53,7 @@ class Commandes
     /**
      * Set comDate
      *
-     * @param \DateTime $comDate
+     * @param  \DateTime $comDate
      * @return Commandes
      */
     public function setComDate($comDate)
@@ -62,7 +66,7 @@ class Commandes
     /**
      * Get comDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getComDate()
     {
@@ -72,7 +76,7 @@ class Commandes
     /**
      * Set comPrix
      *
-     * @param string $comPrix
+     * @param  string    $comPrix
      * @return Commandes
      */
     public function setComPrix($comPrix)
@@ -85,7 +89,7 @@ class Commandes
     /**
      * Get comPrix
      *
-     * @return string 
+     * @return string
      */
     public function getComPrix()
     {

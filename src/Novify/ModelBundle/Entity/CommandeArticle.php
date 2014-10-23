@@ -5,12 +5,12 @@ namespace Novify\ModelBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Achats
+ * CommandeArticle
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Novify\ModelBundle\Entity\AchatsRepository")
+ * @ORM\Entity(repositoryClass="Novify\ModelBundle\Entity\CommandeArticleRepository")
  */
-class Achats
+class CommandeArticle
 {
     /**
      * @var integer
@@ -28,11 +28,22 @@ class Achats
      */
     private $achQte;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Commandes", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $commande;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Articles", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $article;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -42,8 +53,8 @@ class Achats
     /**
      * Set achQte
      *
-     * @param integer $achQte
-     * @return Achats
+     * @param  integer         $achQte
+     * @return CommandeArticle
      */
     public function setAchQte($achQte)
     {
@@ -55,7 +66,7 @@ class Achats
     /**
      * Get achQte
      *
-     * @return integer 
+     * @return integer
      */
     public function getAchQte()
     {

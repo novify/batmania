@@ -35,11 +35,32 @@ class Commentaires
      */
     private $commentNote;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="comment_date", type="integer")
+     */
+    private $commentDate;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Novify\ModelBundle\Entity\Utilisateurs", cascade={"persist"})
+     */
+    private $utilisateur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Articles", cascade={"persist"})
+     */
+    private $article;
+
+    public function __construct()
+    {
+        $this->commentDate = new \DateTIme();
+    }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -49,7 +70,7 @@ class Commentaires
     /**
      * Set commentTexte
      *
-     * @param string $commentTexte
+     * @param  string       $commentTexte
      * @return Commentaires
      */
     public function setCommentTexte($commentTexte)
@@ -62,7 +83,7 @@ class Commentaires
     /**
      * Get commentTexte
      *
-     * @return string 
+     * @return string
      */
     public function getCommentTexte()
     {
@@ -72,7 +93,7 @@ class Commentaires
     /**
      * Set commentNote
      *
-     * @param integer $commentNote
+     * @param  integer      $commentNote
      * @return Commentaires
      */
     public function setCommentNote($commentNote)
@@ -85,7 +106,7 @@ class Commentaires
     /**
      * Get commentNote
      *
-     * @return integer 
+     * @return integer
      */
     public function getCommentNote()
     {
