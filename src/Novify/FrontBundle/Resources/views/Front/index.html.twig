@@ -12,18 +12,22 @@
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/bootstrap-theme.css')}}"/>
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/bootstrap.css')}}"/>
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/style.css')}}"/>
+		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/menu/menu-mobile.css')}}"/>
+
+		<!-- Js -->
+		<script src="js/jquery.nav.min.js"></script>
 
 		<!-- Favicon -->
 		<link rel="icon" href="#" sizes="32x32">
 	    <link rel="icon" href="#" sizes="64x64">
 
 		<!-- Google Font -->
-		
-
 
 	</head>
-	
-	<body>
+
+
+
+	<body>	
 
 	<!-- Header -->				
 		<div class="container">
@@ -48,44 +52,45 @@
 
 				<!-- Nav -->
 				<div class="row">
-					<nav>
+					<nav id="nav" class="skel-layers-fixed">
 						<ul>					
-							<li><a href="../controler/c_index.php">Accueil</a></li>
+							<li class="current"><a href="../controler/c_index.php">Accueil</a></li>
 
-							<li><a href="../controler/c_catalogue.php">Livres</a></li>
-								<!-- <ul class="sous_categorie">
+							<a href="../controler/c_catalogue.php">Livres</a>
+								<ul>
 									<li><a href="../controler/c_catalogue.php">Comics</a></li>
 		                    		<li><a href="../controler/c_catalogue.php">BD</a></li>
 		         	          		<li><a href="../controler/c_catalogue.php">Manga</a></li>
 		                    		<li><a href="../controler/c_catalogue.php">Hors Série</a></li>
 		                    		<li><a href="../controler/c_catalogue.php">Roman</a></li>
-								</ul> -->
+								</ul>
 
-							<li><a href="../controler/c_catalogue.php">Vidéos</a></li>
-								<!-- <ul class="sous_categorie">
+							<a href="../controler/c_catalogue.php">Vidéos</a>
+								<ul>
 									<li><a href="../controler/c_catalogue.php">Films</a></li>
 		                    		<li><a href="../controler/c_catalogue.php">Série TV</a></li>
 		                    		<li><a href="../controler/c_catalogue.php">Dessins animés</a></li>
-								</ul> -->
+								</ul>
 
-							<li><a href="../controler/c_catalogue.php">Jeux-Vidéos</a></li>
-								<!-- <ul class="sous_categorie">
+							<a href="../controler/c_catalogue.php">Jeux-Vidéos</a>
+								<ul class="sous_categorie">
 									<li><a href="../controler/c_catalogue.php">PC</a></li>
 		                    		<li><a href="../controler/c_catalogue.php">Playstation</a></li>
 		                    		<li><a href="../controler/c_catalogue.php">Xbox</a></li>
 		                    		<li><a href="../controler/c_catalogue.php">Nintendo</a></li>
-								</ul> -->
-							<li><a href="../controler/c_catalogue.php">Goodies</a></li>
-								<!-- <ul class="sous_categorie">
+								</ul>
+							<a href="../controler/c_catalogue.php">Goodies</a>
+								<ul class="sous_categorie">
 									<li><a href="../controler/c_catalogue.php">Accessoires</a></li>
 		                    		<li><a href="../controler/c_catalogue.php">Figurines</a></li>
 		                    		<li><a href="../controler/c_catalogue.php">Cosplays/Déguisements</a></li>
-								</ul> -->
+								</ul>
 							<li><a href="../controler/c_contact.php">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
 			<!-- Fin nav -->
+
 			</header>
 		</div>
 	<!-- Fin Header -->
@@ -139,6 +144,9 @@
 	
 	
 
+	<!-- Fin Body -->
+
+
 	<!-- Footer -->
 	<footer>
 			<img src="{{ asset('bundles/novifyfront/images/footer.png')}}" alt="background du footer">
@@ -146,7 +154,6 @@
 	<!-- Fin Footer -->
 	
 
-	
-	<!-- Body -->		
+			
 	</body>
 </html>
