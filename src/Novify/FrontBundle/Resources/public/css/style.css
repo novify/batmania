@@ -1,16 +1,39 @@
 body {
+	margin: auto;
 	background: url(../images/bg.png) no-repeat center fixed;
 	background-size: cover;
 	background-position: fixed;
 }
 
-nav img {
+.header {
+	background-color: #000000;
+}
+
+.logo img {
 	width: 10%;
+}
+
+.client {
+	float: right;
+}
+
+.client img {
+	width: 8%;
+	padding-right: 5px;
+	padding-left: 10px;
+}
+
+.client a {
+	color: #FFFFFF;
 }
 
 nav ul li {
 	padding-right: 10px;
 	display: inline;
+}
+
+nav ul li a {
+	color: #FFFFFF;
 }
 
 .carousel img {
