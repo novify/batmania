@@ -18,7 +18,7 @@ class FrontController extends Controller
         $article = $em->getRepository('NovifyModelBundle:Articles')->find($id);
 
         if (null === $article) {
-          throw new NotFoundHttpException("L'annonce d'id ".$id." n'existe pas.");
+            throw new NotFoundHttpException("L'annonce d'id ".$id." n'existe pas.");
         }
 
         return $this->render('NovifyFrontBundle:Front:view.html.twig', array('article' => $article));
@@ -27,5 +27,10 @@ class FrontController extends Controller
     public function helloAction($name)
     {
         return $this->render('NovifyFrontBundle:Front:hello.html.twig', array('name' => $name));
+    }
+
+    public function catalogueAction()
+    {
+        return $this->render('NovifyFrontBundle:Front:catalogue.html.twig');
     }
 }
