@@ -1,5 +1,4 @@
 @charset 'UTF-8';
-@import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic|Open+Sans+Condensed:700");
 
 /***************************
@@ -83,7 +82,6 @@ header .row{
 		left: 0;
 		z-index: 1000;
 		background-color: rgba(255,255,255,0.95);
-		background-image: url('images/overlay.png');
 		width: 100%;
 		height: 3.25em;
 		line-height: 3.25em;
@@ -100,7 +98,7 @@ header .row{
 			position: relative;
 			z-index: 1001;
 		}
-	
+
 		#nav li
 		{
 			display: inline-block;
@@ -185,11 +183,11 @@ header .row{
 		margin-top: -1em;
 		box-shadow: 0 1em 2em 0 rgba(0,0,0,0.1);
 	}
-	
+
 		.dropotron li
 		{
 		}
-		
+
 			.dropotron li > a,
 			.dropotron li > span
 			{
@@ -212,13 +210,13 @@ header .row{
 			{
 				border-top: 0;
 			}
-			
+
 		.dropotron.level-0
 		{
 			margin-top: 1em;
 			font-size: 0.9em;
 		}
-		
+
 			.dropotron.level-0:before
 			{
 				content: '';
@@ -359,15 +357,15 @@ footer {
 	font-size: 13px;
 
 	margin-top: 50px;
-	
+
 }
- 
+
 footer .container{
 	padding-top: 50px;
 }
 
 footer .container h6{
-	
+
 	text-transform: uppercase;
 }
 
@@ -429,7 +427,7 @@ footer .newsletter input{
 }
 
 footer .container #mentionslegales{
-	
+
 	border-top: 1px solid rgb(150,150,150);
 	text-align: left;
 	margin:0;
