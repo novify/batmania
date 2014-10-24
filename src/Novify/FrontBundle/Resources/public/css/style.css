@@ -258,19 +258,19 @@ header {
 	margin-bottom: 2%;
 }
 
-.col-lg-6 {
+.col-md-6 {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
 
-.col-lg-4 {
+.col-md-4 {
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
 
-.col-lg-12 {
+.col-md-12 {
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
@@ -380,7 +380,6 @@ footer {
  
 footer .container{
 	padding-top: 50px;
-/*	background: url('../images/footer.png') no-repeat;*/
 }
 
 footer .container h6{
