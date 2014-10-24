@@ -28,4 +28,9 @@ class FrontController extends Controller
     {
         return $this->render('NovifyFrontBundle:Front:hello.html.twig', array('name' => $name));
     }
+
+    public function catalogueAction($name)
+    {
+        return $this->render('NovifyFrontBundle:Front:catalogue.html.twig', array('name' => $name));
+    }
 }
