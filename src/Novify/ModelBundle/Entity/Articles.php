@@ -148,7 +148,8 @@ class Articles
     private $artDuree;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Categories", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Categories", cascade={"persist"}, inversedBy="articles")
+     * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
      */
     private $categorie;
 
