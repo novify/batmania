@@ -1,114 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-		<!--[if lt IE 9]>
-	    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-
-		<meta charset="utf-8">
-		<title>Batmania</title>
-
-		<!-- Feuilles de style -->
-		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/bootstrap-theme.css')}}"/>
-		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/bootstrap.css')}}"/>
-		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/style.css')}}"/>
-
-		<!-- Js -->
-		<script src="{{ asset('bundles/novifyfront/js/jquery.min.js')}}"></script>
-
-		<!-- Favicon -->
-		<link rel="icon" href="#" sizes="32x32">
-	    <link rel="icon" href="#" sizes="64x64">
-
-		<!-- Google Font -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-
-	</head>
-
-	<body>	
-
-		<!-- Header -->
-		<div class="container">
-
-
-			<header>
-
-				<!-- Logo -->
-				<div class="logo">
-					<a href="#"><img src="{{ asset('bundles/novifyfront/images/logo.png')}}" alt="Logo Batmania"></a>
-				</div>
-
-				<div class="row">
-					<div class="client">
-						<div class="col-lg-2"></div>
-						<div class="col-lg-3">
-							<form method="post" action="recherche.php">
-								<input type="text" name="rechercher" placeholder="Rechercher.."/><div class="rechercher_img"><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche"></div>
-							</form>
-						</div>
-						<div class="col-lg-1"></div>
-						<div class="col-lg-3">
-							<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman"><div class="text">Mon compte</div></a>
-							<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier"><div class="text">Mon panier</div></a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="#">Accueil</a></li>
-						<li>
-							<a href="#">Livres</a>
-							<ul>
-								<li><a href="#">Comics</a></li>
-								<li><a href="#">BD</a></li>
-								<li><a href="#">Manga</a></li>
-								<li><a href="#">Hors Série</a></li>
-								<li><a href="#">Roman</a></li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="#">Vidéos</a>
-							<ul>
-								<li><a href="#">Films</a></li>
-								<li><a href="#">Série TV</a></li>
-								<li><a href="#">Déssins animés</a></li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="#">Jeux-Vidéos</a>
-							<ul>
-								<li><a href="#">PC</a></li>
-								<li><a href="#">Playstation</a></li>
-								<li><a href="#">Xbox</a></li>
-								<li><a href="#">Nintendo</a></li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="#">Goodies</a>
-							<ul>
-								<li><a href="#">Accessoires</a></li>
-								<li><a href="#">Figurines</a></li>
-								<li><a href="#">Cosplays</a></li>
-							</ul>
-						</li>
-
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</nav>
-				
-				<!-- Fin Nav -->
-			</header>
-		</div>
-		<!-- Fin Header -->
+{% extends '::base.html.twig' %}
+{% block main %}
 
 		<!-- Body -->
 
@@ -125,7 +16,7 @@
 			</div>
 
 			<div class="container">
-				
+
 				<!-- Ligne de tri -->
 				<div class="row">
 					<div class="col-lg-12">
@@ -138,13 +29,13 @@
 					<div class="col-lg-12">
 
 						<div class="row">
-							
+
 							<div class="col-md-3 article">
 
 								<div class="article_image">
 									<img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt="">
 								</div>
-								
+
 								<h5>Titre article</h5>
 								<p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas tellus vel neque luctus, porta maximus elit elementum.</p>
 							</div>
@@ -155,9 +46,9 @@
 								<div class="article_image">
 									<img src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt="">
 								</div>
-								
+
 								<h5>Titre article</h5>
-								<p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas tellus vel neque luctus, porta maximus elit elementum.</p>	
+								<p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas tellus vel neque luctus, porta maximus elit elementum.</p>
 							</div>
 
 
@@ -166,9 +57,9 @@
 								<div class="article_image">
 									<img src="{{ asset('bundles/novifyfront/images/article3.jpg')}}" alt="">
 								</div>
-								
+
 								<h5>Titre article</h5>
-								<p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas tellus vel neque luctus, porta maximus elit elementum.</p>	
+								<p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas tellus vel neque luctus, porta maximus elit elementum.</p>
 							</div>
 
 
@@ -177,100 +68,20 @@
 								<div class="article_image">
 									<img src="{{ asset('bundles/novifyfront/images/article4.jpg')}}" alt="">
 								</div>
-								
+
 								<h5>Titre article</h5>
-								<p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas tellus vel neque luctus, porta maximus elit elementum.</p>	
+								<p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas tellus vel neque luctus, porta maximus elit elementum.</p>
 							</div>
 
 
 						</div>
-						
+
 					</div>
 				</div>
-				
+
 
 			</div>
 
 
 		</div>
-
-
-
-
-		
-		
-		<!-- Footer -->
-		<footer>
-
-				<div class="container">
-					
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row">
-
-
-								<div class="col-md-3">
-
-									<h6>NOS SERVICES</h6>
-									<p>
-										<a href="#"> > Nos engagements<br/></a>
-										<a href="#"> > Carte cadeau<br/></a>
-										<a href="#"> > Paiement sécurisé<br/></a>
-										<a href="#"> > Retour et échanges<br/></a>
-										<a href="#"> > Site mobile</a>
-									</p>
-
-								</div>
-
-
-								<div class="col-md-3">
-
-									<h6>Batmania</h6>
-									<p>
-										Spécialisé dans la vente de produits en tout genre autour de l'univers Batman, Batmania propose une grande variété de produits tout en portant une attention particulière à la qualité et l'exclusivité de nos produits.
-									</p>
-								</div>
-
-
-								<div class="col-md-3">
-									<h6>La communauté</h6>
-									<div class="facebook rs"></div>
-									<div class="twitter rs"></div>
-									<div class="pinterest rs" style="clear:both"></div>
-									<div class="instagram rs"></div>
-								</div>
-			 
-
-								<div class="col-md-3 newsletter">
-									
-									
-									<h6>Recevez notre newsletter</h6>
-									<p>Et soyez les premiers informés des nouveautés et actualités de l’enseigne.</p>
-									
-									<!-- Formulaire d'inscription à la newsletter -->
-									<form method="post" action="#">
-										<p><input type="text" name="mail" placeholder="Votre adresse e-mail"/></p>
-									</form>
-
-								</div>
-
-							</div>
-
-						</div>
-						<div class="row">
-							<div class="col-md-12" id="mentionslegales">
-								
-								<p>Mentions lésgales - Conditions générales de vente - Plan du site - F.A.Q - Contact</p>
-
-							</div>
-						</div>	
-					
-						
-					</div>
-				</div>
-		</footer>
-	<!-- Fin Footer -->
-
-	<!-- Fin Body -->
-	</body>
-</html>
+{% endblock %}
