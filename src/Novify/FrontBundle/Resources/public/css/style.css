@@ -52,7 +52,9 @@ header {
 	background-color: #095273;
 }
 
-
+header .row{
+	margin:0;
+}
 
 .logo img {
 	width: 10%;
