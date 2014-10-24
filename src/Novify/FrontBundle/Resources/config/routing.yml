@@ -2,16 +2,6 @@ novify_front_homepage:
     path:     /
     defaults: { _controller: NovifyFrontBundle:Front:index }
 
-novify_front_view_one:
-    path:     /{id}
-    defaults: { _controller: NovifyFrontBundle:Front:view }
-    requirements:
-        id: \d+
-
-novify_front_view_catalogue:
-    path:     /catalogue
-    defaults: { _controller: NovifyFrontBundle:Front:catalogue }
-
 novify_front_view_categorie:
     path:     /{categorie}
     defaults: { _controller: NovifyFrontBundle:Front:catalogue }
@@ -19,14 +9,18 @@ novify_front_view_categorie:
 novify_front_view_categorie_one:
     path:     /{categorie}/{id}
     defaults: { _controller: NovifyFrontBundle:Front:view }
+    requirements:
+        id: \d+
 
 novify_front_view_souscategorie:
     path:     /{categorie}/{souscategorie}
-    defaults: { _controller: NovifyFrontBundle:Front:view }
+    defaults: { _controller: NovifyFrontBundle:Front:catalogue }
 
 novify_front_view_souscategorie_one:
     path:     /{categorie}/{souscategorie}/{id}
     defaults: { _controller: NovifyFrontBundle:Front:view }
+    requirements:
+        id: \d+
 
 novify_front_hello:
     path:     /hello/{name}

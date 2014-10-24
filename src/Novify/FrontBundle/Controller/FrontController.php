@@ -29,8 +29,11 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:hello.html.twig', array('name' => $name));
     }
 
-    public function catalogueAction()
+    public function catalogueAction($categorie)
     {
-        return $this->render('NovifyFrontBundle:Front:catalogue.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $articles = $em->getRepository('NovifyModelBundle:Categories')->findOneBycatNom($categorie)->getArticles();
+
+        return $this->render('NovifyFrontBundle:Front:view.html.twig', array('articles' => $articles));
     }
 }
