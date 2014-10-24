@@ -5,6 +5,8 @@ novify_front_homepage:
 novify_front_view_one:
     path:     /{id}
     defaults: { _controller: NovifyFrontBundle:Front:view }
+    requirements:
+        id: \d+
 
 novify_front_view_catalogue:
     path:     /catalogue
