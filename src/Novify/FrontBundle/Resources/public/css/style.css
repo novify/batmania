@@ -53,7 +53,7 @@ header {
 }
 
 
-/* #header
+#client
 {
 	text-align: center;
 	font-size: 2em;
@@ -61,7 +61,7 @@ header {
 	font-weight: 700;
 	text-transform: uppercase;
 	margin: 0 auto;
-} */
+}
 
 .logo img {
 	width: 10%;
@@ -258,19 +258,19 @@ header {
 	margin-bottom: 2%;
 }
 
-.col-lg-6 {
+.col-md-6 {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
 
-.col-lg-4 {
+.col-md-4 {
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
 
-.col-lg-12 {
+.col-md-12 {
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
@@ -305,6 +305,81 @@ header {
 
 /*-FIN BODY-*/
 
+
+
+
+
+
+
+
+
+/***************************
+	Catalogue
+**************************/
+
+#bloc_catalogue	.banniere_catalogue{
+
+	position:relative;
+}
+
+#bloc_catalogue	.banniere_catalogue h1{
+	
+	color: rgb(30,30,30);
+	font-size: 36px;
+	text-transform:  uppercase;
+	position: absolute;
+	bottom:30px;
+	left:0;
+/*	font-weight: bold;
+*/	
+	padding: 3px 6px 3px 20px;
+	background-color: rgba(220, 220, 220, 0.7);
+}
+
+
+#bloc_catalogue .banniere_catalogue img{
+
+	width: 100%;
+}
+
+
+
+#bloc_catalogue .container{
+
+	background-color: rgba(255,255,255,0.8);
+}
+
+#bloc_catalogue .container .article{
+
+	padding: 50px ;
+}
+
+#bloc_catalogue .container .article .article_image img{
+
+}
+
+
+#bloc_catalogue .container .article img{
+
+	width: 100%;
+}
+
+#bloc_catalogue .container .article h5{
+	text-transform : uppercase;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/* -------- */
+
+
+
+
+
+
+
+
+
 /***************************
 	FOOTER
 **************************/
@@ -325,7 +400,6 @@ footer {
  
 footer .container{
 	padding-top: 50px;
-/*	background: url('../images/footer.png') no-repeat;*/
 }
 
 footer .container h6{

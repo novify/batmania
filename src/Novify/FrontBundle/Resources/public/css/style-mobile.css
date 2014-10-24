@@ -3,9 +3,21 @@
 /* Header                                                                        */
 /*********************************************************************************/
 
-	#header
-	{
+	header {
+		margin-top: 45px;
+		width: 100%;
+	}
+
+	.text {
 		display: none;
+	}
+
+	header input {
+		display: none;
+	}
+
+	header .rechercher_img:hover {
+
 	}
 
 /*********************************************************************************/
@@ -126,3 +138,14 @@
 			#navPanel .indent-4 { display: inline-block; width: 4em; }
 			#navPanel .indent-5 { display: inline-block; width: 5em; }
 			#navPanel .depth-0 { color: #fff; }
+
+/***************************
+	FOOTER
+**************************/
+
+footer {
+
+	background-size: 260%;
+}
+
+/*-FIN FOOTER-*/
