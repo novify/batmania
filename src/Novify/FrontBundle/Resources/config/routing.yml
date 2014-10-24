@@ -9,7 +9,7 @@ novify_front_view_one:
         id: \d+
 
 novify_front_view_catalogue:
-    path:     /catalogue
+    path:     /catalogue/
     defaults: { _controller: NovifyFrontBundle:Front:catalogue }
 
 novify_front_view_categorie:

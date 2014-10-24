@@ -46,13 +46,13 @@
 						<div class="col-lg-2"></div>
 						<div class="col-lg-3">
 							<form method="post" action="recherche.php">
-								<input type="text" name="rechercher" placeholder="Rechercher.."/><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche">
+								<input type="text" name="rechercher" placeholder="Rechercher.."/><div class="rechercher_img"><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche"></div>
 							</form>
 						</div>
 						<div class="col-lg-1"></div>
 						<div class="col-lg-3">
-							<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman">Mon compte</a>
-							<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier">Mon panier</a>
+							<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman"><div class="text">Mon compte</div></a>
+							<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier"><div class="text">Mon panier</div></a>
 						</div>
 					</div>
 				</div>
@@ -116,6 +116,11 @@
 			<!-- Image choisie par l'utilisateur et modifiable dans le back office -->
 			<div class="banniere_catalogue">
 				<img src="{{ asset('bundles/novifyfront/images/banniere-livres.jpg')}}" alt="image_info_carousel">
+
+				<div class="container">
+					<h1><a href="#">Livres</a> > Comics</h1>
+				</div>
+
 			</div>
 
 			<div class="container">
@@ -135,7 +140,10 @@
 							
 							<div class="col-md-3 article">
 
-								<img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt="">
+								<div class="article_image">
+									<img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt="">
+								</div>
+								
 								<h5>Titre article</h5>
 								<p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas tellus vel neque luctus, porta maximus elit elementum.</p>
 							</div>
@@ -143,7 +151,10 @@
 
 							<div class="col-md-3 article">
 
-								<img src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt="">
+								<div class="article_image">
+									<img src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt="">
+								</div>
+								
 								<h5>Titre article</h5>
 								<p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas tellus vel neque luctus, porta maximus elit elementum.</p>	
 							</div>
@@ -151,7 +162,10 @@
 
 							<div class="col-md-3 article">
 
-								<img src="{{ asset('bundles/novifyfront/images/article3.jpg')}}" alt="">
+								<div class="article_image">
+									<img src="{{ asset('bundles/novifyfront/images/article3.jpg')}}" alt="">
+								</div>
+								
 								<h5>Titre article</h5>
 								<p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas tellus vel neque luctus, porta maximus elit elementum.</p>	
 							</div>
@@ -159,7 +173,10 @@
 
 							<div class="col-md-3 article">
 
-								<img src="{{ asset('bundles/novifyfront/images/article4.jpg')}}" alt="">
+								<div class="article_image">
+									<img src="{{ asset('bundles/novifyfront/images/article4.jpg')}}" alt="">
+								</div>
+								
 								<h5>Titre article</h5>
 								<p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas tellus vel neque luctus, porta maximus elit elementum.</p>	
 							</div>

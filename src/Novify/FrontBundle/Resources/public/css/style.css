@@ -317,6 +317,25 @@ header {
 	Catalogue
 **************************/
 
+#bloc_catalogue	.banniere_catalogue{
+
+	position:relative;
+}
+
+#bloc_catalogue	.banniere_catalogue h1{
+	
+	color: rgb(30,30,30);
+	font-size: 36px;
+	text-transform:  uppercase;
+	position: absolute;
+	bottom:30px;
+	left:0;
+/*	font-weight: bold;
+*/	
+	padding: 3px 6px 3px 20px;
+	background-color: rgba(220, 220, 220, 0.7);
+}
+
 
 #bloc_catalogue .banniere_catalogue img{
 
@@ -324,9 +343,19 @@ header {
 }
 
 
+
 #bloc_catalogue .container{
 
 	background-color: rgba(255,255,255,0.8);
+}
+
+#bloc_catalogue .container .article{
+
+	padding: 50px ;
+}
+
+#bloc_catalogue .container .article .article_image img{
+
 }
 
 
