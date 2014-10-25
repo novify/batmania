@@ -249,19 +249,19 @@ header .row{
 	margin-bottom: 2%;
 }
 
-.col-md-6 {
+.col-sm-6 {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
 
-.col-md-4 {
+.col-sm-4 {
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
 
-.col-md-12 {
+.col-sm-12 {
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
@@ -309,27 +309,102 @@ header .row{
 **************************/
 
 
+#bloc_catalogue .banniere_catalogue{
+
+	position: relative;
+}
+
+
 #bloc_catalogue .banniere_catalogue img{
 
 	width: 100%;
 }
 
+#bloc_catalogue .banniere_catalogue h1{
+
+	position: absolute;
+	bottom:40px;
+	left:0;
+	
+	font-size: 40px;
+	text-transform: uppercase;
+	font-weight: 300;
+	padding:5px 10px 5px 15px;
+
+	color: rgb(35,35,35);
+	background-color: rgba(255,255,255,0.6);
+}
+
+
 
 #bloc_catalogue .container{
 
-	background-color: rgba(255,255,255,0.8);
+	background-color: rgba(255,255,255,1);
+}
+
+#bloc_catalogue .container .barre_tri{
+
+	padding: 0 50px;
+	margin: 30px 0;
+}
+
+#bloc_catalogue .container .pagination{
+
+	text-align:right;
+}
+
+#bloc_catalogue .container .pagination a{
+
+}
+
+#bloc_catalogue .container .pagination span{
+	/*Lien actuel dans la pagination */
+	font-weight: bold;
+
 }
 
 
-#bloc_catalogue .container .article img{
+#bloc_catalogue .ligne_articles{
 
-	width: 100%;
+	margin: 30px 0;
+}
+
+
+#bloc_catalogue .container .col-md-3{
+
+	padding: 0px;
+}
+
+
+#bloc_catalogue .container .article{
+
+	padding: 0 60px;
+}
+
+
+#bloc_catalogue .container .article .article_image{
+
+	height: 300px
+}
+
+
+#bloc_catalogue .container .article .article_image img{
+
+	height: 100%;
 }
 
 #bloc_catalogue .container .article h5{
+	/*Nom article*/
 	text-transform : uppercase;
-	font-size: 18px;
-	font-weight: bold;
+	font-size: 16px;
+}
+
+
+#bloc_catalogue .container .article p{
+	/*Prix*/
+	text-align: center;
+	font-size: 20px;
+	font-weight: 400;
 }
 
 /* -------- */
@@ -351,12 +426,16 @@ footer {
 	text-align: center;
 
 	background: url('../images/footer.jpg') no-repeat center;
-
 	background-size: 100%;
+
+	-webkit-background-size: cover; /* pour Chrome et Safari */
+	-moz-background-size: cover; /* pour Firefox */
+	-o-background-size: cover; /* pour Opera */
+	background-size: cover; /* version standardisÃ©e */
+
 	color:white;
 	font-size: 13px;
 
-	margin-top: 50px;
 
 }
 
@@ -412,6 +491,8 @@ footer .container .instagram:hover{
 footer .newsletter{
 	background-color: gray;
 	height: 150px;
+
+	margin-top: 30px;
 }
 
 footer .newsletter h6{
@@ -437,3 +518,38 @@ footer .container #mentionslegales{
 }
 
 /*-FIN FOOTER-*/
+
+
+
+
+
+
+
+/*media queries*/
+
+@media only screen and (max-width: 768px){
+	
+
+	#bloc_catalogue .container .article p{
+		/*Prix*/
+		text-align: left;
+	
+	}
+
+	#bloc_catalogue .container .article .article_image{
+
+	height: auto;
+	}
+
+
+	#bloc_catalogue .container .article .article_image img{
+
+		width: 100%;
+	}
+
+	#bloc_catalogue .container .pagination{
+
+	text-align:left;
+	}
+
+}
