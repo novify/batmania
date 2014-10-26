@@ -10,14 +10,14 @@ novify_front_view_one:
 
 novify_front_view_categorie:
     path:     /{categorie}
-    defaults: { _controller: NovifyFrontBundle:Front:viewcat }
+    defaults: { _controller: NovifyFrontBundle:Front:viewCat }
 
 novify_front_view_souscategorie:
-    path:     /{categorie}/{souscategorie}
-    defaults: { _controller: NovifyFrontBundle:Front:catalogue }
+    path:     /{categorie}/{sousCategorie}
+    defaults: { _controller: NovifyFrontBundle:Front:viewSousCat }
 
 novify_front_view_one:
-    path:     /{categorie}/{souscategorie}/{id}
+    path:     /{categorie}/{sousCategorie}/{id}
     defaults: { _controller: NovifyFrontBundle:Front:view }
     requirements:
         id: \d+
