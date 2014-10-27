@@ -2,12 +2,6 @@ novify_front_homepage:
     path:     /
     defaults: { _controller: NovifyFrontBundle:Front:index }
 
-novify_front_view_one:
-    path:     /{id}
-    defaults: { _controller: NovifyFrontBundle:Front:view }
-    requirements:
-        id: \d+
-
 # temporaire
 novify_front_view_fiche:
     path:     /fiche
@@ -21,11 +15,11 @@ novify_front_view_souscategorie:
     path:     /{categorie}/{sousCategorie}
     defaults: { _controller: NovifyFrontBundle:Front:viewSousCat }
 
-novify_front_view_one:
+novify_front_view_onee:
     path:     /{categorie}/{sousCategorie}/{id}
-    defaults: { _controller: NovifyFrontBundle:Front:view }
-    requirements:
-        id: \d+
+    defaults: { _controller: NovifyFrontBundle:Front:viewone }
+    # requirements:
+        # id: \d+
 
 novify_front_hello:
     path:     /hello/{name}
