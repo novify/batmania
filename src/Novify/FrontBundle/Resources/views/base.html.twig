@@ -2,8 +2,7 @@
 <html lang="fr">
 	<head>
 
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
 		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -17,7 +16,8 @@
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/bootstrap.css')}}"/>
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/style.css')}}"/>
 
-		<!-- Js -->
+		<!-- Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Favicon -->
 		<link rel="icon" href="#" sizes="32x32">
@@ -32,7 +32,7 @@
 	<body>
 {% block header %}
 		<!-- Header -->
-				<header>
+		<header>
 
 				<!-- Logo -->
 				<div class="logo">
@@ -41,25 +41,23 @@
 
 				<div class="row">
 					<div class="client">
-						<div class="col-lg-3">
-							<form method="post" action="recherche.php">
-								<input type="text" name="rechercher" placeholder="Rechercher.."/><div class="rechercher_img"><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche"></div>
-							</form>
-						</div>
-						<div class="col-lg-2">
-						<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman"><div class="text">Mon compte</div></a>
-						<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier"><div class="text">Mon panier</div></a>
-						</div>
+						<form method="post" action="#">
+							<input type="text" name="rechercher" placeholder="Rechercher.."/><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche">
+						</form>
+						<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman">Mon compte</a>
+						<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier">Mon panier</a>
 					</div>
 				</div>
 
 				<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="#">Accueil</a></li>
+				<nav>
+					<label for="show-menu" class="show-menu">Batmania</label>
+					<input type="checkbox" id="show-menu" role="button">
+						<ul id="menu">
+						<li><a href="#">Accueil</a></li>
 						<li>
 							<a href="#">Livres</a>
-							<ul>
+							<ul class="survol">
 								<li><a href="#">Comics</a></li>
 								<li><a href="#">BD</a></li>
 								<li><a href="#">Manga</a></li>
@@ -67,44 +65,39 @@
 								<li><a href="#">Roman</a></li>
 							</ul>
 						</li>
-
 						<li>
 							<a href="#">Vidéos</a>
-							<ul>
+							<ul class="survol">
 								<li><a href="#">Films</a></li>
 								<li><a href="#">Série TV</a></li>
 								<li><a href="#">Déssins animés</a></li>
 							</ul>
 						</li>
-
 						<li>
 							<a href="#">Jeux-Vidéos</a>
-							<ul>
+							<ul class="survol">
 								<li><a href="#">PC</a></li>
 								<li><a href="#">Playstation</a></li>
 								<li><a href="#">Xbox</a></li>
 								<li><a href="#">Nintendo</a></li>
 							</ul>
 						</li>
-
 						<li>
 							<a href="#">Goodies</a>
-							<ul>
+							<ul class="survol">
 								<li><a href="#">Accessoires</a></li>
 								<li><a href="#">Figurines</a></li>
 								<li><a href="#">Cosplays</a></li>
 							</ul>
 						</li>
-
 						<li><a href="#">Contact</a></li>
 					</ul>
-				</nav>
-
+                
+        		</nav>
 				<!-- Fin Nav -->
-			</header>
-		<!-- Header -->
 
-	<!-- Fin Header -->
+			</header>
+		<!-- Fin Header -->
 
 {% endblock %}
 {% block main %}

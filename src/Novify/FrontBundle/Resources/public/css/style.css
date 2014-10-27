@@ -45,11 +45,7 @@ a:hover {
 **************************/
 
 header {
-	background-color: #095273;
-}
-
-header .row{
-	margin:0;
+	background-color: #000000;
 }
 
 .logo img {
@@ -57,11 +53,11 @@ header .row{
 }
 
 .client {
-	margin-bottom: 4%;
+	float: right;
 }
 
 .client img {
-	width: 40px;
+	width: 8%;
 	padding-right: 5px;
 	padding-left: 10px;
 }
@@ -73,15 +69,140 @@ header .row{
 /***************************
 	NAV
 **************************/
+nav {
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	background-color: rgba(255,255,255,0.95);
+	width: 100%;
+	height: 3.50em;
+	line-height: 3.25em;
+	text-align: left;
+	cursor: default;
+}
+
+nav a:hover {
+	color: #FFF;
+}
+
+/*Style du menu à la vertical*/
+ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	position: absolute;
+}
+
+/*Style du menu à l'horizontal*/
+li {
+	display:inline-block;
+	float: left;
+	margin-right: 1px;
+	width: 189px;
+}
+
+/*Style pour les liens*/
+li a {
+	display:block;
+	min-width:140px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: #fff;
+	background: #2f3036;
+	text-decoration: none;
+}
+
+/*Style pour les liens au survol de la souris*/
+li:hover a {
+	background: #dabb5b;
+}
+
+/*Style pour les sous-liens*/
+li:hover ul a {
+	background: #f3f3f3;
+	color: #2f3036;
+	height: 40px;
+	line-height: 40px;
+}
+
+/*Style pour les sous-liens au survol de la souris*/
+li:hover ul a:hover {
+	background: #dabb5b;
+	color: #fff;
+}
+
+/*pour ne pas afficher les liens qui sont inutile*/
+li ul {
+	display: none;
+}
+
+/*Apparition des sous-liens*/
+li ul li {
+	display: block;
+	float: none;
+}
+
+/*Style des sous-liens*/
+li ul li a {
+	width: auto;
+	min-width: 100px;
+	padding: 0 20px;
+}
+
+/*style des sous-liens*/
+ul li a:hover + .survol, .survol:hover {
+	display: block;
+}
+
+/*Style 'show menu' pour Ipad et Iphone*/
+.show-menu {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #fff;
+	background: #095273;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+/*Checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+
+/*Checkbox sous les 760px*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+
+/*Style pour Ipad & Iphone*/
+
+@media screen and (max-width : 760px){
+	/*Style du menu horizontal*/
+	ul {
+		position: static;
+		display: none;
+	}
+	/*Style du menu à la vertical*/
+	li {
+		margin-bottom: 1px;
+	}
+	/*Taille du menu en global*/
+	ul li, li a {
+		width: 100%;
+	}
+	/*Apparition du menu pour Ipad et Iphone*/
+	.show-menu {
+		display:block;
+	}
+}
 
 /*-FIN NAV-*/
-
-/*********************************************************************************/
-/* Apparition du sous menu au survol de la souris                                                                          */
-/*********************************************************************************/
-
-	
-/*-FIN HOVER-*/
 /*-FIN HEADER-*/
 
 /***************************
@@ -177,7 +298,7 @@ header .row{
 	position: absolute;
 	bottom:40px;
 	left:0;
-	
+
 	font-size: 40px;
 	text-transform: uppercase;
 	font-weight: 300;
@@ -380,12 +501,12 @@ footer .container #mentionslegales{
 /*media queries*/
 
 @media only screen and (max-width: 768px){
-	
+
 
 	#bloc_catalogue .container .article p{
 		/*Prix*/
 		text-align: left;
-	
+
 	}
 
 	#bloc_catalogue .container .article .article_image{
