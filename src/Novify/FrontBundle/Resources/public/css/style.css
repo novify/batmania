@@ -286,18 +286,18 @@ input[type=checkbox]:checked ~ #menu{
 **************************/
 
 
-#bloc_catalogue .banniere_catalogue{
+.banniere_catalogue{
 
 	position: relative;
 }
 
 
-#bloc_catalogue .banniere_catalogue img{
+.banniere_catalogue img{
 
 	width: 100%;
 }
 
-#bloc_catalogue .banniere_catalogue h1{
+.banniere_catalogue h1{
 
 	position: absolute;
 	bottom:40px;
@@ -390,6 +390,21 @@ input[type=checkbox]:checked ~ #menu{
 
 
 
+/***************************
+	FICHE PRODUIT
+**************************/
+
+
+#bloc_ficheproduit{
+
+
+}
+
+
+
+
+
+/* -------- */
 
 
 
@@ -505,7 +520,8 @@ footer .container #mentionslegales{
 /*media queries*/
 
 @media only screen and (max-width: 768px){
-
+	
+	.banniere_catalogue{display:none;}
 
 	#bloc_catalogue .container .article p{
 		/*Prix*/
