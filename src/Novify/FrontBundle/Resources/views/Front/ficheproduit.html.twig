@@ -1,4 +1,3 @@
-<!-- Ficheproduit -->
 {% extends 'NovifyFrontBundle::base.html.twig' %}
 {% block main %}
 
@@ -17,8 +16,198 @@
 
 			</div>
 
-			<div class="container" style="width:100%">
+			<div class="container" id="bloc_produit" style="width:100%">
 
+				<div class="row">
+					
+					<div class="col-sm-6 image_ficheproduit">
+						<img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt="">
+					</div>
+
+					<div class="col-sm-6">
+						<h2> <!-- Titre du produit-->
+							Batman tome 2 - La nuit des hiboux
+						</h2>
+
+						<p class="description_ficheproduit"><!-- Description du produit-->
+							La Cour des Hiboux prend son envol, et la nuit à venir pourrait bien signer la mort de Gotham City elle-même. Lancés depuis les hauteurs de la ville, les Ergots, émissaires assassins de la Cour, ont pour mission de mettre à mort les personnalités les plus progressistes de la cité, laissant à leurs maîtres le champ libre pour étendre leur emprise. Les prochains noms sur leur liste ? Lincoln March et Bruce Wayne…
+						</p>
+
+						<p> <!-- Ancre vers les détails du produit plus bas dans la page -->
+							<a href="#details_produit">Voir les détails du produit</a>
+						</p>
+
+						<p class="prix_ficheproduit"> <!-- Prix du produit-->
+							19.00 €
+						</p>
+
+						<div id="ajout_panier">
+							<a href="#">Ajouter au panier</a> <!--Ce lien ajoute en SESSION l'article au panier -->
+						</div>
+
+						<div id="retrait_magasin">
+							<a href="">Retrait en magasin</a>
+						</div>
+
+						<p><a href="#commentaires_article">Voir les commentaires sur ce produit</a></p>
+
+
+					</div>
+
+				</div>
+
+
+				<div class="row" id="details_produit"> <!-- Description plus précise de l'article-->
+
+					<div class="col-sm-12">
+
+						<h3>Détails sur le produit</h3>
+
+						<p><b>Public: </b> À partir de 12 ans</p>
+
+						<p><b>Pagination: </b> 208 pages</p>
+
+						<p><b>ISBN: </b> 9782365772068</p>
+
+						<p><b>Public: </b> À partir de 12 ans</p>
+
+					</div>
+
+				</div> <!-- Fin description -->
+
+				<div class="row" id="commentaires_article"> <!-- Comments -->
+					
+					<div class="col-sm-12">
+
+						<h3>Commentaires</h3>
+						
+
+						<!-- Boucle des commentaires -->
+
+						<div class="row bloc_commentaire"> <!-- Commentaire le plus récent-->
+
+							<div class="col-sm-3">
+								<p><b>Note:</b> 9/10</p> <!-- Note donnée dans ce commentaire-->
+								<p>Par Pimolo</p> <!-- Auteur du comment-->
+							</div>
+
+							<div class="col-sm-9">
+								<p>Moins bien travaillé que le tome 1, la suite des aventures de Batman par Snyder se laisse lire facilement! On apprends tous de meme de sacrées révélations (qui foutent parfois le bordel dans la continuité de l'univers du chevalier noir...) et ma grande deception reste que ce ne sois pas Capullo qui ai déssiné l'ensemble de l'histoire. Histoire dailleur beaucoup plus courte que le précédent volume et qui est donc agrémenté par plusieurs scénario annexes ayant un rapport plus ou moins important avec les hiboux...<br/>
+
+								Bref a voir si vous avez adoré le premier tome, sinon bien dispensable! </p>
+							</div>
+							
+						</div>
+
+
+
+
+						<div class="row bloc_commentaire"> <!-- Deuxième commentaire le plus récent -->
+
+							<div class="col-sm-3">
+								<p><b>Note:</b> 6/10</p> <!-- Note donnée dans ce commentaire-->
+								<p>Par Bibi12</p> <!-- Auteur du comment-->
+							</div>
+
+							<div class="col-sm-9">
+								<p>Le premier volet avait scotché tout le monde avec un scénario diabolique et des dessins magnifiques (ou du moins très fluides). Ici on change quelque peu d'ambiance, en effet la cour des hiboux passe à l'attaque ! Seul bémol, Batman est diminué par son aventure précédente ...
+								Ici la trame déçoit un peu, il y à quelques surprises mais globalement la nuit ne parait pas "infernal" comme promis. Le twist final est en revanche un peu déjà vu mais toujours sympathique car inattendue !
+								Bref un très bon Batman de toute manière ! </p>
+							</div>
+							
+						</div>
+
+
+
+						<div class="row bloc_commentaire"> <!--Troisième commentaire le plus récent -->
+
+							<div class="col-sm-3">
+								<p><b>Note:</b> 8/10</p> <!-- Note donnée dans ce commentaire-->
+								<p>Par Bégeydelastreet4500</p> <!-- Auteur du comment-->
+							</div>
+
+							<div class="col-sm-9">
+								<p>La première moitié de ce tome vient continuer (et conclure?) l'histoire de la cour des hiboux démarrée dans le tome1. Avec toujours le tandem Snyder-Capullo aux manoeuvres (à l'exception d'un épisode dessiné par Albuquerque), on a le droit à un récit plutôt axé sur l'action, les ergots étant lachés pour éliminer tous les grands noms de Gotham, dont Bruce qui se retrouve attaqué dans son propre manoir... Cette partie est au niveau du 1er tome, agréable tant dans l'histoire qui se terminera en laissant des ouvertures que graphiquement avec un Capullo toujours en grande forme.<br/>
+
+								La suite par contre n'est pas du même accabit, avec des histoires tournant vaguement sur la thématique des hiboux, mais jouant sur la ré-écriture du passé(histoire du père d'Alfred, déjà majordome des parents Waynes et origines de Freezer). Des récits qui n'appportent pas grand chose si ce n'est sans doute de la complexité dans les origines du Batman... Le dernier récit est encore plus anecdotique..
+								Le tout sera mise en images par plusieurs dessinateurs (parfois même dans le même épisode) avec des résultats assez variés.. un petit plus pour l'annual de Jason Fabok..<br/>
+
+								Bref tout cela donne peu le sentiment d'un tout cohérent pour un seul et même album dont une bonne moitié est largement dispensable...
+								Mais c'est sans doute le prix pour avoir en librairie, une série régulière... </p>
+							</div>
+							
+						</div>
+				
+					</div>
+					
+				</div> <!-- Fin commentaires -->
+
+
+				<div class="row" id="suggestions_produits"> <!-- Sugestions de produits complémentaires -->
+					
+					<div class="col-sm-12">
+
+						<h3>Complétez votre commande</h3>
+
+						<div class="row ligne_articles"> <!-- On créé une seule ligne-->
+							<div class="col-md-12">
+
+								<div class="row">
+
+									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- Premier article de la ligne-->
+
+										<div class="article_image"> <!-- Image de l'article-->
+											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></a>
+										</div>
+
+										<h5><a href="#">Titre article</a></h5> <!-- Prix et nom de l'article -->
+										<p><a href="">X €</a></p>
+									</div> <!-- Fin du premier article-->
+
+
+									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
+
+										<div class="article_image"> <!-- Image article -->
+											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt=""></a>
+										</div>
+
+										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
+										<p><a href="">X €</a></p>
+									</div> <!-- Fin de l'article -->
+
+
+									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
+
+										<div class="article_image"> <!-- Image article -->
+											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article3.jpg')}}" alt=""></a>
+										</div>
+
+										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
+										<p><a href="">X €</a></p>
+									</div> <!-- Fin de l'article -->
+
+
+									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
+
+										<div class="article_image">
+											<img src="{{ asset('bundles/novifyfront/images/article4.jpg')}}" alt="">
+										</div>
+
+										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
+										<p><a href="">X €</a></p>
+									</div> <!-- Fin de l'article -->
+
+
+								</div>
+
+							</div>
+
+						</div>
+
+
+					</div>
+
+				</div> <!-- Fin suggestion produits-->
 
 
 			
