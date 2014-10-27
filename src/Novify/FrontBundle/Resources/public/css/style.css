@@ -160,14 +160,13 @@ header .container {
 }
 
 .logo img {
-	width: 15%;
+	width: 10%;
 }
 
 .client {
 	float: right;
-	margin-top: 3%;
 	color: #FFFFFF;
-	font-size: 22px;
+	font-size: 18px;
 }
 
 #separation {
@@ -177,13 +176,14 @@ header .container {
 }
 
 .client img {
-	width: 6%;
+	width: 4%;
 	padding-right: 5px;
 	padding-left: 10px;
 }
 
 .client form {
 	display: inline;
+	margin-right: 14%;
 }
 
 .client .compte {
@@ -223,9 +223,11 @@ header .container {
 	NAV
 **************************/
 nav {
+	padding-left: 9%;
 	z-index: 1000;
 	background-color: rgba(255,255,255,0.95);
 	height: 3.50em;
+	background-image: url('../images/overlay.png');
 }
 
 nav a:hover {
@@ -244,28 +246,30 @@ ul {
 li {
 	display:inline-block;
 	float: left;
-	margin-right: 1px;
-	width: 236px;
 }
 
 /*Style pour les liens*/
 li a {
-	display:block;
-	min-width:140px;
+	display: block;
+	min-width: 160px;
 	height: 50px;
 	text-align: center;
 	line-height: 50px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 400;
 	font-size: 16px;
-	color: #fff;
-	background: #2f3036;
+	color: #2f3036;
 	text-decoration: none;
+}
+
+li.actif a {
+	background: #1a465c;
+	color: #fff;
 }
 
 /*Style pour les liens au survol de la souris*/
 li:hover a {
-	background: #1a465c;
+	background: #dabb5b;
 }
 
 /*Style pour les sous-liens*/
@@ -296,7 +300,7 @@ li ul li {
 /*Style des sous-liens*/
 li ul li a {
 	width: auto;
-	min-width: 100px;
+	min-width: 160px;
 	padding: 0 20px;
 }
 
@@ -360,9 +364,14 @@ input[type=checkbox]:checked ~ #menu{
 	margin-bottom: 50px;
 }
 
-.carousel img {
-	width: 100%;
-}
+#wowslider-container1 {
+		position: absolute !important;
+		-webkit-transform: translateY(-50%) translateX(-50%);
+		transform: translateY(-50%) translateX(-50%);
+		left: 50%;
+		top: 50%;
+		opacity: 1;
+	}
 
 .bloc {
 	margin-top: 2%;
