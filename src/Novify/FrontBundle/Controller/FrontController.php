@@ -36,4 +36,12 @@ class FrontController extends Controller
 
         return $this->render('NovifyFrontBundle:Front:catalogue.html.twig', array('articles' => $articles));
     }
+
+    public function viewSousCatAction($categorie, $sousCategorie)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $articles = $em->getRepository('NovifyModelBundle:Souscategories')->findOneBysouscatNom($sousCategorie)->getArticles();
+
+        return $this->render('NovifyFrontBundle:Front:view.html.twig', array('articles' => $articles));
+    }
 }
