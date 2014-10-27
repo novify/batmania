@@ -265,13 +265,13 @@ li a {
 
 /*Style pour les liens au survol de la souris*/
 li:hover a {
-	background: #dabb5b;
+	background: #1a465c;
 }
 
 /*Style pour les sous-liens*/
 li:hover ul a {
 	background: #f3f3f3;
-	color: #2f3036;
+	color: #1a465c;
 	height: 40px;
 	line-height: 40px;
 }
@@ -369,19 +369,24 @@ input[type=checkbox]:checked ~ #menu{
 	margin-bottom: 2%;
 }
 
-.col-sm-6 {
+.col-md-6 {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
 
-.col-sm-4 {
+.col-md-4 {
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
 
-.col-sm-12 {
+.col-md-8 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.col-md-12 {
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
