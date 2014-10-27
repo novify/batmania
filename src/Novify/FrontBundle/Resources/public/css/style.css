@@ -531,16 +531,11 @@ input[type=checkbox]:checked ~ #menu{
 #bloc_ficheproduit #bloc_produit #commentaires_article .bloc_commentaire{
 
 	width: 100%;
-	border-bottom: 1px solid rgb(210,210,210);
+	border-top: 1px solid rgb(210,210,210);
 	margin-bottom: 30px;
 }
 
-#bloc_ficheproduit #bloc_produit #commentaires_article .bloc_commentaire:last-child{
 
-	width: 100%;
-	border-bottom: 0px solid rgb(210,210,210);
-	margin-bottom: 30px;
-}
 
 
 #bloc_ficheproduit .ligne_articles{
