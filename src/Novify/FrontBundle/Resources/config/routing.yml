@@ -8,6 +8,11 @@ novify_front_view_one:
     requirements:
         id: \d+
 
+# temporaire
+novify_front_view_fiche:
+    path:     /fiche
+    defaults: { _controller: NovifyFrontBundle:Front:fiche }
+
 novify_front_view_categorie:
     path:     /{categorie}
     defaults: { _controller: NovifyFrontBundle:Front:viewCat }
