@@ -23,6 +23,10 @@ class FrontController extends Controller
 
         return $this->render('NovifyFrontBundle:Front:view.html.twig', array('article' => $article));
     }
+    public function ficheAction()
+    {
+        return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig');
+    }
 
     public function helloAction($name)
     {
