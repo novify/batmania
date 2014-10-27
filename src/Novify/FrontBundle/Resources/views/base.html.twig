@@ -58,17 +58,31 @@
 
 				<!-- Logo -->
 				<div class="container">
-						<div class="logo">
-							<a href="#"><img src="{{ asset('bundles/novifyfront/images/logo.png')}}" alt="Logo Batmania"></a>
+					<div class="logo">
+						<a href="#"><img src="{{ asset('bundles/novifyfront/images/logo.png')}}" alt="Logo Batmania"></a>
+					</div>
+					<div class="client">
+						<form method="post" action="#">
+							<input type="text" name="rechercher" placeholder="Rechercher.."/><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche">
+						</form>
+						<div class="compte">
+							<a href="#">
+								<img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman">Mon compte
+								<div class="hover_compte">
+									<strong>connexion :</strong></br>
+									<form method="post" action="#">
+										indentifiant : <input type="text" name="identifiant" placeholder="Votre Identifiant"/><br/>
+										Mot de passe : <input type="text" name="identifiant" placeholder="Votre mot de passe"/>
+									</form><br/><br/><br/>
+									<p>Pas encore de compte : </p>
+										<div class="inscrivez-vous">Inscrivez-Vous
+										</div>
+								</div>
+							</a>
 						</div>
-						<div class="client">
-							<form method="post" action="#">
-								<input type="text" name="rechercher" placeholder="Rechercher.."/><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche">
-							</form>
-							<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman">Mon compte</a>
-							<div id="separation">|</div>
-							<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier">Mon panier</a>
-						</div>
+						<div id="separation">|</div>
+						<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier">Mon panier</a>
+					</div>
 				</div>		
 
 				<!-- Nav -->
