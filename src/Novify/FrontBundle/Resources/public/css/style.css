@@ -147,22 +147,40 @@ header #barre_rs .instagram:hover{
 	background-size: 30px;
 }
 
+header .container {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.logo {
+	display: inline;
+}
+
 .logo img {
-	width: 10%;
+	width: 15%;
 }
 
 .client {
 	float: right;
+	margin-top: 3%;
+	color: #FFFFFF;
+	font-size: 25px;
+}
+
+#separation {
+	display: inline;
+	margin: 5px;
+	font-size: 45px;
 }
 
 .client img {
-	width: 8%;
+	width: 6%;
 	padding-right: 5px;
 	padding-left: 10px;
 }
 
-.client a {
-	color: #FFFFFF;
+.client form {
+	display: inline;
 }
 
 /***************************
@@ -191,7 +209,7 @@ li {
 	display:inline-block;
 	float: left;
 	margin-right: 1px;
-	width: 189px;
+	width: 236px;
 }
 
 /*Style pour les liens*/
