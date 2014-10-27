@@ -19,18 +19,18 @@
 			<div class="container" id="bloc_produit" style="width:100%">
 
 				<div class="row">
-					
+
 					<div class="col-sm-6 image_ficheproduit">
 						<img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt="">
 					</div>
 
 					<div class="col-sm-6">
 						<h2> <!-- Titre du produit-->
-							Batman tome 2 - La nuit des hiboux
+							{{article.artNom}}
 						</h2>
 
 						<p class="description_ficheproduit"><!-- Description du produit-->
-							La Cour des Hiboux prend son envol, et la nuit à venir pourrait bien signer la mort de Gotham City elle-même. Lancés depuis les hauteurs de la ville, les Ergots, émissaires assassins de la Cour, ont pour mission de mettre à mort les personnalités les plus progressistes de la cité, laissant à leurs maîtres le champ libre pour étendre leur emprise. Les prochains noms sur leur liste ? Lincoln March et Bruce Wayne…
+							{{article.artDescript}}La Cour des Hiboux prend son envol, et la nuit à venir pourrait bien signer la mort de Gotham City elle-même. Lancés depuis les hauteurs de la ville, les Ergots, émissaires assassins de la Cour, ont pour mission de mettre à mort les personnalités les plus progressistes de la cité, laissant à leurs maîtres le champ libre pour étendre leur emprise. Les prochains noms sur leur liste ? Lincoln March et Bruce Wayne…
 						</p>
 
 						<p> <!-- Ancre vers les détails du produit plus bas dans la page -->
@@ -38,7 +38,7 @@
 						</p>
 
 						<p class="prix_ficheproduit"> <!-- Prix du produit-->
-							19.00 €
+							{{article.artPrix}} €
 						</p>
 
 						<div id="ajout_panier">
@@ -63,7 +63,7 @@
 
 						<h3>Détails sur le produit</h3>
 
-						<p><b>Public: </b> À partir de 12 ans</p>
+						<p><b>Public: </b> {{article.artPublic}}</p>
 
 						<p><b>Pagination: </b> 208 pages</p>
 
@@ -76,11 +76,12 @@
 				</div> <!-- Fin description -->
 
 				<div class="row" id="commentaires_article"> <!-- Comments -->
-					
+
 					<div class="col-sm-12">
 
 						<h3>Commentaires</h3>
 
+<<<<<<< HEAD
 						<p>Moyenne des commentaires : <b>X/10</b></p> <!-- A calculer via calcul de la bdd -->
 
 						<p style="margin-bottom: 40px">18 commentaires rédigés</p> <!-- Nombre a récupérer selon le nombre d'entrées dans la bdd -->
@@ -100,7 +101,7 @@
 
 								Bref a voir si vous avez adoré le premier tome, sinon bien dispensable! </p>
 							</div>
-							
+
 						</div>
 
 
@@ -118,7 +119,7 @@
 								Ici la trame déçoit un peu, il y à quelques surprises mais globalement la nuit ne parait pas "infernal" comme promis. Le twist final est en revanche un peu déjà vu mais toujours sympathique car inattendue !
 								Bref un très bon Batman de toute manière ! </p>
 							</div>
-							
+
 						</div>
 
 
@@ -139,16 +140,16 @@
 								Bref tout cela donne peu le sentiment d'un tout cohérent pour un seul et même album dont une bonne moitié est largement dispensable...
 								Mais c'est sans doute le prix pour avoir en librairie, une série régulière... </p>
 							</div>
-							
+
 						</div>
-				
+
 					</div>
-					
+
 				</div> <!-- Fin commentaires -->
 
 
 				<div class="row" id="suggestions_produits"> <!-- Sugestions de produits complémentaires -->
-					
+
 					<div class="col-sm-12">
 
 						<h3>Complétez votre commande</h3>
@@ -214,7 +215,7 @@
 				</div> <!-- Fin suggestion produits-->
 
 
-			
+
 
 
 			</div>

@@ -30,13 +30,20 @@ class Categories
     private $catNom;
 
     /**
-     * @ORM\OneToMany(targetEntity="Novify\ModelBundle\Entity\Articles", mappedBy="categorie")
+     * @var string
+     *
+     * @ORM\Column(name="cat_banniere", type="string", length=50, nullable=true)
      */
-    protected $articles;
+    private $catBanniere;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Novify\ModelBundle\Entity\Souscategories", mappedBy="categorie")
+     */
+    protected $sousCategories;
 
     public function __construct()
     {
-        $this->articles = new ArrayCollection();
+        $this->sousCategories = new ArrayCollection();
     }
 
     /**
@@ -73,35 +80,58 @@ class Categories
     }
 
     /**
-     * Add articles
+     * Add sousCategories
      *
-     * @param  \Novify\ModelBundle\Entity\Articles $articles
+     * @param  \Novify\ModelBundle\Entity\Souscategories $sousCategories
      * @return Categories
      */
-    public function addArticle(\Novify\ModelBundle\Entity\Articles $articles)
+    public function addSousCategory(\Novify\ModelBundle\Entity\Souscategories $sousCategories)
     {
-        $this->articles[] = $articles;
+        $this->sousCategories[] = $sousCategories;
 
         return $this;
     }
 
     /**
-     * Remove articles
+     * Remove sousCategories
      *
-     * @param \Novify\ModelBundle\Entity\Articles $articles
+     * @param \Novify\ModelBundle\Entity\Souscategories $sousCategories
      */
-    public function removeArticle(\Novify\ModelBundle\Entity\Articles $articles)
+    public function removeSousCategory(\Novify\ModelBundle\Entity\Souscategories $sousCategories)
     {
-        $this->articles->removeElement($articles);
+        $this->sousCategories->removeElement($sousCategories);
     }
 
     /**
-     * Get articles
+     * Get sousCategories
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getArticles()
+    public function getSousCategories()
     {
-        return $this->articles;
+        return $this->sousCategories;
+    }
+
+    /**
+     * Set catBanniere
+     *
+     * @param  string     $catBanniere
+     * @return Categories
+     */
+    public function setCatBanniere($catBanniere)
+    {
+        $this->catBanniere = $catBanniere;
+
+        return $this;
+    }
+
+    /**
+     * Get catBanniere
+     *
+     * @return string
+     */
+    public function getCatBanniere()
+    {
+        return $this->catBanniere;
     }
 }

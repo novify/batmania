@@ -12,17 +12,6 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:index.html.twig');
     }
 
-    public function viewAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $article = $em->getRepository('NovifyModelBundle:Articles')->find($id);
-
-        if (null === $article) {
-            throw new NotFoundHttpException("L'annonce d'id ".$id." n'existe pas.");
-        }
-
-        return $this->render('NovifyFrontBundle:Front:view.html.twig', array('article' => $article));
-    }
     public function ficheAction()
     {
         return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig');
@@ -36,7 +25,11 @@ class FrontController extends Controller
     public function viewCatAction($categorie)
     {
         $em = $this->getDoctrine()->getManager();
-        $articles = $em->getRepository('NovifyModelBundle:Categories')->findOneBycatNom($categorie)->getArticles();
+        $cat = $em->getRepository('NovifyModelBundle:Categories')->findOneBycatNom($categorie);
+        $souscat = $em->getRepository('NovifyModelBundle:Souscategories')->findByCategorie($cat);
+        foreach ($souscat as $sc) {
+            $articles = $em->getRepository('NovifyModelBundle:Articles')->findBysousCategorie($sc);
+        }
 
         return $this->render('NovifyFrontBundle:Front:catalogue.html.twig', array('articles' => $articles));
     }
@@ -44,8 +37,23 @@ class FrontController extends Controller
     public function viewSousCatAction($categorie, $sousCategorie)
     {
         $em = $this->getDoctrine()->getManager();
-        $articles = $em->getRepository('NovifyModelBundle:Souscategories')->findOneBysouscatNom($sousCategorie)->getArticles();
+        $cat = $em->getRepository('NovifyModelBundle:Categories')->findOneBycatNom($categorie);
+        $souscat = $em->getRepository('NovifyModelBundle:Souscategories')->findOneBy(array('categorie' => $cat, 'souscatNom' => $sousCategorie));
+        $articles = $em->getRepository('NovifyModelBundle:Articles')->findBysousCategorie($souscat);
 
-        return $this->render('NovifyFrontBundle:Front:view.html.twig', array('articles' => $articles));
+        return $this->render('NovifyFrontBundle:Front:catalogue.html.twig', array('articles' => $articles));
+    }
+    public function viewoneAction($categorie, $sousCategorie, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $cat = $em->getRepository('NovifyModelBundle:Categories')->findOneBycatNom($categorie);
+        $souscat = $em->getRepository('NovifyModelBundle:Souscategories')->findOneBy(array('categorie' => $cat, 'souscatNom' => $sousCategorie));
+        $article = $em->getRepository('NovifyModelBundle:Articles')->findOneBy(array('sousCategorie' => $souscat, 'id' => $id));
+
+        if (null === $article) {
+            throw new NotFoundHttpException("Cet article n'existe pas.");
+        }
+
+        return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article));
     }
 }
