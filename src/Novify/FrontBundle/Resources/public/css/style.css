@@ -45,7 +45,14 @@ a:hover {
 **************************/
 
 header {
-	background-color: #000000;
+	background-color: #dabb5b;
+}
+
+#barre_rs {
+	background-color: #2f3036;
+	color: #FFF;
+	font-size: 14px;
+	padding: 6px;
 }
 
 .logo img {
@@ -70,15 +77,9 @@ header {
 	NAV
 **************************/
 nav {
-	top: 0;
-	left: 0;
 	z-index: 1000;
 	background-color: rgba(255,255,255,0.95);
-	width: 100%;
 	height: 3.50em;
-	line-height: 3.25em;
-	text-align: left;
-	cursor: default;
 }
 
 nav a:hover {
