@@ -3,6 +3,7 @@
 namespace Novify\ModelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Souscategories
@@ -28,11 +29,20 @@ class Souscategories
      */
     private $souscatNom;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Novify\ModelBundle\Entity\Articles", mappedBy="sousCategorie")
+     */
+    protected $articles;
+
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -42,7 +52,7 @@ class Souscategories
     /**
      * Set souscatNom
      *
-     * @param string $souscatNom
+     * @param  string         $souscatNom
      * @return Souscategories
      */
     public function setSouscatNom($souscatNom)
@@ -55,10 +65,43 @@ class Souscategories
     /**
      * Get souscatNom
      *
-     * @return string 
+     * @return string
      */
     public function getSouscatNom()
     {
         return $this->souscatNom;
+    }
+
+    /**
+     * Add articles
+     *
+     * @param \Novify\ModelBundle\Entity\Articles $articles
+     * @return Souscategories
+     */
+    public function addArticle(\Novify\ModelBundle\Entity\Articles $articles)
+    {
+        $this->articles[] = $articles;
+
+        return $this;
+    }
+
+    /**
+     * Remove articles
+     *
+     * @param \Novify\ModelBundle\Entity\Articles $articles
+     */
+    public function removeArticle(\Novify\ModelBundle\Entity\Articles $articles)
+    {
+        $this->articles->removeElement($articles);
+    }
+
+    /**
+     * Get articles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getArticles()
+    {
+        return $this->articles;
     }
 }

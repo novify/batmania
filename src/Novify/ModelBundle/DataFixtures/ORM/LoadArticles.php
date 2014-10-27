@@ -5,6 +5,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Novify\ModelBundle\Entity\Articles;
 use Novify\ModelBundle\Entity\Categories;
+use Novify\ModelBundle\Entity\Souscategories;
 
 class LoadArticles implements FixtureInterface
 {
@@ -27,6 +28,10 @@ class LoadArticles implements FixtureInterface
         $categorie1->setCatNom('goodies');
         $manager->persist($categorie1);
 
+        $sousCategorie1 = new Souscategories();
+        $sousCategorie1->setSouscatNom('accessoires');
+        $manager->persist($sousCategorie1);
+
         $article1 = new Articles();
         $article1->setArtNom('Bracelet');
         $article1->setArtPrix('3');
@@ -35,6 +40,7 @@ class LoadArticles implements FixtureInterface
         $article1->setArtPublic('Tous publics');
         $article1->setArtStock('28');
         $article1->setCategorie($categorie1);
+        $article1->setSousCategorie($sousCategorie1);
 
         $manager->persist($article1);
         $manager->flush();
