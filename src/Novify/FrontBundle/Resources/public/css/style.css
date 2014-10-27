@@ -48,7 +48,7 @@ a:hover {
 **************************/
 
 header {
-	background-color: #dabb5b;
+	background-color: #1a465c;
 }
 
 #barre_rs {
@@ -167,7 +167,7 @@ header .container {
 	float: right;
 	margin-top: 3%;
 	color: #FFFFFF;
-	font-size: 25px;
+	font-size: 22px;
 }
 
 #separation {
@@ -184,6 +184,39 @@ header .container {
 
 .client form {
 	display: inline;
+}
+
+.client .compte {
+	display: inline;
+}
+
+.client .compte .hover_compte {
+	display: none;
+}
+
+.client .compte a:hover .hover_compte {
+	width: 390px;
+	height: 229px;
+	color: #000;
+	background-image: url('../images/bulle_compte.png');
+	display: block;
+	z-index: 1000;
+	position: absolute;
+	margin-left: 20%;
+	font-size: 16px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 70px;
+}
+
+.hover_compte p {
+	display: inline;
+}
+
+.hover_compte .inscrivez-vous {
+	display: inline;
+	text-decoration: underline;
+	color: #dabb5b;
 }
 
 /***************************
