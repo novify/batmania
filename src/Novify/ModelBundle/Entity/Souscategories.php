@@ -30,6 +30,11 @@ class Souscategories
     private $souscatNom;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Categories", inversedBy="sousCategories")
+     */
+    protected $categorie;
+
+    /**
      * @ORM\OneToMany(targetEntity="Novify\ModelBundle\Entity\Articles", mappedBy="sousCategorie")
      */
     protected $articles;
@@ -70,6 +75,29 @@ class Souscategories
     public function getSouscatNom()
     {
         return $this->souscatNom;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \Novify\ModelBundle\Entity\Categories $categorie
+     * @return Souscategories
+     */
+    public function setCategorie(\Novify\ModelBundle\Entity\Categories $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \Novify\ModelBundle\Entity\Categories 
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 
     /**

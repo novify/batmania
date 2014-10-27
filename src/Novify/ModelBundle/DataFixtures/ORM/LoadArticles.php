@@ -30,6 +30,7 @@ class LoadArticles implements FixtureInterface
 
         $sousCategorie1 = new Souscategories();
         $sousCategorie1->setSouscatNom('accessoires');
+        $sousCategorie1->setCategorie($categorie1);
         $manager->persist($sousCategorie1);
 
         $article1 = new Articles();
@@ -39,7 +40,6 @@ class LoadArticles implements FixtureInterface
         $article1->setArtRef('23256443');
         $article1->setArtPublic('Tous publics');
         $article1->setArtStock('28');
-        $article1->setCategorie($categorie1);
         $article1->setSousCategorie($sousCategorie1);
 
         $manager->persist($article1);
