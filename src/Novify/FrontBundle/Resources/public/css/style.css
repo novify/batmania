@@ -363,7 +363,6 @@ input[type=checkbox]:checked ~ #menu{
 #carrousel {
 	margin-bottom: 50px;
 	width: 100%;
-	z-index: -1;
  }
 
 
@@ -374,15 +373,22 @@ input[type=checkbox]:checked ~ #menu{
 	height: 250px;
 	margin: 0 auto; 
 	overflow: hidden; 
-	z-index: -1;
 }
 
 #carrousel #box .slide { 
+	display:block;
 	position: absolute; 
 	width: 100%;  
 	height: auto;
 	display: inline-block; 
-	z-index: -1;
+}
+
+#carrousel #box .slide img { 
+	display:block;
+	position: absolute; 
+	width: 100%;  
+	height: auto;
+	display: inline-block; 
 }
 
 
