@@ -184,7 +184,39 @@ header .container {
 
 .client form {
 	display: inline;
+}
+
+.client form.connexion {
 	margin-right: 14%;
+}
+
+.client #bulle {
+	text-align: center;
+}
+
+.client .boutton input {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 7px 11px;
+	background: -moz-linear-gradient(
+		top,
+		#b80707 0%,
+		#ab0000);
+	background-color: #dabb5b;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	border: 0px solid #ab0000;
+	cursor: pointer;
+	-webkit-transform: scale(1);
+	transition: all 0.60s;
+}
+
+.client .boutton input:hover {
+	-webkit-transform: scale(1.13);
 }
 
 .client .compte {
@@ -208,7 +240,7 @@ header .container {
 	position: absolute;
 	background: #f3f3f3;
 	width: 260px; 
-	height: 250px;
+	height: 280px;
 	border-radius: 10px;
 	margin-left: 40%;
 	margin-top: -15px;
@@ -224,7 +256,7 @@ header .container {
 #bulle:after {
 	border-bottom-color: #f3f3f3;
 	border-width: 16px;
-	margin-top: -239px;
+	margin-top: -304px;
 }
 
 /*Pour si on veut mettre un contour*/ 
