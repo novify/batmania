@@ -865,7 +865,6 @@ input[type=checkbox]:checked ~ #menu{
 
 #bloc_panier .container #panier_total #bouton_passer_commande p{
 
-	padding: 10px 5px;
 	font-size: 18px;
 	color:white;
 	text-align:center;
@@ -873,7 +872,8 @@ input[type=checkbox]:checked ~ #menu{
 
 
 #bloc_panier .container #panier_total #bouton_passer_commande a{
-
+	
+	padding: 10px 5px;
 	display:block;
 	width: 100%;
 	height: 100%;
