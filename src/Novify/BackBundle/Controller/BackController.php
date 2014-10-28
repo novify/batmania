@@ -30,4 +30,9 @@ class BackController extends Controller
     {
         return $this->render('NovifyBackBundle:Back:remove.html.twig');
     }
+
+    public function loginAction()
+    {
+        return $this->render('NovifyBackBundle:Back:connexion.html.twig');
+    }
 }
