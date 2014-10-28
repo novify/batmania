@@ -159,8 +159,13 @@ header .container {
 	width: 10%;
 }
 
+.texte {
+	display: inline;
+}
+
 .client {
-	float: right;
+	display: inline;
+	margin-left: 22px;
 	color: #FFFFFF;
 	font-size: 18px;
 }
@@ -172,7 +177,7 @@ header .container {
 }
 
 .client img {
-	width: 4%;
+	width: 43px;
 	padding-right: 5px;
 	padding-left: 10px;
 }
@@ -186,30 +191,54 @@ header .container {
 	display: inline;
 }
 
-.client .compte .hover_compte {
+.client .compte #bulle {
 	display: none;
 }
 
-.client .compte a:hover .hover_compte {
-	width: 390px;
-	height: 229px;
-	color: #000;
-	background-image: url('../images/bulle_compte.png');
-	display: block;
-	z-index: 1000;
-	position: absolute;
-	margin-left: 20%;
-	font-size: 16px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 70px;
-}
-
-.hover_compte p {
+.panier {
 	display: inline;
 }
 
-.hover_compte .inscrivez-vous {
+.client .compte a:hover #bulle { 
+	color: #2f3036;
+	font-size: 16px;
+	padding: 20px;
+	z-index: 1000;
+	display: block;
+	position: absolute;
+	background: #f3f3f3;
+	width: 260px; 
+	height: 250px;
+	border-radius: 10px;
+	margin-left: 40%;
+	margin-top: -15px;
+}
+
+#bulle:after, #bulle:before {
+	right: 50%;
+	border: solid transparent; 
+	content: "";
+	position: absolute;
+}
+
+#bulle:after {
+	border-bottom-color: #f3f3f3;
+	border-width: 16px;
+	margin-top: -239px;
+}
+
+/*Pour si on veut mettre un contour*/ 
+/*#bulle:before {
+	border-bottom-color: #f3f3f3;
+	border-width: 16px;
+	margin-top: -220px;
+}*/
+
+#bulle p {
+	display: inline;
+}
+
+#bulle .inscrivez-vous {
 	display: inline;
 	text-decoration: underline;
 	color: #dabb5b;
@@ -230,11 +259,18 @@ nav a:hover {
 	color: #FFF;
 }
 
+.fix_menu {
+	z-index: 9999;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
 /*Style du menu à la vertical*/
 ul {
-	list-style-type:none;
-	margin:0;
-	padding:0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 	position: absolute;
 }
 
@@ -948,6 +984,16 @@ footer .container #mentionslegales{
 
 @media only screen and (max-width: 768px){
 	
+	nav {
+		padding: 0;
+		height: 0px;
+	}
+
+	.client .compte a:hover #bulle {
+		margin-left: 0;
+		margin-top: 10px;
+	}
+
 	#carrousel { 
 		display:none;
 	}
