@@ -17,6 +17,11 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:connexion.html.twig');
     }
 
+    public function panierAction()
+    {
+        return $this->render('NovifyFrontBundle:Front:panier.html.twig');
+    }
+
     public function ficheAction()
     {
         return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig');
