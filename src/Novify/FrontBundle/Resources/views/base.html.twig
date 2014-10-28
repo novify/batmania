@@ -9,6 +9,9 @@
 
 
 		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width">
+
 		<title>Batmania</title>
 
 		<!-- Feuilles de style -->
@@ -213,7 +216,35 @@
 	<!-- Fin Footer -->
 {% endblock %}
 
-	<!-- Fin Body -->
+
+
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+    $(function() {
+        var img = $('#box .slide');
+        $(img).each(function(i) {
+            $(this).css('left', i*100+'%');
+        });
+        setInterval(function() {
+            $(img).each(function(i, e) {
+                console.log($(e));
+                if ($(img).last().css('left') === '0px') {
+                    $(e).animate({
+                        left: '+='+($(img).size()-1)*100+'%'
+                    }, 3000);
+                } else {
+                    $(e).animate({
+                        left: '-=100%'
+                    }, 3000);
+                }
+            });
+        }, 7000);
+    });
+    </script>
+
+    <!-- Fin Body -->
+
 	</body>
 {% endblock %}
 </html>
