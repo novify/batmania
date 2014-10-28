@@ -12,6 +12,11 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:index.html.twig');
     }
 
+    public function loginAction()
+    {
+        return $this->render('NovifyFrontBundle:Front:connexion.html.twig');
+    }
+
     public function ficheAction()
     {
         return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig');
@@ -43,6 +48,7 @@ class FrontController extends Controller
 
         return $this->render('NovifyFrontBundle:Front:catalogue.html.twig', array('articles' => $articles));
     }
+
     public function viewoneAction($categorie, $sousCategorie, $id)
     {
         $em = $this->getDoctrine()->getManager();

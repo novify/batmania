@@ -2,6 +2,10 @@ novify_front_homepage:
     path:     /
     defaults: { _controller: NovifyFrontBundle:Front:index }
 
+novify_front_login:
+    path:     /login
+    defaults: { _controller: NovifyFrontBundle:Front:login }
+
 # temporaire
 novify_front_view_fiche:
     path:     /fiche
