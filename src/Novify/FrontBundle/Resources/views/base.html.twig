@@ -35,9 +35,9 @@
 			$(function() {
 				$(window).scroll(function () { //Au scroll dans la fenetre on déclenche la fonction 
 				if ($(this).scrollTop() > 135) { //si on a défilé de plus de 135px du haut vers le bas 
-					$('nav').addClass("fix_menu"); //on ajoute la classe fix_menu à #nav 
+					$('nav').addClass("fix_menu"); //on ajoute la classe fix_menu à nav
 					} else { 
-						$('nav').removeClass("fix_menu"); //sinon on retire la classe fix_menu à #nav 
+						$('nav').removeClass("fix_menu"); //sinon on retire la classe fix_menu à nav
 					} 
 				});
 			}); 
@@ -146,6 +146,12 @@
 						</li>
 						<li><a href="#">Contact</a></li>
 					</ul>
+
+					<div class="compte_fix">
+						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman"></a>
+						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier"></a>
+						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche"></a>
+					</div>
                 
         		</nav>
 				<!-- Fin Nav -->

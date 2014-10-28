@@ -156,7 +156,7 @@ header .container {
 }
 
 .logo img {
-	width: 10%;
+	width: 120px;
 }
 
 .texte {
@@ -266,6 +266,10 @@ nav a:hover {
 	width: 100%;
 }
 
+.compte_fix {
+	display: none;
+}
+
 /*Style du menu à la vertical*/
 ul {
 	list-style-type: none;
@@ -369,28 +373,6 @@ input[type=checkbox]:checked ~ #menu{
     display: block;
 }
 
-
-/*Style pour Ipad & Iphone*/
-
-@media screen and (max-width : 760px){
-	/*Style du menu horizontal*/
-	ul {
-		position: static;
-		display: none;
-	}
-	/*Style du menu à la vertical*/
-	li {
-		margin-bottom: 1px;
-	}
-	/*Taille du menu en global*/
-	ul li, li a {
-		width: 100%;
-	}
-	/*Apparition du menu pour Ipad et Iphone*/
-	.show-menu {
-		display:block;
-	}
-}
 
 /*-FIN NAV-*/
 /*-FIN HEADER-*/
@@ -1160,6 +1142,35 @@ footer .container #mentionslegales{
 	}
 
 
+/*Menu pour Ipad & Iphone*/
+
+@media screen and (max-width : 768px) {
+	/*Style du menu horizontal*/
+	ul {
+		position: static;
+		display: none;
+	}
+	/*Style du menu à la vertical*/
+	li {
+		margin-bottom: 1px;
+	}
+
+	li a {
+		background: #2f3036;
+		color: #f3f3f3;
+	}
+
+	/*Taille du menu en global*/
+	ul li, li a {
+		width: 100%;
+	}
+	/*Apparition du menu pour Ipad et Iphone*/
+	.show-menu {
+		display:block;
+	}
+}
+
+
 
 @media only screen and (max-width: 768px){
 	
@@ -1175,6 +1186,10 @@ footer .container #mentionslegales{
 
 	#carrousel { 
 		display:none;
+	}
+
+	.logo img {
+	width: 54px;
 	}
 
 	.banniere_catalogue{display:none;}
@@ -1202,3 +1217,7 @@ footer .container #mentionslegales{
 	}
 
 }
+
+
+
+
