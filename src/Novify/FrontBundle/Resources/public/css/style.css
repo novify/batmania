@@ -359,10 +359,8 @@ input[type=checkbox]:checked ~ #menu{
 #carrousel {
 	margin-bottom: 50px;
 	width: 100%;
-	z-index:-1;
- }
-
-
+	z-index: -1;
+}
 
 #carrousel #box { 
 	position: relative; 
