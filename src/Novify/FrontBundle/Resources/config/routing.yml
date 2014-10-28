@@ -32,3 +32,10 @@ novify_front_view_onee:
 novify_front_hello:
     path:     /hello/{name}
     defaults: { _controller: NovifyFrontBundle:Front:hello }
+
+remove_trailing_slash:
+    path: /{url}
+    defaults: { _controller: NovifyFrontBundle:Redirecting:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]
