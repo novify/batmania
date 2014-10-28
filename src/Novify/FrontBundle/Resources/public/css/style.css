@@ -224,7 +224,7 @@ header .container {
 **************************/
 nav {
 	padding-left: 9%;
-	z-index: 1000;
+	z-index: 91;
 	background-color: rgba(255,255,255,0.95);
 	height: 3.50em;
 	background-image: url('../images/overlay.png');
