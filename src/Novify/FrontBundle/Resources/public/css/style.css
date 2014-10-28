@@ -362,19 +362,12 @@ input[type=checkbox]:checked ~ #menu{
 
 .carousel {
 	margin-bottom: 50px;
-}
+ }
 
-#wowslider-container1 {
-		position: absolute !important;
-		-webkit-transform: translateY(-50%) translateX(-50%);
-		transform: translateY(-50%) translateX(-50%);
-		left: 50%;
-		top: 50%;
-		opacity: 1;
-	}
+.carousel img{width:100%;}
 
 .bloc {
-	margin-top: 375px;
+	margin-top: 60px;
 	margin-bottom: 2%;
 }
 
