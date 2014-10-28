@@ -1,0 +1,81 @@
+{% extends 'NovifyFrontBundle::base.html.twig' %}
+{% block main %}
+
+
+		<!-- Body -->
+
+		<div id="bloc_panier">
+
+			<div class="container">
+				
+				<div class="row">
+
+					<div class="col-sm-8">
+						<h3>Vos articles au panier</h3>
+						
+						<!-- On organise les articles en tableau -->
+						<table>
+							<thead> <!-- En-tête du tableau -->
+							    <tr>
+								    <th colspan="2">Produit</th>
+								    <th>Prix</th>
+								    <th colspan="2">Quantité</th>
+							    </tr>
+							</thead>
+
+							<tbody>
+							    <tr>
+							    	<!-- Premier article -->
+							    	<!-- Image du produit -->
+							    	<td style="width:10%"><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></td>
+									
+									<!-- Nom du produit -->
+								    <td style="width:50%"><a href="">Batman tome 2 - La nuit des hiboux</a></td>
+									
+									<!-- Prix du produit -->
+								    <td style="width:20%">19.00€</td>
+									
+									<!-- Quantité choisie -->
+								    <td style="width:10%">1</td>
+								
+									<!-- Supprimer les articles -->
+								    <td><a href="#">Supprimer</a></td>
+							    </tr>
+
+
+
+							    <tr>
+							    	<!-- deuxième article -->
+							    	<!-- Image du produit -->
+							    	<td style="width:10%"><img src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt=""></td>
+									
+									<!-- Nom du produit -->
+								    <td style="width:50%"><a href="">Batman tome 3 - La nuit de Pimolo</a></td><!-- Lien vers l'article -->
+									
+									<!-- Prix du produit -->
+								    <td style="width:20%">14.00€</td>
+									
+									<!-- Quantité choisie -->
+								    <td style="width:10%">2</td>
+								
+									<!-- Supprimer les articles -->
+								    <td><a href="#">Supprimer</a></td>
+							    </tr>
+							</tbody>
+						</table>
+
+					</div>
+
+
+					<div class="col-sm-4">
+						<div id="panier_total">
+							
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock %}

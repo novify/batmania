@@ -763,6 +763,87 @@ input[type=checkbox]:checked ~ #menu{
 
 
 
+
+
+
+
+/***************************
+	PANIER
+**************************/
+
+
+#bloc_panier{
+	width: 100%;
+	background-color: white;
+}
+
+
+#bloc_panier .container{
+	padding: 50px 10px;
+
+}
+
+#bloc_panier .container h3{
+	
+	color: #e2c879;
+	font-size: 26px;
+	font-weight: 400;
+
+
+}
+
+
+#bloc_panier .container table{
+	
+	margin: 50px 0;
+	width: 100%;
+}
+
+
+#bloc_panier .container table thead{
+		
+		font-weight: 300;
+		text-transform: uppercase;
+		border-bottom: 1px solid rgb(180,180,180);
+
+}
+
+
+#bloc_panier .container table tbody{
+	
+}
+
+
+#bloc_panier .container table tbody tr{
+	
+	border-bottom: 1px solid rgb(180,180,180);
+}
+
+
+#bloc_panier .container table tbody tr td{
+
+		padding: 15px 0;
+		font-weight: 300;
+}
+
+
+#bloc_panier table img{
+	width: 100%;
+	padding: 6px;
+}
+
+
+
+/* -------- */
+
+
+
+
+
+
+
+
+
 /***************************
 	FOOTER
 **************************/
