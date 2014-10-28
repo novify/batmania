@@ -56,7 +56,7 @@ header {
 	text-align: left;
 	color: #FFF;
 	font-size: 14px;
-	padding: 6px;
+	padding: 10px;
 }
 
 #barre_rs .langue img {
@@ -78,8 +78,7 @@ header #barre_rs .facebook{
 
 	background-image: url('../images/pictogrammes/fb_gris.png');
 	background-size: 30px;
-	display: inline;
-
+	float:right;
 	margin-right: 5px;
 
 	-webkit-transition: all .2s ease-in;
@@ -92,8 +91,7 @@ header #barre_rs .twitter{
 
 	background-image: url('../images/pictogrammes/tw_gris.png');
 	background-size: 30px;
-	display: inline;
-
+	float:right;
 	margin-right: 5px;
 
 	-webkit-transition: all .2s ease-in;
@@ -106,8 +104,7 @@ header #barre_rs .pinterest{
 
 	background-image: url('../images/pictogrammes/p_gris.png');
 	background-size: 30px;
-	display: inline;
-
+	float:right;
 	margin-right: 5px;
 
 	-webkit-transition: all .2s ease-in;
@@ -120,8 +117,7 @@ header #barre_rs .instagram{
 
 	background-image: url('../images/pictogrammes/in_gris.png');
 	background-size: 30px;
-	display: inline;
-
+	float:right;
 	margin-right: 5px;
 
 	-webkit-transition: all .2s ease-in;
