@@ -1,3 +1,19 @@
-# novify_back_homepage:
-#     path:     /hello/{name}
-#     defaults: { _controller: NovifyBackBundle:Default:index }
+novify_back_hello:
+    path:     /hello/{name}
+    defaults: { _controller: NovifyBackBundle:Back:hello }
+
+novify_back_homepage:
+    path:     /
+    defaults: { _controller: NovifyBackBundle:Back:index }
+
+novify_back_homepage:
+    path:     /add
+    defaults: { _controller: NovifyBackBundle:Back:add }
+
+novify_back_homepage:
+    path:     /edit
+    defaults: { _controller: NovifyBackBundle:Back:edit }
+
+novify_back_homepage:
+    path:     /remove
+    defaults: { _controller: NovifyBackBundle:Back:remove }

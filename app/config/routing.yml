@@ -4,7 +4,7 @@ novify_model:
 
 novify_back:
     resource: "@NovifyBackBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /back
 
 novify_front:
     resource: "@NovifyFrontBundle/Resources/config/routing.yml"
