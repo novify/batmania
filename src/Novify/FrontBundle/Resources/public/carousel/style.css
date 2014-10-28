@@ -9,8 +9,7 @@
 	width: 100%;
 	max-width:100%;
 	max-height:360px;
-	margin:0px auto 0px;
-	z-index:90;
+	margin-top: 139px;
 	border:none;
 	text-align:left; /* reset align=center */
 	font-size: 10px;
