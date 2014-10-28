@@ -6,18 +6,14 @@ novify_back_homepage:
     path:     /
     defaults: { _controller: NovifyBackBundle:Back:index }
 
-novify_back_add:
+novify_back_homepage:
     path:     /add
     defaults: { _controller: NovifyBackBundle:Back:add }
 
-novify_back_edit:
+novify_back_homepage:
     path:     /edit
     defaults: { _controller: NovifyBackBundle:Back:edit }
 
-novify_back_remove:
+novify_back_homepage:
     path:     /remove
     defaults: { _controller: NovifyBackBundle:Back:remove }
-
-novify_back_login:
-    path:     /login
-    defaults: { _controller: NovifyBackBundle:Back:login }
