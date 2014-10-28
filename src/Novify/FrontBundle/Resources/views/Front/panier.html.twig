@@ -36,7 +36,19 @@
 								    <td style="width:20%">19.00€</td>
 									
 									<!-- Quantité choisie -->
-								    <td style="width:10%">1</td>
+								    <td style="width:10%"><form method="post" action="#">
+										   
+										      <label>Quantité:</label> <select name="quantite" id="quantite">
+										           <option value="1">1</option>
+										           <option value="2">2</option>
+										           <option value="3">3</option>
+										           <option value="4">4</option>
+										           <option value="5">5</option>
+										           
+										       </select>
+
+										   
+							</form></td>
 								
 									<!-- Supprimer les articles -->
 								    <td><a href="#">Supprimer</a></td>
@@ -56,7 +68,19 @@
 								    <td style="width:20%">14.00€</td>
 									
 									<!-- Quantité choisie -->
-								    <td style="width:10%">2</td>
+								    <td style="width:10%"><form method="post" action="#">
+										   
+										      <label>Quantité:</label> <select name="quantite" id="quantite">
+										           <option value="1">1</option>
+										           <option value="2">2</option>
+										           <option value="3">3</option>
+										           <option value="4">4</option>
+										           <option value="5">5</option>
+										           
+										       </select>
+
+										   
+							</form></td>
 								
 									<!-- Supprimer les articles -->
 								    <td><a href="#">Supprimer</a></td>
@@ -66,14 +90,88 @@
 
 					</div>
 
-
+					<!-- Bloc latéral de validation du panier -->
 					<div class="col-sm-4">
 						<div id="panier_total">
-							
+							<p>Sous total:</p>
+							<p id="sous_total">47.00€</p>
+
+							<div id="bouton_passer_commande"><p><a href="">Passer la commande</a></p></div>
 						</div>
 					</div>
 
 				</div>
+
+
+
+
+				<div class="row" id="suggestions_produits"> <!-- Sugestions de produits complémentaires -->
+
+					<div class="col-sm-12">
+
+						<h3>Complétez votre commande</h3>
+
+						<div class="row ligne_articles"> <!-- On créé une seule ligne-->
+							<div class="col-md-12">
+
+								<div class="row">
+
+									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- Premier article de la ligne-->
+
+										<div class="article_image"> <!-- Image de l'article-->
+											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></a>
+										</div>
+
+										<h5><a href="#">Titre article</a></h5> <!-- Prix et nom de l'article -->
+										<p><a href="">X €</a></p>
+									</div> <!-- Fin du premier article-->
+
+
+									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
+
+										<div class="article_image"> <!-- Image article -->
+											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt=""></a>
+										</div>
+
+										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
+										<p><a href="">X €</a></p>
+									</div> <!-- Fin de l'article -->
+
+
+									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
+
+										<div class="article_image"> <!-- Image article -->
+											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article3.jpg')}}" alt=""></a>
+										</div>
+
+										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
+										<p><a href="">X €</a></p>
+									</div> <!-- Fin de l'article -->
+
+
+									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
+
+										<div class="article_image">
+											<img src="{{ asset('bundles/novifyfront/images/article4.jpg')}}" alt="">
+										</div>
+
+										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
+										<p><a href="">X €</a></p>
+									</div> <!-- Fin de l'article -->
+
+
+								</div>
+
+							</div>
+
+						</div>
+
+
+					</div>
+
+				</div> <!-- Fin suggestion produits-->
+
+
 			</div>
 			
 		</div>
