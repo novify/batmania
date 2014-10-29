@@ -2,7 +2,10 @@
 
 namespace Novify\BackBundle\Controller;
 
+use Novify\ModelBundle\Form\ArticlesType;
+use Novify\ModelBundle\Entity\Articles;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class ArticlesController extends Controller
 {
@@ -16,9 +19,20 @@ class ArticlesController extends Controller
         return $this->render('NovifyBackBundle:Articles:index.html.twig');
     }
 
-    public function addAction()
+    public function addAction(Request $request)
     {
-        return $this->render('NovifyBackBundle:Articles:add.html.twig');
+        $article = new Articles();
+        $form = $this->createForm(new ArticlesType(), $article);
+
+        if ($form->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($article);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('novify_back_article_index'));
+        }
+
+        return $this->render('NovifyBackBundle:Articles:add.html.twig', array('form' => $form->createView()));
     }
 
     public function editAction($id)
