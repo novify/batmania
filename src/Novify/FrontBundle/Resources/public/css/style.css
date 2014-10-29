@@ -186,8 +186,12 @@ header .container {
 	display: inline;
 }
 
-.client form.connexion {
+.client form{
 	margin-right: 14%;
+}
+
+.client form.connexion {
+	margin-right: 0;
 }
 
 .client #bulle {
@@ -212,11 +216,11 @@ header .container {
 	border: 0px solid #ab0000;
 	cursor: pointer;
 	-webkit-transform: scale(1);
-	transition: all 0.60s;
+	transition: all 0.25s;
 }
 
 .client .boutton input:hover {
-	-webkit-transform: scale(1.13);
+	-webkit-transform: scale(1.05);
 }
 
 .client .compte {
@@ -588,7 +592,7 @@ input[type=checkbox]:checked ~ #menu{
 
 #bloc_catalogue .container .article .article_image{
 
-	height: 300px
+	height: 300px;
 }
 
 
@@ -904,10 +908,14 @@ input[type=checkbox]:checked ~ #menu{
 	width: 90%;
 	margin:auto;
 	background-color: #e2c879;
+	cursor: pointer;
+	-webkit-transform: scale(1);
+	transition: all 0.25s;
 }
 
 #bloc_panier .container #panier_total #bouton_passer_commande:hover{
 
+	-webkit-transform: scale(1.02);
 	background-color: #f2dc9a;
 }
 
@@ -1238,6 +1246,10 @@ footer .container #mentionslegales{
 	#bloc_catalogue .container .pagination{
 
 	text-align:left;
+	}
+
+	#bloc_panier {
+		margin-top: 41px;
 	}
 
 }
