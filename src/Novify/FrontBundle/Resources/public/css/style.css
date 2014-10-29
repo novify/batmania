@@ -59,22 +59,24 @@ header {
 	padding: 10px;
 }
 
-#barre_rs .langue img {
+header #barre_rs .langue img {
 	width: 18px;
 }
-#barre_rs .langue {
+
+header #barre_rs .langue {
 	display: inline;
 }
 
-#barre_rs .rs {
+header #barre_rs .rs {
 	float: right;
+	margin-top: -5px;
 }
 
-#barre_rs .rs img {
+header #barre_rs .rs img {
 	width: 30px;
 }
 
-header #barre_rs .facebook{
+header #barre_rs .facebook {
 
 	background-image: url('../images/pictogrammes/fb_gris.png');
 	background-size: 30px;
@@ -87,7 +89,7 @@ header #barre_rs .facebook{
     transition: all .2s ease-in;
 }
 
-header #barre_rs .twitter{
+header #barre_rs .twitter {
 
 	background-image: url('../images/pictogrammes/tw_gris.png');
 	background-size: 30px;
@@ -100,7 +102,7 @@ header #barre_rs .twitter{
     transition: all .2s ease-in;
 }
 
-header #barre_rs .pinterest{
+header #barre_rs .pinterest {
 
 	background-image: url('../images/pictogrammes/p_gris.png');
 	background-size: 30px;
@@ -113,7 +115,7 @@ header #barre_rs .pinterest{
     transition: all .2s ease-in;
 }
 
-header #barre_rs .instagram{
+header #barre_rs .instagram {
 
 	background-image: url('../images/pictogrammes/in_gris.png');
 	background-size: 30px;
@@ -126,22 +128,22 @@ header #barre_rs .instagram{
     transition: all .2s ease-in;
 }
 
-header #barre_rs .facebook:hover{
+header #barre_rs .facebook:hover {
 	background-image: url('../images/pictogrammes/fb.png');
 	background-size: 30px;
 }
 
-header #barre_rs .twitter:hover{
+header #barre_rs .twitter:hover {
 	background-image: url('../images/pictogrammes/tw.png');
 	background-size: 30px;
 }
 
-header #barre_rs .pinterest:hover{
+header #barre_rs .pinterest:hover {
 	background-image: url('../images/pictogrammes/p.png');
 	background-size: 30px;
 }
 
-header #barre_rs .instagram:hover{
+header #barre_rs .instagram:hover {
 	background-image: url('../images/pictogrammes/in.png');
 	background-size: 30px;
 }
@@ -151,54 +153,41 @@ header .container {
 	margin-bottom: 10px;
 }
 
-.logo {
+header .logo {
 	display: inline;
 }
 
-.logo img {
+header .logo img {
 	width: 120px;
 }
 
-.texte {
+header .texte {
 	display: inline;
 }
 
-.client {
+header .client {
 	display: inline;
-	margin-left: 22px;
 	color: #FFFFFF;
 	font-size: 18px;
 }
 
-#separation {
+header #separation {
 	display: inline;
 	margin: 5px;
 	font-size: 45px;
 }
 
-.client img {
+header .client img {
 	width: 43px;
 	padding-right: 5px;
 	padding-left: 10px;
 }
 
-.client form {
-	display: inline;
-}
-
-.client form{
-	margin-right: 14%;
-}
-
-.client form.connexion {
-	margin-right: 0;
-}
-
-.client #bulle {
+header .client #bulle {
 	text-align: center;
 }
 
-.client .boutton input {
+header .client .boutton input {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -219,35 +208,39 @@ header .container {
 	transition: all 0.25s;
 }
 
-.client .boutton input:hover {
+header .client .boutton input:hover {
 	-webkit-transform: scale(1.05);
 }
 
-.client .compte {
+header .client .compte {
 	display: inline;
 }
 
-.client .compte #bulle {
+header .client .col-lg-4 .formulaire {
+	margin-top: 25px;
+}
+
+header .client .compte #bulle {
 	display: none;
 }
 
-.panier {
+header .panier {
 	display: inline;
 }
 
-.client .compte a:hover #bulle { 
+header .client .compte a:hover #bulle { 
 	color: #2f3036;
 	font-size: 16px;
 	padding: 20px;
-	z-index: 1000;
+	z-index: 9999;
+	overflow: visible;
+	opacity: 1;
 	display: block;
 	position: absolute;
 	background: #f3f3f3;
 	width: 260px; 
 	height: 280px;
 	border-radius: 10px;
-	margin-left: 40%;
-	margin-top: -15px;
 }
 
 #bulle:after, #bulle:before {
@@ -285,7 +278,7 @@ header .container {
 **************************/
 nav {
 	padding-left: 9%;
-	z-index: 9999;
+	z-index: 9998;
 	background-color: rgba(255,255,255,0.95);
 	height: 3.50em;
 	background-image: url('../images/overlay.png');
@@ -293,11 +286,11 @@ nav {
 
 nav a:hover {
 	color: #FFF;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 .fix_menu {
-	z-index: 9999;
+	z-index: 9998;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -313,14 +306,14 @@ ul {
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 /*Style du menu à l'horizontal*/
 li {
 	display:inline-block;
 	float: left;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 /*Style pour les liens*/
@@ -335,19 +328,19 @@ li a {
 	font-size: 16px;
 	color: #2f3036;
 	text-decoration: none;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 li.actif a {
 	background: #1a465c;
 	color: #fff;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 /*Style pour les liens au survol de la souris*/
 li:hover a {
 	background: #dabb5b;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 /*Style pour les sous-liens*/
@@ -356,28 +349,28 @@ li:hover ul a {
 	color: #1a465c;
 	height: 40px;
 	line-height: 40px;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 /*Style pour les sous-liens au survol de la souris*/
 li:hover ul a:hover {
 	background: #dabb5b;
 	color: #fff;
-	z-index: 9999;
+	z-index: 9998;
 
 }
 
 /*pour ne pas afficher les liens qui sont inutile*/
 li ul {
 	display: none;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 /*Apparition des sous-liens*/
 li ul li {
 	display: block;
 	float: none;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 /*Style des sous-liens*/
@@ -385,14 +378,14 @@ li ul li a {
 	width: auto;
 	min-width: 160px;
 	padding: 0 20px;
-	z-index: 9999;
+	z-index: 9998;
 
 }
 
 /*style des sous-liens*/
 ul li a:hover + .survol, .survol:hover {
 	display: block;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 /*Style 'show menu' pour Ipad et Iphone*/
@@ -404,7 +397,7 @@ ul li a:hover + .survol, .survol:hover {
 	text-align: center;
 	padding: 10px 0;
 	display: none;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 /*Checkbox*/
@@ -465,24 +458,24 @@ input[type=checkbox]:checked ~ #menu{
 	margin-bottom: 2%;
 }
 
-.col-md-6 {
+.bloc .col-md-6 {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
 
-.col-md-4 {
+.bloc .col-md-4 {
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
 
-.col-md-8 {
+.bloc .col-md-8 {
 	padding-left: 0px;
 	padding-right: 0px;
 }
 
-.col-md-12 {
+.bloc .col-md-12 {
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
@@ -1178,53 +1171,85 @@ footer .container #mentionslegales{
 /*media queries*/
 
 
-@media only screen and (min-width: 1500px){
+@media only screen and (min-width: 1500px) {
 		
 
-		#carrousel #box { 
-			
-			height: 400px;
-			
-		}
-
+	#carrousel #box { 
+		height: 400px;
 	}
 
-
-/*Menu pour Ipad & Iphone*/
-
-@media screen and (max-width : 768px) {
-	/*Style du menu horizontal*/
-	ul {
-		position: static;
-		display: none;
-	}
-	/*Style du menu à la vertical*/
-	li {
-		margin-bottom: 1px;
-	}
-
-	li a {
-		background: #2f3036;
-		color: #f3f3f3;
-	}
-
-	/*Taille du menu en global*/
-	ul li, li a {
-		width: 100%;
-	}
-	/*Apparition du menu pour Ipad et Iphone*/
-	.show-menu {
-		display:block;
-	}
 }
 
+@media only screen and (max-width: 1200px){
+		
+	nav {
+		padding-left: 5%;
+	}
 
+	nav li a {
+		min-width: 150px;
+	}
 
-@media only screen and (max-width: 768px){
+}
+
+@media only screen and (max-width: 991px){
+		
+	nav {
+		padding-left: 0;
+	}
+
+	nav li a {
+		min-width: 128px;
+	}
+
+	nav li ul li a {
+		min-width: 128px;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	/*Menu pour Ipad & Iphone*/
+		/*Style du menu horizontal*/
+		ul {
+			position: static;
+			display: none;
+		}
+		/*Style du menu à la vertical*/
+		li {
+			margin-bottom: 1px;
+		}
+
+		li a {
+			background: #2f3036;
+			color: #f3f3f3;
+		}
+
+		/*Taille du menu en global*/
+		ul li, li a {
+			width: 100%;
+		}
+		/*Apparition du menu pour Ipad et Iphone*/
+		.show-menu {
+			display:block;
+		}
 	
 	nav {
 		padding: 0;
 		height: 0px;
+	}
+
+	header .container {
+		text-align: center;
+	}
+
+	.client form {
+		margin-right: 0;
+	}
+
+	.client .compte {
+		margin-left: 0;
 	}
 
 	.client .compte a:hover #bulle {
