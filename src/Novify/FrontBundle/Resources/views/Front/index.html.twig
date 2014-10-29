@@ -2,9 +2,22 @@
 {% block main %}
 	<!-- Body -->
 
+	
 		<!-- Carousel -->
-		<div class="carousel">
-			<img src="{{ asset('bundles/novifyfront/images/carousel1.png')}}" alt="image_info_carousel">
+		<div id="carrousel">
+		
+
+			<div id="box">
+				<!-- Le lien est à chercher dans la bdd -->
+				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel1.png')}}" alt="carousel1" title="" /></a> <!-- Le nom de l'image est à chercher dans la bdd-->
+
+				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel2.png')}}" alt="carousel1" title="" /></a>
+
+				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel3.png')}}" alt="carousel1" title="" /></a>
+
+				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel4.png')}}" alt="carousel1" title="" /></a>
+		        
+		    </div>
 		</div>
 		<!-- Fin Carousel -->
 
@@ -13,26 +26,26 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="col-sm-8">
+					<div class="col-md-8">
 						<div class="row">
-							<div class="col-sm-12">
+							<div class="col-md-12">
 								<div class="news">
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-md-6">
 								<div class="coupcoeur">
 								</div>
 							</div>
-							<div class="col-sm-6">
+							<div class="col-md-6">
 								<div class="promo">
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<div class="col-sm-4">
+					<div class="col-md-4">
 						<div class="top_ventes">
 						</div>
 					</div>

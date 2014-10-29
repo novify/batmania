@@ -1,0 +1,79 @@
+{% extends 'NovifyFrontBundle::base.html.twig' %}
+{% block main %}
+	<!-- Body -->
+
+	
+
+		<!-- Bloc -->
+		<div class="bloc" style="background-color:white">
+			 <div class="container" style="padding:100px">
+				<!--<div class="row">
+
+					<div class="col-md-8">
+					
+					</div>
+
+					<div class="col-md-4">
+						
+					</div>
+
+				</div>
+			</div> -->
+
+			<?php
+
+				// Sécurité au cas où l'utilisateur est deja connecté
+				if(isset($_SESSION['user_id'])){
+
+					echo'Vous êtes dejà connecté';
+
+					exit();
+				}
+
+
+				// Si la variable de l'input hidden ne vaut pas oui, on affiche le formulaire
+				if($_GET['connexion_ok'] != 'oui'){
+
+					?>
+						<h1>Connexion</h1>
+
+
+						<form name="connexion" id="connexion" method="post" action="login">
+
+							
+								<label for="pseudo" class="float">Votre adresse e-mail</label> 
+								<input type="text" name="mail" id="mail" /><br/>
+
+								<label for="mdp">Mot de passe :</label> 
+								<input type="password" name="mdp" id="mdp"/><br/>
+								
+								<!-- Champs caché qui vérifie que le formulaire à été rempli lors du traitements -->
+								<input type="hidden" name="connexion_ok" id="connexion_ok" value="oui"/>
+
+								
+								<input type="submit" value="Connexion" />
+
+						</form>
+
+						<p><a href="">Mot de passe oublié?</a></p>
+						<p><a href="">S'inscrire</a></p>
+					<?php
+
+				}
+
+
+
+				// Sinon, on procède à la verification de l'identité, l'authentification et à la création des variables
+				else{
+
+
+
+				}
+
+
+			?>
+
+			</div>
+		</div>
+		<!-- Fin Bloc -->
+{% endblock %}

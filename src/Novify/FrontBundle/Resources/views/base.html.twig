@@ -1,3 +1,4 @@
+<?php session_start(); ?> <!-- A écrire sur toutes la pages avant le code html-->
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -19,12 +20,28 @@
 		<!-- Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<!-- Js -->
+		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+
 		<!-- Favicon -->
 		<link rel="icon" href="#" sizes="32x32">
 		<link rel="icon" href="#" sizes="64x64">
 
 		<!-- Google Font -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+		<!-- Script js -->
+		<script type='text/javascript'> 
+			$(function() {
+				$(window).scroll(function () { //Au scroll dans la fenetre on déclenche la fonction 
+				if ($(this).scrollTop() > 135) { //si on a défilé de plus de 135px du haut vers le bas 
+					$('nav').addClass("fix_menu"); //on ajoute la classe fix_menu à nav
+					} else { 
+						$('nav').removeClass("fix_menu"); //sinon on retire la classe fix_menu à nav
+					} 
+				});
+			}); 
+		</script>
 
 	</head>
 {% block body %}
@@ -58,17 +75,35 @@
 
 				<!-- Logo -->
 				<div class="container">
-						<div class="logo">
-							<a href="#"><img src="{{ asset('bundles/novifyfront/images/logo.png')}}" alt="Logo Batmania"></a>
+					<div class="logo">
+						<a href="#"><img src="{{ asset('bundles/novifyfront/images/logo.png')}}" alt="Logo Batmania"></a>
+					</div>
+					<div class="client">
+						<form class="connexion" method="post" action="#">
+							<input type="text" name="rechercher" placeholder="Rechercher.."/><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche">
+						</form>
+						<div class="compte">
+							<a href="#">
+								<img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman"><div class="texte">Mon compte</div>
+								<div id="bulle">
+									<strong>connexion :</strong></br>
+									<form class="connexion" method="post" action="#">
+										indentifiant : <input type="text" name="identifiant" placeholder="Votre Identifiant"/><br/>
+										Mot de passe : <input type="text" name="identifiant" placeholder="Votre mot de passe"/><br/>
+										<div class="boutton"><input type="submit" value="Se connecter" /></div>
+									</form>
+									<form method="post" action="#">
+										Pas encore de compte :
+										<div class="boutton"><input type="submit" value="Inscrivez-vous" /></div>
+									</form>
+								</div>
+							</a>
 						</div>
-						<div class="client">
-							<form method="post" action="#">
-								<input type="text" name="rechercher" placeholder="Rechercher.."/><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche">
-							</form>
-							<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman">Mon compte</a>
-							<div id="separation">|</div>
-							<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier">Mon panier</a>
+						<div id="separation">|</div>
+						<div class="panier">
+							<a href="#"><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier"><div class="texte">Mon panier</div></a>
 						</div>
+					</div>
 				</div>		
 
 				<!-- Nav -->
@@ -76,7 +111,7 @@
 					<label for="show-menu" class="show-menu">Menu</label>
 					<input type="checkbox" id="show-menu" role="button">
 						<ul id="menu">
-						<li><a href="#">Accueil</a></li>
+						<li class="actif"><a href="#">Accueil</a></li>
 						<li>
 							<a href="#">Livres</a>
 							<ul class="survol">
@@ -114,6 +149,12 @@
 						</li>
 						<li><a href="#">Contact</a></li>
 					</ul>
+
+					<div class="compte_fix">
+						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman"></a>
+						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier"></a>
+						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche"></a>
+					</div>
                 
         		</nav>
 				<!-- Fin Nav -->
@@ -160,7 +201,7 @@
 							<div class="col-md-3 col-sm-4 col-xs-12">
 								<h6>La communauté</h6>
 								<div class="facebook rs">
-									<a href="#"><img src="{{ asset('bundles/novifyfront/images/pictogrammes/vierge.png')}}" alt="image vide"></a>
+									
 								</div>
 								<div class="twitter rs"></div>
 								<div class="pinterest rs" style="clear:both"></div>
@@ -199,7 +240,35 @@
 	<!-- Fin Footer -->
 {% endblock %}
 
-	<!-- Fin Body -->
+
+
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+    $(function() {
+        var img = $('#box .slide');
+        $(img).each(function(i) {
+            $(this).css('left', i*100+'%');
+        });
+        setInterval(function() {
+            $(img).each(function(i, e) {
+                console.log($(e));
+                if ($(img).last().css('left') === '0px') {
+                    $(e).animate({
+                        left: '+='+($(img).size()-1)*100+'%'
+                    }, 3000);
+                } else {
+                    $(e).animate({
+                        left: '-=100%'
+                    }, 3000);
+                }
+            });
+        }, 7000);
+    });
+    </script>
+
+    <!-- Fin Body -->
+
 	</body>
 {% endblock %}
 </html>

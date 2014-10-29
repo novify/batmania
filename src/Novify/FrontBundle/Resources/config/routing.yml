@@ -2,6 +2,14 @@ novify_front_homepage:
     path:     /
     defaults: { _controller: NovifyFrontBundle:Front:index }
 
+novify_front_login:
+    path:     /login
+    defaults: { _controller: NovifyFrontBundle:Front:login }
+
+novify_front_panier:
+    path:     /panier
+    defaults: { _controller: NovifyFrontBundle:Front:panier }
+
 # temporaire
 novify_front_view_fiche:
     path:     /fiche
@@ -24,3 +32,10 @@ novify_front_view_onee:
 novify_front_hello:
     path:     /hello/{name}
     defaults: { _controller: NovifyFrontBundle:Front:hello }
+
+remove_trailing_slash:
+    path: /{url}
+    defaults: { _controller: NovifyFrontBundle:Redirecting:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]

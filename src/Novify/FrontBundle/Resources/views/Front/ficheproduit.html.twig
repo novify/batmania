@@ -8,7 +8,7 @@
 
 			<!-- Image choisie par l'utilisateur et modifiable dans le back office -->
 			<div class="banniere_catalogue"> <!-- Banniere a actualiser selon la catégorie -->
-				<img src="{{ asset('bundles/novifyfront/images/banniere-livres.jpg')}}" alt="image_info_carousel">
+				<img src="{{ asset('bundles/novifyfront/images/banniere-livres.jpg')}}" alt="">
 
 				<div class="container"><!-- Fil d'ariane, liens et textes à générer depuis la bdd -->
 					<h1><a href="#">Livres</a> > Comics</h1>
@@ -30,7 +30,7 @@
 						</h2>
 
 						<p class="description_ficheproduit"><!-- Description du produit-->
-							{{article.artDescript}}La Cour des Hiboux prend son envol, et la nuit à venir pourrait bien signer la mort de Gotham City elle-même. Lancés depuis les hauteurs de la ville, les Ergots, émissaires assassins de la Cour, ont pour mission de mettre à mort les personnalités les plus progressistes de la cité, laissant à leurs maîtres le champ libre pour étendre leur emprise. Les prochains noms sur leur liste ? Lincoln March et Bruce Wayne…
+							{{article.artDescript}}
 						</p>
 
 						<p> <!-- Ancre vers les détails du produit plus bas dans la page -->
@@ -81,9 +81,10 @@
 
 						<h3>Commentaires</h3>
 
-						<p>Moyenne des commentaires : <b>X/10</b></p>
-						<p style="margin-bottom: 40px">18 commentaires rédigés</p>
+						<p>Moyenne des commentaires : <b>X/10</b></p> <!-- A calculer via calcul de la bdd -->
 
+						<p style="margin-bottom: 40px">18 commentaires rédigés</p> <!-- Nombre a récupérer selon le nombre d'entrées dans la bdd -->
+						
 
 						<!-- Boucle des commentaires -->
 
