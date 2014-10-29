@@ -1,19 +1,59 @@
-novify_back_hello:
-    path:     /hello/{name}
-    defaults: { _controller: NovifyBackBundle:Back:hello }
+novify_back_article_hello:
+    path:     /article/hello/{name}
+    defaults: { _controller: NovifyBackBundle:Articles:hello }
 
-novify_back_homepage:
-    path:     /
-    defaults: { _controller: NovifyBackBundle:Back:index }
+novify_back_article_index:
+    path:     /article
+    defaults: { _controller: NovifyBackBundle:Articles:index }
 
-novify_back_homepage:
-    path:     /add
-    defaults: { _controller: NovifyBackBundle:Back:add }
+novify_back_article_add:
+    path:     /article/add
+    defaults: { _controller: NovifyBackBundle:Articles:add }
 
-novify_back_homepage:
-    path:     /edit
-    defaults: { _controller: NovifyBackBundle:Back:edit }
+novify_back_article_edit:
+    path:     /article/edit/{id}
+    defaults: { _controller: NovifyBackBundle:Articles:edit }
 
-novify_back_homepage:
-    path:     /remove
-    defaults: { _controller: NovifyBackBundle:Back:remove }
+novify_back_article_remove:
+    path:     /article/remove/{id}
+    defaults: { _controller: NovifyBackBundle:Articles:remove }
+
+novify_back_categorie_hello:
+    path:     /categorie/hello/{name}
+    defaults: { _controller: NovifyBackBundle:Categories:hello }
+
+novify_back_categorie_index:
+    path:     /categorie
+    defaults: { _controller: NovifyBackBundle:Categories:index }
+
+novify_back_categorie_add:
+    path:     /categorie/add
+    defaults: { _controller: NovifyBackBundle:Categories:add }
+
+novify_back_categorie_edit:
+    path:     /categorie/edit/{id}
+    defaults: { _controller: NovifyBackBundle:Categories:edit }
+
+novify_back_categorie_remove:
+    path:     /categorie/remove/{id}
+    defaults: { _controller: NovifyBackBundle:Categories:remove }
+
+novify_back_souscategorie_hello:
+    path:     /sous-categorie/hello/{name}
+    defaults: { _controller: NovifyBackBundle:SousCategories:hello }
+
+novify_back_souscategorie_index:
+    path:     /sous-categorie
+    defaults: { _controller: NovifyBackBundle:SousCategories:index }
+
+novify_back_souscategorie_add:
+    path:     /sous-categorie/add
+    defaults: { _controller: NovifyBackBundle:SousCategories:add }
+
+novify_back_souscategorie_edit:
+    path:     /sous-categorie/edit/{id}
+    defaults: { _controller: NovifyBackBundle:SousCategories:edit }
+
+novify_back_souscategorie_remove:
+    path:     /sous-categorie/remove/{id}
+    defaults: { _controller: NovifyBackBundle:SousCategories:remove }

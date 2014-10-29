@@ -1,7 +1,7 @@
 /***************************
 	MISE EN PAGE GÉNÉRALE
 **************************/
-
+*{z-index: 1;}
 body {
 	margin: auto;
 	background: url('../images/bg.png') no-repeat center fixed;
@@ -285,7 +285,7 @@ header .container {
 **************************/
 nav {
 	padding-left: 9%;
-	z-index: 91;
+	z-index: 9999;
 	background-color: rgba(255,255,255,0.95);
 	height: 3.50em;
 	background-image: url('../images/overlay.png');
@@ -293,6 +293,7 @@ nav {
 
 nav a:hover {
 	color: #FFF;
+	z-index: 9999;
 }
 
 .fix_menu {
@@ -312,12 +313,14 @@ ul {
 	margin: 0;
 	padding: 0;
 	position: absolute;
+	z-index: 9999;
 }
 
 /*Style du menu à l'horizontal*/
 li {
 	display:inline-block;
 	float: left;
+	z-index: 9999;
 }
 
 /*Style pour les liens*/
@@ -332,16 +335,19 @@ li a {
 	font-size: 16px;
 	color: #2f3036;
 	text-decoration: none;
+	z-index: 9999;
 }
 
 li.actif a {
 	background: #1a465c;
 	color: #fff;
+	z-index: 9999;
 }
 
 /*Style pour les liens au survol de la souris*/
 li:hover a {
 	background: #dabb5b;
+	z-index: 9999;
 }
 
 /*Style pour les sous-liens*/
@@ -350,23 +356,28 @@ li:hover ul a {
 	color: #1a465c;
 	height: 40px;
 	line-height: 40px;
+	z-index: 9999;
 }
 
 /*Style pour les sous-liens au survol de la souris*/
 li:hover ul a:hover {
 	background: #dabb5b;
 	color: #fff;
+	z-index: 9999;
+
 }
 
 /*pour ne pas afficher les liens qui sont inutile*/
 li ul {
 	display: none;
+	z-index: 9999;
 }
 
 /*Apparition des sous-liens*/
 li ul li {
 	display: block;
 	float: none;
+	z-index: 9999;
 }
 
 /*Style des sous-liens*/
@@ -374,6 +385,8 @@ li ul li a {
 	width: auto;
 	min-width: 160px;
 	padding: 0 20px;
+	z-index: 9999;
+
 }
 
 /*style des sous-liens*/
@@ -391,6 +404,7 @@ ul li a:hover + .survol, .survol:hover {
 	text-align: center;
 	padding: 10px 0;
 	display: none;
+	z-index: 9999;
 }
 
 /*Checkbox*/
@@ -830,11 +844,13 @@ input[type=checkbox]:checked ~ #menu{
 #bloc_panier{
 	width: 100%;
 	background-color: white;
+	z-index:-10 !important;
 }
 
 
 #bloc_panier .container{
 	padding: 50px 10px;
+
 
 }
 
