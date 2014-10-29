@@ -375,6 +375,7 @@ li ul li a {
 /*style des sous-liens*/
 ul li a:hover + .survol, .survol:hover {
 	display: block;
+	z-index: 9999;
 }
 
 /*Style 'show menu' pour Ipad et Iphone*/
@@ -418,16 +419,16 @@ input[type=checkbox]:checked ~ #menu{
 	height: 250px;
 	margin: 0 auto; 
 	overflow: hidden; 
-	z-index:-1;
+	z-index: -1;
 }
 
 #carrousel #box .slide { 
-	display:block;
+	display: block;
 	position: absolute; 
 	width: 100%;  
 	height: auto;
 	display: inline-block; 
-	z-index:-1;
+	z-index: -1;
 }
 
 #carrousel #box .slide img { 
@@ -436,7 +437,7 @@ input[type=checkbox]:checked ~ #menu{
 	width: 100%;  
 	height: auto;
 	display: inline-block; 
-	z-index:-1;
+	z-index: -1;
 }
 
 
@@ -514,7 +515,7 @@ input[type=checkbox]:checked ~ #menu{
 .banniere_catalogue{
 
 	position: relative;
-	z-index:-1;
+	z-index: -1;
 }
 
 
