@@ -73,7 +73,7 @@ class Articles
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="art_date_sortie", type="datetime", nullable=true)
+     * @ORM\Column(name="art_date_sortie", type="date", nullable=true)
      */
     private $artDateSortie;
 
