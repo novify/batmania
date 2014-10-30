@@ -1,7 +1,6 @@
 {% extends 'NovifyFrontBundle::base.html.twig' %}
 {% block main %}
 
-
 		<!-- Body -->
 
 		<div id="bloc_panier">
@@ -96,29 +95,42 @@
 							<p>Sous total :</p>
 							<p id="sous_total">47.00€</p>
 
-							<section id="open" tabindex="0">
-								<div>
-									<article>
-										<h1>CONNECTION >> PAIEMENT >> COMMANDEZ!</h1>
-										<div class="etape1">
-											<strong>connexion :</strong></br><br/>
-											<form method="post" action="#">
-												indentifiant : <input type="text" name="identifiant" placeholder="Votre Identifiant"/><br/>
-												Mot de passe : <input type="text" name="identifiant" placeholder="Votre mot de passe"/><br/>
-												<div class="faux_liens">mot de passe oublié ?</div>
-												<div class="boutton"><input type="submit" value="Se connecter" /></div>
-											</form>
-											<form method="post" action="#">
-												Pas encore de compte :
-												<div class="boutton"><input type="submit" value="Inscrivez-vous" /></div>
-											</form>
-										</div>
-										<span id="close" tabindex="0">
-											<a href="#">Retour au panier</a>
-										</span>
-									</article>
+							<!-- Modal Box -->
+							<div class="commandez">
+								<div class="modal_box">
+									<dialog id="window">
+										<h1><div class="actif">CONNECTION</div> >> PAIEMENT >> COMMANDEZ!</h1>
+											<div class="etape1">
+												<form method="post" action="#">
+													indentifiant : <input type="text" name="identifiant" placeholder="Votre Identifiant"/><br/>
+													Mot de passe : <input type="text" name="identifiant" placeholder="Votre mot de passe"/><br/>
+													<div class="faux_liens">mot de passe oublié ?</div>
+													<div class="boutton"><input type="submit" value="Se connecter" /></div>
+												</form>
+												<form method="post" action="#">
+													Pas encore de compte :
+													<div class="boutton"><input type="submit" value="Inscrivez-vous" /></div>
+												</form>
+											</div>
+										<button id="exit">Retour aux panier</button>
+									</dialog>
+									<button id="open">Passez la commande</button>
 								</div>
-							</section>
+							</div>
+							<!-- Fin Modal Box -->
+								
+								<script type="text/javascript">
+								(function() {
+								   	var dialog = document.getElementById('window');
+									document.getElementById('open').onclick = function() {
+										dialog.show();
+									};
+									document.getElementById('exit').onclick = function() {
+										dialog.close();
+									};
+								})();
+								</script>
+
 						</div>
 					</div>
 
