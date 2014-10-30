@@ -928,87 +928,71 @@ input[type=checkbox]:checked ~ #menu{
 	padding: 6px;
 }
 
-/* -- Modal Box -- */
-	
-	.white-popup {
-	  position: relative;
-	  background: #FFF;
-	  padding: 20px;
-	  width:auto;
-	  max-width: 500px;
-	  margin: 20px auto;
-	}
-	
-	#bloc_panier dialog div {
-		display: inline;
-	}
+/* -- pop-up -- */
 
-	#bloc_panier .commandez {
+	/* -- lien pour ouvrir le pop-up -- */
+	#bloc_panier .lien_popup a {
 		text-align: center;
-		display: table-cell;
-		vertical-align: middle;
-		margin: auto;
+		padding: 10px 5px;
+		display:block;
 		width: 100%;
 		height: 100%;
-	}
-
-	#bloc_panier .modal_box {
-		width: 250px;
-		margin: 0 auto;
-	}
-
-	#bloc_panier .modal_box dialog {
-		width: 500px;
-		height: auto;
-		color: #2f3036;
-		font-size: 16px;
-		padding: 20px;
-		z-index: 9999;
-		background: #f3f3f3;
-		border-radius: 10px;
-		border: 1px solid;
-	}
-
-	#bloc_panier .modal_box button#open {
-		font-size: 18px;
-	  	position: relative;
-		border-radius: 3px;
+		font-size: 20px;
 		color: #fff;
-		border-width: 0;
-		height: 50px;
-	  	width: 90%;
-	  	margin:auto;
-	  	background-color: #e2c879;
-	  	cursor: pointer;
-	  	-webkit-transform: scale(1);
-	  	transition: all 0.25s;
+		background-color: #e2c879;
+		cursor: pointer;
+		-webkit-transform: scale(1);
+		transition: all 0.25s;
 	}
 
-	#bloc_panier .modal_box button#exit {
-		background-color: #c0392b;
-		border-radius: 3px;
-		color: #fff;
-		border-width: 0;
-		width: auto;
-		height: 30px;
-	  	-webkit-transform: scale(1);
-	  	transition: all 0.25s;
-	}
 
-	#bloc_panier .modal_box button#open:hover {
+	#bloc_panier .lien_popup a:hover {
 	  	-webkit-transform: scale(1.02);
 	  	background-color: #f2dc9a;
 	}
-
-	#bloc_panier .modal_box button#exit:hover {
-		-webkit-transform: scale(1.02);
-		background-color: #e74c3c;
+	
+	/* -- style du pop-up -- */
+	.white-popup {
+		position: relative;
+	  	padding: 20px;
+	  	width: auto;
+	  	max-width: 500px;
+	  	margin: 20px auto;
+		height: auto;
+		color: #2f3036;
+		font-size: 16px;
+		background: #fff;
+		border-radius: 3px;
+		border: 1px solid;
 	}
 
-	#bloc_panier .modal_box dialog .actif {
+	#test-popup a {
+		font-size: 14px;
+		color: #3781b2;
 		text-decoration: underline;
 	}
 
+	#test-popup .popup_header {
+		padding-bottom: 5px;
+		border-bottom: #dedede 1px solid; 
+	}
+
+	#test-popup .popup_header h1 .actif {
+		text-decoration: underline;
+		display: inline;
+	}
+
+	#test-popup .popup_body {
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+
+	#test-popup .popup_footer {
+		padding-top: 5px;
+		border-top: #dedede 1px solid; 
+		text-align: right;
+	}
+	
 /* ---- */
 
 #bloc_panier .container #panier_total{
@@ -1026,42 +1010,6 @@ input[type=checkbox]:checked ~ #menu{
 	font-weight: 400;
 	color:#4f9649;
 }
-
-#bloc_panier .container #panier_total #bouton_passer_commande{
-
-	width: 90%;
-	margin:auto;
-	background-color: #e2c879;
-	cursor: pointer;
-	-webkit-transform: scale(1);
-	transition: all 0.25s;
-}
-
-#bloc_panier .container #panier_total #bouton_passer_commande:hover{
-
-	-webkit-transform: scale(1.02);
-	background-color: #f2dc9a;
-}
-
-
-
-
-#bloc_panier .container #panier_total #bouton_passer_commande p{
-
-	font-size: 18px;
-	color:white;
-	text-align:center;
-}
-
-
-#bloc_panier .container #panier_total #bouton_passer_commande a{
-	
-	padding: 10px 5px;
-	display:block;
-	width: 100%;
-	height: 100%;
-}
-
 
 #bloc_panier .container #suggestions_produits{
 
@@ -1106,6 +1054,7 @@ input[type=checkbox]:checked ~ #menu{
 }
 
 #bloc_panier a.supprimer {
+	display: block;
 	padding: 5px 10px;
 	background-color: #c0392b;
 	color: #fff;

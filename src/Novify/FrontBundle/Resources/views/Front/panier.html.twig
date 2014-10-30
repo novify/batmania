@@ -95,46 +95,60 @@
 							<p>Sous total :</p>
 							<p id="sous_total">47.00€</p>
 
-							<!-- Modal Box -->
-							<div class="commandez">
-								<div class="modal_box">
-									<dialog id="window">
-										<div class="modal_header">
-											<h1><div class="actif">CONNECTION</div> >> PAIEMENT >> COMMANDEZ!</h1>
-										</div>
-										<section>
-											<div class="etape1">
-												<form method="post" action="#">
-													indentifiant : <input type="text" name="identifiant" placeholder="Votre Identifiant"/><br/>
-													Mot de passe : <input type="text" name="identifiant" placeholder="Votre mot de passe"/><br/>
-													<div class="faux_liens">mot de passe oublié ?</div>
-													<div class="boutton"><input type="submit" value="Se connecter" /></div>
-												</form>
-												<form method="post" action="#">
-													Pas encore de compte :
-													<div class="boutton"><input type="submit" value="Inscrivez-vous" /></div>
-												</form>
-										</section>
-										<div class="modal_footer">
-											</div>
-											<button id="exit">Retour aux panier</button>
-										</div>
-									</dialog>
-									<button id="open">Passez la commande</button>
+							<div class="lien_popup"><a href="#test-popup" class="open-popup-link">Passez la commande</a></div>
+
+							<!-- Popup -->
+							<div id="test-popup" class="white-popup mfp-hide">
+							  	<div class="popup_header">
+									<h1><div class="actif">CONNECTION</div> >> PAIEMENT >> COMMANDEZ!</h1>
+								</div>
+								<div class="popup_body">
+									<div class="etape1">
+										<form method="post" acti on="#">
+											<strong>J'ai déjà un compte</strong> <input type="radio" name="teakts" value="oui" id="oui" onClick="afficher();" /> <br />
+											<strong>Je n'ai pas encore de compte</strong> <input type="radio" name="teakts" value="non" onClick="afficher2();" id="non"/> <br/>
+											 
+											 
+											 
+											<p id="champ_cache">
+											indentifiant : <input type="text" name="identifiant" placeholder="Votre Identifiant"/><br/>
+											Mot de passe : <input type="text" name="identifiant" placeholder="Votre mot de passe"/><br/>
+											<a href="#">mot de passe oublié ?</a><br/>
+											<input type="submit" value="Se connecter" />
+											</p>
+
+											<p id="champ_cache2">
+											Pas encore de compte :
+											<input type="submit" value="Inscrivez-vous" />
+											</p>
+										</form>
+									</div>
+								</div>
+								<div class="popup_footer">
+									<a href="#">Etape suivante >></a>
 								</div>
 							</div>
-							<!-- Fin Modal Box -->
+							<!-- Fin popup -->
 								
 								<script type="text/javascript">
-								(function() {
-								   	var dialog = document.getElementById('window');
-									document.getElementById('open').onclick = function() {
-										dialog.show();
-									};
-									document.getElementById('exit').onclick = function() {
-										dialog.close();
-									};
-								})();
+
+								document.getElementById("champ_cache").style.display = "none";		 
+										function afficher()
+										{
+										    document.getElementById("champ_cache").style.display = "block";
+										    document.getElementById("champ_cache2").style.display = "none";
+										}
+								document.getElementById("champ_cache2").style.display = "none";		 
+										function afficher2()
+										{
+										    document.getElementById("champ_cache2").style.display = "block";
+										    document.getElementById("champ_cache").style.display = "none";
+										}
+
+									$('.open-popup-link').magnificPopup({
+									  type:'inline',
+									  midClick: true 
+									});
 								</script>
 
 						</div>
