@@ -1,7 +1,6 @@
 /***************************
 	MISE EN PAGE GÉNÉRALE
 **************************/
-*{z-index: 1;}
 body {
 	margin: auto;
 	background: url('../images/bg.png') no-repeat center fixed;
@@ -193,14 +192,8 @@ header .client .boutton input {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: #ffffff;
-	padding: 7px 11px;
-	background: -moz-linear-gradient(
-		top,
-		#b80707 0%,
-		#ab0000);
-	background-color: #dabb5b;
-	-moz-border-radius: 0px;
-	-webkit-border-radius: 0px;
+	padding: 5px 10px;
+	background-color: #e2c879;
 	border-radius: 0px;
 	border: 0px solid #ab0000;
 	cursor: pointer;
@@ -220,57 +213,92 @@ header .client .col-lg-4 .formulaire {
 	margin-top: 25px;
 }
 
-header .client .compte #bulle {
-	display: none;
-}
+header .client .compte #bulle_compte {display: none;} 
+header .client .panier #bulle_panier {display: none;}
 
 header .panier {
 	display: inline;
 }
 
-header .client .compte a:hover #bulle { 
+header .client .compte a:hover #bulle_compte { 
 	color: #2f3036;
 	font-size: 16px;
 	padding: 20px;
 	z-index: 9999;
+	text-align: center;
 	overflow: visible;
 	opacity: 1;
 	display: block;
 	position: absolute;
 	background: #f3f3f3;
 	width: 260px; 
-	height: 280px;
+	height: auto;
 	border-radius: 10px;
 }
 
-#bulle:after, #bulle:before {
+header .client .panier a:hover #bulle_panier { 
+	color: #2f3036;
+	font-size: 16px;
+	padding: 20px;
+	z-index: 9999;
+	text-align: center;
+	overflow: visible;
+	opacity: 1;
+	display: block;
+	position: absolute;
+	background: #f3f3f3;
+	width: auto; 
+	height: auto;
+	border-radius: 10px;
+}
+
+#bulle_compte:after, #bulle_compte:before {
 	right: 50%;
 	border: solid transparent; 
 	content: "";
 	position: absolute;
 }
 
-#bulle:after {
+#bulle_compte:after {
 	border-bottom-color: #f3f3f3;
-	border-width: 16px;
-	margin-top: -304px;
+	border-width: 13px;
+	margin-top: -332px;
 }
 
-/*Pour si on veut mettre un contour*/ 
+#bulle_panier:after, #bulle_compte:before {
+	right: 15%;
+	border: solid transparent; 
+	content: "";
+	position: absolute;
+}
+
+#bulle_panier:after {
+	border-bottom-color: #f3f3f3;
+	border-width: 13px;
+	margin-top: -179px;
+}
+
+/*Garder si on veut mettre un contour*/ 
 /*#bulle:before {
 	border-bottom-color: #f3f3f3;
 	border-width: 16px;
 	margin-top: -220px;
 }*/
 
-#bulle p {
-	display: inline;
+#bulle_compte p {display: inline;}
+#bulle_panier p {display: inline;}
+
+.faux_liens {
+	font-size: 14px;
+	color: #3781b2;
+	text-decoration: underline;
 }
 
-#bulle .inscrivez-vous {
-	display: inline;
-	text-decoration: underline;
-	color: #dabb5b;
+.prix {
+	color: #4f9649;
+	font-size: 22px;
+	font-weight: 400;
+	padding: 5px;
 }
 
 /***************************
@@ -896,6 +924,79 @@ input[type=checkbox]:checked ~ #menu{
 	padding: 6px;
 }
 
+#bloc_panier #open {
+	outline: none;
+}
+
+#bloc_panier #open > div {
+	color: #2f3036;
+	font-size: 16px;
+	padding: 20px;
+	z-index: 9999;
+	text-align: center;
+	overflow: visible;
+	opacity: 1;
+	display: block;
+	background: #f3f3f3;
+	width: auto; 
+	height: auto;
+	border-radius: 10px;
+	position: absolute;
+	transform: scale(0);
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -125px;
+	transition: transform 1s;
+}
+
+#bloc_panier #open:before {
+	content: 'Passer la commande';
+}
+
+#bloc_panier #open:before, #open #close {
+	display: inline-block;
+	z-index: 1;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 5px 10px;
+	background-color: #e2c879;
+	border-radius: 0px;
+	border: 0px solid #ab0000;
+	cursor: pointer;
+	-webkit-transform: scale(1);
+	transition: all 0.25s;
+}
+
+#bloc_panier #open:focus > div {
+	transform: scale(1);
+	transition: ease-in transform 0.40s;
+	left: 50%;
+	top: 50%;
+}
+
+#bloc_panier #open:focus:before , #open #close{
+	opacity: 0;
+}
+
+#bloc_panier #open:focus #close {
+	opacity: 1;
+}
+
+#bloc_panier #open > div > article {
+	display: table-cell;
+	width: 500px;
+	height: 250px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#bloc_panier #close {
+	text-decoration: none;
+}
 
 #bloc_panier .container #panier_total{
 
@@ -910,6 +1011,7 @@ input[type=checkbox]:checked ~ #menu{
 
 	font-size: 25px;
 	font-weight: 400;
+	color:#4f9649;
 }
 
 #bloc_panier .container #panier_total #bouton_passer_commande{
@@ -990,6 +1092,9 @@ input[type=checkbox]:checked ~ #menu{
 	font-weight: 400;
 }
 
+#bloc_panier a.supprimer {
+	color: ;
+}
 
 /* -------- */
 
@@ -1242,19 +1347,6 @@ footer .container #mentionslegales{
 
 	header .container {
 		text-align: center;
-	}
-
-	.client form {
-		margin-right: 0;
-	}
-
-	.client .compte {
-		margin-left: 0;
-	}
-
-	.client .compte a:hover #bulle {
-		margin-left: 0;
-		margin-top: 10px;
 	}
 
 	#carrousel { 

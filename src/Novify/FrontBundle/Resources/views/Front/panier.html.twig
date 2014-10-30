@@ -33,7 +33,7 @@
 								    <td style="width:50%"><a href="">Batman tome 2 - La nuit des hiboux</a></td>
 									
 									<!-- Prix du produit -->
-								    <td style="width:20%">19.00€</td>
+								    <td style="width:20%; color:#4f9649;">19.00€</td>
 									
 									<!-- Quantité choisie -->
 								    <td style="width:10%"><form method="post" action="#">
@@ -51,7 +51,7 @@
 							</form></td>
 								
 									<!-- Supprimer les articles -->
-								    <td><a href="#">Supprimer</a></td>
+								    <td><a class="supprimer" href="#">Supprimer</a></td>
 							    </tr>
 
 
@@ -65,7 +65,7 @@
 								    <td style="width:50%"><a href="">Batman tome 3 - La nuit de Pimolo</a></td><!-- Lien vers l'article -->
 									
 									<!-- Prix du produit -->
-								    <td style="width:20%">14.00€</td>
+								    <td style="width:20%; color:#4f9649;">14.00€</td>
 									
 									<!-- Quantité choisie -->
 								    <td style="width:10%"><form method="post" action="#">
@@ -83,7 +83,7 @@
 							</form></td>
 								
 									<!-- Supprimer les articles -->
-								    <td><a href="#">Supprimer</a></td>
+								    <td><a class="supprimer" href="#">Supprimer</a></td>
 							    </tr>
 							</tbody>
 						</table>
@@ -93,10 +93,32 @@
 					<!-- Bloc latéral de validation du panier -->
 					<div class="col-sm-4">
 						<div id="panier_total">
-							<p>Sous total:</p>
+							<p>Sous total :</p>
 							<p id="sous_total">47.00€</p>
 
-							<div id="bouton_passer_commande"><p><a href="">Passer la commande</a></p></div>
+							<section id="open" tabindex="0">
+								<div>
+									<article>
+										<h1>CONNECTION >> PAIEMENT >> COMMANDEZ!</h1>
+										<div class="etape1">
+											<strong>connexion :</strong></br><br/>
+											<form method="post" action="#">
+												indentifiant : <input type="text" name="identifiant" placeholder="Votre Identifiant"/><br/>
+												Mot de passe : <input type="text" name="identifiant" placeholder="Votre mot de passe"/><br/>
+												<div class="faux_liens">mot de passe oublié ?</div>
+												<div class="boutton"><input type="submit" value="Se connecter" /></div>
+											</form>
+											<form method="post" action="#">
+												Pas encore de compte :
+												<div class="boutton"><input type="submit" value="Inscrivez-vous" /></div>
+											</form>
+										</div>
+										<span id="close" tabindex="0">
+											<a href="#">Retour au panier</a>
+										</span>
+									</article>
+								</div>
+							</section>
 						</div>
 					</div>
 
