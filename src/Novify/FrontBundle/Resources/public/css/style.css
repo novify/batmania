@@ -723,6 +723,22 @@ input[type=checkbox]:checked ~ #menu{
 
 }
 
+#bloc_ficheproduit #bloc_produit .dispo_ficheproduit{
+	
+	font-size: 20px;
+	display: inline;
+
+}
+
+#bloc_ficheproduit #bloc_produit .variable_dispo {
+	
+	font-size: 30px;
+	font-weight: bold;
+	display: inline;
+	color: #4f9649;
+	padding-left: 5px;
+
+}
 
 #bloc_ficheproduit #bloc_produit #ajout_panier, #bloc_ficheproduit #bloc_produit #retrait_magasin{
 	
@@ -774,9 +790,10 @@ input[type=checkbox]:checked ~ #menu{
 
 }
 
-#bloc_ficheproduit #bloc_produit p a{
+#bloc_ficheproduit #bloc_produit p a {
 	
 	font-weight: 400;
+	color: #3781b2;
 	text-decoration: underline;
 
 }
@@ -790,7 +807,7 @@ input[type=checkbox]:checked ~ #menu{
 }
 
 
-#bloc_ficheproduit #bloc_produit #details_produit p{
+#bloc_ficheproduit #bloc_produit #details_produit p {
 	
 	
 
@@ -1008,7 +1025,7 @@ input[type=checkbox]:checked ~ #menu{
 
 	font-size: 25px;
 	font-weight: 400;
-	color:#4f9649;
+	color: #4f9649;
 }
 
 #bloc_panier .container #suggestions_produits{
@@ -1030,7 +1047,7 @@ input[type=checkbox]:checked ~ #menu{
 
 #bloc_panier .container .article .article_image{
 
-	height: 300px
+	height: 300px;
 }
 
 
