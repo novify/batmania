@@ -198,11 +198,15 @@ header .client .boutton input {
 	border: 0px solid #ab0000;
 	cursor: pointer;
 	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
 	transition: all 0.25s;
 }
 
 header .client .boutton input:hover {
 	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-o-transform: scale(1.05);
 }
 
 header .client .compte {
@@ -1093,7 +1097,16 @@ input[type=checkbox]:checked ~ #menu{
 }
 
 #bloc_panier a.supprimer {
-	color: ;
+	padding: 5px 10px;
+	background-color: #c0392b;
+	color: #fff;
+	 -webkit-transform: scale(1);
+  	transition: all 0.25s;
+}
+
+#bloc_panier a.supprimer:hover  {
+	background-color: #e74c3c;
+	-webkit-transform: scale(1.02);
 }
 
 /* -------- */
