@@ -331,7 +331,7 @@ ul {
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	z-index: 9998;
+	z-index: 1000;
 }
 
 /*Style du menu à l'horizontal*/
@@ -921,79 +921,72 @@ input[type=checkbox]:checked ~ #menu{
 	padding: 6px;
 }
 
-#bloc_panier #open {
-	outline: none;
-}
+/* -- pop-up -- */
 
-#bloc_panier #open > div {
-	color: #2f3036;
-	font-size: 16px;
-	padding: 20px;
-	z-index: 9999;
-	text-align: center;
-	overflow: visible;
-	opacity: 1;
-	display: block;
-	background: #f3f3f3;
-	width: auto; 
-	height: auto;
-	border-radius: 10px;
-	position: absolute;
-	transform: scale(0);
-	left: 50%;
-	top: 50%;
-	margin-left: -250px;
-	margin-top: -125px;
-	transition: transform 1s;
-}
+	/* -- lien pour ouvrir le pop-up -- */
+	#bloc_panier .lien_popup a {
+		text-align: center;
+		padding: 10px 5px;
+		display:block;
+		width: 100%;
+		height: 100%;
+		font-size: 20px;
+		color: #fff;
+		background-color: #e2c879;
+		cursor: pointer;
+		-webkit-transform: scale(1);
+		transition: all 0.25s;
+	}
 
-#bloc_panier #open:before {
-	content: 'Passer la commande';
-}
 
-#bloc_panier #open:before, #open #close {
-	display: inline-block;
-	z-index: 1;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: #ffffff;
-	padding: 5px 10px;
-	background-color: #e2c879;
-	border-radius: 0px;
-	border: 0px solid #ab0000;
-	cursor: pointer;
-	-webkit-transform: scale(1);
-	transition: all 0.25s;
-}
+	#bloc_panier .lien_popup a:hover {
+	  	-webkit-transform: scale(1.02);
+	  	background-color: #f2dc9a;
+	}
+	
+	/* -- style du pop-up -- */
+	.white-popup {
+		position: relative;
+	  	padding: 20px;
+	  	width: auto;
+	  	max-width: 500px;
+	  	margin: 20px auto;
+		height: auto;
+		color: #2f3036;
+		font-size: 16px;
+		background: #fff;
+		border-radius: 3px;
+		border: 1px solid;
+	}
 
-#bloc_panier #open:focus > div {
-	transform: scale(1);
-	transition: ease-in transform 0.40s;
-	left: 50%;
-	top: 50%;
-}
+	#test-popup a {
+		font-size: 14px;
+		color: #3781b2;
+		text-decoration: underline;
+	}
 
-#bloc_panier #open:focus:before , #open #close{
-	opacity: 0;
-}
+	#test-popup .popup_header {
+		padding-bottom: 5px;
+		border-bottom: #dedede 1px solid; 
+	}
 
-#bloc_panier #open:focus #close {
-	opacity: 1;
-}
+	#test-popup .popup_header h1 .actif {
+		text-decoration: underline;
+		display: inline;
+	}
 
-#bloc_panier #open > div > article {
-	display: table-cell;
-	width: 500px;
-	height: 250px;
-	vertical-align: middle;
-	text-align: center;
-}
+	#test-popup .popup_body {
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
 
-#bloc_panier #close {
-	text-decoration: none;
-}
+	#test-popup .popup_footer {
+		padding-top: 5px;
+		border-top: #dedede 1px solid; 
+		text-align: right;
+	}
+
+/* ---- */
 
 #bloc_panier .container #panier_total{
 
@@ -1010,42 +1003,6 @@ input[type=checkbox]:checked ~ #menu{
 	font-weight: 400;
 	color:#4f9649;
 }
-
-#bloc_panier .container #panier_total #bouton_passer_commande{
-
-	width: 90%;
-	margin:auto;
-	background-color: #e2c879;
-	cursor: pointer;
-	-webkit-transform: scale(1);
-	transition: all 0.25s;
-}
-
-#bloc_panier .container #panier_total #bouton_passer_commande:hover{
-
-	-webkit-transform: scale(1.02);
-	background-color: #f2dc9a;
-}
-
-
-
-
-#bloc_panier .container #panier_total #bouton_passer_commande p{
-
-	font-size: 18px;
-	color:white;
-	text-align:center;
-}
-
-
-#bloc_panier .container #panier_total #bouton_passer_commande a{
-	
-	padding: 10px 5px;
-	display:block;
-	width: 100%;
-	height: 100%;
-}
-
 
 #bloc_panier .container #suggestions_produits{
 
@@ -1090,6 +1047,7 @@ input[type=checkbox]:checked ~ #menu{
 }
 
 #bloc_panier a.supprimer {
+	display: block;
 	padding: 5px 10px;
 	background-color: #c0392b;
 	color: #fff;
