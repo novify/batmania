@@ -151,35 +151,50 @@ header .container {
 	padding: 30px 0;
 }
 
-header .logo {
+header .container .logo {
 }
 
-header .logo img {
-	width: 130px;
+header .container .logo img {
+	width: 90%;
 }
 
-header .texte {
-	display: inline;
+header .container .rechercher{
+	padding: 0 20px;
 }
 
-header .client {
+header .container .rechercher input{
+	color:black;
+	width: 100%;
+	margin-top: 30px;
+}
+
+header .header_client {
 	display: inline;
 	color: #FFFFFF;
 	font-size: 18px;
 }
+header .panier, header .compte{
 
+	padding-top: 30px;
+}
 
-header .client img {
+header .compte{
+
+	text-align:right;
+}
+
+header .header_client img {
+	display:inline;
 	width: 43px;
 	padding-right: 5px;
 	padding-left: 10px;
 }
 
-header .client #bulle {
+header .header_client #bulle {
 	text-align: center;
 }
 
-header .client .boutton input {
+header .header_client .boutton input {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -196,28 +211,19 @@ header .client .boutton input {
 	transition: all 0.25s;
 }
 
-header .client .boutton input:hover {
+header .header_client .boutton input:hover {
 	-webkit-transform: scale(1.05);
 	-moz-transform: scale(1.05);
 	-o-transform: scale(1.05);
 }
 
-header .client .compte {
-	display: inline;
-}
 
-header .client .col-lg-4 .formulaire {
-	margin-top: 25px;
-}
+header .header_client .compte #bulle_compte {display: none;} 
+header .header_client .panier #bulle_panier {display: none;}
 
-header .client .compte #bulle_compte {display: none;} 
-header .client .panier #bulle_panier {display: none;}
 
-header .panier {
-	display: inline;
-}
 
-header .client .compte a:hover #bulle_compte { 
+header .header_client .compte a:hover #bulle_compte { 
 	color: #2f3036;
 	font-size: 16px;
 	padding: 20px;
@@ -233,7 +239,7 @@ header .client .compte a:hover #bulle_compte {
 	border-radius: 10px;
 }
 
-header .client .panier a:hover #bulle_panier { 
+header .header_client .panier a:hover #bulle_panier { 
 	color: #2f3036;
 	font-size: 16px;
 	padding: 20px;
@@ -298,6 +304,7 @@ header .client .panier a:hover #bulle_panier {
 	padding: 5px;
 }
 
+header .container .col-xs-12  {text-align:center;}
 /***************************
 	NAV
 **************************/
