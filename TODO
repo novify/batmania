@@ -1,2 +1,10 @@
-- Lier les entités Categories et Souscategories
-- Ajouter un champ $souscategories dans Categories
+- prix du panier (dans le header et sur la page panier)
+- ajouter/supprimer des articles
+- modifier la quantité(avec augmentation du prix)
+- les infos sur les articles (prix, stock, ...)
+- les trois couleurs selon le stock
+- la connexion
+- la création de compte
+- les formulaires (inscription/carte bancaire/connexion)
+- mot de passe oublié
+- les commentaires (ajouter, modifier) et les notes

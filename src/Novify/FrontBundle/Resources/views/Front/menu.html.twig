@@ -1,0 +1,8 @@
+						{% for categorie in categories %}
+						<li>
+							<a href="{{ path('novify_front_view_categorie', {'categorie': categorie.catNom }) }}">{{ categorie.catNom|capitalize }}</a>
+							<ul class="survol">
+{{ render(controller('NovifyFrontBundle:Front:showMenuSousCategories', { 'categorie': categorie.catNom })) }}
+							</ul>
+						<li>
+						{% endfor %}
