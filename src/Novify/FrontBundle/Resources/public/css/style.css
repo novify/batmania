@@ -980,7 +980,7 @@ input[type=checkbox]:checked ~ #menu{
 		position: relative;
 	  	padding: 30px;
 	  	width: auto;
-	  	max-width: 500px;
+	  	max-width: 550px;
 	  	margin: 20px auto;
 		height: auto;
 		color: #2f3036;
@@ -989,6 +989,9 @@ input[type=checkbox]:checked ~ #menu{
 		border-radius: 3px;
 		border: 1px solid;
 	}
+
+	#test-popup .etape1 {display: none;}
+	#test-popup .etape2 {display: none;}
 
 	#test-popup a {
 		font-size: 14px;
@@ -1023,8 +1026,7 @@ input[type=checkbox]:checked ~ #menu{
 
 	#test-popup .popup_footer {
 		padding-top: 10px;
-		border-top: #dedede 1px solid; 
-		text-align: right;
+		border-top: #dedede 1px solid;
 	}
 
 

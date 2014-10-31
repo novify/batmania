@@ -99,12 +99,12 @@
 
 							<!-- Popup -->
 							<div id="test-popup" class="white-popup mfp-hide">
-							  	<div class="popup_header">
-									<h1><span class="actif">CONNEXION</span> >> PAIEMENT >> COMMANDEZ!</h1>
-								</div>
+								<div class="etape1">
+								  	<div class="popup_header">
+										<h1><span class="actif">CONNEXION</span> >> PAIEMENT >> COMMANDEZ!</h1>
+									</div>
 
-								<div class="popup_body">
-									<div class="etape1">
+									<div class="popup_body">
 										<form method="post" acti on="#">
 											<strong>J'ai déjà un compte</strong> <input type="radio" name="teakts" value="oui" id="oui" onClick="afficher();" /> <br />
 											<strong>Je n'ai pas encore de compte</strong> <input type="radio" name="teakts" value="non" onClick="afficher2();" id="non"/> <br/>
@@ -124,10 +124,88 @@
 											</p>
 										</form>
 									</div>
+									<div class="popup_footer">
+										<a href="#" style="float:right;">Etape suivante >></a>
+									</div>
 								</div>
-								<div class="popup_footer">
-									<a href="#">Etape suivante >></a>
+
+								<div class="etape2">
+								  	<div class="popup_header">
+										<h1>CONNEXION >> <span class="actif">PAIEMENT</span> >> COMMANDEZ!</h1>
+									</div>
+
+									<div class="popup_body">
+										<form method="post" acti on="#">
+											<strong>Veuillez renseignez vos coordonnées bancaires</strong>
+											<p> Bientôt un formulaire ici .. </p>
+										</form>
+									</div>
+									<div class="popup_footer">
+										<a href="#" style="float:left;"><< Etape Précédente</a>
+										<a href="#" style="float:right">Etape suivante >></a>
+									</div>
 								</div>
+
+								<div class="etape3">
+								  	<div class="popup_header">
+										<h1>CONNEXION >> PAIEMENT >> <span class="actif"> COMMANDEZ! </span></h1>
+									</div>
+
+									<div class="popup_body">
+										<h3>Vos articles au panier</h3>
+						
+										<!-- On organise les articles en tableau -->
+										<table>
+											<thead> <!-- En-tête du tableau -->
+											    <tr>
+												    <th colspan="2">Produit</th>
+												    <th>Prix</th>
+												    <th colspan="2">Quantité</th>
+											    </tr>
+											</thead>
+
+											<tbody>
+												<tr>
+											    	<!-- Premier article -->
+											    	<!-- Image du produit -->
+											    	<td style="width:10%"><img style="width:50px;margin-right:2px;" src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></td>
+													
+													<!-- Nom du produit -->
+												    <td style="width:80%"><a href="">Batman tome 2 - La nuit des hiboux</a></td>
+													
+													<!-- Prix du produit -->
+												    <td style="width:10%; color:#4f9649;">19.00€</td>
+													
+													<!-- Quantité choisie -->
+												    <td style="width:10%"><p style="text-align:center;">1</p></td>
+											    </tr>
+
+
+
+											    <tr>
+											    	<!-- deuxième article -->
+											    	<!-- Image du produit -->
+											    	<td style="width:10%;"><img style="width:50px;margin-right:2px;" src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt="image de l'article"></td>
+													
+													<!-- Nom du produit -->
+												    <td style="width:50%"><a href="">Batman tome 3 - La nuit de Pimolo</a></td><!-- Lien vers l'article -->
+													
+													<!-- Prix du produit -->
+												    <td style="width:20%; color:#4f9649;">14.00€</td>
+													
+													<!-- Quantité choisie -->
+												    <td style="width:10%"><p style="text-align:center;">1</p></td>
+											    </tr>
+
+											</tbody>
+										</table>
+									</div>
+									
+									<div class="popup_footer">
+										<a href="#" style="float:left;"><< Etape Précédente</a>
+									</div>
+								</div>
+
 							</div>
 							<!-- Fin popup -->
 								
