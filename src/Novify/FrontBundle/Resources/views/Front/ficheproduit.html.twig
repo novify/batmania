@@ -25,59 +25,90 @@
 					</div>
 
 					<div class="col-sm-6">
-						<h2> <!-- Titre du produit-->
-							{{article.artNom}}
-						</h2>
+						<div class="row">
+							<h2> <!-- Titre du produit-->
+								{{article.artNom}}
+							</h2>
 
-						<p class="description_ficheproduit"><!-- Description du produit-->
-							{{article.artDescript}}
-						</p>
+							<p class="description_ficheproduit"><!-- Description du produit-->
+								{{article.artDescript}}
+							</p>
 
-						<p> <!-- Ancre vers les détails du produit plus bas dans la page -->
-							<a href="#details_produit">Voir les détails du produit</a>
-						</p>
+							<p> <!-- Ancre vers les détails du produit plus bas dans la page -->
+								<a href="#details_produit">Voir les détails du produit</a>
+							</p>
 
-						<p class="dispo_ficheproduit"> <!-- Prix du produit-->
-							Disponibilité : <div class="variable_dispo" {% if article.artStock <= '10' %}style="color: red;"{% endif %}> {{article.artStock}}</div>
-						</p>
+							<p class="dispo_ficheproduit"> <!-- Stock du produit-->
+								Disponibilité : <div class="variable_dispo" {% if article.artStock <= '10' %} style="color: red;" {% endif %}> {{article.artStock}}</div>
+							</p>
 
-						<p class="prix_ficheproduit"> <!-- Prix du produit-->
-							{{article.artPrix}} €
-						</p>
+							<p class="prix_ficheproduit"> <!-- Prix du produit-->
+								{{article.artPrix}} €
+							</p>
+							
+							<div id="ajout_panier">
+								<div class="lien_popup"><a href="#test-popup" class="open-popup-link">Ajouter au panier</a></div> <!--Ce lien ajoute en SESSION l'article au panier -->
+							</div>
 
-						<div id="ajout_panier">
-							<a href="#">Ajouter au panier</a> <!--Ce lien ajoute en SESSION l'article au panier -->
-						</div>
+								<!-- Popup -->
+								<div id="test-popup" class="white-popup mfp-hide">
+									<div id="produit_popup">
+										<div class="popup_header">
+											<h3>Ajout d'un nouvel article au panier</h3>
+										</div>
 
-						<div id="retrait_magasin">
-							<a href="">Retrait en magasin</a>
-						</div>
+										<div class="popup_body">
+											<img style="width:120px;" src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt="">
+											<h4> <!-- Titre du produit-->
+												{{article.artNom}}
+											</h4>
+											<p class="prix_produit_popup"> <!-- Prix du produit-->
+												{{article.artPrix}}€
+											</p>
+											<p class="quantite_produit_popup"> <!-- Quantité choisi par l'internaute -->
+												Quantité : 1
+											</p>
+											<p class="confirmation_produit_popup">L'article à bien été ajouté au panier !</p>
+										</div>
 
-						<p><a href="#commentaires_article">Voir les commentaires sur ce produit</a></p>
+										<div class="popup_footer">
+											<a href="#">Voir mon panier</a>
+											<a href="#" class="boutique">Retournez à la boutique</a>
+										</div>
+									</div>
+								</div>
+								<!-- Fin popup -->
 
+								<script type="text/javascript">
+									$('.open-popup-link').magnificPopup({
+									  type:'inline',
+									  midClick: true 
+									});
+								</script>
 
-					</div>
+							<div id="retrait_magasin">
+								<a href="">Retrait en magasin</a>
+							</div>
 
-				</div>
+							<p><a href="#commentaires_article">Voir les commentaires sur ce produit</a></p>
 
+						</div> <!-- Fin description -->
 
-				<div class="row" id="details_produit"> <!-- Description plus précise de l'article-->
+						<div class="row" id="details_produit"> <!-- Description plus précise de l'article-->
 
-					<div class="col-sm-12">
+							<h3>Détails sur le produit</h3>
 
-						<h3>Détails sur le produit</h3>
+							<p><b>Public: </b> {{article.artPublic}}</p>
 
-						<p><b>Public: </b> {{article.artPublic}}</p>
+							<p><b>Pagination: </b> 208 pages</p>
 
-						<p><b>Pagination: </b> 208 pages</p>
+							<p><b>ISBN: </b> 9782365772068</p>
 
-						<p><b>ISBN: </b> 9782365772068</p>
+							<p><b>Public: </b> À partir de 12 ans</p>
 
-						<p><b>Public: </b> À partir de 12 ans</p>
-
-					</div>
-
-				</div> <!-- Fin description -->
+						</div> <!-- Fin description -->
+					</div> <!-- Fin col-sm-6 -->
+				</div> <!-- Fin row principal -->
 
 				<div class="row" id="commentaires_article"> <!-- Comments -->
 
