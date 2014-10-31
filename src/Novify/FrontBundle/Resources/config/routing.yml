@@ -23,7 +23,7 @@ novify_front_view_souscategorie:
     path:     /{categorie}/{sousCategorie}
     defaults: { _controller: NovifyFrontBundle:Front:viewSousCat }
 
-novify_front_view_onee:
+novify_front_view_one:
     path:     /{categorie}/{sousCategorie}/{id}
     defaults: { _controller: NovifyFrontBundle:Front:viewone }
     # requirements:

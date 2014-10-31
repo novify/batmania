@@ -38,51 +38,10 @@
 					<div class="col-md-12">
 
 						<div class="row">
-{% for article in articles %}
-							<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- Premier article de la ligne-->
-
-								<div class="article_image"> <!-- Image de l'article-->
-									<a href="#"><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></a>
-								</div>
-
-								<h5><a href="#">{{article.artNom}}</a></h5> <!-- Prix et nom de l'article -->
-								<p><a href="">{{article.artPrix}} €</a></p>
-							</div> <!-- Fin du premier article-->
+{% for souscat in souscats %}
+							<h2>{{ souscat.souscatNom }}</h2>
+{{ render(controller('NovifyFrontBundle:Front:showArticles', { 'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom })) }}
 {% endfor %}
-
-
-							<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
-
-								<div class="article_image"> <!-- Image article -->
-									<a href="#"><img src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt=""></a>
-								</div>
-
-								<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
-								<p><a href="">X €</a></p>
-							</div> <!-- Fin de l'article -->
-
-
-							<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
-
-								<div class="article_image"> <!-- Image article -->
-									<a href="#"><img src="{{ asset('bundles/novifyfront/images/article3.jpg')}}" alt=""></a>
-								</div>
-
-								<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
-								<p><a href="">X €</a></p>
-							</div> <!-- Fin de l'article -->
-
-
-							<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
-
-								<div class="article_image">
-									<img src="{{ asset('bundles/novifyfront/images/article4.jpg')}}" alt="">
-								</div>
-
-								<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
-								<p><a href="">X €</a></p>
-							</div> <!-- Fin de l'article -->
-
 
 						</div>
 
