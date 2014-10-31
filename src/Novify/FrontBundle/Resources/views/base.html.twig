@@ -29,6 +29,20 @@
 		<!-- Google Font -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
+		<!-- Js -->
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+		<script src="{{ asset('bundles/novifyfront/js/sticky.js')}}"></script>
+
+		<script>
+		  $(document).ready(function(){
+		    $("#menu").sticky({topSpacing:0});
+		  });
+		</script> 
+
+
+		<script src="{{ asset('bundles/novifyfront/js/jquery.magnific-popup.js')}}"></script> 
+		
 	</head>
 {% block body %}
 
@@ -230,21 +244,9 @@
 {% endblock %}
 	
 
-	<!-- Js -->
-		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-
-		<script src="{{ asset('bundles/novifyfront/js/sticky.js')}}"></script>
-
-		<script>
-		  $(document).ready(function(){
-		    $("#menu").sticky({topSpacing:0});
-		  });
-		</script> 
+	
 
 
-		<script src="{{ asset('bundles/novifyfront/js/jquery.magnific-popup.js')}}"></script> 
-
-		
 	<!-- Caroussel -->
     <script>
     $(function() {
