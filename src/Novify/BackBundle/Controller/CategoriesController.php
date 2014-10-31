@@ -17,7 +17,10 @@ class CategoriesController extends Controller
 
     public function indexAction()
     {
-        return $this->render('NovifyBackBundle:Categories:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository('NovifyModelBundle:Categories')->findAll();
+
+        return $this->render('NovifyBackBundle:Categories:index.html.twig', array('categories' => $categories));
     }
 
     public function addAction(Request $request)

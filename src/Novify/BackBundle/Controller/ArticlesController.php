@@ -17,7 +17,10 @@ class ArticlesController extends Controller
 
     public function indexAction()
     {
-        return $this->render('NovifyBackBundle:Articles:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $articles = $em->getRepository('NovifyModelBundle:Articles')->findAll();
+
+        return $this->render('NovifyBackBundle:Articles:index.html.twig', array('articles' => $articles));
     }
 
     public function addAction(Request $request)
@@ -62,6 +65,6 @@ class ArticlesController extends Controller
         $em->remove($article);
         $em->flush();
 
-        return $this->render('NovifyBackBundle:Articles:remove.html.twig');
+        return $this->redirect($this->generateUrl('novify_back_article_index'));
     }
 }
