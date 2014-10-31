@@ -164,15 +164,32 @@ article table thead{
 article table thead th{
 
 	font-size:17px;
-	font-weight: 300;
-	text-transform: uppercase;	
+	font-weight: 400;
 	width: 10%;
+	text-transform: uppercase;	
 	padding-bottom:30px;
 }
 
 article table tbody tr{
+	font-weight: 300;
 }
 article table tbody img{
 	width: 50%;
 }
+
+
+/*Pour la page de modif des articles*/
+
+
+article .article table thead th{
+	width: 10%;
+
+}
+
+
+article .categories table thead th{
+	width: 20%;
+
+}
+
 

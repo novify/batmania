@@ -5,12 +5,11 @@
 
 
     <article>
-        <div class="container">
-            <h1>Articles</h1> <!-- Titre de la section -->
-
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante est, facilisis nec risus vitae, tincidunt sollicitudin metus. Vivamus eleifend diam ac augue mattis, vel porta dolor consectetur. Aliquam feugiat arcu non risus venenatis auctor. Pellentesque vulputate, nulla in auctor lacinia, tellus tortor maximus justo, in tincidunt dui ante eu ante. Morbi id ex varius, accumsan felis at, commodo ante. Nam fermentum est ex, vitae porta justo ullamcorper eu. Cras molestie aliquam lorem ac vehicula. Nullam ut mi vehicula, sagittis ex sit amet, aliquam enim. Praesent neque ipsum, tincidunt eget placerat non, facilisis et ipsum. Nulla et libero risus. Aliquam erat volutpat. Nam facilisis vestibulum interdum. Nullam eu nisl iaculis, suscipit nibh a, aliquam nulla. Sed feugiat scelerisque risus, quis pretium nulla laoreet sit amet. In ac dolor nisl.
-
-            Aenean velit massa, vehicula id diam eu, egestas pulvinar purus. Donec condimentum consequat dignissim. Mauris vel diam iaculis, mollis quam quis, bibendum ligula. Proin vitae dictum dolor. Aenean ullamcorper porttitor tempor. Maecenas ac orci eu velit viverra elementum aliquet a eros. Mauris finibus turpis in nisl elementum, vel vestibulum mauris accumsan. Aenean vitae mollis lacus. Donec non tincidunt nibh, a volutpat ligula. </p>
+        <div class="container catagories">
+            <h1>Catégories</h1> <!-- Titre de la section -->
+            
+            <!-- Ajouter une catégorie -->
+            <p class="ajouter"><a href="{{ path('novify_back_categorie_add') }}"><i class="glyphicon-plus"></i> Ajouter</a></p>
 
 
             <table>
@@ -18,11 +17,8 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Image</th>
                         <th>Nom</th>
-                        <th>Prix</th>
-                        <th>Quantité</th>
-                        <th>Catégorie</th>
+                        <th>Bannière</th>
                         <th>Modifier</th>
                         <th>Supprimer</th>
                     </tr>
@@ -32,7 +28,6 @@
 {% for categorie in categories %}
                     <tr>
                         <td>{{ categorie.id }}</td>
-                        <td><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></td>
                         <td>{{ categorie.catNom }}</td>
                         <td>{{ categorie.catBanniere }}</td>
                         <td><a href="{{ path('novify_back_categorie_edit', {id: categorie.id}) }}">Modifier</a></td>
