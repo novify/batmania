@@ -60,6 +60,11 @@ class SousCategoriesController extends Controller
 
     public function removeAction($id)
     {
-        return $this->render('NovifyBackBundle:SousCategories:remove.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $souscategorie = $em->getRepository('NovifyModelBundle:Souscategories')->find($id);
+        $em->remove($souscategorie);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('novify_back_souscategorie_index'));
     }
 }

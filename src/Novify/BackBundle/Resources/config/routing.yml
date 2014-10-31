@@ -61,3 +61,23 @@ novify_back_souscategorie_edit:
 novify_back_souscategorie_remove:
     path:     /sous-categorie/remove/{id}
     defaults: { _controller: NovifyBackBundle:SousCategories:remove }
+
+novify_back_utilisateurs_hello:
+    path:     /utilisateurs/hello/{name}
+    defaults: { _controller: NovifyBackBundle:Utilisateurs:hello }
+
+novify_back_utilisateurs_index:
+    path:     /utilisateurs
+    defaults: { _controller: NovifyBackBundle:Utilisateurs:index }
+
+novify_back_utilisateurs_add:
+    path:     /utilisateurs/add
+    defaults: { _controller: NovifyBackBundle:Utilisateurs:add }
+
+novify_back_utilisateurs_edit:
+    path:     /utilisateurs/edit/{id}
+    defaults: { _controller: NovifyBackBundle:Utilisateurs:edit }
+
+novify_back_utilisateurs_remove:
+    path:     /utilisateurs/remove/{id}
+    defaults: { _controller: NovifyBackBundle:Utilisateurs:remove }

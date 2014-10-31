@@ -1,0 +1,55 @@
+{% extends 'NovifyBackBundle::base.html.twig' %}
+{% block main %}
+
+
+
+
+    <article>
+        <div class="container utilisateurs">
+            <h1>Clients</h1> <!-- Titre de la section -->
+            
+            <!-- Ajouter une catégorie -->
+            <p class="ajouter"><a href="{{ path('novify_back_utilisateurs_add') }}"><i class="glyphicon-plus"></i> Ajouter</a></p>
+
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Civilité</th>
+                        <th>Prenom</th>
+                        <th>Nom</th>
+                        <th>Mail</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+{% for utilisateurs in utilisateurs %}
+                    <tr>
+                        <td>{{ utilisateurs.id }}</td>
+                        <td>{{ utilisateurs.userCivilite }}</td>
+                        <td>{{ utilisateurs.userPrenom }}</td>
+                        <td>{{ utilisateurs.userNom }}</td>
+                        <td>{{ utilisateurs.userMail }}</td>
+
+                        <td><a href="{{ path('novify_back_utilisateurs_edit', {id: utilisateurs.id}) }}">Modifier</a></td>
+                        <td><a href="{{ path('novify_back_utilisateurs_remove', {id: utilisateurs.id}) }}">Supprimer</a></td>
+                    </tr>
+
+{% endfor %}
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+    </article>
+
+
+
+
+{% endblock %}
