@@ -22,7 +22,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Js -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+		<script src="{{ asset('bundles/novifyfront/js/sticky.js')}}"></script>
+
+		<script>
+		  $(document).ready(function(){
+		    $("#menu").sticky({topSpacing:0});
+		  });
+		</script> 
+
+
 		<script src="{{ asset('bundles/novifyfront/js/jquery.magnific-popup.js')}}"></script> 
 
 		<!-- Favicon -->
@@ -147,44 +157,44 @@
 					<label for="show-menu" class="show-menu">Menu</label>
 					<input type="checkbox" id="show-menu" role="button">
 						<ul id="menu">
-						<li class="actif"><a href="#">Accueil</a></li>
-						<li>
-							<a href="#">Livres</a>
-							<ul class="survol">
-								<li><a href="#">Comics</a></li>
-								<li><a href="#">BD</a></li>
-								<li><a href="#">Manga</a></li>
-								<li><a href="#">Hors Série</a></li>
-								<li><a href="#">Roman</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#">Vidéos</a>
-							<ul class="survol">
-								<li><a href="#">Films</a></li>
-								<li><a href="#">Série TV</a></li>
-								<li><a href="#">Déssins animés</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#">Jeux-Vidéos</a>
-							<ul class="survol">
-								<li><a href="#">PC</a></li>
-								<li><a href="#">Playstation</a></li>
-								<li><a href="#">Xbox</a></li>
-								<li><a href="#">Nintendo</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#">Goodies</a>
-							<ul class="survol">
-								<li><a href="#">Accessoires</a></li>
-								<li><a href="#">Figurines</a></li>
-								<li><a href="#">Cosplays</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Contact</a></li>
-					</ul>
+							<li class="actif"><a href="#">Accueil</a></li>
+							<li>
+								<a href="#">Livres</a>
+								<ul class="survol">
+									<li><a href="#">Comics</a></li>
+									<li><a href="#">BD</a></li>
+									<li><a href="#">Manga</a></li>
+									<li><a href="#">Hors Série</a></li>
+									<li><a href="#">Roman</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Vidéos</a>
+								<ul class="survol">
+									<li><a href="#">Films</a></li>
+									<li><a href="#">Série TV</a></li>
+									<li><a href="#">Déssins animés</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Jeux-Vidéos</a>
+								<ul class="survol">
+									<li><a href="#">PC</a></li>
+									<li><a href="#">Playstation</a></li>
+									<li><a href="#">Xbox</a></li>
+									<li><a href="#">Nintendo</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Goodies</a>
+								<ul class="survol">
+									<li><a href="#">Accessoires</a></li>
+									<li><a href="#">Figurines</a></li>
+									<li><a href="#">Cosplays</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Contact</a></li>
+						</ul>
 
 					<div class="compte_fix">
 						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman"></a>
@@ -279,7 +289,8 @@
 
 
 	
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
     <script>
     $(function() {
         var img = $('#box .slide');

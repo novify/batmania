@@ -148,7 +148,7 @@ header #barre_rs .instagram:hover {
 }
 
 header .container {
-	padding: 30px 0;
+	padding: 10px 0;
 }
 
 header .container .logo {
@@ -309,24 +309,31 @@ header .container .col-xs-12  {text-align:center;}
 	NAV
 **************************/
 nav {
-	padding-left: 9%;
 	z-index: 9998;
-	background-color: rgba(255,255,255,0.95);
 	height: 3.50em;
-	background-image: url('../images/overlay.png');
 }
 
+nav #menu{	padding-left: 9%;
+	background-color: rgba(243,245,255,0.95);
+	background-image: url('../images/overlay.png');
+	width: 100%;
+}	
 nav a:hover {
 	color: #FFF;
 	z-index: 9998;
 }
 
-.fix_menu {
+
+
+
+nav .sticky li a{color:white;}
+
+/*.fix_menu {
 	z-index: 9998;
 	position: fixed;
 	top: 0;
 	width: 100%;
-}
+}*/
 
 .compte_fix {
 	display: none;
