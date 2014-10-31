@@ -49,7 +49,7 @@ class CategoriesController extends Controller
         $form = $this->createForm(new CategoriesType(), $categorie);
 
         if ($form->handleRequest($request)->isValid()) {
-            $em->persist($souscategorie);
+            $em->persist($categorie);
             $em->flush();
 
             return $this->redirect($this->generateUrl('novify_back_categorie_index'));
@@ -60,6 +60,11 @@ class CategoriesController extends Controller
 
     public function removeAction($id)
     {
-        return $this->render('NovifyBackBundle:Categories:remove.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $categorie = $em->getRepository('NovifyModelBundle:Categories')->find($id);
+        $em->remove($categorie);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('novify_back_categorie_index'));
     }
 }
