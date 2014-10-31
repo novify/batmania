@@ -10,6 +10,10 @@ novify_front_panier:
     path:     /panier
     defaults: { _controller: NovifyFrontBundle:Front:panier }
 
+novify_front_compte:
+    path:     /compte
+    defaults: { _controller: NovifyFrontBundle:Front:compte }
+
 # temporaire
 novify_front_view_fiche:
     path:     /fiche

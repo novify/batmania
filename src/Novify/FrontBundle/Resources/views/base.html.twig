@@ -21,6 +21,14 @@
 		<!-- Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+		<!-- Favicon -->
+		<link rel="icon" href="#" sizes="32x32">
+		<link rel="icon" href="#" sizes="64x64">
+
+		<!-- Google Font -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
 		<!-- Js -->
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
@@ -34,29 +42,7 @@
 
 
 		<script src="{{ asset('bundles/novifyfront/js/jquery.magnific-popup.js')}}"></script> 
-
-
-		<!-- Favicon -->
-		<link rel="icon" href="#" sizes="32x32">
-		<link rel="icon" href="#" sizes="64x64">
-
-		<!-- Google Font -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-
-
-		<!-- Script js --><!--
-		<script type='text/javascript'>
-			$(function() {
-				$(window).scroll(function () { //Au scroll dans la fenetre on déclenche la fonction
-				if ($(this).scrollTop() > 135) { //si on a défilé de plus de 135px du haut vers le bas
-					$('nav').addClass("fix_menu"); //on ajoute la classe fix_menu à nav
-					} else {
-						$('nav').removeClass("fix_menu"); //sinon on retire la classe fix_menu à nav
-					}
-				});
-			});
-		</script>
- -->
+		
 	</head>
 {% block body %}
 
@@ -256,8 +242,12 @@
 	</footer>
 	<!-- Fin Footer -->
 {% endblock %}
+	
+
+	
 
 
+	<!-- Caroussel -->
     <script>
     $(function() {
         var img = $('#box .slide');
