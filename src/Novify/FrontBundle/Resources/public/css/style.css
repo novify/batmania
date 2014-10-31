@@ -77,7 +77,7 @@ header #barre_rs .rs img {
 
 header #barre_rs .facebook {
 
-	background-image: url('../images/pictogrammes/fb_gris.png');
+	background-image: url('../images/pictogrammes/fb.png');
 	background-size: 30px;
 	float:right;
 	margin-right: 5px;
@@ -90,7 +90,7 @@ header #barre_rs .facebook {
 
 header #barre_rs .twitter {
 
-	background-image: url('../images/pictogrammes/tw_gris.png');
+	background-image: url('../images/pictogrammes/tw.png');
 	background-size: 30px;
 	float:right;
 	margin-right: 5px;
@@ -103,7 +103,7 @@ header #barre_rs .twitter {
 
 header #barre_rs .pinterest {
 
-	background-image: url('../images/pictogrammes/p_gris.png');
+	background-image: url('../images/pictogrammes/p.png');
 	background-size: 30px;
 	float:right;
 	margin-right: 5px;
@@ -116,7 +116,7 @@ header #barre_rs .pinterest {
 
 header #barre_rs .instagram {
 
-	background-image: url('../images/pictogrammes/in_gris.png');
+	background-image: url('../images/pictogrammes/in.png');
 	background-size: 30px;
 	float:right;
 	margin-right: 5px;
@@ -128,22 +128,22 @@ header #barre_rs .instagram {
 }
 
 header #barre_rs .facebook:hover {
-	background-image: url('../images/pictogrammes/fb.png');
+	background-image: url('../images/pictogrammes/fb_gris.png');
 	background-size: 30px;
 }
 
 header #barre_rs .twitter:hover {
-	background-image: url('../images/pictogrammes/tw.png');
+	background-image: url('../images/pictogrammes/tw_gris.png');
 	background-size: 30px;
 }
 
 header #barre_rs .pinterest:hover {
-	background-image: url('../images/pictogrammes/p.png');
+	background-image: url('../images/pictogrammes/p_gris.png');
 	background-size: 30px;
 }
 
 header #barre_rs .instagram:hover {
-	background-image: url('../images/pictogrammes/in.png');
+	background-image: url('../images/pictogrammes/in_gris.png');
 	background-size: 30px;
 }
 
@@ -971,7 +971,7 @@ input[type=checkbox]:checked ~ #menu{
 	/* -- style du pop-up -- */
 	.white-popup {
 		position: relative;
-	  	padding: 20px;
+	  	padding: 30px;
 	  	width: auto;
 	  	max-width: 500px;
 	  	margin: 20px auto;
@@ -994,21 +994,33 @@ input[type=checkbox]:checked ~ #menu{
 		border-bottom: #dedede 1px solid; 
 	}
 
-	#test-popup .popup_header h1 .actif {
-		text-decoration: underline;
-		display: inline;
+	#test-popup .popup_header h1 {
+		text-transform: uppercase;
+		font-size:18px;
+		margin-bottom:20px;
 	}
 
+
+	#test-popup .popup_header h1 .actif {
+		font-weight:bold;	
+	}
+
+
 	#test-popup .popup_body {
-		padding-bottom: 10px;
-		padding-top: 10px;
+		padding:30px 0;
+	}
+
+	#test-popup .popup_body #champ_cache input{
+		margin: 5px 0;
 	}
 
 	#test-popup .popup_footer {
-		padding-top: 5px;
+		padding-top: 10px;
 		border-top: #dedede 1px solid; 
 		text-align: right;
 	}
+
+
 
 /* ---- */
 
