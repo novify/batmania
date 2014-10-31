@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/bootstrap-theme.css')}}"/>
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/bootstrap.css')}}"/>
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/style.css')}}"/>
-		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/magnific-popup.css')}}"> 
+		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/magnific-popup.css')}}">
 
 		<!-- Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,6 +35,7 @@
 
 		<script src="{{ asset('bundles/novifyfront/js/jquery.magnific-popup.js')}}"></script> 
 
+
 		<!-- Favicon -->
 		<link rel="icon" href="#" sizes="32x32">
 		<link rel="icon" href="#" sizes="64x64">
@@ -42,17 +43,18 @@
 		<!-- Google Font -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
-		<!-- Script js --><!-- 
-		<script type='text/javascript'> 
+
+		<!-- Script js --><!--
+		<script type='text/javascript'>
 			$(function() {
-				$(window).scroll(function () { //Au scroll dans la fenetre on déclenche la fonction 
-				if ($(this).scrollTop() > 135) { //si on a défilé de plus de 135px du haut vers le bas 
+				$(window).scroll(function () { //Au scroll dans la fenetre on déclenche la fonction
+				if ($(this).scrollTop() > 135) { //si on a défilé de plus de 135px du haut vers le bas
 					$('nav').addClass("fix_menu"); //on ajoute la classe fix_menu à nav
-					} else { 
+					} else {
 						$('nav').removeClass("fix_menu"); //sinon on retire la classe fix_menu à nav
-					} 
+					}
 				});
-			}); 
+			});
 		</script>
  -->
 	</head>
@@ -65,7 +67,7 @@
 				<!-- Barre de réseaux sociaux-->
 				<div id="barre_rs">
 					<div class="langue">
-						langue : 
+						langue :
 						<a href="#"><img src="{{ asset('bundles/novifyfront/images/pictogrammes/picto_fr.png')}}" alt="Langue français"></a>
 						<a href="#"><img src="{{ asset('bundles/novifyfront/images/pictogrammes/picto_en.png')}}" alt="Langue anglais"></a>
 					</div>
@@ -85,10 +87,10 @@
 					</div>
 				</div>
 
-				
+
 				<div class="container">
 					<div class="row">
-						
+
 						<div class="col-md-2 col-sm-5 col-xs-4 logo">
 							<a href="#"><img src="{{ asset('bundles/novifyfront/images/logo.png')}}" alt="Logo Batmania"></a>
 						</div>
@@ -96,7 +98,7 @@
 
 						<div class="col-md-4 col-sm-7 col-xs-8 rechercher">
 							<form method="post" action="#">
-								
+
 								<input type="text" name="rechercher" placeholder="Rechercher"/>
 
 								<!-- <img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche"> -->
@@ -104,7 +106,7 @@
 							</form>
 						</div>
 
-						
+
 						<div class="header_client">
 							<div class="col-md-3 col-sm-3 col-xs-12 compte">
 								<a href="#">
@@ -156,52 +158,21 @@
 				<nav>
 					<label for="show-menu" class="show-menu">Menu</label>
 					<input type="checkbox" id="show-menu" role="button">
-						<ul id="menu">
-							<li class="actif"><a href="#">Accueil</a></li>
-							<li>
-								<a href="#">Livres</a>
-								<ul class="survol">
-									<li><a href="#">Comics</a></li>
-									<li><a href="#">BD</a></li>
-									<li><a href="#">Manga</a></li>
-									<li><a href="#">Hors Série</a></li>
-									<li><a href="#">Roman</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#">Vidéos</a>
-								<ul class="survol">
-									<li><a href="#">Films</a></li>
-									<li><a href="#">Série TV</a></li>
-									<li><a href="#">Déssins animés</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#">Jeux-Vidéos</a>
-								<ul class="survol">
-									<li><a href="#">PC</a></li>
-									<li><a href="#">Playstation</a></li>
-									<li><a href="#">Xbox</a></li>
-									<li><a href="#">Nintendo</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#">Goodies</a>
-								<ul class="survol">
-									<li><a href="#">Accessoires</a></li>
-									<li><a href="#">Figurines</a></li>
-									<li><a href="#">Cosplays</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Contact</a></li>
-						</ul>
+					<ul id="menu">
 
-					<div class="compte_fix">
+						<li class="actif"><a href="#">Accueil</a></li>
+{{ render(controller('NovifyFrontBundle:Front:menu')) }}
+						<li><a href="#">Contact</a></li>
+					</ul>
+
+
+
+					<!-- <div class="compte_fix">
 						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman"></a>
 						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier"></a>
 						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche"></a>
-					</div>
-                
+					</div> -->
+
         		</nav>
 				<!-- Fin Nav -->
 
@@ -247,7 +218,7 @@
 							<div class="col-md-3 col-sm-4 col-xs-12">
 								<h6>La communauté</h6>
 								<div class="facebook rs">
-									
+
 								</div>
 								<div class="twitter rs"></div>
 								<div class="pinterest rs" style="clear:both"></div>
@@ -285,10 +256,6 @@
 	</footer>
 	<!-- Fin Footer -->
 {% endblock %}
-
-
-
-	
 
 
     <script>

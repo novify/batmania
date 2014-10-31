@@ -1,0 +1,3 @@
+{% for souscat in souscats %}
+								<li><a href="{{ path('novify_front_view_souscategorie', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom}) }}">{{ souscat.souscatNom|capitalize }}</a></li>
+{% endfor %}
