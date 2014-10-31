@@ -1,3 +1,7 @@
+novify_back_index:
+    path:     /
+    defaults: { _controller: NovifyBackBundle:Back:index }
+
 novify_back_article_hello:
     path:     /article/hello/{name}
     defaults: { _controller: NovifyBackBundle:Articles:hello }

@@ -1155,7 +1155,6 @@ input[type=checkbox]:checked ~ #menu{
 		font-weight: 300;
 		text-transform: uppercase;
 		border-bottom: 1px solid rgb(180,180,180);
-
 }
 
 #bloc_compte .container table thead .commande_numero{

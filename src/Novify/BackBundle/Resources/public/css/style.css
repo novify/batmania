@@ -1,0 +1,140 @@
+*, html{
+	margin:0;
+	padding:0;
+}
+
+
+html, body{
+
+	height:100%;
+	width: 100%;
+	color:black;
+	font-family: 'Open Sans';
+}
+
+.container{
+	width:90%;
+	margin:auto;
+	background-color:white;
+	border-radius:3px;
+	padding: 15px;
+	margin-top: 40px;
+}
+a{
+	color:black;
+	text-decoration: none
+}
+
+p{
+	font-size: 14px;
+	font-weight: 400;
+	color:rgb(70,70,70);
+}
+
+header{
+	background-color:#e2c879;
+	color:white;
+
+}
+
+header p{
+	
+	padding: 10px;
+	margin-left: 30px;
+	font-size:22px;
+	font-weight: 300;
+	color:inherit;
+
+}
+
+
+
+section{
+	width:100%;
+	height:100%;
+	display:table;
+}
+
+aside, article{display:table-cell}
+
+/*Navigation*/
+aside{
+
+	background-color:rgb(50,50,50);
+	width: 15%;
+	height:100%;
+
+}
+
+aside ul{
+	padding: 20px 0;
+
+}
+
+aside ul li{
+
+	display:block;
+}
+
+aside ul li a{
+	
+	color:white;
+	display:block;
+	padding: 10px 0px 10px 20px;
+	background-color:rgb(50,50,50);
+}
+
+aside ul li a:hover{
+	background-color:#e2c879;
+	color:black;
+
+}
+
+
+/*Corps de page*/
+
+article{
+
+	width: 85%;
+	height:2000px;
+	background-color:rgb(235,235,235);
+}
+
+article h1{
+
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 24px;
+	border-bottom:1px solid gray;
+	margin-bottom: 30px;
+}
+
+article table{
+
+	margin: 50px 0;
+	padding: 0 30px;
+	text-align:center;
+	width: 100%;
+	border-bottom: 1px solid rgb(180,180,180);
+}
+
+article table thead{
+	
+}
+
+
+article table thead th{
+
+	font-size:17px;
+	font-weight: 300;
+	text-transform: uppercase;	
+	width: 10%;
+	padding-bottom:30px;
+}
+
+article table tbody tr{
+}
+article table tbody img{
+	width: 50%;
+}
+
