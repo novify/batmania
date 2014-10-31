@@ -90,6 +90,10 @@ aside ul li a:hover{
 
 }
 
+aside ul li a i{
+	margin-bottom:5px;
+	margin-right: 6px;
+}
 
 /*Corps de page*/
 
