@@ -38,7 +38,7 @@
 						</p>
 
 						<p class="dispo_ficheproduit"> <!-- Prix du produit-->
-							Disponibilité : <div class="variable_dispo"> {{article.artStock}}</div>
+							Disponibilité : <div class="variable_dispo" {% if article.artStock <= '10' %}style="color: red;"{% endif %}> {{article.artStock}}</div>
 						</p>
 
 						<p class="prix_ficheproduit"> <!-- Prix du produit-->
@@ -88,7 +88,7 @@
 						<p>Moyenne des commentaires : <b>X/10</b></p> <!-- A calculer via calcul de la bdd -->
 
 						<p style="margin-bottom: 40px">18 commentaires rédigés</p> <!-- Nombre a récupérer selon le nombre d'entrées dans la bdd -->
-						
+
 
 						<!-- Boucle des commentaires -->
 
