@@ -1,0 +1,56 @@
+{% extends 'NovifyFrontBundle::base.html.twig' %}
+{% block main %}
+
+		<!-- Body -->
+
+		<div id="bloc_compte">
+
+			<div class="container">
+				
+				<div class="row">
+
+					<div class="col-sm-8">
+						<h3>Vos articles au panier</h3>
+						
+						<!-- On organise les articles en tableau -->
+
+
+						<table> <!-- Premiere commande -->
+							<thead> <!-- En-tête du tableau -->
+							    <tr>
+								    <th class="commande_numero">Commande n°3943</th>
+								    <th class="commande_date">Du vendredi 31 octobre 2014</th>
+								    <th class="commande_prix">87,43€</th>
+							    </tr>
+							</thead>
+
+							<tbody> <!-- Détail de la commande-->
+							    <tr>
+							    	
+							    	<td colspan="3">1 x Batman tome 8 - La nuit des boobs volants</td>
+							    </tr>
+							    <tr>
+							    	<td colspan="3">2 x le Jocker Returns - le sourire démoniaque</td>
+								
+							    </tr>
+							    
+							</tbody>
+						</table> <!-- Fin de la première commande-->
+
+
+
+
+					</div>
+
+					<!-- Bloc latéral de validation du panier -->
+					<div class="col-sm-4">
+						Ici: informations du compte
+					</div>
+
+				</div>
+
+			</div>
+			
+		</div>
+
+{% endblock %}
