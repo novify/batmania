@@ -1106,6 +1106,107 @@ input[type=checkbox]:checked ~ #menu{
 
 
 
+
+/***************************
+	COMPTE
+**************************/
+
+
+#bloc_compte{
+	width: 100%;
+	background-color: white;
+	z-index:-10 !important;
+}
+
+
+#bloc_compte .container{
+	padding: 50px 10px;
+
+
+}
+
+#bloc_compte .container h3{
+	
+	color: #e2c879;
+	font-size: 26px;
+	font-weight: 400;
+
+
+}
+
+
+#bloc_compte .container table{
+	
+	margin: 60px 0;
+	width: 100%;
+	border-bottom: 1px solid rgb(180,180,180);
+}
+
+
+#bloc_compte .container table thead{
+		
+		font-weight: 300;
+		text-transform: uppercase;
+		border-bottom: 1px solid rgb(180,180,180);
+
+}
+
+#bloc_compte .container table thead .commande_numero{
+		
+		font-weight:400;
+/*		color:;  */
+		font-size:17px;
+
+}
+
+#bloc_compte .container table thead .commande_date{
+		
+		font-weight: 300;
+		color:gray;
+
+}
+
+
+#bloc_compte .container table thead .commande_prix{
+		
+		font-weight: bold;
+		font-size: 16px;
+}
+
+
+#bloc_compte .container table tbody{
+	
+	font-weight: 300;
+	padding-left: 5px;
+	margin-left: 5px;
+	border-left: 1px gray dashed;
+}
+
+#bloc_compte .container table tbody tr{
+
+}
+
+
+#bloc_compte .container table tbody tr td{
+
+		padding: 15px 0;
+		font-weight: 300;
+}
+
+
+
+
+/* -------- */
+
+
+
+
+
+
+
+
+
+
 /***************************
 	FOOTER
 **************************/
