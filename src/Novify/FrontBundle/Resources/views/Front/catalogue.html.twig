@@ -19,13 +19,17 @@
 
 			<div class="container" style="width:100%">
 
+{% for souscat in souscats %}
 				<!-- Ligne de tri et pagination -->
 				<div class="row barre_tri"> <!-- Ligne de la barre de tri-->
-					<div class="col-sm-2 col-xs-6"> <!-- Nombre d'articles sur la page-->
-						17 articles
+					<div class="col-sm-2 col-xs-4">
+						{{ souscat.souscatNom|capitalize }}
+					</div>
+					<div class="col-sm-2 col-xs-4"> <!-- Nombre d'articles sur la page-->
+						{{ souscat.articles|length }} articles
 					</div>
 
-					<div class="col-sm-8 col-xs-6"> <!-- Tri -->
+					<div class="col-sm-6 col-xs-4"> <!-- Tri -->
 						Du - au + cher
 					</div>
 
@@ -41,9 +45,18 @@
 					<div class="col-md-12">
 
 						<div class="row">
-{% for souscat in souscats %}
-							<h2>{{ souscat.souscatNom }}</h2>
-{{ render(controller('NovifyFrontBundle:Front:showArticles', { 'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom })) }}
+{% for article in souscat.articles %}
+							<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
+
+								<div class="article_image"> <!-- Image article -->
+									<a href="{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': article.id}) }}"><img src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt=""></a>
+								</div>
+
+								<h5><a href="{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': article.id}) }}">{{article.artNom}}</a></h5> <!-- Titre et prix de l'article -->
+								<p><a href="">{{article.artPrix}} €</a></p>
+							</div> <!-- Fin de l'article -->
+
+
 {% endfor %}
 
 						</div>
@@ -52,6 +65,7 @@
 				</div>
 
 
+{% endfor %}
 			</div>
 
 
