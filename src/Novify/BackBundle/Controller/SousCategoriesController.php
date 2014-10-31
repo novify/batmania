@@ -17,7 +17,10 @@ class SousCategoriesController extends Controller
 
     public function indexAction()
     {
-        return $this->render('NovifyBackBundle:SousCategories:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $souscategories = $em->getRepository('NovifyModelBundle:Souscategories')->findAll();
+
+        return $this->render('NovifyBackBundle:SousCategories:index.html.twig', array('souscategories' => $souscategories));
     }
 
     public function addAction(Request $request)

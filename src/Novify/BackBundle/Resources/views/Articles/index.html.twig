@@ -1,4 +1,59 @@
-{% extends 'NovifyFrontBundle::base.html.twig' %}
+{% extends 'NovifyBackBundle::base.html.twig' %}
 {% block main %}
+
+
+
+
+	<article>
+		<div class="container">
+			<h1>Articles</h1> <!-- Titre de la section -->
+
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante est, facilisis nec risus vitae, tincidunt sollicitudin metus. Vivamus eleifend diam ac augue mattis, vel porta dolor consectetur. Aliquam feugiat arcu non risus venenatis auctor. Pellentesque vulputate, nulla in auctor lacinia, tellus tortor maximus justo, in tincidunt dui ante eu ante. Morbi id ex varius, accumsan felis at, commodo ante. Nam fermentum est ex, vitae porta justo ullamcorper eu. Cras molestie aliquam lorem ac vehicula. Nullam ut mi vehicula, sagittis ex sit amet, aliquam enim. Praesent neque ipsum, tincidunt eget placerat non, facilisis et ipsum. Nulla et libero risus. Aliquam erat volutpat. Nam facilisis vestibulum interdum. Nullam eu nisl iaculis, suscipit nibh a, aliquam nulla. Sed feugiat scelerisque risus, quis pretium nulla laoreet sit amet. In ac dolor nisl.
+
+			Aenean velit massa, vehicula id diam eu, egestas pulvinar purus. Donec condimentum consequat dignissim. Mauris vel diam iaculis, mollis quam quis, bibendum ligula. Proin vitae dictum dolor. Aenean ullamcorper porttitor tempor. Maecenas ac orci eu velit viverra elementum aliquet a eros. Mauris finibus turpis in nisl elementum, vel vestibulum mauris accumsan. Aenean vitae mollis lacus. Donec non tincidunt nibh, a volutpat ligula. </p>
+
+
+			<table>
+
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Image</th>
+						<th>Nom</th>
+						<th>Prix</th>
+						<th>Quantité</th>
+						<th>Catégorie</th>
+						<th>Sous-catégorie</th>
+						<th>Modifier</th>
+						<th>Supprimer</th>
+					</tr>
+				</thead>
+
+				<tbody>
+{% for article in articles %}
+					<tr>
+						<td>{{ article.id }}</td>
+						<td><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></td>
+						<td>{{ article.artNom }}</td>
+						<td>{{ article.artPrix }} €</td>
+						<td>{{ article.artStock }}</td>
+						<td>{{ article.sousCategorie.souscatNom }}</td>
+						<td>{{ article.sousCategorie.categorie.catNom }}</td>
+						<td><a href="{{ path('novify_back_article_edit', {id: article.id}) }}">Modifier</a></td>
+						<td><a href="{{ path('novify_back_article_remove', {id: article.id}) }}">Supprimer</a></td>
+					</tr>
+
+{% endfor %}
+
+				</tbody>
+
+			</table>
+
+
+		</div>
+	</article>
+
+
+
 
 {% endblock %}

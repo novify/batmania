@@ -2,9 +2,9 @@
 						<li>
 							<a href="{{ path('novify_front_view_categorie', {'categorie': categorie.catNom }) }}">{{ categorie.catNom|capitalize }}</a>
 							<ul class="survol">
-							{% for souscategorie in categorie.sousCategories %}
+{% for souscategorie in categorie.sousCategories %}
 								<li><a href="{{ path('novify_front_view_souscategorie', {'categorie': categorie.catNom, 'sousCategorie': souscategorie.souscatNom}) }}">{{ souscategorie.souscatNom|capitalize }}</a></li>
-							{% endfor %}
+{% endfor %}
 							</ul>
 						<li>
 						{% endfor %}

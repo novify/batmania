@@ -80,7 +80,7 @@ class Souscategories
     /**
      * Set categorie
      *
-     * @param \Novify\ModelBundle\Entity\Categories $categorie
+     * @param  \Novify\ModelBundle\Entity\Categories $categorie
      * @return Souscategories
      */
     public function setCategorie(\Novify\ModelBundle\Entity\Categories $categorie = null)
@@ -93,7 +93,7 @@ class Souscategories
     /**
      * Get categorie
      *
-     * @return \Novify\ModelBundle\Entity\Categories 
+     * @return \Novify\ModelBundle\Entity\Categories
      */
     public function getCategorie()
     {
@@ -103,7 +103,7 @@ class Souscategories
     /**
      * Add articles
      *
-     * @param \Novify\ModelBundle\Entity\Articles $articles
+     * @param  \Novify\ModelBundle\Entity\Articles $articles
      * @return Souscategories
      */
     public function addArticle(\Novify\ModelBundle\Entity\Articles $articles)
@@ -126,7 +126,7 @@ class Souscategories
     /**
      * Get articles
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getArticles()
     {

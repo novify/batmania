@@ -13,6 +13,7 @@
 
         <!-- Feuilles de style -->
         <link rel="stylesheet" href="{{ asset('bundles/novifyback/css/style.css')}}"/>
+        <link rel="stylesheet" href="{{ asset('bundles/novifyback/font/glyphicons.css')}}"/>
 
         <!-- Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,24 +33,25 @@
         <!-- Header -->
 
 
-        <header>            
-            <p>BATMANIA</p>  
+        <header>
+            <p><a href="">BATMANIA </a></p>
         </header>
         <!-- Fin Header -->
 
 
 
-        <section>  
-                
+        <section>
+
             <!-- Barre de navigation du backoffice -->
             <aside>
                    <ul>
-                        <li><a href="">Tableau de bord</a></li>
-                        <li><a href="">Catégories</a></li>
-                        <li><a href="">Sous catégories</a></li>
-                        <li><a href="">Produits</a></li>
-                        <li><a href="">Clients</a></li>
-                        <li><a href="">Commandes</a></li>
+
+                        <li><a href="{{ path('novify_back_index') }}"><i class="glyphicon-home"></i> Tableau de bord</a></li>
+                        <li><a href="{{ path('novify_back_categorie_index') }}"><i class="glyphicon-tag"></i> Catégories</a></li>
+                        <li><a href="{{ path('novify_back_souscategorie_index') }}"><i class="glyphicon-tags"></i> Sous catégories</a></li>
+                        <li><a href="{{ path('novify_back_article_index') }}"><i class="glyphicon-t-shirt"></i> Articles</a></li>
+                        <li><a href="{# {{ path('novify_back__add') }} #}"><i class="glyphicon-group"></i> Clients</a></li>
+                        <li><a href="{# {{ path('novify_back__add') }} #}"><i class="glyphicon-eye_open"></i> Commandes</a></li>
                    </ul>
             </aside>
 
@@ -66,7 +68,7 @@
     <!-- Footer -->
     <footer>
 
-            
+
     </footer>
     <!-- Fin Footer -->
 {% endblock %}
