@@ -35,7 +35,7 @@ class Souscategories
     protected $categorie;
 
     /**
-     * @ORM\OneToMany(targetEntity="Novify\ModelBundle\Entity\Articles", mappedBy="sousCategorie")
+     * @ORM\OneToMany(targetEntity="Novify\ModelBundle\Entity\Articles", mappedBy="sousCategorie", cascade={"remove"})
      */
     protected $articles;
 

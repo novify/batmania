@@ -59,7 +59,7 @@ class Utilisateurs
     /**
      * @var string
      *
-     * @ORM\Column(name="user_fact_civilite", type="string", length=1)
+     * @ORM\Column(name="user_fact_civilite", type="string", length=3, nullable=true)
      */
     private $userFactCivilite;
 
@@ -182,11 +182,10 @@ class Utilisateurs
      */
     private $userLivTel;
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -196,7 +195,7 @@ class Utilisateurs
     /**
      * Set userMdp
      *
-     * @param string $userMdp
+     * @param  string       $userMdp
      * @return Utilisateurs
      */
     public function setUserMdp($userMdp)
@@ -209,7 +208,7 @@ class Utilisateurs
     /**
      * Get userMdp
      *
-     * @return string 
+     * @return string
      */
     public function getUserMdp()
     {
@@ -219,7 +218,7 @@ class Utilisateurs
     /**
      * Set userMail
      *
-     * @param string $userMail
+     * @param  string       $userMail
      * @return Utilisateurs
      */
     public function setUserMail($userMail)
@@ -232,7 +231,7 @@ class Utilisateurs
     /**
      * Get userMail
      *
-     * @return string 
+     * @return string
      */
     public function getUserMail()
     {
@@ -242,7 +241,7 @@ class Utilisateurs
     /**
      * Set userNom
      *
-     * @param string $userNom
+     * @param  string       $userNom
      * @return Utilisateurs
      */
     public function setUserNom($userNom)
@@ -255,7 +254,7 @@ class Utilisateurs
     /**
      * Get userNom
      *
-     * @return string 
+     * @return string
      */
     public function getUserNom()
     {
@@ -265,7 +264,7 @@ class Utilisateurs
     /**
      * Set userPrenom
      *
-     * @param string $userPrenom
+     * @param  string       $userPrenom
      * @return Utilisateurs
      */
     public function setUserPrenom($userPrenom)
@@ -278,7 +277,7 @@ class Utilisateurs
     /**
      * Get userPrenom
      *
-     * @return string 
+     * @return string
      */
     public function getUserPrenom()
     {
@@ -288,7 +287,7 @@ class Utilisateurs
     /**
      * Set userCivilite
      *
-     * @param string $userCivilite
+     * @param  string       $userCivilite
      * @return Utilisateurs
      */
     public function setUserCivilite($userCivilite)
@@ -301,7 +300,7 @@ class Utilisateurs
     /**
      * Get userCivilite
      *
-     * @return string 
+     * @return string
      */
     public function getUserCivilite()
     {
@@ -311,7 +310,7 @@ class Utilisateurs
     /**
      * Set userFactCivilite
      *
-     * @param string $userFactCivilite
+     * @param  string       $userFactCivilite
      * @return Utilisateurs
      */
     public function setUserFactCivilite($userFactCivilite)
@@ -324,7 +323,7 @@ class Utilisateurs
     /**
      * Get userFactCivilite
      *
-     * @return string 
+     * @return string
      */
     public function getUserFactCivilite()
     {
@@ -334,7 +333,7 @@ class Utilisateurs
     /**
      * Set userFactNom
      *
-     * @param string $userFactNom
+     * @param  string       $userFactNom
      * @return Utilisateurs
      */
     public function setUserFactNom($userFactNom)
@@ -347,7 +346,7 @@ class Utilisateurs
     /**
      * Get userFactNom
      *
-     * @return string 
+     * @return string
      */
     public function getUserFactNom()
     {
@@ -357,7 +356,7 @@ class Utilisateurs
     /**
      * Set userFactPrenom
      *
-     * @param string $userFactPrenom
+     * @param  string       $userFactPrenom
      * @return Utilisateurs
      */
     public function setUserFactPrenom($userFactPrenom)
@@ -370,7 +369,7 @@ class Utilisateurs
     /**
      * Get userFactPrenom
      *
-     * @return string 
+     * @return string
      */
     public function getUserFactPrenom()
     {
@@ -380,7 +379,7 @@ class Utilisateurs
     /**
      * Set userFactSociete
      *
-     * @param string $userFactSociete
+     * @param  string       $userFactSociete
      * @return Utilisateurs
      */
     public function setUserFactSociete($userFactSociete)
@@ -393,7 +392,7 @@ class Utilisateurs
     /**
      * Get userFactSociete
      *
-     * @return string 
+     * @return string
      */
     public function getUserFactSociete()
     {
@@ -403,7 +402,7 @@ class Utilisateurs
     /**
      * Set userFactAdresse
      *
-     * @param string $userFactAdresse
+     * @param  string       $userFactAdresse
      * @return Utilisateurs
      */
     public function setUserFactAdresse($userFactAdresse)
@@ -416,7 +415,7 @@ class Utilisateurs
     /**
      * Get userFactAdresse
      *
-     * @return string 
+     * @return string
      */
     public function getUserFactAdresse()
     {
@@ -426,7 +425,7 @@ class Utilisateurs
     /**
      * Set userFactPays
      *
-     * @param string $userFactPays
+     * @param  string       $userFactPays
      * @return Utilisateurs
      */
     public function setUserFactPays($userFactPays)
@@ -439,7 +438,7 @@ class Utilisateurs
     /**
      * Get userFactPays
      *
-     * @return string 
+     * @return string
      */
     public function getUserFactPays()
     {
@@ -449,7 +448,7 @@ class Utilisateurs
     /**
      * Set userFactCodep
      *
-     * @param string $userFactCodep
+     * @param  string       $userFactCodep
      * @return Utilisateurs
      */
     public function setUserFactCodep($userFactCodep)
@@ -462,7 +461,7 @@ class Utilisateurs
     /**
      * Get userFactCodep
      *
-     * @return string 
+     * @return string
      */
     public function getUserFactCodep()
     {
@@ -472,7 +471,7 @@ class Utilisateurs
     /**
      * Set userFactVille
      *
-     * @param string $userFactVille
+     * @param  string       $userFactVille
      * @return Utilisateurs
      */
     public function setUserFactVille($userFactVille)
@@ -485,7 +484,7 @@ class Utilisateurs
     /**
      * Get userFactVille
      *
-     * @return string 
+     * @return string
      */
     public function getUserFactVille()
     {
@@ -495,7 +494,7 @@ class Utilisateurs
     /**
      * Set userFactTel
      *
-     * @param string $userFactTel
+     * @param  string       $userFactTel
      * @return Utilisateurs
      */
     public function setUserFactTel($userFactTel)
@@ -508,7 +507,7 @@ class Utilisateurs
     /**
      * Get userFactTel
      *
-     * @return string 
+     * @return string
      */
     public function getUserFactTel()
     {
@@ -518,7 +517,7 @@ class Utilisateurs
     /**
      * Set userLivCivilite
      *
-     * @param string $userLivCivilite
+     * @param  string       $userLivCivilite
      * @return Utilisateurs
      */
     public function setUserLivCivilite($userLivCivilite)
@@ -531,7 +530,7 @@ class Utilisateurs
     /**
      * Get userLivCivilite
      *
-     * @return string 
+     * @return string
      */
     public function getUserLivCivilite()
     {
@@ -541,7 +540,7 @@ class Utilisateurs
     /**
      * Set userLivNom
      *
-     * @param string $userLivNom
+     * @param  string       $userLivNom
      * @return Utilisateurs
      */
     public function setUserLivNom($userLivNom)
@@ -554,7 +553,7 @@ class Utilisateurs
     /**
      * Get userLivNom
      *
-     * @return string 
+     * @return string
      */
     public function getUserLivNom()
     {
@@ -564,7 +563,7 @@ class Utilisateurs
     /**
      * Set userLivPrenom
      *
-     * @param string $userLivPrenom
+     * @param  string       $userLivPrenom
      * @return Utilisateurs
      */
     public function setUserLivPrenom($userLivPrenom)
@@ -577,7 +576,7 @@ class Utilisateurs
     /**
      * Get userLivPrenom
      *
-     * @return string 
+     * @return string
      */
     public function getUserLivPrenom()
     {
@@ -587,7 +586,7 @@ class Utilisateurs
     /**
      * Set userLivSociete
      *
-     * @param string $userLivSociete
+     * @param  string       $userLivSociete
      * @return Utilisateurs
      */
     public function setUserLivSociete($userLivSociete)
@@ -600,7 +599,7 @@ class Utilisateurs
     /**
      * Get userLivSociete
      *
-     * @return string 
+     * @return string
      */
     public function getUserLivSociete()
     {
@@ -610,7 +609,7 @@ class Utilisateurs
     /**
      * Set userLivAdresse
      *
-     * @param string $userLivAdresse
+     * @param  string       $userLivAdresse
      * @return Utilisateurs
      */
     public function setUserLivAdresse($userLivAdresse)
@@ -623,7 +622,7 @@ class Utilisateurs
     /**
      * Get userLivAdresse
      *
-     * @return string 
+     * @return string
      */
     public function getUserLivAdresse()
     {
@@ -633,7 +632,7 @@ class Utilisateurs
     /**
      * Set userLivPays
      *
-     * @param string $userLivPays
+     * @param  string       $userLivPays
      * @return Utilisateurs
      */
     public function setUserLivPays($userLivPays)
@@ -646,7 +645,7 @@ class Utilisateurs
     /**
      * Get userLivPays
      *
-     * @return string 
+     * @return string
      */
     public function getUserLivPays()
     {
@@ -656,7 +655,7 @@ class Utilisateurs
     /**
      * Set userLivCodep
      *
-     * @param string $userLivCodep
+     * @param  string       $userLivCodep
      * @return Utilisateurs
      */
     public function setUserLivCodep($userLivCodep)
@@ -669,7 +668,7 @@ class Utilisateurs
     /**
      * Get userLivCodep
      *
-     * @return string 
+     * @return string
      */
     public function getUserLivCodep()
     {
@@ -679,7 +678,7 @@ class Utilisateurs
     /**
      * Set userLivVille
      *
-     * @param string $userLivVille
+     * @param  string       $userLivVille
      * @return Utilisateurs
      */
     public function setUserLivVille($userLivVille)
@@ -692,7 +691,7 @@ class Utilisateurs
     /**
      * Get userLivVille
      *
-     * @return string 
+     * @return string
      */
     public function getUserLivVille()
     {
@@ -702,7 +701,7 @@ class Utilisateurs
     /**
      * Set userLivTel
      *
-     * @param string $userLivTel
+     * @param  string       $userLivTel
      * @return Utilisateurs
      */
     public function setUserLivTel($userLivTel)
@@ -715,7 +714,7 @@ class Utilisateurs
     /**
      * Get userLivTel
      *
-     * @return string 
+     * @return string
      */
     public function getUserLivTel()
     {

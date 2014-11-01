@@ -21,7 +21,7 @@
 				<div class="row">
 
 					<div class="col-sm-6 image_ficheproduit">
-						<img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt="">
+						<img src="{{ asset(article.getWebPath) }}" alt="">
 					</div>
 
 					<div class="col-sm-6">
@@ -45,7 +45,7 @@
 							<p class="prix_ficheproduit"> <!-- Prix du produit-->
 								{{article.artPrix}} €
 							</p>
-							
+
 							<div id="ajout_panier">
 								<div class="lien_popup"><a href="#test-popup" class="open-popup-link">Ajouter au panier</a></div> <!--Ce lien ajoute en SESSION l'article au panier -->
 							</div>
@@ -82,7 +82,7 @@
 								<script type="text/javascript">
 									$('.open-popup-link').magnificPopup({
 									  type:'inline',
-									  midClick: true 
+									  midClick: true
 									});
 								</script>
 
