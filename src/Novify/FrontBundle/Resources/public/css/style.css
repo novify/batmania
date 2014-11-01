@@ -1458,6 +1458,11 @@ input[type=checkbox]:checked ~ #menu{
 	background-color: rgba(255,255,255,0.6);
 }
 
+#bloc_contact textarea{
+	max-width: 100%;
+	min-width:100%;
+}
+
 #bloc_contact #contact_droite {
 	border-radius: 3px;
 	padding: 20px;
