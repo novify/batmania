@@ -31,6 +31,11 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:panier.html.twig');
     }
 
+    public function inscriptionAction()
+    {
+        return $this->render('NovifyFrontBundle:Front:inscription.html.twig');
+    }
+
     public function compteAction()
     {
         return $this->render('NovifyFrontBundle:Front:compte.html.twig');
