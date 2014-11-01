@@ -7,11 +7,12 @@
 		<div id="bloc_contact">
 
 			<!-- Image choisie par l'utilisateur et modifiable dans le back office -->
-			<div class="banniere_contact"> <!-- Banniere a actualiser selon la catégorie -->
+
+			<div class="banniere_contact">
 				<img src="{{ asset('bundles/novifyfront/images/banniere-livres.jpg')}}" alt="Bannière indiquant la catégorie">
 
-				<div class="container"><!-- Fil d'ariane, liens et textes à générer depuis la bdd -->
-					<h1><a href="#">Contact</a>
+				<div class="container">
+					<h1>Contact</h1>
 				</div>
 
 			</div>
@@ -23,7 +24,7 @@
 
 						<div class="row" id="mail_contact"> <!-- Envoyez un mail direcetement depuis le site grâce à un formulaire -->
 							<div class="col-sm-12">
-								<h3>Nous écrires :</h3>
+								<h3>Nous écrire</h3>
 
 								<p> Pour nous contactez, rien de plus simple, remplissez ce formulaire, et envoyez nous un mail directement depuis le site internet ! Nous vous répondrons le plus rapidement possible !<br/>
 								Allez-y, Cela ne vous prendra que quelques secondes !</p>
@@ -31,7 +32,9 @@
 								<form method="post" action="#">
 									<p><input type="text" name="mail" placeholder="Votre adresse mail"/></p>
 									<p><input type="text" name="objet" placeholder="L'objet de votre message"/></p>
-									<textarea name="message" placeholder="Ecrivez votre message !" rows="10" cols="50"></textarea>
+									<p><textarea name="message" placeholder="Ecrivez votre message !" rows="10" cols="50"></textarea></p>
+
+									<p><input type="submit" value="Envoyer"/></p>
 								</form>
 							</div>
 						</div> <!-- Fin zone mail -->
@@ -43,7 +46,7 @@
 								<h3>La boutique</h3>
 
 								<div class="row">
-									<p>Le saviez-vous ? Nous avons aussi une boutique, et elle est à Paris ! N'hésitez pas à venir nous voir</p>
+									<p>Le saviez-vous ? Nous avons aussi une boutique, et elle est à Paris ! N'hésitez pas à venir nous voir.</p>
 
 									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20999.550226356612!2d2.3858124550031774!3d48.85928246926929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8f6e8490fb%3A0xbbd5deb4fcf23e3!2sBATMAN+SERVICE!5e0!3m2!1sfr!2sfr!4v1414843086784" width="600" height="450" frameborder="0" style="border:0"></iframe> <!-- Carte Google maps de la boutique -->
 								</div>
@@ -58,9 +61,9 @@
 						
 						<div class="row" id="newsletter_contact"> <!-- Envoyez un mail direcetement depuis le site grâce à un formulaire -->
 							<div class="col-sm-12">
-								<h4>Recevez notre newsletter :</h4>
+								<h4>Recevez notre newsletter</h4>
 
-								<p>Vous pourrais suivre toute l'actualité, les nouveaux produits, les promos du mois ect ... !</p>
+								<p>Vous pourrez suivre toute l'actualité de l'enseigne, les nouveaux produits, les promos du mois, et bien plus!</p>
 
 								<!-- Formulaire d'inscription à la newsletter -->
 								<form method="post" action="#">
