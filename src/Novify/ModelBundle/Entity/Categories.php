@@ -37,7 +37,7 @@ class Categories
     private $catBanniere;
 
     /**
-     * @ORM\OneToMany(targetEntity="Novify\ModelBundle\Entity\Souscategories", mappedBy="categorie")
+     * @ORM\OneToMany(targetEntity="Novify\ModelBundle\Entity\Souscategories", mappedBy="categorie", cascade={"remove"})
      */
     protected $sousCategories;
 
