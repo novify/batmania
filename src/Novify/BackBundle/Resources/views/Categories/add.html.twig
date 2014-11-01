@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <style>
-        .required::before { content: '*'; }
-    </style>
-</head>
-<body>
-    {{ form(form) }}
-</body>
-</html>
+{% extends 'NovifyBackBundle::base.html.twig' %}
+{% block main %}
+
+
+
+
+    <article>
+        <div class="container catagories">
+            <h1>Ajouter une catégorie</h1> <!-- Titre de la section -->
+            
+			{{ form(form) }}
+
+        </div>
+    </article>
+
+
+
+
+{% endblock %}

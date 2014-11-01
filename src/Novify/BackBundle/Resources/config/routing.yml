@@ -81,3 +81,23 @@ novify_back_utilisateurs_edit:
 novify_back_utilisateurs_remove:
     path:     /utilisateurs/remove/{id}
     defaults: { _controller: NovifyBackBundle:Utilisateurs:remove }
+
+novify_back_caroussel_hello:
+    path:     /caroussel/hello/{name}
+    defaults: { _controller: NovifyBackBundle:Caroussel:hello }
+
+novify_back_caroussel_index:
+    path:     /caroussel
+    defaults: { _controller: NovifyBackBundle:Caroussel:index }
+
+novify_back_caroussel_add:
+    path:     /caroussel/add
+    defaults: { _controller: NovifyBackBundle:Caroussel:add }
+
+novify_back_caroussel_edit:
+    path:     /caroussel/edit/{id}
+    defaults: { _controller: NovifyBackBundle:Caroussel:edit }
+
+novify_back_caroussel_remove:
+    path:     /caroussel/remove/{id}
+    defaults: { _controller: NovifyBackBundle:Caroussel:remove }
