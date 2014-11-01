@@ -1565,56 +1565,6 @@ input[type=checkbox]:checked ~ #menu{
 	background-size: 50px;
 }
 
-/* #bloc_contact #contact_droite #infos_generales{
-	border-bottom:1px solid rgb(200,200,200);
-}
-
-
-#bloc_compte #compte_infos #infos_generales strong{
-
-	text-transform: uppercase;
-	font-weight: bold;
-}
-
-
-#bloc_compte #compte_infos #adresse_livraison{
-
-	margin-top: 50px;
-	border-bottom:1px solid rgb(200,200,200);
-	line-height: 8px;
-	
-}
-
-#bloc_compte #compte_infos #adresse_facturation{
-	
-	margin-top: 50px;
-	border-bottom:1px solid rgb(200,200,200);
-	line-height: 8px;
-
-}
-
-
-#bloc_compte #compte_infos #modifier_infos{
-	
-	margin: 30px auto;
-	width: 50%;
-}
-
-#bloc_compte #compte_infos #modifier_infos a{
-	color: white;
-	padding: 8px;
-	text-align:center;
-	font-size: 18px;
-	display: block;
-	width: 100%;
-	height:100%;
-	background-color: #e2c879;
-}
-
-#bloc_compte #compte_infos #modifier_infos a:hover{
-	background-color: #f2dc9a;
-} */
-
 /* -------- */
 
 
