@@ -30,6 +30,7 @@ class ArticlesController extends Controller
 
         if ($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $article->upload();
             $em->persist($article);
             $em->flush();
 

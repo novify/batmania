@@ -122,8 +122,10 @@ class Articles
     /**
      * @var string
      *
-     * @ORM\Column(name="art_img", type="string", length=255, nullable=true)
+     * @ORM\Column(name="art_img_path", type="string", length=255, nullable=true)
      */
+    private $artImgPath;
+
     private $artImg;
 
     /**
@@ -620,5 +622,47 @@ class Articles
     public function getSousCategorie()
     {
         return $this->sousCategorie;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->artImgPath ? null : $this->getUploadRootDir().'/'.$this->artImgPath;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->artImgPath ? null : $this->getUploadDir().'/'.$this->artImgPath;
+    }
+
+    protected function getUploadRootDir()
+    {
+        // le chemin absolu du répertoire où les documents uploadés doivent être sauvegardés
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        // on se débarrasse de « __DIR__ » afin de ne pas avoir de problème lorsqu'on affiche
+        // le document/image dans la vue.
+        return 'uploads/images';
+    }
+
+    public function upload()
+    {
+        // la propriété « artImg » peut être vide si le champ n'est pas requis
+        if (null === $this->artImg) {
+            return;
+        }
+
+        // la méthode « move » prend comme arguments le répertoire cible et
+        // le nom de fichier cible où le fichier doit être déplacé
+        $this->artImg->move($this->getUploadRootDir(), $this->artImg->getClientOriginalName());
+
+        // définit la propriété « path » comme étant le nom de fichier où vous
+        // avez stocké le fichier
+        $this->artImgPath = $this->artImg->getClientOriginalName();
+
+        // « nettoie » la propriété « artImg » comme vous n'en aurez plus besoin
+        $this->artImg = null;
     }
 }

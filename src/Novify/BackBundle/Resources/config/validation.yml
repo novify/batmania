@@ -1,0 +1,9 @@
+Novify\ModelBundle\Entity\Articles:
+    properties:
+        artImg:
+            - Image:
+                mimeTypes:
+                    - image/jpeg
+                    - image/png
+                    - image/gif
+                maxSize: 1M

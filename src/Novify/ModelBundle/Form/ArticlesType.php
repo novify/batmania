@@ -29,7 +29,7 @@ class ArticlesType extends AbstractType
             ->add('artStock')
             ->add('artGenre')
             ->add('artPlateforme')
-            ->add('artImg')
+            ->add('artImg', 'file')
             ->add('artRealisat')
             ->add('artCasting')
             ->add('artDuree')

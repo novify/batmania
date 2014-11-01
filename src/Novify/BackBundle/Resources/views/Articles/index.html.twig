@@ -32,7 +32,13 @@
 {% for article in articles %}
 					<tr>
 						<td>{{ article.id }}</td>
-						<td><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></td>
+						<td>
+{% if article.getWebPath is not null %}
+<img src="{{ asset(article.getWebPath)}}" alt="">
+{% else %}
+Pas d'image
+{% endif %}
+</td>
 						<td>{{ article.artNom }}</td>
 						<td>{{ article.artPrix }} €</td>
 						<td>{{ article.artStock }}</td>
