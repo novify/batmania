@@ -74,23 +74,18 @@ header{
 header p{
 	
 	padding: 10px;
-
 	margin-left: 30px;
-	font-size:22px;
+	font-size: 18px;
 	font-weight: 300;
-	color:inherit;
+	color: inherit;
 	text-transform: uppercase;
 
 }
 
 header p a{
-	color:white;
-	padding: 10px;
-
-}
-
-header p a:hover{
-	background-color: #bfa966;
+	display:inline;
+	color: white;
+	text-align: right;
 }
 
 section{
@@ -108,10 +103,10 @@ aside {
 	height: 100%;
 }
 
-aside ul{
+aside ul {
+	width: 15%;
 	position: absolute;
 	padding: 20px 0;
-
 }
 
 aside ul li{
@@ -141,9 +136,8 @@ aside ul li a i{
 
 /*Corps de page*/
 
-article{
-
-	width: 88%;
+article {
+	width: 85%;
 	background-color:rgb(235,235,235);
 }
 
@@ -251,9 +245,44 @@ article table tbody img{
 		text-align: center;
 	}
 
+/*Boutton modifier et supprimer*/
+
+article table tbody td a.supprimer {
+	text-decoration: none;
+	display: block;
+	padding: 5px 10px;
+	background-color: #c0392b;
+	color: #fff;
+	 -webkit-transform: scale(1);
+  	transition: all 0.25s;
+  	width: 90px;
+	margin-left: 25px;
+}
+
+article table tbody td a.supprimer:hover {
+	background-color: #e74c3c;
+	-webkit-transform: scale(1.02);
+}
+
+article table tbody td a.modifier {
+	text-decoration: none;
+	display: block;
+	padding: 5px 10px;
+	background-color: #eb6700;
+	color: #fff;
+	 -webkit-transform: scale(1);
+  	transition: all 0.25s;
+  	width: 90px;
+  	margin-left: 25px;
+}
+
+article table tbody td a.modifier:hover {
+	background-color: #ff9646;
+	-webkit-transform: scale(1.02);
+}
+
 
 /*Pour la page de modif des articles*/
-
 
 article .article table thead th{
 	width: 10%;
