@@ -10,6 +10,10 @@ novify_front_panier:
     path:     /panier
     defaults: { _controller: NovifyFrontBundle:Front:panier }
 
+novify_front_inscription:
+    path:     /inscription
+    defaults: { _controller: NovifyFrontBundle:Front:inscription }
+
 novify_front_compte:
     path:     /compte
     defaults: { _controller: NovifyFrontBundle:Front:compte }
