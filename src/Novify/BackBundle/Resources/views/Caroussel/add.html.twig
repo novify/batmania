@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <style>
-        .required::before { content: '*'; }
-    </style>
-</head>
-<body>
-    {{ form(form) }}
-</body>
-</html>
+{% extends 'NovifyBackBundle::base.html.twig' %}
+{% block main %}
+
+
+
+
+    <article>
+        <div class="container">
+            <h1>Ajouter une slide du carrousel</h1>
+            
+			{{ form(form) }} <!-- Génère le formulaire automatiquement-->
+
+        </div>
+    </article>
+
+
+
+
+{% endblock %}
