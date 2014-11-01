@@ -34,6 +34,7 @@ class ArticlesType extends AbstractType
             ->add('artPages')
             ->add('artGenre')
             ->add('artPlateforme')
+            ->add('artImg', 'file')
             ->add('artRealisat')
             ->add('artCasting')
             ->add('artDuree')
