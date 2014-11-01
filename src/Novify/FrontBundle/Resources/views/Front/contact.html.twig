@@ -7,8 +7,8 @@
 		<div id="bloc_contact">
 
 			<!-- Image choisie par l'utilisateur et modifiable dans le back office -->
-			<div class="banniere_catalogue"> <!-- Banniere a actualiser selon la catégorie -->
-				<img src="{{ asset('bundles/novifyfront/images/banniere-livres.jpg')}}" alt="">
+			<div class="banniere_contact"> <!-- Banniere a actualiser selon la catégorie -->
+				<img src="{{ asset('bundles/novifyfront/images/banniere-livres.jpg')}}" alt="Bannière indiquant la catégorie">
 
 				<div class="container"><!-- Fil d'ariane, liens et textes à générer depuis la bdd -->
 					<h1><a href="#">Contact</a>
@@ -16,16 +16,23 @@
 
 			</div>
 
-			<div class="container" id="bloc_contact" style="width:100%">
+			<div class="container" id="bloc_contact">
 				<div class="row">
 
-					<div class="col-sm-8"> <!-- Bloc de gauche (information et contact) -->
+					<div class="col-sm-7" id="contact_gauche"> <!-- Bloc de gauche (information et contact) -->
 
 						<div class="row" id="mail_contact"> <!-- Envoyez un mail direcetement depuis le site grâce à un formulaire -->
 							<div class="col-sm-12">
 								<h3>Nous écrires :</h3>
 
-								<p>Vous pourrez bientôt nous envoyez un mail ici !</p>
+								<p> Pour nous contactez, rien de plus simple, remplissez ce formulaire, et envoyez nous un mail directement depuis le site internet ! Nous vous répondrons le plus rapidement possible !<br/>
+								Allez-y, Cela ne vous prendra que quelques secondes !</p>
+
+								<form method="post" action="#">
+									<p><input type="text" name="mail" placeholder="Votre adresse mail"/></p>
+									<p><input type="text" name="objet" placeholder="L'objet de votre message"/></p>
+									<textarea name="message" placeholder="Ecrivez votre message !" rows="10" cols="50"></textarea>
+								</form>
 							</div>
 						</div> <!-- Fin zone mail -->
 
@@ -38,18 +45,20 @@
 								<div class="row">
 									<p>Le saviez-vous ? Nous avons aussi une boutique, et elle est à Paris ! N'hésitez pas à venir nous voir</p>
 
-									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20999.550226356612!2d2.3858124550031774!3d48.85928246926929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8f6e8490fb%3A0xbbd5deb4fcf23e3!2sBATMAN+SERVICE!5e0!3m2!1sfr!2sfr!4v1414843086784" width="800" height="600" frameborder="0" style="border:0"></iframe> <!-- Carte Google maps de la boutique -->
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20999.550226356612!2d2.3858124550031774!3d48.85928246926929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8f6e8490fb%3A0xbbd5deb4fcf23e3!2sBATMAN+SERVICE!5e0!3m2!1sfr!2sfr!4v1414843086784" width="600" height="450" frameborder="0" style="border:0"></iframe> <!-- Carte Google maps de la boutique -->
 								</div>
 							</div>
 						</div> <!-- Fin informations sur la boutique -->
 
 					</div>
 
-					<div class="col-sm-4"> <!-- Bloc de droite (Newsletter et Réseaux Sociaux) -->
+					<div class="col-xs-1"></div>
+
+					<div class="col-sm-4" id="contact_droite"> <!-- Bloc de droite (Newsletter et Réseaux Sociaux) -->
 						
 						<div class="row" id="newsletter_contact"> <!-- Envoyez un mail direcetement depuis le site grâce à un formulaire -->
 							<div class="col-sm-12">
-								<h3>Recevez notre newsletter :</h3>
+								<h4>Recevez notre newsletter :</h4>
 
 								<p>Vous pourrais suivre toute l'actualité, les nouveaux produits, les promos du mois ect ... !</p>
 
@@ -60,24 +69,14 @@
 							</div>
 						</div> <!-- Fin zone newsletter -->
 
-						<div class="row" id="newsletter_contact"> <!-- Envoyez un mail direcetement depuis le site grâce à un formulaire -->
+						<div class="row" id="rs_contact"> <!-- Envoyez un mail direcetement depuis le site grâce à un formulaire -->
 							<div class="col-sm-12">
-								<h3>N'hésitez pas à nous suivre sur les réseaux sociaux !</h3>
+								<h4>N'hésitez pas à nous suivre sur les réseaux sociaux !</h4>
 
-								<div class="rs">
-									<div class="instagram">
-										<a href="#"><img src="{{ asset('bundles/novifyfront/images/pictogrammes/vierge.png')}}" alt="image vide"></a>
-									</div>
-									<div class="pinterest">
-										<a href="#"><img src="{{ asset('bundles/novifyfront/images/pictogrammes/vierge.png')}}" alt="image vide"></a>
-									</div>
-									<div class="twitter">
-										<a href="#"><img src="{{ asset('bundles/novifyfront/images/pictogrammes/vierge.png')}}" alt="image vide"></a>
-									</div>
-									<div class="facebook">
-										<a href="#"><img src="{{ asset('bundles/novifyfront/images/pictogrammes/vierge.png')}}" alt="image vide"></a>
-									</div>
-								</div>
+								<div class="facebook rs"></div>
+								<div class="twitter rs"></div>
+								<div class="pinterest rs" style="clear:both"></div>
+								<div class="instagram rs"></div>
 							</div>
 							
 						</div> <!-- Fin zone newsletter -->

@@ -1408,6 +1408,227 @@ input[type=checkbox]:checked ~ #menu{
 
 
 /***************************
+	CONTACT
+**************************/
+
+
+#bloc_contact {
+	background-color: white;
+	z-index:-10 !important;
+}
+
+#bloc_contact .container {
+	padding: 25px 10px;
+}
+
+#bloc_contact .container h3 {
+	color: #e2c879;
+	font-size: 26px;
+	font-weight: 400;
+	margin-bottom:40px;
+}
+
+#bloc_contact .container h4 {
+	color: #1a465c;
+	font-size: 22px;
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+
+#bloc_contact .banniere_contact {
+	position: relative;
+}
+
+#bloc_contact .banniere_contact img{
+	width: 100%;
+}
+
+#bloc_contact .banniere_contact h1{
+
+	position: absolute;
+	bottom: 170px;
+	left: 0;
+
+	font-size: 40px;
+	text-transform: uppercase;
+	font-weight: 300;
+	padding:5px 10px 5px 15px;
+
+	color: rgb(35,35,35);
+	background-color: rgba(255,255,255,0.6);
+}
+
+#bloc_contact #contact_droite {
+	border-radius: 3px;
+	padding: 20px;
+	background-color: rgb(245,245,245);
+	height: auto;
+}
+
+#bloc_contact #mail_contact, #boutique_produits {
+	border-top: 1px solid #e2c879;
+}
+
+#bloc_contact #mail_contact, #boutique_produits, #newsletter_contact, #rs_contact {
+	padding-bottom: 20px;
+}
+
+#bloc_contact #contact_droite .container .facebook{
+
+	width: 50px;
+	height: 50px;
+	border-radius: 4px;
+	background-image: url('../images/pictogrammes/fb.png');
+	background-size: 50px;
+	float: left;
+
+	margin-top: 20px;
+	margin-right: 20px;
+
+	-webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+#bloc_contact #contact_droite .twitter{
+
+	width: 50px;
+	height: 50px;
+	border-radius: 4px;
+	background-image: url('../images/pictogrammes/tw.png');
+	background-size: 50px;
+	float: left;
+
+	margin-top: 20px;
+	margin-right: 20px;
+
+	-webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+#bloc_contact #contact_droite .pinterest{
+
+	width: 50px;
+	height: 50px;
+	border-radius: 4px;
+	background-image: url('../images/pictogrammes/p.png');
+	background-size: 50px;
+	float: left;
+
+	margin-top: 20px;
+	margin-right: 20px;
+
+	-webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+#bloc_contact #contact_droite .instagram{
+
+	width: 50px;
+	height: 50px;
+	border-radius: 4px;
+	background-image: url('../images/pictogrammes/in.png');
+	background-size: 50px;
+	float: left;
+
+	margin-top: 20px;
+	margin-right: 20px;
+
+	-webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+#bloc_contact #contact_droite .facebook:hover{
+	background-image: url('../images/pictogrammes/fb_gris.png');
+	background-size: 50px;
+}
+
+#bloc_contact #contact_droite .twitter:hover{
+	background-image: url('../images/pictogrammes/tw_gris.png');
+	background-size: 50px;
+}
+
+#bloc_contact #contact_droite .pinterest:hover{
+	background-image: url('../images/pictogrammes/p_gris.png');
+	background-size: 50px;
+}
+
+#bloc_contact #contact_droite .instagram:hover{
+	background-image: url('../images/pictogrammes/in_gris.png');
+	background-size: 50px;
+}
+
+/* #bloc_contact #contact_droite #infos_generales{
+	border-bottom:1px solid rgb(200,200,200);
+}
+
+
+#bloc_compte #compte_infos #infos_generales strong{
+
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+
+#bloc_compte #compte_infos #adresse_livraison{
+
+	margin-top: 50px;
+	border-bottom:1px solid rgb(200,200,200);
+	line-height: 8px;
+	
+}
+
+#bloc_compte #compte_infos #adresse_facturation{
+	
+	margin-top: 50px;
+	border-bottom:1px solid rgb(200,200,200);
+	line-height: 8px;
+
+}
+
+
+#bloc_compte #compte_infos #modifier_infos{
+	
+	margin: 30px auto;
+	width: 50%;
+}
+
+#bloc_compte #compte_infos #modifier_infos a{
+	color: white;
+	padding: 8px;
+	text-align:center;
+	font-size: 18px;
+	display: block;
+	width: 100%;
+	height:100%;
+	background-color: #e2c879;
+}
+
+#bloc_compte #compte_infos #modifier_infos a:hover{
+	background-color: #f2dc9a;
+} */
+
+/* -------- */
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************
 	FOOTER
 **************************/
 
