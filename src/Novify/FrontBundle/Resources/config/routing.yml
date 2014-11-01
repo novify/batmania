@@ -14,6 +14,10 @@ novify_front_compte:
     path:     /compte
     defaults: { _controller: NovifyFrontBundle:Front:compte }
 
+novify_front_contact:
+    path:     /contact
+    defaults: { _controller: NovifyFrontBundle:Front:contact }
+
 # temporaire
 novify_front_view_fiche:
     path:     /fiche

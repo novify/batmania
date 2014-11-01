@@ -16,27 +16,28 @@ class ArticlesType extends AbstractType
     {
         $builder
             ->add('artNom')
-            ->add('artPromo')
-            ->add('artPrix')
+            ->add('artImg')
             ->add('artDescript')
+            ->add('artPrix')
             ->add('artRef')
+            ->add('artStock')
+            ->add('sousCategorie', 'entity', array(
+                    'class' => 'NovifyModelBundle:Souscategories',
+                    'property' => 'souscatNom'
+                ))
+            ->add('artPromo')
             ->add('artAuteur')
             ->add('artEditeur')
             ->add('artDateSortie')
-            ->add('artIsbn')
             ->add('artPublic')
+            ->add('artIsbn')
             ->add('artPages')
-            ->add('artStock')
             ->add('artGenre')
             ->add('artPlateforme')
             ->add('artImg', 'file')
             ->add('artRealisat')
             ->add('artCasting')
             ->add('artDuree')
-            ->add('sousCategorie', 'entity', array(
-                    'class' => 'NovifyModelBundle:Souscategories',
-                    'property' => 'souscatNom'
-                ))
             ->add('Valider', 'submit')
         ;
     }

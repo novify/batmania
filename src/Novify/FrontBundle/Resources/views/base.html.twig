@@ -78,7 +78,7 @@
 					<div class="row">
 
 						<div class="col-md-2 col-sm-5 col-xs-4 logo">
-							<a href="#"><img src="{{ asset('bundles/novifyfront/images/logo.png')}}" alt="Logo Batmania"></a>
+							<a href="{{ path('novify_front_homepage') }}"><img src="{{ asset('bundles/novifyfront/images/logo.png')}}" alt="Logo Batmania"></a>
 						</div>
 
 
@@ -95,7 +95,7 @@
 
 						<div class="header_client">
 							<div class="col-md-3 col-sm-3 col-xs-12 compte">
-								<a href="#">
+								<a href="{{ path('novify_front_compte') }}">
 									<img src="{{ asset('bundles/novifyfront/images/pictogrammes/compte.png')}}" alt="picto tête de batman">
 									Mon compte
 									<!-- <div id="bulle_compte">
@@ -116,7 +116,7 @@
 
 
 							<div class="col-md-3 col-sm-3 col-xs-12 panier">
-								<a href="#">
+								<a href="{{ path('novify_front_panier') }}">
 									<img src="{{ asset('bundles/novifyfront/images/pictogrammes/panier.png')}}" alt="picto panier">Mon panier
 									<!-- <div id="bulle_panier">
 										<strong>La somme de votre panier est de :</strong>
@@ -146,7 +146,7 @@
 					<input type="checkbox" id="show-menu" role="button">
 					<ul id="menu">
 
-						<li class="actif"><a href="#">Accueil</a></li>
+						<li class="actif"><a href="{{ path('novify_front_homepage') }}">Accueil</a></li>
 {{ render(controller('NovifyFrontBundle:Front:menu')) }}
 						<li><a href="#">Contact</a></li>
 					</ul>
