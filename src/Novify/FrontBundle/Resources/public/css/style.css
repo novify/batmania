@@ -1465,11 +1465,11 @@ input[type=checkbox]:checked ~ #menu{
 	height: auto;
 }
 
-#bloc_contact #mail_contact, #boutique_produits {
+#bloc_contact #mail_contact, #boutique_contact {
 	border-top: 1px solid #e2c879;
 }
 
-#bloc_contact #mail_contact, #boutique_produits, #newsletter_contact, #rs_contact {
+#bloc_contact #mail_contact, #boutique_contact, #newsletter_contact, #rs_contact {
 	padding-bottom: 20px;
 }
 
@@ -1856,6 +1856,7 @@ footer .container #mentionslegales{
 	#bloc_panier {
 		margin-top: 41px;
 	}
+
 
 }
 
