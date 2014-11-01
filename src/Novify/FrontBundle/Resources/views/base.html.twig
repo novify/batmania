@@ -78,7 +78,7 @@
 					<div class="row">
 
 						<div class="col-md-2 col-sm-5 col-xs-4 logo">
-							<a href="{{ asset('app_dev.php/boutique/')}}"><img src="{{ asset('bundles/novifyfront/images/logo.png')}}" alt="Logo Batmania"></a>
+							<a href="{{ path('novify_front_homepage') }}"><img src="{{ asset('bundles/novifyfront/images/logo.png')}}" alt="Logo Batmania"></a>
 						</div>
 
 
@@ -146,7 +146,7 @@
 					<input type="checkbox" id="show-menu" role="button">
 					<ul id="menu">
 
-						<li class="actif"><a href="#">Accueil</a></li>
+						<li class="actif"><a href="{{ path('novify_front_homepage') }}">Accueil</a></li>
 {{ render(controller('NovifyFrontBundle:Front:menu')) }}
 						<li><a href="#">Contact</a></li>
 					</ul>
