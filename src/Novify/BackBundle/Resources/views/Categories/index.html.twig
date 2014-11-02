@@ -29,7 +29,16 @@
                     <tr>
                         <td>{{ categorie.id }}</td>
                         <td>{{ categorie.catNom }}</td>
-                        <td>{{ categorie.catBanniere }}</td>
+
+                        <td>
+                            {% if categorie.getWebPath is not null %}
+                            <img src="{{ asset(categorie.getWebPath)}}" alt="">
+                            {% else %}
+                            Pas d'image
+                            {% endif %}    
+                        </td>
+
+
                         <td><a href="{{ path('novify_back_categorie_edit', {id: categorie.id}) }}">Modifier</a></td>
                         <td><a href="{{ path('novify_back_categorie_remove', {id: categorie.id}) }}">Supprimer</a></td>
                     </tr>
