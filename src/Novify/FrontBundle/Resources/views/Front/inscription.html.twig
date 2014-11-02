@@ -9,8 +9,8 @@
 
 				<div class="row">
 
-					<div class="col-sm-8" style="padding-right: 50px">
-						<h3>Vous inscrire</h3>
+					<div class="col-sm-8" style="padding-right: 50px;">
+						<h3 style="border-bottom: #e2c879 1px solid;">Vous inscrire</h3>
 
 
 
@@ -22,7 +22,15 @@
 						<p>Créer un compte vous permettra de commander sur notre site de manière sécurisée.</p>
 						<p>Nous nous engageons à garder ces informations strictement confidentielles.</p>
 					</div>
-{{ form(form) }}
+				{{ form_start(form, {'method': 'POST'}) }}
+
+				    {{ form_row(form.userNom) }}
+
+				    <input type="submit" value="Envoyez le formulaire"/>
+
+				{# ne pas rendre les champs non définis #}
+				{{ form_end(form, {'render_rest': false}) }}
+
 				</div>
 
 			</div>
