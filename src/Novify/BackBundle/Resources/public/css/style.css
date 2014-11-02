@@ -12,17 +12,29 @@ html, body{
 	font-family: 'Open Sans';
 }
 
-.container_back{
+.container{
 	width: 90%;
 	margin: auto;
+	background-color: white;
+	margin-top: 40px;
+	padding: 20px;
+	border-radius: 3px;
+
 }
 
-.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
-	background-color: white;
-	border-radius: 3px;
-	padding: 15px;
-	margin: 15px;
+.container_index{	
+
+	width: 90%;
+	margin: auto;
 	margin-top: 40px;
+	padding: 20px;
+}
+
+.bloc_back_index{
+
+	background-color:white;
+	border-radius:5px;
+	margin-bottom: 50px;
 }
 
 .ajouter {
@@ -183,17 +195,11 @@ article table tbody img{
 
 	/*Corps de page (tableau de bord) - Partie droite */
 
-	.info .col-sm-4 {
-		padding: 0;
-		background-color: rgb(235,235,235);
+	.info{
+		padding: 20px;
+		margin-left: 20px;
 	}
 
-	.info .col-sm-12 {
-		margin: 0;
-		padding: 0;
-		margin-top: 0;
-		margin-bottom: 30px;
-	}
 
 	.info table {
 		margin:0;
@@ -209,11 +215,6 @@ article table tbody img{
 		width: 100%;
 		background-color: #1a465c;
 		color: white;
-	}
-
-	.info table tr.vierge th{
-		height: 5px;
-		background-color: rgb(235,235,235);
 	}
 
 	.info table thead th{
@@ -301,4 +302,69 @@ article .utilisateurs table thead th{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 750px){
+
+
+	section{
+		width:100%;
+		height:100%;
+		display:block;
+	}
+
+	aside, article{display:block}
+
+	/*Navigation*/
+	aside {
+		background-color: rgb(50,50,50);
+		width: 100%;
+		height: 200px;
+	}
+
+	article{width:100%;}
+
+	aside ul {
+		width: 100%;
+		position: absolute;
+		padding: 20px 0;
+
+	}
+
+	aside ul li{
+		
+		display:inline;
+		line-height: 70px;
+	}
+
+	aside ul li a{
+		
+		text-decoration: none;
+		color:white;
+		display:inline;
+		padding: 10px 0px 10px 20px;
+		background-color:rgb(50,50,50);
+	}
+
+	aside ul li a:hover{
+		background-color:#e2c879;
+		color:black;
+		text-decoration: none;
+	}
+
+	aside ul li a i{
+		margin-bottom:5px;
+		margin-right: 6px;
+	}
+
+}
 
