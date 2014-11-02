@@ -32,8 +32,10 @@ class Categories
     /**
      * @var string
      *
-     * @ORM\Column(name="cat_banniere", type="string", length=50, nullable=true)
+     * @ORM\Column(name="cat_banniere_path", type="string", length=50, nullable=true)
      */
+    private $catBannierePath;
+
     private $catBanniere;
 
     /**
@@ -133,5 +135,74 @@ class Categories
     public function getCatBanniere()
     {
         return $this->catBanniere;
+    }
+
+
+
+
+    // Upload d'image
+    public function getAbsolutePath()
+    {
+        return null === $this->catBannierePath ? null : $this->getUploadRootDir().'/'.$this->catBannierePath;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->catBannierePath ? null : $this->getUploadDir().'/'.$this->catBannierePath;
+    }
+
+    protected function getUploadRootDir()
+    {
+        // le chemin absolu du répertoire où les documents uploadés doivent être sauvegardés
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        // on se débarrasse de « __DIR__ » afin de ne pas avoir de problème lorsqu'on affiche
+        // le document/image dans la vue.
+        return 'uploads/images/banniere';
+    }
+
+    public function upload()
+    {
+        // la propriété « catBanniere » peut être vide si le champ n'est pas requis
+        if (null === $this->catBanniere) {
+            return;
+        }
+
+        // la méthode « move » prend comme arguments le répertoire cible et
+        // le nom de fichier cible où le fichier doit être déplacé
+        $this->catBanniere->move($this->getUploadRootDir(), $this->catBanniere->getClientOriginalName());
+
+        // définit la propriété « path » comme étant le nom de fichier où vous
+        // avez stocké le fichier
+        $this->catBannierePath = $this->catBanniere->getClientOriginalName();
+
+        // « nettoie » la propriété « catBanniere » comme vous n'en aurez plus besoin
+        $this->catBanniere = null;
+    }
+
+    /**
+     * Set catBannierePath
+     *
+     * @param string $catBannierePath
+     * @return Categories
+     */
+    public function setCatBannierePath($catBannierePath)
+    {
+        $this->catBannierePath = $catBannierePath;
+
+        return $this;
+    }
+
+    /**
+     * Get catBannierePath
+     *
+     * @return string 
+     */
+    public function getCatBannierePath()
+    {
+        return $this->catBannierePath;
     }
 }

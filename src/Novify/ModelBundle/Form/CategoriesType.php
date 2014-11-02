@@ -16,7 +16,7 @@ class CategoriesType extends AbstractType
     {
         $builder
             ->add('catNom')
-            ->add('catBanniere')
+            ->add('catBanniere', 'file')
             ->add('valider', 'submit')
         ;
     }

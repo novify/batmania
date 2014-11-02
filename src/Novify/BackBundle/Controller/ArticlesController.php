@@ -50,6 +50,7 @@ class ArticlesController extends Controller
         $form = $this->createForm(new ArticlesType(), $article);
 
         if ($form->handleRequest($request)->isValid()) {
+            $article->upload();
             $em->persist($article);
             $em->flush();
 

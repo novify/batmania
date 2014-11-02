@@ -30,6 +30,7 @@ class CategoriesController extends Controller
 
         if ($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $categorie->upload();
             $em->persist($categorie);
             $em->flush();
 
@@ -49,6 +50,7 @@ class CategoriesController extends Controller
         $form = $this->createForm(new CategoriesType(), $categorie);
 
         if ($form->handleRequest($request)->isValid()) {
+            $categorie->upload();
             $em->persist($categorie);
             $em->flush();
 
