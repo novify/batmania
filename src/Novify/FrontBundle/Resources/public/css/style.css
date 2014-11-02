@@ -538,29 +538,60 @@ input[type=checkbox]:checked ~ #menu{
 .news {
 	border: 1px solid #FFFFFF;
 	height: 200px;
-	background: url('../images/news.png');
+	background: url('../images/news.jpg');
 	background-size: cover;
 }
 
 .top_ventes {
 	border: 1px solid #FFFFFF;
 	height: 415px;
-	background: url('../images/top.png');
+	background: url('../images/top.jpg');
 	background-size: cover;
 }
 
 .coupcoeur {
 	border: 1px solid #FFFFFF;
 	height: 200px;
-	background: url('../images/coeur.png');
+	background: url('../images/coeur.jpg');
 	background-size: cover;
 }
 
 .promo {
 	border: 1px solid #FFFFFF;
 	height: 200px;
-	background: url('../images/promos2.png');
+	background: url('../images/promos.jpg');
 	background-size: cover;
+}
+
+.news p, .coupcoeur p, .promo p, .top_ventes p {
+	font-weight: 900;
+	font-family: 'Roboto', sans-serif;
+	opacity: 0.50;
+	padding: 7px;
+}
+
+.news p {
+	color: #5d656b;
+	font-size: 50px;
+	text-align: left;
+	padding-top: 80px;
+}
+
+.coupcoeur p {
+	font-size: 32px;
+	text-align: left;
+}
+
+.promo p {
+	margin-top: 7px;
+	font-size: 49px;
+	text-align: right;
+}
+
+.top_ventes p {
+	margin-top: 0;
+	font-size: 42px;
+	text-align: center;
 }
 
 /*-FIN BODY-*/
