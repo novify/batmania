@@ -563,14 +563,14 @@ input[type=checkbox]:checked ~ #menu{
 	font-weight: 900;
 	font-family: 'Roboto', sans-serif;
 	opacity: 0.50;
-	padding: 7px;
+	padding: 10px;
 }
 
 .news p {
-	color: #5d656b;
-	font-size: 50px;
+	color:rgb(170,170,170);
+	font-size: 60px;
 	text-align: left;
-	padding-top: 80px;
+	padding-top: 60px;
 }
 
 .coupcoeur p {
@@ -585,6 +585,7 @@ input[type=checkbox]:checked ~ #menu{
 }
 
 .top_ventes p {
+	color:rgb(170,170,170);
 	margin-top: 0;
 	font-size: 42px;
 	text-align: center;
