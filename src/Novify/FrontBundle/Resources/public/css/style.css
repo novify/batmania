@@ -476,7 +476,6 @@ input[type=checkbox]:checked ~ #menu{
 #carrousel {
 	margin-bottom: 50px;
 	width: 100%;
-	z-index: -1;
 }
 
 #carrousel #box { 
@@ -485,7 +484,6 @@ input[type=checkbox]:checked ~ #menu{
 	height: 250px;
 	margin: 0 auto; 
 	overflow: hidden; 
-	z-index: -1;
 }
 
 #carrousel #box .slide { 
@@ -494,7 +492,6 @@ input[type=checkbox]:checked ~ #menu{
 	width: 100%;  
 	height: 100%;
 	display: inline-block; 
-	z-index: 0;
 }
 
 #carrousel #box .slide img { 
@@ -503,7 +500,6 @@ input[type=checkbox]:checked ~ #menu{
 	width: 100%;  
 	height: auto;
 	display: inline-block; 
-	z-index: 0;
 }
 
 
