@@ -15,7 +15,7 @@ class CarousselType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('carImg')
+            ->add('carImg', 'file')
             ->add('carLien')
             ->add('Créer', 'submit')
         ;

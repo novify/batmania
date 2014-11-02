@@ -8,14 +8,15 @@
 		
 
 			<div id="box">
-				<!-- Le lien est à chercher dans la bdd -->
-				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel1.png')}}" alt="carousel1" title="" /></a> <!-- Le nom de l'image est à chercher dans la bdd-->
 
-				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel2.png')}}" alt="carousel1" title="" /></a>
+				{% for caroussels in caroussels  %}
 
-				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel3.png')}}" alt="carousel1" title="" /></a>
+					<a href="{{caroussels.carLien}}" class="slide">
+						<img src="{{ asset(caroussels.getWebPath)}}" alt="carousel" title="" />
+					</a> <!-- Le nom de l'image est à chercher dans la bdd-->
+				
+				{% endfor %}
 
-				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel4.png')}}" alt="carousel1" title="" /></a>
 		        
 		    </div>
 		</div>
