@@ -37,6 +37,7 @@ a:hover {
 	text-decoration: none;
 }
 
+a:focus{color:inherit;text-decoration:none;}
 /*-- Fenêtre Pop-up --*/
 .white-popup {
 	position: relative;
@@ -456,12 +457,12 @@ ul li a:hover + .survol, .survol:hover {
 }
 
 /*Checkbox*/
-input[type=checkbox]{
+nav input[type=checkbox]{
     display: none;
 }
 
 /*Checkbox sous les 760px*/
-input[type=checkbox]:checked ~ #menu{
+nav input[type=checkbox]:checked ~ #menu{
     display: block;
 }
 
@@ -476,7 +477,6 @@ input[type=checkbox]:checked ~ #menu{
 #carrousel {
 	margin-bottom: 50px;
 	width: 100%;
-	z-index: -1;
 }
 
 #carrousel #box { 
@@ -485,16 +485,14 @@ input[type=checkbox]:checked ~ #menu{
 	height: 250px;
 	margin: 0 auto; 
 	overflow: hidden; 
-	z-index: -1;
 }
 
 #carrousel #box .slide { 
 	display: block;
 	position: absolute; 
 	width: 100%;  
-	height: auto;
+	height: 100%;
 	display: inline-block; 
-	z-index: -1;
 }
 
 #carrousel #box .slide img { 
@@ -503,7 +501,6 @@ input[type=checkbox]:checked ~ #menu{
 	width: 100%;  
 	height: auto;
 	display: inline-block; 
-	z-index: -1;
 }
 
 
@@ -538,29 +535,61 @@ input[type=checkbox]:checked ~ #menu{
 .news {
 	border: 1px solid #FFFFFF;
 	height: 200px;
-	background: url('../images/news.png');
+	background: url('../images/news.jpg');
 	background-size: cover;
 }
 
 .top_ventes {
 	border: 1px solid #FFFFFF;
 	height: 415px;
-	background: url('../images/top.png');
+	background: url('../images/top.jpg');
 	background-size: cover;
 }
 
 .coupcoeur {
 	border: 1px solid #FFFFFF;
 	height: 200px;
-	background: url('../images/coeur.png');
+	background: url('../images/coeur.jpg');
 	background-size: cover;
 }
 
 .promo {
 	border: 1px solid #FFFFFF;
 	height: 200px;
-	background: url('../images/promos2.png');
+	background: url('../images/promos.jpg');
 	background-size: cover;
+}
+
+.news p, .coupcoeur p, .promo p, .top_ventes p {
+	font-weight: 900;
+	font-family: 'Roboto', sans-serif;
+	opacity: 0.50;
+	padding: 10px;
+}
+
+.news p {
+	color:rgb(170,170,170);
+	font-size: 60px;
+	text-align: left;
+	padding-top: 60px;
+}
+
+.coupcoeur p {
+	font-size: 32px;
+	text-align: left;
+}
+
+.promo p {
+	margin-top: 7px;
+	font-size: 49px;
+	text-align: right;
+}
+
+.top_ventes p {
+	color:rgb(170,170,170);
+	margin-top: 0;
+	font-size: 42px;
+	text-align: center;
 }
 
 /*-FIN BODY-*/
@@ -902,7 +931,7 @@ input[type=checkbox]:checked ~ #menu{
 		font-size: 22px;
 		text-transform: uppercase;
 		font-weight: 400;
-		margin-bottom:20px;
+		margin-bottom: 20px;
 	}
 
 	#test-popup #produit_popup .popup_body {
@@ -1746,11 +1775,176 @@ footer .container #mentionslegales{
 
 
 
+/***************************
+	FORMULAIRE
+**************************/
+
+form#formulaire h4 {
+	font-weight: 400;
+	color: #1a465c;
+	font-size: 20px;
+}
+
+form#formulaire h5 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+form#formulaire a {
+	font-size: 14px;
+	color: #3781b2;
+	text-decoration: underline;
+}
+
+form#formulaire a:hover {
+	font-size: 14px;
+	color: #3781b2;
+	text-decoration: underline;
+}
+
+form#formulaire legend {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+form#formulaire fieldset {
+	margin-top: 30px;
+	margin-bottom: 20px;
+	padding: 20px;
+	border-color: #1a465c;
+}
+
+form#formulaire span {
+	display: none;
+}
+
+form#formulaire label {
+	margin-right: 15px;
+	display: block;
+	width: 150px;
+	float: left;
+}
+
+form#formulaire input {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 15px;
+	width: 150px;
+	border: 1px solid #dedede;
+	color: #54555A;
+	padding: 5px;
+}
+
+form#formulaire input:focus {
+	outline:none;
+}
+
+form#formulaire input:required {
+	background: url('../images/asterisk.png') 98% center no-repeat;
+}
+
+form#formulaire input:focus:invalid {
+	border-color: #ff0000;
+	background: url('../images/invalid.png') 98% center no-repeat;
+	-webkit-box-shadow : (#d45252,0,0,5px);
+}
+
+form#formulaire input:focus:invalid + span {
+	display: inline;
+	color: #ff0000;
+	margin-right: 10px;
+}
+
+form#formulaire input:focus:valid {
+	border-color: #56c93f;
+	background: url('../images/valid.png') 98% center no-repeat;
+}
+
+form#formulaire input:valid {
+	border-color: #56c93f;
+	background: url('../images/valid.png') 98% center no-repeat;
+}
+
+form#formulaire input[type=checkbox] {
+	width: auto;
+}
+
+form#formulaire input[type=submit] {
+	padding: 10px 5px;
+	border: none;
+	display: block;
+	width: auto;
+	height: auto;
+	font-size: 20px;
+	color: #fff;
+	background-color: #e2c879;
+	cursor: pointer;
+	-webkit-transform: scale(1);
+	transition: all 0.25s;
+}
+
+form#formulaire input[type=submit]:hover {
+	-webkit-transform: scale(1.02);
+	background-color: #f2dc9a;
+}		
+
+	/* CSS indépendant à chaque champs*/
+
+	form#formulaire label.prenom {
+	 	margin-right: 19px;
+	}
+
+	form#formulaire label.pass {
+	 	width: 250px;
+	}
+
+	form#formulaire input#civiliteh {
+		margin-right: -125px;
+	}
+
+	form#formulaire input#civilitef {
+		margin-right: -125px;
+		margin-left: 165px;
+	}
+
+	form#formulaire input#novify_modelbundle_signup_userMail {
+		width: 200px;
+	}
+
+	form#formulaire input#novify_modelbundle_signup_userLivTel {
+		width: 130px;
+	}
+
+	form#formulaire input#novify_modelbundle_signup_userLivAdresse {
+		width: 250px;
+	}
+
+	form#formulaire input#novify_modelbundle_signup_userLivCodep {
+		width: 85px;
+	}
+
+	form#formulaire input#creer_compte {
+		margin-left: 76%;
+		margin-bottom: 15px;
+	}
+
+	form#formulaire input#creer_compte:focus:valid {
+	background: none;
+	}
+
+	form#formulaire input#creer_compte:valid {
+	background-image: none;
+	}
+	/* ---- */
+
+/*- FIN FORMULAIRE -*/
 
 
 
 
-/*media queries*/
+/***************************
+	MEDIA QUERIES
+**************************/
 
 
 @media only screen and (min-width: 1500px) {
@@ -1791,6 +1985,47 @@ footer .container #mentionslegales{
 }
 
 @media only screen and (max-width: 768px) {
+		
+
+	
+
+	.news p, .coupcoeur p, .promo p, .top_ventes p {
+		font-weight: 900;
+		font-family: 'Roboto', sans-serif;
+		opacity: 0.50;
+		padding: 5px;
+	}
+
+	.news p {
+		color:rgb(200,200,200);
+		font-size: 40px;
+		text-align: left;
+		padding-top: 90px;
+	}
+
+	.coupcoeur p {
+		font-size: 32px;
+		text-align: left;
+	}
+
+	.promo p {
+		color:rgb(10,10,10);
+		padding:0px;
+		background-color: rgba(255,255,255,0.7);
+		margin-top: 7px;
+		font-size: 49px;
+		text-align: right;
+	}
+
+	.top_ventes p {
+		color:rgb(200,200,200);
+		margin-top: 0;
+		font-size: 42px;
+		text-align: center;
+	}
+
+
+
 
 	/*Menu pour Ipad & Iphone*/
 		/*Style du menu horizontal*/
@@ -1864,6 +2099,8 @@ footer .container #mentionslegales{
 
 
 }
+
+/*-----*/
 
 
 

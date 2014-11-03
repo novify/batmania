@@ -36,9 +36,9 @@ class Commentaires
     private $commentNote;
 
     /**
-     * @var integer
+     * @var \DateTime
      *
-     * @ORM\Column(name="comment_date", type="integer")
+     * @ORM\Column(name="comment_date", type="date")
      */
     private $commentDate;
 
@@ -54,7 +54,7 @@ class Commentaires
 
     public function __construct()
     {
-        $this->commentDate = new \DateTIme();
+        $this->commentDate = new \DateTime();
     }
 
     /**

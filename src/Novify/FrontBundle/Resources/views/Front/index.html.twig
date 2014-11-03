@@ -8,14 +8,15 @@
 		
 
 			<div id="box">
-				<!-- Le lien est à chercher dans la bdd -->
-				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel1.png')}}" alt="carousel1" title="" /></a> <!-- Le nom de l'image est à chercher dans la bdd-->
 
-				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel2.png')}}" alt="carousel1" title="" /></a>
+				{% for caroussels in caroussels  %}
 
-				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel3.png')}}" alt="carousel1" title="" /></a>
+					<a href="{{caroussels.carLien}}" class="slide">
+						<img src="{{ asset(caroussels.getWebPath)}}" alt="carousel" title="" />
+					</a> <!-- Le nom de l'image est à chercher dans la bdd-->
+				
+				{% endfor %}
 
-				<a href="#" class="slide"><img src="{{ asset('bundles/novifyfront/images/carousel4.png')}}" alt="carousel1" title="" /></a>
 		        
 		    </div>
 		</div>
@@ -30,16 +31,19 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="news">
+									<p>NOUVEAUTÉS</p>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="coupcoeur">
+									<p>COUP<br/>DE COEUR</p>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="promo">
+									<p>PROMOS</p>
 								</div>
 							</div>
 						</div>
@@ -47,6 +51,7 @@
 
 					<div class="col-md-4">
 						<div class="top_ventes">
+							<p>TOP DES VENTES</p>
 						</div>
 					</div>
 

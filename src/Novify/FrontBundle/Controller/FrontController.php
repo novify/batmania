@@ -2,6 +2,8 @@
 
 namespace Novify\FrontBundle\Controller;
 
+use Novify\ModelBundle\Entity\Commentaires;
+use Novify\ModelBundle\Form\CommentairesType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -18,7 +20,12 @@ class FrontController extends Controller
 
     public function indexAction()
     {
-        return $this->render('NovifyFrontBundle:Front:index.html.twig');
+
+        $em = $this->getDoctrine()->getManager();
+        $caroussels = $em->getRepository('NovifyModelBundle:Caroussel')->findAll();
+
+        return $this->render('NovifyFrontBundle:Front:index.html.twig', array('caroussels' => $caroussels));
+
     }
 
     public function loginAction()
@@ -28,12 +35,27 @@ class FrontController extends Controller
 
     public function panierAction()
     {
-        return $this->render('NovifyFrontBundle:Front:panier.html.twig');
+        // A faire fonctionner
+
+        $em = $this->getDoctrine()->getManager();
+        $suggestion_articles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
+            array('sousCategorie' => ''), // Critere
+            array('id' => 'desc'), // Tri
+            4, // Limite
+            0 // Offset
+        );
+
+        return $this->render('NovifyFrontBundle:Front:panier.html.twig', array('suggestion_articles' => $suggestion_articles));
     }
 
     public function compteAction()
     {
         return $this->render('NovifyFrontBundle:Front:compte.html.twig');
+    }
+
+    public function compteModifAction()
+    {
+        return $this->render('NovifyFrontBundle:Front:compte_modif.html.twig');
     }
 
     public function contactAction()
@@ -76,17 +98,39 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:catalogue.html.twig', array('categorie' => $cat, 'souscats' => $souscat));
     }
 
-    public function viewoneAction($categorie, $sousCategorie, $id)
+    public function viewoneAction(Request $request, $categorie, $sousCategorie, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $cat = $em->getRepository('NovifyModelBundle:Categories')->findOneBycatNom($categorie);
         $souscat = $em->getRepository('NovifyModelBundle:Souscategories')->findOneBy(array('categorie' => $cat, 'souscatNom' => $sousCategorie));
         $article = $em->getRepository('NovifyModelBundle:Articles')->findOneBy(array('sousCategorie' => $souscat, 'id' => $id));
+        $suggestion_articles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
+            array('sousCategorie' => $souscat), // Critere
+            array('id' => 'desc'), // Tri
+            4, // Limite
+            0 // Offset
+        );
+
+        $commentaires = $em->getRepository('NovifyModelBundle:Commentaires')->findBy(array('article' => $article));
 
         if (!$article) {
             throw new NotFoundHttpException("Cet article n'existe pas.");
         }
 
-        return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article));
+        if (!$suggestion_articles) {
+            throw new NotFoundHttpException("Cet article suggeré n'existe pas.");
+        }
+
+        $commentaire = new Commentaires();
+        $form = $this->createForm(new CommentairesType(), $commentaire);
+        if ($form->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($commentaire);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('novify_front_view_fiche'));
+        }
+
+        return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article, 'suggestion_articles' => $suggestion_articles, 'commentaires' => $commentaires, 'form' => $form->createView()));
     }
 }

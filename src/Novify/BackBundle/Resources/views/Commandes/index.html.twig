@@ -1,0 +1,53 @@
+{% extends 'NovifyBackBundle::base.html.twig' %}
+{% block main %}
+
+
+
+
+    <article>
+        <div class="container">
+            <h1>Commandes</h1> <!-- Titre de la section -->
+            
+            <!-- Ajouter une catégorie -->
+            <!-- <p class="ajouter"><a href="{# {{ path('novify_back_categorie_add') }} #}"><i class="glyphicon-plus"></i> Ajouter</a></p> -->
+
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Client</th>
+                        <th>Total</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+
+
+{% for commandes in commandes %}
+                    <tr>
+                        <td>{{ commandes.id }}</td>
+                        <td>{{ commandes.utilisateur.userNom }}</td>
+                        <td>{{ commandes.comPrix }} €</td>
+                        <td>{# {{ commandes.comDate }} #}</td>
+
+                       
+                    </tr>
+
+{% endfor %}
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+    </article>
+
+
+
+
+{% endblock %}

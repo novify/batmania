@@ -82,6 +82,14 @@ novify_back_utilisateurs_remove:
     path:     /utilisateurs/remove/{id}
     defaults: { _controller: NovifyBackBundle:Utilisateurs:remove }
 
+novify_back_commandes_hello:
+    path:     /commandes/hello/{name}
+    defaults: { _controller: NovifyBackBundle:Caroussel:hello }
+
+novify_back_commandes_index:
+    path:     /commandes
+    defaults: { _controller: NovifyBackBundle:Commandes:index }
+
 novify_back_caroussel_hello:
     path:     /caroussel/hello/{name}
     defaults: { _controller: NovifyBackBundle:Caroussel:hello }

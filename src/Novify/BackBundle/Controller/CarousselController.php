@@ -30,6 +30,7 @@ class CarousselController extends Controller
 
         if ($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $caroussel->upload();
             $em->persist($caroussel);
             $em->flush();
 
@@ -49,6 +50,7 @@ class CarousselController extends Controller
         $form = $this->createForm(new CarousselType(), $caroussel);
 
         if ($form->handleRequest($request)->isValid()) {
+            $caroussel->upload();
             $em->persist($caroussel);
             $em->flush();
 

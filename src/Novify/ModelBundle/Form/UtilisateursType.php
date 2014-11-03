@@ -15,8 +15,11 @@ class UtilisateursType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('userMdp')
-            ->add('userMail')
+            ->add('userMdp', 'repeated', array(
+                'type' => 'password',
+                'invalid_message' => 'Les mots de passe doivent correspondre',
+            ))
+            ->add('userMail', 'email')
             ->add('userNom')
             ->add('userPrenom')
             ->add('userCivilite')
@@ -37,8 +40,7 @@ class UtilisateursType extends AbstractType
             ->add('userLivPays')
             ->add('userLivCodep')
             ->add('userLivVille')
-            ->add('userLivTel')
-            ->add('Créer', 'submit')
+            ->add('userLivTel', 'tel')
         ;
     }
     
@@ -48,7 +50,8 @@ class UtilisateursType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Novify\ModelBundle\Entity\Utilisateurs'
+            'data_class' => 'Novify\ModelBundle\Entity\Utilisateurs',
+            'csrf_protection'   => false
         ));
     }
 

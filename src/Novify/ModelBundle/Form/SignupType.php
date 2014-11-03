@@ -15,6 +15,7 @@ class SignupType extends AbstractType
     {
         $builder
             ->remove('userFactCivilite')
+            ->remove('userCivilite')
             ->remove('userFactNom')
             ->remove('userFactPrenom')
             ->remove('userFactSociete')

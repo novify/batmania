@@ -22,6 +22,10 @@ html, body{
 
 }
 
+.required::before{
+	content:'*';
+}
+
 .container_index{	
 
 	width: 90%;
@@ -187,7 +191,10 @@ article table thead th{
 
 article table tbody tr{
 	font-weight: 300;
+	padding:10px 0;
 }
+
+article table tbody tr td{padding:5px 0;}
 
 article table tbody img{
 	width: 50%;
