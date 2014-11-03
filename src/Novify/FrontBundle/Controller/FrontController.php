@@ -3,7 +3,9 @@
 namespace Novify\FrontBundle\Controller;
 
 use Novify\ModelBundle\Entity\Utilisateurs;
+use Novify\ModelBundle\Entity\Commentaires;
 use Novify\ModelBundle\Form\SignupType;
+use Novify\ModelBundle\Form\CommentairesType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -99,17 +101,29 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:catalogue.html.twig', array('categorie' => $cat, 'souscats' => $souscat));
     }
 
-    public function viewoneAction($categorie, $sousCategorie, $id)
+    public function viewoneAction(Request $request, $categorie, $sousCategorie, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $cat = $em->getRepository('NovifyModelBundle:Categories')->findOneBycatNom($categorie);
         $souscat = $em->getRepository('NovifyModelBundle:Souscategories')->findOneBy(array('categorie' => $cat, 'souscatNom' => $sousCategorie));
         $article = $em->getRepository('NovifyModelBundle:Articles')->findOneBy(array('sousCategorie' => $souscat, 'id' => $id));
+        $commentaires = $em->getRepository('NovifyModelBundle:Commentaires')->findBy(array('article' => $article));
 
         if (!$article) {
             throw new NotFoundHttpException("Cet article n'existe pas.");
         }
 
-        return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article));
+
+        $commentaire = new Commentaires();
+        $form = $this->createForm(new CommentairesType(), $commentaire);
+        if ($form->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($commentaire);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('novify_front_view_fiche'));
+        }
+
+        return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article, 'commentaires' => $commentaires, 'form' => $form->createView()));
     }
 }
