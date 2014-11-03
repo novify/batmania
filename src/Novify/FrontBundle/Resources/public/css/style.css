@@ -1902,8 +1902,9 @@ form#formulaire input:valid {
 	background: url('../images/valid.png') 98% center no-repeat;
 }
 
-form#formulaire input[type=checkbox] {
+form#formulaire input[type=radio] {
 	width: auto;
+	float:left;
 }
 
 form#formulaire input[type=submit] {
@@ -1936,12 +1937,11 @@ form#formulaire input[type=submit]:hover {
 	 	width: 220px;
 	}
 
-	form#formulaire input#novify_modelbundle_signup_userCivilite_0 {
-		margin-right: -265px;
+	form#formulaire #novify_modelbundle_signup_userCivilite label{
+		width: 50px;
 	}
 
-	form#formulaire input#novify_modelbundle_signup_userCivilite_1 {
-		margin-right: -825px;
+	form#formulaire #novify_modelbundle_signup_userCivilite_1 label{
 	}
 
 	form#formulaire input#novify_modelbundle_signup_userMail {
