@@ -110,6 +110,11 @@
 					</div> <!-- Fin col-sm-6 -->
 				</div> <!-- Fin row principal -->
 
+
+
+
+
+
 				<div class="row" id="commentaires_article"> <!-- Comments -->
 
 					<div class="col-sm-12">
@@ -118,62 +123,41 @@
 
 						<p>Moyenne des commentaires : <b>X/10</b></p> <!-- A calculer via calcul de la bdd -->
 
-						<p style="margin-bottom: 40px">18 commentaires rédigés</p> <!-- Nombre a récupérer selon le nombre d'entrées dans la bdd -->
+						<p style="margin-bottom: 40px">{{ commentaires|length }} commentaires rédigés</p> <!-- Nombre a récupérer selon le nombre d'entrées dans la bdd -->
 
 
 						<!-- Boucle des commentaires -->
 
+{% for commentaire in commentaires  %}
+
 						<div class="row bloc_commentaire"> <!-- Commentaire le plus récent-->
 
 							<div class="col-sm-3">
-								<p><b>Note:</b> 9/10</p> <!-- Note donnée dans ce commentaire-->
-								<p>Par Pimolo</p> <!-- Auteur du comment-->
+								<p><b>Note:</b> {{commentaire.commentNote}}/10</p> <!-- Note donnée dans ce commentaire-->
+								<p>Par {{commentaire.utilisateur.userPrenom}} {{commentaire.utilisateur.userNom}}</p> <!-- Auteur du comment-->
 							</div>
 
 							<div class="col-sm-9">
-								<p>Moins bien travaillé que le tome 1, la suite des aventures de Batman par Snyder se laisse lire facilement! On apprends tous de meme de sacrées révélations (qui foutent parfois le bordel dans la continuité de l'univers du chevalier noir...) et ma grande deception reste que ce ne sois pas Capullo qui ai déssiné l'ensemble de l'histoire. Histoire dailleur beaucoup plus courte que le précédent volume et qui est donc agrémenté par plusieurs scénario annexes ayant un rapport plus ou moins important avec les hiboux...<br/>
-
-								Bref a voir si vous avez adoré le premier tome, sinon bien dispensable! </p>
+								<p>
+									{{commentaire.commentTexte}}
+								</p>
 							</div>
 
 						</div>
 
+{% endfor %}
 
+						<!-- Formulaire -->
+						<div class="formulaire_commentaires">
+							{{ form_start(form, {'method': 'POST'}) }}
 
+							    {{ form_row(form.commentTexte) }}
+							    {{ form_row(form.commentNote) }}
 
-						<div class="row bloc_commentaire"> <!-- Deuxième commentaire le plus récent -->
+							    <input type="submit" value="Commenter"/>
 
-							<div class="col-sm-3">
-								<p><b>Note:</b> 6/10</p> <!-- Note donnée dans ce commentaire-->
-								<p>Par Bibi12</p> <!-- Auteur du comment-->
-							</div>
+							{{ form_end(form, {'render_rest': false}) }}
 
-							<div class="col-sm-9">
-								<p>Le premier volet avait scotché tout le monde avec un scénario diabolique et des dessins magnifiques (ou du moins très fluides). Ici on change quelque peu d'ambiance, en effet la cour des hiboux passe à l'attaque ! Seul bémol, Batman est diminué par son aventure précédente ...
-								Ici la trame déçoit un peu, il y à quelques surprises mais globalement la nuit ne parait pas "infernal" comme promis. Le twist final est en revanche un peu déjà vu mais toujours sympathique car inattendue !
-								Bref un très bon Batman de toute manière ! </p>
-							</div>
-
-						</div>
-
-
-
-						<div class="row bloc_commentaire"> <!--Troisième commentaire le plus récent -->
-
-							<div class="col-sm-3">
-								<p><b>Note:</b> 8/10</p> <!-- Note donnée dans ce commentaire-->
-								<p>Par Bégeydelastreet4500</p> <!-- Auteur du comment-->
-							</div>
-
-							<div class="col-sm-9">
-								<p>La première moitié de ce tome vient continuer (et conclure?) l'histoire de la cour des hiboux démarrée dans le tome1. Avec toujours le tandem Snyder-Capullo aux manoeuvres (à l'exception d'un épisode dessiné par Albuquerque), on a le droit à un récit plutôt axé sur l'action, les ergots étant lachés pour éliminer tous les grands noms de Gotham, dont Bruce qui se retrouve attaqué dans son propre manoir... Cette partie est au niveau du 1er tome, agréable tant dans l'histoire qui se terminera en laissant des ouvertures que graphiquement avec un Capullo toujours en grande forme.<br/>
-
-								La suite par contre n'est pas du même accabit, avec des histoires tournant vaguement sur la thématique des hiboux, mais jouant sur la ré-écriture du passé(histoire du père d'Alfred, déjà majordome des parents Waynes et origines de Freezer). Des récits qui n'appportent pas grand chose si ce n'est sans doute de la complexité dans les origines du Batman... Le dernier récit est encore plus anecdotique..
-								Le tout sera mise en images par plusieurs dessinateurs (parfois même dans le même épisode) avec des résultats assez variés.. un petit plus pour l'annual de Jason Fabok..<br/>
-
-								Bref tout cela donne peu le sentiment d'un tout cohérent pour un seul et même album dont une bonne moitié est largement dispensable...
-								Mais c'est sans doute le prix pour avoir en librairie, une série régulière... </p>
-							</div>
 
 						</div>
 
@@ -193,49 +177,22 @@
 
 								<div class="row">
 
+
+{% for suggestion_article in suggestion_articles %}
+
 									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- Premier article de la ligne-->
 
 										<div class="article_image"> <!-- Image de l'article-->
-											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></a>
+											<a href="#"><img src="{{ asset(suggestion_article.getWebPath) }}" alt=""></a>
 										</div>
 
-										<h5><a href="#">Titre article</a></h5> <!-- Prix et nom de l'article -->
-										<p><a href="">X €</a></p>
+										<h5><a href="#">{{suggestion_article.artNom}}</a></h5> <!-- Prix et nom de l'article -->
+										<p><a href="">{{suggestion_article.artPrix}} €</a></p>
 									</div> <!-- Fin du premier article-->
 
 
-									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
 
-										<div class="article_image"> <!-- Image article -->
-											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt=""></a>
-										</div>
-
-										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
-										<p><a href="">X €</a></p>
-									</div> <!-- Fin de l'article -->
-
-
-									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
-
-										<div class="article_image"> <!-- Image article -->
-											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article3.jpg')}}" alt=""></a>
-										</div>
-
-										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
-										<p><a href="">X €</a></p>
-									</div> <!-- Fin de l'article -->
-
-
-									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
-
-										<div class="article_image">
-											<img src="{{ asset('bundles/novifyfront/images/article4.jpg')}}" alt="">
-										</div>
-
-										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
-										<p><a href="">X €</a></p>
-									</div> <!-- Fin de l'article -->
-
+{% endfor %}
 
 								</div>
 

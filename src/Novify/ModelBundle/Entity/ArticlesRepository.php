@@ -12,4 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class ArticlesRepository extends EntityRepository
 {
+	// public function findAllWithLimit($limit)
+	// {
+	// 	// return $this->createQueryBuilder('a')->ge
+	// }
 }
