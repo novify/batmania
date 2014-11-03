@@ -1907,6 +1907,10 @@ form#formulaire input[type=radio] {
 	float:left;
 }
 
+form#formulaire input[type=checkbox] {
+	width: auto;
+}
+
 form#formulaire input[type=submit] {
 	background: none;
 	padding: 10px 5px;
