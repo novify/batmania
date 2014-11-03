@@ -21,7 +21,12 @@ class FrontController extends Controller
 
     public function indexAction()
     {
-        return $this->render('NovifyFrontBundle:Front:index.html.twig');
+
+        $em = $this->getDoctrine()->getManager();
+        $caroussels = $em->getRepository('NovifyModelBundle:Caroussel')->findAll();
+
+        return $this->render('NovifyFrontBundle:Front:index.html.twig', array('caroussels' => $caroussels));
+
     }
 
     public function loginAction()
