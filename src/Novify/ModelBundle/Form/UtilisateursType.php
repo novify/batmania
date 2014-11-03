@@ -42,7 +42,8 @@ class UtilisateursType extends AbstractType
             ->add('userLivPays')
             ->add('userLivCodep')
             ->add('userLivVille')
-            ->add('userLivTel', 'tel')
+            ->add('userLivTel')
+            ->add('Valider', 'submit')
         ;
     }
     

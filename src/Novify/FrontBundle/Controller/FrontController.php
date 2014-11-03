@@ -4,8 +4,12 @@ namespace Novify\FrontBundle\Controller;
 
 use Novify\ModelBundle\Entity\Commentaires;
 use Novify\ModelBundle\Form\CommentairesType;
+
+use Novify\ModelBundle\Form\UtilisateursType;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpFoundation\Request;
 
 class FrontController extends Controller
 {
@@ -50,11 +54,40 @@ class FrontController extends Controller
 
     public function compteAction()
     {
+        $user = $this->getUser();
+
+        if (!$user) {
+            throw new NotFoundHttpException("Cet utilisateur n'existe pas.");
+        }
+
         return $this->render('NovifyFrontBundle:Front:compte.html.twig');
     }
 
-    public function compteModifAction()
+    public function compteModifAction(Request $request)
     {
+
+        $id = $this->getUser()->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $utilisateur = $em->getRepository('NovifyModelBundle:Utilisateurs')->find($id);
+        if (!$utilisateur) {
+            throw new NotFoundHttpException("Cet utilisateur n'existe pas.");
+        }
+        $form = $this->createForm(new UtilisateursType(), $utilisateur);
+
+        if ($form->handleRequest($request)->isValid()) {
+            $em->persist($utilisateur);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('novify_front_compte'));
+        }
+
+        return $this->render('NovifyFrontBundle:Front:compte_modif.html.twig', array('form' => $form->createView()));
+
+
+    
+
+
         return $this->render('NovifyFrontBundle:Front:compte_modif.html.twig');
     }
 
