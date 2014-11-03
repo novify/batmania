@@ -17,7 +17,7 @@ security:
             chain :
                 providers: [in_memory, bdd]
         bdd:
-            entity: { class: Novify\ModelBundle\Entity\Utilisateurs, property: userNom }
+            entity: { class: Novify\ModelBundle\Entity\Utilisateurs, property: userMail }
         in_memory:
             memory:
                 users:
