@@ -107,22 +107,24 @@
 											</div>
 
 											<div class="popup_body">
-												<form method="post" acti on="#">
+												<form id="formulaire" method="post" action="#">
 													<strong>J'ai déjà un compte</strong>
 													<input type="radio" name="teakts" value="oui" id="oui" onClick="afficher();" /> <br />
 													<strong>Je n'ai pas encore de compte</strong>
-													<input type="radio" name="teakts" value="non" onClick="afficher2();" id="non"/> <br/>
+													<input type="radio" name="teakts" value="non" onClick="afficher2();" id="non"/><br/>
 													 
 													 
 													 
-													<p id="champ_cache">
-													Identifiant : <input type="text" name="identifiant" placeholder="Votre Identifiant"/><br/>
-													Mot de passe : <input type="text" name="mdp" placeholder="Votre mot de passe"/><br/>
+													<p id="champ_cache" style="margin-top: 30px;">
+													<label for="identifiant">Adresse Mail</label><br/>
+													<input type="text" name="identifiant"/ required><br/>
+													<label for="identifiant">Mot de passe</label><br/>
+													<input type="text" name="mdp" required/><br/><br/>
 													<a href="#">mot de passe oublié ?</a><br/>
 													<input type="submit" value="Se connecter" />
 													</p>
 
-													<p id="champ_cache2">
+													<p id="champ_cache2" style="margin-top: 30px;">
 													Pas encore de compte :
 													<input type="submit" value="Inscrivez-vous" />
 													</p>
@@ -130,7 +132,7 @@
 											</div>
 
 											<div class="popup_footer">
-												<a href="#" style="float:right;">Etape suivante >></a>
+												<a href="#" id="suivante_1" style="float:right;">Etape suivante >></a>
 											</div>
 										</div>
 
@@ -142,15 +144,50 @@
 											</div>
 
 											<div class="popup_body">
-												<form method="post" acti on="#">
+												<form id="formulaire" method="post" action="#">
 													<strong>Veuillez renseignez vos coordonnées bancaires</strong>
-													<p> Bientôt un formulaire ici .. </p>
+													<p>
+														<form id="formulaire" method="POST" action="#"> 
+														<fieldset>
+													    <legend>Informations CB</legend>
+													    <ol>
+													      <li>
+													          <label for="type_de_carte" style="width:200px;">Type de carte bancaire</label>
+													          <ol>
+													            <li>
+													              <input name="type_de_carte" type="radio">
+													              <label for="visa">VISA</label>
+													            </li>
+													            <li>
+													              <input name="type_de_carte" type="radio">
+													              <label for="amex">AmEx</label>
+													            </li>
+													            <li>
+													              <input name="type_de_carte" type="radio">
+													              <label for="mastercard">Mastercard</label>
+													            </li>
+													          </ol>
+													      </li>
+													      <li>
+													        <label for="numero_de_carte">N° de carte</label>
+													        <input name="numero_de_carte" type="texte" required>
+													      </li>
+													      <li>
+													        <label for="securite">Code sécurité</label>
+													        <input name="securite" type="number" required>
+													      </li>
+													      <li>
+													        <label for="nom_porteur">Nom du porteur</label>
+													        <input name="nom_porteur" type="text" required>
+													      </li>
+													    </ol>
+													  </fieldset></p>
 												</form>
 											</div>
 
 											<div class="popup_footer">
-												<a href="#" style="float:left;"><< Etape Précédente</a>
-												<a href="#" style="float:right">Etape suivante >></a>
+												<a href="#" id="precedente_1" style="float:left;"><< Etape Précédente</a>
+												<a href="#" id="suivante_2" style="float:right">Etape suivante >></a>
 											</div>
 										</div>
 
@@ -214,7 +251,7 @@
 											</div>
 
 											<div class="popup_footer">
-												<a href="#" style="float:left;"><< Etape Précédente</a>
+												<a href="#" id="precedente_2" style="float:left;"><< Etape Précédente</a>
 											</div>
 										</div>
 									</div>
