@@ -101,7 +101,7 @@ class Articles
     /**
      * @var integer
      *
-     * @ORM\Column(name="art_stock", type="integer", nullable=true)
+     * @ORM\Column(name="art_stock", type="integer")
      */
     private $artStock;
 

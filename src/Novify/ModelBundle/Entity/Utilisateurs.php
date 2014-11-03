@@ -25,14 +25,14 @@ class Utilisateurs implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="user_mdp", type="string", length=100)
+     * @ORM\Column(name="user_mdp", type="string", length=255)
      */
     private $userMdp;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="user_mail", type="string", length=100)
+     * @ORM\Column(name="user_mail", type="string", length=255)
      */
     private $userMail;
 
@@ -198,7 +198,8 @@ class Utilisateurs implements UserInterface
     public function __construct()
     {
         $this->isActive = true;
-        $this->userSalt = md5(uniqid(null, true));
+        // $this->userSalt = md5(uniqid(null, true));
+        $this->userSalt = '';
     }
 
     /**
@@ -293,7 +294,7 @@ class Utilisateurs implements UserInterface
      */
     public function getUsername()
     {
-        return $this->userNom;
+        return $this->userMail;
     }
 
     /**
