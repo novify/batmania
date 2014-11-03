@@ -23,8 +23,8 @@ class UtilisateursType extends AbstractType
             ->add('userNom')
             ->add('userPrenom')
             ->add('userCivilite', 'choice', array(
-                    'choices' => array('F' => 'Femme', 'M' => 'Homme'),
-                    'expanded' => true))
+            'choices' => array('M' => 'Homme', 'F' => 'Femme')
+            'expanded' => true, 
             ->add('userFactCivilite')
             ->add('userFactNom')
             ->add('userFactPrenom')
@@ -42,7 +42,7 @@ class UtilisateursType extends AbstractType
             ->add('userLivPays')
             ->add('userLivCodep')
             ->add('userLivVille')
-            ->add('userLivTel')
+            ->add('userLivTel', 'tel')
         ;
     }
     
