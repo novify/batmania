@@ -6,19 +6,8 @@
 
 		<!-- Bloc -->
 		<div class="bloc_connexion">
-			 <div class="container" style="padding:35px">
-				<!--<div class="row">
-
-					<div class="col-md-8">
-
-					</div>
-
-					<div class="col-md-4">
-
-					</div>
-
-				</div>
-			</div> -->
+			<div class="container" style="padding:35px">
+				
 
 			<?php
 
@@ -39,17 +28,19 @@
 {% if error %}
 	<div>{{ error.message }}</div>
 {% endif %}
+
+
 				<div class="col-md-6">
 					<form id="formulaire" action="{{ path('login_check') }}" method="post">
-						<fieldset id="connexion">
-							<h4>Connexion</h4>
+						<fieldset>
+							<legend><h4>Connexion</h4></legend>
 
-								<div class="connex_email">
+								<div>
 									<label for="email" class="email">Adresse mail</label><br/>
 									<input type="email" name="email" placeholder="exemple@batmania.fr" id="email_connexion" value="{{ last_username }}" required/><br/><br/>
 								</div>
 
-								<div class="connex_psswd">
+								<div>
 									<label for="pass" class="pass">Entrez votre mot de passe</label><br/>
 									<input type="password" name="pass" id="pass_connexion" required/><br/><br/>
 								</div>
@@ -63,8 +54,7 @@
 						<input type="submit" value="Connexion"/>
 
 						<p><a href="#">Mot de passe oublié?</a></p>
-						<p>Pas encore de compte ?<br/><br/>
-						<a href="{{ path('inscription') }}" id="inscription_connex">inscrivez-vous</a></p>
+						<p>Pas encore de compte ? <a href="{{ path('inscription') }}">Inscrivez-vous</a>.</p>
 						</fieldset>
 					</form>
 				</div>
