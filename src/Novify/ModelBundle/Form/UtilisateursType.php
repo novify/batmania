@@ -23,7 +23,7 @@ class UtilisateursType extends AbstractType
             ->add('userNom')
             ->add('userPrenom')
             ->add('userCivilite', 'choice', array(
-                'choices' => array('m' => 'Masculin', 'f' => 'Féminin'),
+                'choices' => array('M' => 'Masculin', 'F' => 'Féminin'),
                 'expanded' => true
             ))
             ->add('userFactCivilite')
