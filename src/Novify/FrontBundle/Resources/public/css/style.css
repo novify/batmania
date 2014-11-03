@@ -1610,54 +1610,12 @@ nav input[type=checkbox]:checked ~ #menu{
 
 .bloc_connexion {
 	margin: 0;
-	height: 550px;
-	background-color:rgb(235,235,235);
+	background-color:white;
 }
 
-.bloc_connexion h4 {
-	text-align: center;
-	margin-bottom: 50px;
-}
-
-.bloc_connexion fieldset {
-	border-radius: 10px;
-	background-color: white;
-}
-
-.bloc_connexion p {
-	text-align: center;
-}
-
-.bloc_connexion .connex_email {
-	margin-left: 27%;
-}
-
-.bloc_connexion .connex_psswd {
-	margin-left: 27%;
-}
 
 .bloc_connexion form#formulaire input[type=submit] {
-	margin-left: 37%;
-	border-radius: 3px;
-	padding: 4px 5px;
-}
-
-form#formulaire a#inscription_connex {
-	background: none;
-	display: block;
-	border-radius: 3px;
-	padding: 4px 5px;
-	font-size: 16px;
-	border: none;
-	width: 130px;
-	height: auto;
-	color: #fff;
-	background-color: #205773;
-	cursor: pointer;
-	-webkit-transform: scale(1);
-	transition: all 0.25s;
-	text-decoration: none;
-	margin-left: 35%;
+	padding: 5px 7px;
 }
 
 form#formulaire a#inscription_connex:hover {
