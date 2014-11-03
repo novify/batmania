@@ -22,7 +22,7 @@ class UtilisateursType extends AbstractType
             ->add('userMail', 'email')
             ->add('userNom')
             ->add('userPrenom')
-            ->add('userCivilite', 'radio')
+            ->add('userCivilite')
             ->add('userFactCivilite')
             ->add('userFactNom')
             ->add('userFactPrenom')
@@ -40,7 +40,8 @@ class UtilisateursType extends AbstractType
             ->add('userLivPays')
             ->add('userLivCodep')
             ->add('userLivVille')
-            ->add('userLivTel', 'tel')
+            ->add('userLivTel')
+            ->add('Valider', 'submit')
         ;
     }
     
