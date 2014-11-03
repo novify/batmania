@@ -38,7 +38,17 @@ class FrontController extends Controller
 
     public function panierAction()
     {
-        return $this->render('NovifyFrontBundle:Front:panier.html.twig');
+        // A faire fonctionner
+
+        $em = $this->getDoctrine()->getManager();
+        $suggestion_articles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
+            array('sousCategorie' => ''), // Critere
+            array('id' => 'desc'),        // Tri
+            4,                              // Limite
+            0                               // Offset
+        );
+
+        return $this->render('NovifyFrontBundle:Front:panier.html.twig', array('suggestion_articles' => $suggestion_articles));
     }
 
     public function inscriptionAction(Request $request)
@@ -107,10 +117,21 @@ class FrontController extends Controller
         $cat = $em->getRepository('NovifyModelBundle:Categories')->findOneBycatNom($categorie);
         $souscat = $em->getRepository('NovifyModelBundle:Souscategories')->findOneBy(array('categorie' => $cat, 'souscatNom' => $sousCategorie));
         $article = $em->getRepository('NovifyModelBundle:Articles')->findOneBy(array('sousCategorie' => $souscat, 'id' => $id));
+        $suggestion_articles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
+            array('sousCategorie' => $souscat), // Critere
+            array('id' => 'desc'),        // Tri
+            4,                              // Limite
+            0                               // Offset
+        );
+
         $commentaires = $em->getRepository('NovifyModelBundle:Commentaires')->findBy(array('article' => $article));
 
         if (!$article) {
             throw new NotFoundHttpException("Cet article n'existe pas.");
+        }
+
+        if (!$suggestion_articles) {
+            throw new NotFoundHttpException("Cet article suggeré n'existe pas.");
         }
 
 
@@ -124,6 +145,6 @@ class FrontController extends Controller
             return $this->redirect($this->generateUrl('novify_front_view_fiche'));
         }
 
-        return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article, 'commentaires' => $commentaires, 'form' => $form->createView()));
+        return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article, 'suggestion_articles' => $suggestion_articles, 'commentaires' => $commentaires, 'form' => $form->createView()));
     }
 }

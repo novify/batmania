@@ -177,49 +177,22 @@
 
 								<div class="row">
 
+
+{% for suggestion_article in suggestion_articles %}
+
 									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- Premier article de la ligne-->
 
 										<div class="article_image"> <!-- Image de l'article-->
-											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></a>
+											<a href="#"><img src="{{ asset(suggestion_article.getWebPath) }}" alt=""></a>
 										</div>
 
-										<h5><a href="#">Titre article</a></h5> <!-- Prix et nom de l'article -->
-										<p><a href="">X €</a></p>
+										<h5><a href="#">{{suggestion_article.artNom}}</a></h5> <!-- Prix et nom de l'article -->
+										<p><a href="">{{suggestion_article.artPrix}} €</a></p>
 									</div> <!-- Fin du premier article-->
 
 
-									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
 
-										<div class="article_image"> <!-- Image article -->
-											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt=""></a>
-										</div>
-
-										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
-										<p><a href="">X €</a></p>
-									</div> <!-- Fin de l'article -->
-
-
-									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
-
-										<div class="article_image"> <!-- Image article -->
-											<a href="#"><img src="{{ asset('bundles/novifyfront/images/article3.jpg')}}" alt=""></a>
-										</div>
-
-										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
-										<p><a href="">X €</a></p>
-									</div> <!-- Fin de l'article -->
-
-
-									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
-
-										<div class="article_image">
-											<img src="{{ asset('bundles/novifyfront/images/article4.jpg')}}" alt="">
-										</div>
-
-										<h5><a href="#">Titre article</a></h5> <!-- Titre et prix de l'article -->
-										<p><a href="">X €</a></p>
-									</div> <!-- Fin de l'article -->
-
+{% endfor %}
 
 								</div>
 
