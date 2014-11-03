@@ -6,6 +6,7 @@ use Novify\ModelBundle\Entity\Commentaires;
 use Novify\ModelBundle\Form\CommentairesType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpFoundation\Request;
 
 class FrontController extends Controller
 {
@@ -50,6 +51,12 @@ class FrontController extends Controller
 
     public function compteAction()
     {
+        $user = $this->getUser();
+
+        if (!$user) {
+            throw new NotFoundHttpException("Cet utilisateur n'existe pas.");
+        }
+
         return $this->render('NovifyFrontBundle:Front:compte.html.twig');
     }
 

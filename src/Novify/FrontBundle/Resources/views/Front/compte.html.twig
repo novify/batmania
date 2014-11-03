@@ -99,28 +99,43 @@
 					<div class="col-sm-4" id="compte_infos">
 						<div id="infos_generales">
 							<h3>Informations personnelles</h3>
-							<strong>M. Maxime Emorine</strong>
-							<p>maxime.emorine@domain.fr</p>
+							<strong>{{app.user.userCivilite ~'. '~ app.user.userPrenom ~' '~ app.user.userNom}}</strong>
+							<p>{{app.user.userMail}}</p>
 						</div>
 
 						<div id="adresse_livraison">
+							
 							<strong>Adresse de livraison</strong>
-							<p>M. Maxime Emorine</p>
-							<p>26 avenue Anatole France</p>
-							<p>10 000 Troyes</p>
-							<p>France</p>
+
+							{% if app.user.userLivNom is not null or app.user.userLivAdresse is not null %}
+
+								<p>{{app.user.userLivCivilite ~'. '~ app.user.userLivPrenom ~' '~ app.user.userLivNom}}</p>
+								<p>{{app.user.userLivAdresse}}</p>
+								<p>{{app.user.userLivCodeP ~' '~ app.user.userLivVille}} </p>
+								<p>{{app.user.userLivPays}}</p>
+
+							{% else %}
+							<p>Vous n'avez pas renseigné la totalité de vos informations de livraison</p>
+							{% endif %}
 						</div>
 
 						<div id="adresse_facturation">
 							<strong>Adresse de facturation</strong>
-							<p>M. Maxime Emorine</p>
-							<p>7 Bd des Champs Elysées</p>
-							<p>75 000 Paris</p>
-							<p>France</p>
+
+							{% if app.user.userFactNom is not null or app.user.userFactAdresse is not null %}
+								<p>{{app.user.userFactCivilite ~'. '~ app.user.userFactPrenom ~' '~ app.user.userFactNom}}</p>
+								<p>{{app.user.userFactAdresse}}</p>
+								<p>{{app.user.userFactCodeP ~' '~ app.user.userFactVille}} </p>
+								<p>{{app.user.userFactPays}}</p>
+
+							{% else %}
+							<p>Vous n'avez pas renseigné la totalité de vos informations de facturation</p>
+							{% endif %}
+
 						</div>
 
 						<div id="modifier_infos">
-							<a href="#">Modifier</a>
+							<a href="{{ path('novify_front_compte_modif') }}">Modifier</a>
 						</div>
 					</div>
 

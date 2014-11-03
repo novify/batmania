@@ -1390,7 +1390,7 @@ nav input[type=checkbox]:checked ~ #menu{
 
 	margin-top: 50px;
 	border-bottom:1px solid rgb(200,200,200);
-	line-height: 8px;
+	line-height: 1.5em;
 	
 }
 
@@ -1398,7 +1398,7 @@ nav input[type=checkbox]:checked ~ #menu{
 	
 	margin-top: 50px;
 	border-bottom:1px solid rgb(200,200,200);
-	line-height: 8px;
+	line-height: 1.5em;
 
 }
 
@@ -1425,11 +1425,6 @@ nav input[type=checkbox]:checked ~ #menu{
 	background-color: #f2dc9a;
 }
 
-#bloc_compte #compte_infos h4 {
-	font-weight: 400;
-	color: #1a465c;
-	font-size: 20px;
-}
 /* -------- */
 
 
@@ -1865,11 +1860,6 @@ form#formulaire input:focus:valid {
 	background: url('../images/valid.png') 98% center no-repeat;
 }
 
-form#formulaire input:valid {
-	border-color: #56c93f;
-	background: url('../images/valid.png') 98% center no-repeat;
-}
-
 form#formulaire input[type=checkbox] {
 	width: auto;
 }
@@ -1900,7 +1890,7 @@ form#formulaire input[type=submit]:hover {
 	}
 
 	form#formulaire label.pass {
-	 	width: 250px;
+	 	width: 220px;
 	}
 
 	form#formulaire input#civiliteh {
@@ -1916,33 +1906,25 @@ form#formulaire input[type=submit]:hover {
 		width: 200px;
 	}
 
-	form#formulaire input#novify_modelbundle_signup_userLivTel {
+	form#formulaire input#tel {
 		width: 130px;
 	}
 
-	form#formulaire input#novify_modelbundle_signup_userLivAdresse {
+	form#formulaire input#rue {
 		width: 250px;
 	}
 
-	form#formulaire input#novify_modelbundle_signup_userLivCodep {
+	form#formulaire input#postal {
 		width: 85px;
 	}
 
 	form#formulaire input#creer_compte {
-		margin-left: 76%;
-		margin-bottom: 15px;
-	}
-
-	form#formulaire input#creer_compte:focus:valid {
-	background: none;
-	}
-
-	form#formulaire input#creer_compte:valid {
-	background-image: none;
+	margin-left: 70%;
+	margin-bottom: 15px;
 	}
 	/* ---- */
 
-/*- FIN FORMULAIRE -*/
+/*-FIN FORMULAIRE-*/
 
 
 
