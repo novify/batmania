@@ -2,12 +2,9 @@
 
 namespace Novify\FrontBundle\Controller;
 
-use Novify\ModelBundle\Entity\Utilisateurs;
 use Novify\ModelBundle\Entity\Commentaires;
-use Novify\ModelBundle\Form\SignupType;
 use Novify\ModelBundle\Form\CommentairesType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class FrontController extends Controller
@@ -43,27 +40,12 @@ class FrontController extends Controller
         $em = $this->getDoctrine()->getManager();
         $suggestion_articles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
             array('sousCategorie' => ''), // Critere
-            array('id' => 'desc'),        // Tri
-            4,                              // Limite
-            0                               // Offset
+            array('id' => 'desc'), // Tri
+            4, // Limite
+            0 // Offset
         );
 
         return $this->render('NovifyFrontBundle:Front:panier.html.twig', array('suggestion_articles' => $suggestion_articles));
-    }
-
-    public function inscriptionAction(Request $request)
-    {
-        $inscription = new Utilisateurs();
-        $form = $this->createForm(new SignupType(), $inscription);
-        if ($form->handleRequest($request)->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($inscription);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('novify_front_homepage'));
-        }
-
-        return $this->render('NovifyFrontBundle:Front:inscription.html.twig', array('form' => $form->createView()));
     }
 
     public function compteAction()
@@ -71,7 +53,7 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:compte.html.twig');
     }
 
-     public function compteModifAction()
+    public function compteModifAction()
     {
         return $this->render('NovifyFrontBundle:Front:compte_modif.html.twig');
     }
@@ -124,9 +106,9 @@ class FrontController extends Controller
         $article = $em->getRepository('NovifyModelBundle:Articles')->findOneBy(array('sousCategorie' => $souscat, 'id' => $id));
         $suggestion_articles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
             array('sousCategorie' => $souscat), // Critere
-            array('id' => 'desc'),        // Tri
-            4,                              // Limite
-            0                               // Offset
+            array('id' => 'desc'), // Tri
+            4, // Limite
+            0 // Offset
         );
 
         $commentaires = $em->getRepository('NovifyModelBundle:Commentaires')->findBy(array('article' => $article));
@@ -138,7 +120,6 @@ class FrontController extends Controller
         if (!$suggestion_articles) {
             throw new NotFoundHttpException("Cet article suggeré n'existe pas.");
         }
-
 
         $commentaire = new Commentaires();
         $form = $this->createForm(new CommentairesType(), $commentaire);

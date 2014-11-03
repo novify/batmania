@@ -16,4 +16,9 @@ class RedirectingController extends Controller
 
         return $this->redirect($url, 301);
     }
+
+    public function redirectHomeAction(Request $request)
+    {
+        return $this->redirect($this->generateUrl('novify_front_homepage'));
+    }
 }

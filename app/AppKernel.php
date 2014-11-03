@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Novify\FrontBundle\NovifyFrontBundle(),
             new Novify\BackBundle\NovifyBackBundle(),
             new Novify\ModelBundle\NovifyModelBundle(),
+            new Novify\SecurityBundle\NovifySecurityBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
