@@ -284,7 +284,7 @@ header .header_client .panier a:hover #bulle_panier {
 #bulle_compte:after {
 	border-bottom-color: #f3f3f3;
 	border-width: 13px;
-	margin-top: -332px;
+	margin-top: -133px;
 }
 
 #bulle_panier:after, #bulle_compte:before {
@@ -297,15 +297,15 @@ header .header_client .panier a:hover #bulle_panier {
 #bulle_panier:after {
 	border-bottom-color: #f3f3f3;
 	border-width: 13px;
-	margin-top: -179px;
+	margin-top: -220px;
+	right: 45%;
 }
 
-/*Garder si on veut mettre un contour*/ 
-/*#bulle:before {
+#bulle {
 	border-bottom-color: #f3f3f3;
 	border-width: 16px;
 	margin-top: -220px;
-}*/
+}
 
 #bulle_compte p {display: inline;}
 #bulle_panier p {display: inline;}
