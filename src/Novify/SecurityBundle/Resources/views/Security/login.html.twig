@@ -5,20 +5,9 @@
 
 
 		<!-- Bloc -->
-		<div class="bloc" style="background-color:white">
-			 <div class="container" style="padding:100px">
-				<!--<div class="row">
-
-					<div class="col-md-8">
-
-					</div>
-
-					<div class="col-md-4">
-
-					</div>
-
-				</div>
-			</div> -->
+		<div class="bloc_connexion">
+			<div class="container" style="padding:35px">
+				
 
 			<?php
 
@@ -35,28 +24,41 @@
 				if($_GET['connexion_ok'] != 'oui'){
 
 					?>
-						<h1>Connexion</h1>
 
 {% if error %}
 	<div>{{ error.message }}</div>
 {% endif %}
 
-<form action="{{ path('login_check') }}" method="post">
-	<label for="username">Login :</label>
-	<input type="text" id="username" name="_username" value="{{ last_username }}" />
 
-	<label for="password">Mot de passe :</label>
-	<input type="password" id="password" name="_password" />
+				<div class="col-md-6">
+					<form id="formulaire" action="{{ path('login_check') }}" method="post">
+						<fieldset>
+							<legend><h4>Connexion</h4></legend>
 
-	{#
-		Si vous voulez contrôler l'URL vers laquelle l'utilisateur est redirigé en cas de succès
-		(plus de détails ci-dessous)
-		<input type="hidden" name="_target_path" value="/account" />
-	#}
+								<div>
+									<label for="email" class="email">Adresse mail</label><br/>
+									<input type="email" name="email" placeholder="exemple@batmania.fr" id="email_connexion" value="{{ last_username }}" required/><br/><br/>
+								</div>
 
-	<button type="submit">login</button>
-</form>
-<!-- 						<form name="connexion" id="connexion" method="post" action="login">
+								<div>
+									<label for="pass" class="pass">Entrez votre mot de passe</label><br/>
+									<input type="password" name="pass" id="pass_connexion" required/><br/><br/>
+								</div>
+
+						{#
+							Si vous voulez contrôler l'URL vers laquelle l'utilisateur est redirigé en cas de succès
+							(plus de détails ci-dessous)
+							<input type="hidden" name="_target_path" value="/account" />
+						#}
+
+						<input type="submit" value="Connexion"/>
+
+						<p><a href="#">Mot de passe oublié?</a></p>
+						<p>Pas encore de compte ? <a href="{{ path('inscription') }}">Inscrivez-vous</a>.</p>
+						</fieldset>
+					</form>
+				</div>
+					<!-- 						<form name="connexion" id="connexion" method="post" action="login">
 
 
 								<label for="pseudo" class="float">Votre adresse e-mail</label>
@@ -71,10 +73,7 @@
 
 								<input type="submit" value="Connexion" />
 
-						</form>
- -->
-						<p><a href="">Mot de passe oublié?</a></p>
-						<p><a href="">S'inscrire</a></p>
+						</form> -->
 					<?php
 
 				}
