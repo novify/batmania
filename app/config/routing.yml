@@ -1,7 +1,9 @@
-novify_model:
-    resource: "@NovifyModelBundle/Resources/config/routing.yml"
+novify_security:
+    resource: "@NovifySecurityBundle/Resources/config/routing.yml"
     prefix:   /
-
+home:
+    pattern: /
+    defaults:  { _controller: NovifyFrontBundle:Redirecting:redirectHome }
 novify_back:
     resource: "@NovifyBackBundle/Resources/config/routing.yml"
     prefix:   /back
@@ -9,4 +11,3 @@ novify_back:
 novify_front:
     resource: "@NovifyFrontBundle/Resources/config/routing.yml"
     prefix:   /boutique
-

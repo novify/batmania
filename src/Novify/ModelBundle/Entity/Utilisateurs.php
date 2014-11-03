@@ -3,6 +3,7 @@
 namespace Novify\ModelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Utilisateurs
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Novify\ModelBundle\Entity\UtilisateursRepository")
  */
-class Utilisateurs
+class Utilisateurs implements UserInterface
 {
     /**
      * @var integer
@@ -48,6 +49,18 @@ class Utilisateurs
      * @ORM\Column(name="user_prenom", type="string", length=50)
      */
     private $userPrenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="user_salt", type="string", length=32)
+     */
+    private $userSalt;
+
+    /**
+     * @ORM\Column(name="is_active", type="boolean")
+     */
+    private $isActive;
 
     /**
      * @var string
@@ -182,6 +195,12 @@ class Utilisateurs
      */
     private $userLivTel;
 
+    public function __construct()
+    {
+        $this->isActive = true;
+        $this->userSalt = md5(uniqid(null, true));
+    }
+
     /**
      * Get id
      *
@@ -211,6 +230,14 @@ class Utilisateurs
      * @return string
      */
     public function getUserMdp()
+    {
+        return $this->userMdp;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getPassword()
     {
         return $this->userMdp;
     }
@@ -262,6 +289,14 @@ class Utilisateurs
     }
 
     /**
+     * @inheritDoc
+     */
+    public function getUsername()
+    {
+        return $this->userNom;
+    }
+
+    /**
      * Set userPrenom
      *
      * @param  string       $userPrenom
@@ -282,6 +317,29 @@ class Utilisateurs
     public function getUserPrenom()
     {
         return $this->userPrenom;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getSalt()
+    {
+        return $this->userSalt;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function eraseCredentials()
+    {
     }
 
     /**
