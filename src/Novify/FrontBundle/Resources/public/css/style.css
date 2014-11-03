@@ -1778,31 +1778,53 @@ footer .container #mentionslegales{
 	FORMULAIRE
 **************************/
 
-form h4 {
+form#formulaire h4 {
 	font-weight: 400;
 	color: #1a465c;
 	font-size: 20px;
-	margin-top: 40px;
-	margin-bottom: 20px;
 }
 
-form h5 {
+form#formulaire h5 {
 	font-size: 20px;
 	margin-bottom: 10px;
 }
 
-form span {
+form#formulaire a {
+	font-size: 14px;
+	color: #3781b2;
+	text-decoration: underline;
+}
+
+form#formulaire a:hover {
+	font-size: 14px;
+	color: #3781b2;
+	text-decoration: underline;
+}
+
+form#formulaire legend {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+form#formulaire fieldset {
+	margin-top: 30px;
+	margin-bottom: 20px;
+	padding: 20px;
+	border-color: #1a465c;
+}
+
+form#formulaire span {
 	display: none;
 }
 
-form label {
+form#formulaire label {
 	margin-right: 15px;
 	display: block;
 	width: 150px;
 	float: left;
 }
 
-input {
+form#formulaire input {
 	margin-top: 5px;
 	margin-bottom: 5px;
 	margin-right: 15px;
@@ -1812,36 +1834,36 @@ input {
 	padding: 5px;
 }
 
-input:focus {
+form#formulaire input:focus {
 	outline:none;
 }
 
-input:required {
+form#formulaire input:required {
 	background: url('../images/asterisk.png') 98% center no-repeat;
 }
 
-input:focus:invalid {
+form#formulaire input:focus:invalid {
 	border-color: #ff0000;
 	background: url('../images/invalid.png') 98% center no-repeat;
 	-webkit-box-shadow : (#d45252,0,0,5px);
 }
 
-input:focus:invalid + span {
+form#formulaire input:focus:invalid + span {
 	display: inline;
 	color: #ff0000;
 	margin-right: 10px;
 }
 
-input:focus:valid {
+form#formulaire input:focus:valid {
 	border-color: #56c93f;
 	background: url('../images/valid.png') 98% center no-repeat;
 }
 
-input[type=checkbox] {
+form#formulaire input[type=checkbox] {
 	width: auto;
 }
 
-input[type=submit] {
+form#formulaire input[type=submit] {
 	padding: 10px 5px;
 	border: none;
 	display: block;
@@ -1855,47 +1877,47 @@ input[type=submit] {
 	transition: all 0.25s;
 }
 
-input[type=submit]:hover {
+form#formulaire input[type=submit]:hover {
 	-webkit-transform: scale(1.02);
 	background-color: #f2dc9a;
 }		
 
 	/* CSS indépendant à chaque champs*/
 
-	label#prenom {
+	form#formulaire label.prenom {
 	 	margin-right: 19px;
 	}
 
-	label#pass {
+	form#formulaire label.pass {
 	 	width: 220px;
 	}
 
-	input#civiliteh {
+	form#formulaire input#civiliteh {
 		margin-right: -125px;
 	}
 
-	input#civilitef {
+	form#formulaire input#civilitef {
 		margin-right: -125px;
 		margin-left: 165px;
 	}
 
-	input#email {
+	form#formulaire input#novify_modelbundle_signup_userMail {
 		width: 200px;
 	}
 
-	input#tel {
+	form#formulaire input#tel {
 		width: 130px;
 	}
 
-	input#rue {
+	form#formulaire input#rue {
 		width: 250px;
 	}
 
-	input#postal {
+	form#formulaire input#postal {
 		width: 85px;
 	}
 
-	input#creer_compte {
+	form#formulaire input#creer_compte {
 	margin-left: 70%;
 	margin-bottom: 15px;
 	}
