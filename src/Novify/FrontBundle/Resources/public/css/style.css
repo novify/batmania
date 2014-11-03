@@ -1859,6 +1859,11 @@ form#formulaire input:focus:valid {
 	background: url('../images/valid.png') 98% center no-repeat;
 }
 
+form#formulaire input:valid {
+	border-color: #56c93f;
+	background: url('../images/valid.png') 98% center no-repeat;
+}
+
 form#formulaire input[type=checkbox] {
 	width: auto;
 }
@@ -1889,7 +1894,7 @@ form#formulaire input[type=submit]:hover {
 	}
 
 	form#formulaire label.pass {
-	 	width: 220px;
+	 	width: 250px;
 	}
 
 	form#formulaire input#civiliteh {
@@ -1905,25 +1910,33 @@ form#formulaire input[type=submit]:hover {
 		width: 200px;
 	}
 
-	form#formulaire input#tel {
+	form#formulaire input#novify_modelbundle_signup_userLivTel {
 		width: 130px;
 	}
 
-	form#formulaire input#rue {
+	form#formulaire input#novify_modelbundle_signup_userLivAdresse {
 		width: 250px;
 	}
 
-	form#formulaire input#postal {
+	form#formulaire input#novify_modelbundle_signup_userLivCodep {
 		width: 85px;
 	}
 
 	form#formulaire input#creer_compte {
-	margin-left: 70%;
-	margin-bottom: 15px;
+		margin-left: 76%;
+		margin-bottom: 15px;
+	}
+
+	form#formulaire input#creer_compte:focus:valid {
+	background: none;
+	}
+
+	form#formulaire input#creer_compte:valid {
+	background-image: none;
 	}
 	/* ---- */
 
-/*-FIN FORMULAIRE-*/
+/*- FIN FORMULAIRE -*/
 
 
 

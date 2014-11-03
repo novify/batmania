@@ -13,95 +13,13 @@
 					<div class="col-sm-8" style="padding-right: 50px;">
 						<h3 style="border-bottom: #e2c879 1px solid;">Vous inscrire</h3>
 
-						<form id="formulaire" method="post" action="#">
-
-						<fieldset>
-						<legend><h4>Informations principal</h4></legend>
-
-							<!-- Nom & Prénom -->
-							<label for="prenom" id="prenom">Prénom</label><label for="nom">Nom</label><br/>
-							<input type="text" id="prenom" required/>
-								<span>Vous devez entrer votre prénom</span>
-							<input type="text" id="nom" required/>
-								<span>Vous devez entrer votre nom de famille</span><br/><br/>
-							<!-- -->
-
-							<!-- Email -->
-							<label for="email">Adresse mail</label><br/>
-							<input type="email" name="email" placeholder="exemple@batmania.fr" id="email" required/>
-								<span>Vous devez entrer une adresse mail du type : exemple@batmania.fr</span><br/><br/>
-							<!-- -->
-
-							<!-- Mot de passe -->
-							<label for="pass" id="pass">Entrez votre mot de passe</label><br/>
-							<input type="password" name="pass" id="pass" required/>
-								<span>Vous devez entrer un mot de passe d'au moins 6 caractères</span><br/><br/>
-
-							<label for="comfirmation_pass" id="pass">Confirmez votre mot de passe</label><br/>
-							<input type="password" name="mot_pass2" id="mot_pass2" required/>
-								<span>Votre mot de passe doit correspondre avec celui entrer ci-dessus</span><br/><br/>
-							<!-- -->
-						</fieldset>
-						<fieldset>
-						<legend><h4>Informations Secondaires</h4></legend>
-
-							<!-- Téléphone -->
-							<label for="telephone">Téléphone</label><br/>
-							<input type="tel" name="telephone" maxlength="12" value="+33" id="tel" required/>
-								<span>Vous devez entrer uniquement des numéros dans ce champs (à l'exception du +)</span><br/><br/>
-							<!-- -->
-
-							<!-- Civilité -->
-							<label for="civilite">Civilité</label>
-							<input type="radio" name="sexe" id="civiliteh"/>Homme<br/>
-							<input type="radio" name="sexe" id="civilitef"/>Femme<br/><br/>
-							<!-- -->
-
-							<!-- Adresse -->
-							<h5>Adresse</h5>
-
-								<!-- Rue -->
-								<label for="rue"> Rue </label><br/>
-								<input type="text" name="rue" id="rue" required/>
-									<span>N° rue, Adresse, puis le n° du batiment si nécéssaire</span><br/><br/>
-								<!-- -->
-
-								<!-- Ville & Code Postal-->
-								<label for="ville"> Ville </label><label for="postal"> Code Postal </label><br/>
-					        	<input type="text" name="ville" id="ville" required/><span>Vous devez entrez le nom de votre ville</span><input type="text" name="postal" maxlength="5" id="postal" required/><span>Vous devez renseigner le code postal de votre ville (nombre à 5 chiffres)</span><br/><br/>
-					        	<!-- -->
-
-								<!-- Pays -->
-								<label for="pays">Pays</label><br/>
-								<select name="pays" id="text_base" required/>
-						   			<option selected="selected" value="France"> France </option><option value="Afghanistan"> Afghanistan </option><option value="Albania"> Albania </option><option value="Algeria"> Algeria </option><option value="American Samoa"> American Samoa </option><option value="Andorra"> Andorra </option><option value="Angola"> Angola </option><option value="Anguilla"> Anguilla </option><option value="Antigua and Barbuda"> Antigua and Barbuda </option><option value="Argentina"> Argentina </option><option value="Armenia"> Armenia </option><option value="Aruba"> Aruba </option><option value="Australia"> Australia </option><option value="Austria"> Austria </option><option value="Azerbaijan"> Azerbaijan </option><option value="The Bahamas"> The Bahamas </option><option value="Bahrain"> Bahrain </option><option value="Bangladesh"> Bangladesh </option><option value="Barbados"> Barbados </option><option value="Belarus"> Belarus </option><option value="Belgium"> Belgium </option><option value="Belize"> Belize </option><option value="Benin"> Benin </option><option value="Bermuda"> Bermuda </option><option value="Bhutan"> Bhutan </option><option value="Bolivia"> Bolivia </option><option value="Bosnia and Herzegovina"> Bosnia and Herzegovina </option><option value="Botswana"> Botswana </option><option value="Brazil"> Brazil </option><option value="Brunei"> Brunei </option><option value="Bulgaria"> Bulgaria </option><option value="Burkina Faso"> Burkina Faso </option><option value="Burundi"> Burundi </option><option value="Cambodia"> Cambodia </option><option value="Cameroon"> Cameroon </option><option value="Canada"> Canada </option><option value="Cape Verde"> Cape Verde </option><option value="Cayman Islands"> Cayman Islands </option><option value="Central African Republic"> Central African Republic </option><option value="Czech Republic"> Czech Republic </option><option value="Denmark"> Denmark </option><option value="Djibouti"> Djibouti </option><option value="Dominica"> Dominica </option><option value="France"> France </option><option value="French Polynesia"> French Polynesia </option><option value="Gabon"> Gabon </option><option value="The Gambia"> The Gambia </option><option value="Kazakhstan"> Kazakhstan </option><option value="Kenya"> Kenya </option><option value="Kiribati"> Kiribati </option><option value="North Korea"> North Korea </option><option value="South Korea"> South Korea </option><option value="Kosovo"> Kosovo </option><option value="Kuwait"> Kuwait </option><option value="Kyrgyzstan"> Kyrgyzstan </option><option value="Laos"> Laos </option><option value="Netherlands"> Netherlands </option><option value="Netherlands Antilles"> Netherlands Antilles </option><option value="New Caledonia"> New Caledonia </option><option value="New Zealand"> New Zealand </option><option value="Peru"> Peru </option><option value="Philippines"> Philippines </option><option value="Pitcairn Islands"> Pitcairn Islands </option><option value="Poland"> Poland </option><option value="Portugal"> Portugal </option><option value="Puerto Rico"> Puerto Rico </option><option value="Qatar"> Qatar </option><option value="Romania"> Romania </option><option value="Solomon Islands"> Solomon Islands </option><option value="Somalia"> Somalia </option><option value="Somaliland"> Somaliland </option><option value="South Africa"> South Africa </option><option value="South Ossetia"> South Ossetia </option><option value="Togo"> Togo </option><option value="Tokelau"> Tokelau </option><option value="Zambia"> Zambia </option><option value="Zimbabwe"> Zimbabwe </option><option value="autre"> Autre </option>
-						    	</select><br/><br/>
-						    	<!-- -->
-					    	<!-- -->
-
-					    	</fieldset>
-					    	<fieldset>
-					    	<legend><h4>Finaliser son inscription</h4></legend>
-
-					    	<!-- Abonnements à la newsletter -->
-							<input name="newsletter" type="checkbox" />Je souhaite m'inscrire à la newsletter pour recevoir par mail les dernières informations de batmania.fr<br/><br/>
-							<!-- -->
-							<!-- Conditions d'utilisation -->
-							<input name="conditions" type="checkbox" required/>J'accepte les <a href="#">Conditions d'utilisations</a> et affirme avoir prit connaissance des <a href="#">Régles de confidentialités</a> du site Batmania.<img src="{{ asset('bundles/novifyfront/images/asterisk.png')}}" alt="image vide"><br/><br/>
-							<!-- -->
-							</fieldset>
-
-							<!-- Boutton validé -->
-							<div class="boutton_inscription">
-								<input type="submit" id="creer_compte" value="Créer un compte"/>
-							</div>
-							<!-- -->
-						</form>
-
 							{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire'}}) }}
+
 
 							<fieldset>
 						<legend><h4>Informations principal</h4></legend>
+
+						{{ form_errors(form) }} <br/>
 
 							<!-- Nom & Prénom -->
 							{{ form_label(form.userPrenom, 'Prénom', {'label_attr': {'class': 'prenom'}}) }}
@@ -119,54 +37,17 @@
 							<!-- -->
 
 							<!-- Mot de passe -->
-							{{ form_label(form.userPrenom, 'Entrez votre mot de passe', {'label_attr': {'class': 'pass'}}) }}<br/>
-							{{ form_widget(form.userMPD) }}
+							{{ form_label(form.userMdp.first, 'Entrez votre mot de passe', {'label_attr': {'class': 'pass'}}) }}<br/>
+							{{ form_widget(form.userMdp.first) }}
 								<span>Vous devez entrer un mot de passe d'au moins 6 caractères</span><br/><br/>
 
-							<label for="comfirmation_pass" id="pass">Confirmez votre mot de passe</label><br/>
-							<input type="password" name="mot_pass2" id="mot_pass2" required/>
+							{{ form_label(form.userMdp.second, 'Confirmez votre mot de passe', {'label_attr': {'class': 'pass'}}) }}<br/>
+							{{ form_widget(form.userMdp.second) }}
 								<span>Votre mot de passe doit correspondre avec celui entrer ci-dessus</span><br/><br/>
 							<!-- -->
 						</fieldset>
-						<fieldset>
-						<legend><h4>Informations Secondaires</h4></legend>
 
-							<!-- Téléphone -->
-							<label for="telephone">Téléphone</label><br/>
-							<input type="tel" name="telephone" maxlength="12" value="+33" id="tel" required/>
-								<span>Vous devez entrer uniquement des numéros dans ce champs (à l'exception du +)</span><br/><br/>
-							<!-- -->
-
-							<!-- Civilité -->
-							<label for="civilite">Civilité</label>
-							<input type="radio" name="sexe" id="civiliteh"/>Homme<br/>
-							<input type="radio" name="sexe" id="civilitef"/>Femme<br/><br/>
-							<!-- -->
-
-							<!-- Adresse -->
-							<h5>Adresse</h5>
-
-								<!-- Rue -->
-								<label for="rue"> Rue </label><br/>
-								<input type="text" name="rue" id="rue" required/>
-									<span>N° rue, Adresse, puis le n° du batiment si nécéssaire</span><br/><br/>
-								<!-- -->
-
-								<!-- Ville & Code Postal-->
-								<label for="ville"> Ville </label><label for="postal"> Code Postal </label><br/>
-					        	<input type="text" name="ville" id="ville" required/><span>Vous devez entrez le nom de votre ville</span><input type="text" name="postal" maxlength="5" id="postal" required/><span>Vous devez renseigner le code postal de votre ville (nombre à 5 chiffres)</span><br/><br/>
-					        	<!-- -->
-
-								<!-- Pays -->
-								<label for="pays">Pays</label><br/>
-								<select name="pays" id="text_base" required/>
-						   			<option selected="selected" value="France"> France </option><option value="Afghanistan"> Afghanistan </option><option value="Albania"> Albania </option><option value="Algeria"> Algeria </option><option value="American Samoa"> American Samoa </option><option value="Andorra"> Andorra </option><option value="Angola"> Angola </option><option value="Anguilla"> Anguilla </option><option value="Antigua and Barbuda"> Antigua and Barbuda </option><option value="Argentina"> Argentina </option><option value="Armenia"> Armenia </option><option value="Aruba"> Aruba </option><option value="Australia"> Australia </option><option value="Austria"> Austria </option><option value="Azerbaijan"> Azerbaijan </option><option value="The Bahamas"> The Bahamas </option><option value="Bahrain"> Bahrain </option><option value="Bangladesh"> Bangladesh </option><option value="Barbados"> Barbados </option><option value="Belarus"> Belarus </option><option value="Belgium"> Belgium </option><option value="Belize"> Belize </option><option value="Benin"> Benin </option><option value="Bermuda"> Bermuda </option><option value="Bhutan"> Bhutan </option><option value="Bolivia"> Bolivia </option><option value="Bosnia and Herzegovina"> Bosnia and Herzegovina </option><option value="Botswana"> Botswana </option><option value="Brazil"> Brazil </option><option value="Brunei"> Brunei </option><option value="Bulgaria"> Bulgaria </option><option value="Burkina Faso"> Burkina Faso </option><option value="Burundi"> Burundi </option><option value="Cambodia"> Cambodia </option><option value="Cameroon"> Cameroon </option><option value="Canada"> Canada </option><option value="Cape Verde"> Cape Verde </option><option value="Cayman Islands"> Cayman Islands </option><option value="Central African Republic"> Central African Republic </option><option value="Czech Republic"> Czech Republic </option><option value="Denmark"> Denmark </option><option value="Djibouti"> Djibouti </option><option value="Dominica"> Dominica </option><option value="France"> France </option><option value="French Polynesia"> French Polynesia </option><option value="Gabon"> Gabon </option><option value="The Gambia"> The Gambia </option><option value="Kazakhstan"> Kazakhstan </option><option value="Kenya"> Kenya </option><option value="Kiribati"> Kiribati </option><option value="North Korea"> North Korea </option><option value="South Korea"> South Korea </option><option value="Kosovo"> Kosovo </option><option value="Kuwait"> Kuwait </option><option value="Kyrgyzstan"> Kyrgyzstan </option><option value="Laos"> Laos </option><option value="Netherlands"> Netherlands </option><option value="Netherlands Antilles"> Netherlands Antilles </option><option value="New Caledonia"> New Caledonia </option><option value="New Zealand"> New Zealand </option><option value="Peru"> Peru </option><option value="Philippines"> Philippines </option><option value="Pitcairn Islands"> Pitcairn Islands </option><option value="Poland"> Poland </option><option value="Portugal"> Portugal </option><option value="Puerto Rico"> Puerto Rico </option><option value="Qatar"> Qatar </option><option value="Romania"> Romania </option><option value="Solomon Islands"> Solomon Islands </option><option value="Somalia"> Somalia </option><option value="Somaliland"> Somaliland </option><option value="South Africa"> South Africa </option><option value="South Ossetia"> South Ossetia </option><option value="Togo"> Togo </option><option value="Tokelau"> Tokelau </option><option value="Zambia"> Zambia </option><option value="Zimbabwe"> Zimbabwe </option><option value="autre"> Autre </option>
-						    	</select><br/><br/>
-						    	<!-- -->
-					    	<!-- -->
-
-					    	</fieldset>
-					    	<fieldset>
+					    <fieldset>
 					    	<legend><h4>Finaliser son inscription</h4></legend>
 
 					    	<!-- Abonnements à la newsletter -->
@@ -175,7 +56,7 @@
 							<!-- Conditions d'utilisation -->
 							<input name="conditions" type="checkbox" required/>J'accepte les <a href="#">Conditions d'utilisations</a> et affirme avoir prit connaissance des <a href="#">Régles de confidentialités</a> du site Batmania.<img src="{{ asset('bundles/novifyfront/images/asterisk.png')}}" alt="image vide"><br/><br/>
 							<!-- -->
-							</fieldset>
+						</fieldset>
 
 							<!-- Boutton validé -->
 							<div class="boutton_inscription">
@@ -183,10 +64,8 @@
 							</div>
 							<!-- -->
 
-							    <input type="submit" value="Envoyez le formulaire"/>
-
-							{# ne pas rendre les champs non définis #}
-							{{ form_end(form, {'render_rest': false}) }}
+							{# Rend le formulaire html #}
+							{{ form_end(form) }}
 
 					</div>
 
