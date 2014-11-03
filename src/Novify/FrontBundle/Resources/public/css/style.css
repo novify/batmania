@@ -1425,6 +1425,11 @@ nav input[type=checkbox]:checked ~ #menu{
 	background-color: #f2dc9a;
 }
 
+#bloc_compte #compte_infos h4 {
+	font-weight: 400;
+	color: #1a465c;
+	font-size: 20px;
+}
 /* -------- */
 
 
