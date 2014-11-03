@@ -22,7 +22,7 @@ class UtilisateursType extends AbstractType
             ->add('userMail', 'email')
             ->add('userNom')
             ->add('userPrenom')
-            ->add('userCivilite')
+            ->add('userCivilite', 'radio')
             ->add('userFactCivilite')
             ->add('userFactNom')
             ->add('userFactPrenom')
