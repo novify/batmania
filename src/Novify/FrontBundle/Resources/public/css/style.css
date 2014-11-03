@@ -38,6 +38,7 @@ a:hover {
 }
 
 a:focus{color:inherit;text-decoration:none;}
+
 /*-- Fenêtre Pop-up --*/
 .white-popup {
 	position: relative;
@@ -198,6 +199,25 @@ header .panier, header .compte{
 header .compte{
 
 	text-align:right;
+}
+
+header .sous_texte {
+	margin-left: 25px;
+	display: block;
+	font-size: 11px;
+}
+
+header .sous_texte_panier {
+	margin-left: 25px;
+	display: block;
+	font-size: 15px;
+	color:#4f9649
+}
+
+header .sous_texte_connecte {
+	margin-left: 60px;
+	display: none;
+	font-size: 11px;
 }
 
 header .header_client img {
@@ -1112,8 +1132,8 @@ nav input[type=checkbox]:checked ~ #menu{
 	  	background-color: #f2dc9a;
 	}
 
-	#test-popup #panier_popup .etape1 {display: none;}
 	#test-popup #panier_popup .etape2 {display: none;}
+	#test-popup #panier_popup .etape3 {display: none;}
 
 	#test-popup #panier_popup a {
 		font-size: 14px;
@@ -1909,9 +1929,8 @@ form#formulaire input:valid {
 	background: url('../images/valid.png') 98% center no-repeat;
 }
 
-form#formulaire input[type=radio] {
+form#formulaire input[type=checkbox] {
 	width: auto;
-	float:left;
 }
 
 form#formulaire input[type=checkbox] {
@@ -1948,11 +1967,12 @@ form#formulaire input[type=submit]:hover {
 	 	width: 220px;
 	}
 
-	form#formulaire #novify_modelbundle_signup_userCivilite label{
-		width: 50px;
+	form#formulaire input#novify_modelbundle_signup_userCivilite_0 {
+		margin-right: -265px;
 	}
 
-	form#formulaire #novify_modelbundle_signup_userCivilite_1 label{
+	form#formulaire input#novify_modelbundle_signup_userCivilite_1 {
+		margin-right: -825px;
 	}
 
 	form#formulaire input#novify_modelbundle_signup_userMail {
