@@ -1,0 +1,86 @@
+{% extends 'NovifyFrontBundle::base.html.twig' %}
+{% block main %}
+
+
+		<!-- Body -->
+
+		<div id="bloc_compte">
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-sm-8" style="padding-right: 50px;">
+						<h3 style="border-bottom: #e2c879 1px solid;">Vous inscrire</h3>
+
+							{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire'}}) }}
+
+
+							<fieldset>
+						<legend><h4>Informations principal</h4></legend>
+
+						{{ form_errors(form) }} <br/>
+
+							<!-- Nom & Prénom -->
+							{{ form_label(form.userPrenom, 'Prénom', {'label_attr': {'class': 'prenom'}}) }}
+							{{ form_label(form.userNom, 'Nom') }}<br/>
+							{{ form_widget(form.userPrenom) }}
+								<span>Vous devez entrer votre prénom</span>
+							{{ form_widget(form.userNom) }}
+								<span>Vous devez entrer votre nom de famille</span><br/><br/>
+							<!-- -->
+
+							<!-- Email -->
+							{{ form_label(form.userMail, 'Adresse Mail') }}<br/>
+							{{ form_widget(form.userMail, {'attr': {'placeholder': 'exemple@batmania.fr'}}) }}
+								<span>Vous devez entrer une adresse mail du type : exemple@batmania.fr</span><br/><br/>
+							<!-- -->
+
+							<!-- Mot de passe -->
+							{{ form_label(form.userMdp.first, 'Entrez votre mot de passe', {'label_attr': {'class': 'pass'}}) }}<br/>
+							{{ form_widget(form.userMdp.first) }}<br/>
+								<span>Vous devez entrer un mot de passe d'au moins 6 caractères</span><br/><br/>
+
+							{{ form_label(form.userMdp.second, 'Confirmez votre mot de passe', {'label_attr': {'class': 'pass'}}) }}<br/>
+							{{ form_widget(form.userMdp.second) }}
+								<span>Votre mot de passe doit correspondre avec celui entrer ci-dessus</span><br/><br/>
+							<!-- -->
+						</fieldset>
+
+					    <fieldset>
+					    	<legend><h4>Finaliser son inscription</h4></legend>
+
+					    	<!-- Abonnements à la newsletter -->
+							<input name="newsletter" type="checkbox" />Je souhaite m'inscrire à la newsletter pour recevoir par mail les dernières informations de batmania.fr<br/><br/>
+							<!-- -->
+							<!-- Conditions d'utilisation -->
+							<input name="conditions" type="checkbox" required/>J'accepte les <a href="#">Conditions d'utilisations</a> et affirme avoir prit connaissance des <a href="#">Régles de confidentialités</a> du site Batmania.<img src="{{ asset('bundles/novifyfront/images/asterisk.png')}}" alt="image vide"><br/><br/>
+							<!-- -->
+						</fieldset>
+
+							<!-- Boutton validé -->
+							<div class="boutton_inscription">
+								<input type="submit" id="creer_compte" value="Créer un compte"/>
+							</div>
+							<!-- -->
+
+							{# Rend le formulaire html #}
+							{{ form_end(form) }}
+
+					</div>
+
+					<!-- Bloc latéral d'inscription -->
+					<div class="col-sm-4" id="compte_infos">
+
+						<p>Créer un compte vous permettra de commander sur notre site de manière sécurisée.</p>
+						<p>Nous nous engageons à garder ces informations strictement confidentielles.</p>
+					</div>
+
+	
+				</div>
+
+			</div>
+
+		</div>
+
+{% endblock %}
