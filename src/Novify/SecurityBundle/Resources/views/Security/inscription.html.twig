@@ -30,6 +30,11 @@
 								<span>Vous devez entrer votre nom de famille</span><br/><br/>
 							<!-- -->
 
+							<!-- civilité -->
+							{{ form_label(form.userCivilite, 'Civilité') }}<br/>
+							{{ form_widget(form.userCivilite) }}<br/><br/>
+							<!-- -->
+
 							<!-- Email -->
 							{{ form_label(form.userMail, 'Adresse Mail') }}<br/>
 							{{ form_widget(form.userMail, {'attr': {'placeholder': 'exemple@batmania.fr'}}) }}
