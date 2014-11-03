@@ -13,7 +13,7 @@
 					<div class="col-sm-8" style="padding-right: 50px;">
 						<h3 style="border-bottom: #e2c879 1px solid;">Vous inscrire</h3>
 
-							{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire'}}) }}
+							<!-- {{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire'}}) }}
 
 
 							<fieldset>
@@ -21,7 +21,7 @@
 
 						{{ form_errors(form) }} <br/>
 
-							<!-- Nom & Prénom -->
+							<!-- Nom & Prénom --
 							{{ form_label(form.userPrenom, 'Prénom', {'label_attr': {'class': 'prenom'}}) }}
 							{{ form_label(form.userNom, 'Nom') }}<br/>
 							{{ form_widget(form.userPrenom) }}
@@ -30,13 +30,13 @@
 								<span>Vous devez entrer votre nom de famille</span><br/><br/>
 							<!-- -->
 
-							<!-- Email -->
+							<!-- Email --
 							{{ form_label(form.userMail, 'Adresse Mail') }}<br/>
 							{{ form_widget(form.userMail, {'attr': {'placeholder': 'exemple@batmania.fr'}}) }}
 								<span>Vous devez entrer une adresse mail du type : exemple@batmania.fr</span><br/><br/>
 							<!-- -->
 
-							<!-- Mot de passe -->
+							<!-- Mot de passe --
 							{{ form_label(form.userMdp.first, 'Entrez votre mot de passe', {'label_attr': {'class': 'pass'}}) }}<br/>
 							{{ form_widget(form.userMdp.first) }}
 								<span>Vous devez entrer un mot de passe d'au moins 6 caractères</span><br/><br/>
@@ -44,8 +44,8 @@
 							{{ form_label(form.userMdp.second, 'Confirmez votre mot de passe', {'label_attr': {'class': 'pass'}}) }}<br/>
 							{{ form_widget(form.userMdp.second) }}
 								<span>Votre mot de passe doit correspondre avec celui entrer ci-dessus</span><br/><br/>
-							<!-- -->
-						</fieldset>
+							<!-- --
+						</fieldset> -->
 
 						<form id="formulaire" method="post" action="#">
 						<fieldset>
