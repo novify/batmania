@@ -751,6 +751,13 @@ nav input[type=checkbox]:checked ~ #menu{
 
 }
 
+#bloc_ficheproduit #bloc_produit #ref_ficheproduit{
+	font-size: 20px;
+	font-weight: 300;
+	text-transform: uppercase;
+	color:gray;
+}
+
 #bloc_ficheproduit .container .image_ficheproduit{
 
 }
@@ -772,21 +779,21 @@ nav input[type=checkbox]:checked ~ #menu{
 
 #bloc_ficheproduit #bloc_produit .prix_ficheproduit{
 	
-	font-size: 30px;
+	font-size: 45px;
 	font-weight: bold;
 
 }
 
 #bloc_ficheproduit #bloc_produit .dispo_ficheproduit{
 	
-	font-size: 20px;
+	font-size: 18px;
 	display: inline;
 
 }
 
 #bloc_ficheproduit #bloc_produit .variable_dispo {
 	
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;
 	display: inline;
 	color: #4f9649;
