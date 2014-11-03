@@ -22,7 +22,9 @@ class UtilisateursType extends AbstractType
             ->add('userMail', 'email')
             ->add('userNom')
             ->add('userPrenom')
-            ->add('userCivilite', 'radio')
+            ->add('userCivilite', 'choice', array(
+                    'choices' => array('F' => 'Femme', 'M' => 'Homme'),
+                    'expanded' => true))
             ->add('userFactCivilite')
             ->add('userFactNom')
             ->add('userFactPrenom')

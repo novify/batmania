@@ -211,9 +211,10 @@ header .header_client #bulle {
 	text-align: center;
 }
 
-header .header_client .boutton input {
+header .header_client .boutton {
 	margin-top: 10px;
 	margin-bottom: 10px;
+	margin-left: 20%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: #ffffff;
@@ -222,13 +223,14 @@ header .header_client .boutton input {
 	border-radius: 0px;
 	border: 0px solid #ab0000;
 	cursor: pointer;
+	width: 130px;
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
 	-o-transform: scale(1);
 	transition: all 0.25s;
 }
 
-header .header_client .boutton input:hover {
+header .header_client .boutton:hover {
 	-webkit-transform: scale(1.05);
 	-moz-transform: scale(1.05);
 	-o-transform: scale(1.05);
@@ -1903,13 +1905,12 @@ form#formulaire input[type=submit]:hover {
 	 	width: 250px;
 	}
 
-	form#formulaire input#civiliteh {
-		margin-right: -125px;
+	form#formulaire input#novify_modelbundle_signup_userCivilite_0 {
+		margin-right: -265px;
 	}
 
-	form#formulaire input#civilitef {
-		margin-right: -125px;
-		margin-left: 165px;
+	form#formulaire input#novify_modelbundle_signup_userCivilite_1 {
+		margin-right: -825px;
 	}
 
 	form#formulaire input#novify_modelbundle_signup_userMail {
@@ -1941,6 +1942,8 @@ form#formulaire input[type=submit]:hover {
 	background-image: none;
 	}
 	/* ---- */
+
+/* I
 
 /*- FIN FORMULAIRE -*/
 
