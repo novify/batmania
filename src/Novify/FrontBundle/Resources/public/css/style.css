@@ -771,6 +771,13 @@ nav input[type=checkbox]:checked ~ #menu{
 
 }
 
+#bloc_ficheproduit #bloc_produit #ref_ficheproduit{
+	font-size: 20px;
+	font-weight: 300;
+	text-transform: uppercase;
+	color:gray;
+}
+
 #bloc_ficheproduit .container .image_ficheproduit{
 
 }
@@ -792,21 +799,21 @@ nav input[type=checkbox]:checked ~ #menu{
 
 #bloc_ficheproduit #bloc_produit .prix_ficheproduit{
 	
-	font-size: 30px;
+	font-size: 45px;
 	font-weight: bold;
 
 }
 
 #bloc_ficheproduit #bloc_produit .dispo_ficheproduit{
 	
-	font-size: 20px;
+	font-size: 18px;
 	display: inline;
 
 }
 
 #bloc_ficheproduit #bloc_produit .variable_dispo {
 	
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;
 	display: inline;
 	color: #4f9649;
@@ -1922,9 +1929,12 @@ form#formulaire input:valid {
 	background: url('../images/valid.png') 98% center no-repeat;
 }
 
-form#formulaire input[type=radio] {
+form#formulaire input[type=checkbox] {
 	width: auto;
-	float:left;
+}
+
+form#formulaire input[type=checkbox] {
+	width: auto;
 }
 
 form#formulaire input[type=submit] {
@@ -1957,11 +1967,12 @@ form#formulaire input[type=submit]:hover {
 	 	width: 220px;
 	}
 
-	form#formulaire #novify_modelbundle_signup_userCivilite label{
-		width: 50px;
+	form#formulaire input#novify_modelbundle_signup_userCivilite_0 {
+		margin-right: -265px;
 	}
 
-	form#formulaire #novify_modelbundle_signup_userCivilite_1 label{
+	form#formulaire input#novify_modelbundle_signup_userCivilite_1 {
+		margin-right: -825px;
 	}
 
 	form#formulaire input#novify_modelbundle_signup_userMail {

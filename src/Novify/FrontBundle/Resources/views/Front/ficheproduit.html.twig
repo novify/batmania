@@ -30,6 +30,8 @@
 								{{article.artNom}}
 							</h2>
 
+							<h3 id="ref_ficheproduit">{{article.artRef}}</h3>
+
 							<p class="description_ficheproduit"><!-- Description du produit-->
 								{{article.artDescript}}
 							</p>
@@ -98,13 +100,49 @@
 
 							<h3>Détails sur le produit</h3>
 
-							<p><b>Public: </b> {{article.artPublic}}</p>
+							{% if article.artPublic is not null %}
+								<p><b>Public: </b> {{article.artPublic}}</p>
+							{% endif %}
 
-							<p><b>Pagination: </b> 208 pages</p>
+							{% if article.artAuteur is not null %}
+								<p><b>Auteur: </b> {{article.artAuteur}}</p>
+							{% endif %}
 
-							<p><b>ISBN: </b> 9782365772068</p>
+							{% if article.artEditeur is not null %}
+								<p><b>Editeur: </b> {{article.artEditeur}}</p>
+							{% endif %}
 
-							<p><b>Public: </b> À partir de 12 ans</p>
+							{# {% if article.artDateSortie is not null %}
+								<p><b>Date de sortie: </b> {{article.artDateSortie}}</p>
+							{% endif %} #}
+
+							{% if article.artIsbn is not null %}
+								<p><b>ISBN: </b> {{article.artIsbn}}</p>
+							{% endif %}
+
+							{% if article.artPages is not null %}
+								<p><b>Nombre de pages: </b> {{article.artPages}}</p>
+							{% endif %}
+
+							{% if article.artGenre is not null %}
+								<p><b>Genre: </b> {{article.artGenre}}</p>
+							{% endif %}
+
+							{% if article.artPlateforme is not null %}
+								<p><b>Plateforme: </b> {{article.artPlateforme}}</p>
+							{% endif %}
+
+							{% if article.artRealisat is not null %}
+								<p><b>Réalisateur: </b> {{article.artRealisat}}</p>
+							{% endif %}
+
+							{% if article.artCasting is not null %}
+								<p><b>Casting: </b> {{article.artCasting}}</p>
+							{% endif %}
+
+							{% if article.artDuree is not null %}
+								<p><b>Durée: </b> {{article.artDuree}}</p>
+							{% endif %}
 
 						</div> <!-- Fin description -->
 					</div> <!-- Fin col-sm-6 -->
@@ -147,7 +185,9 @@
 
 {% endfor %}
 
-						<!-- Formulaire -->
+{% if app.user.userID is defined %}
+								
+						<!-- Formulaire seulement si on est connecté-->
 						<div class="formulaire_commentaires">
 							{{ form_start(form, {'method': 'POST'}) }}
 
@@ -159,7 +199,13 @@
 							{{ form_end(form, {'render_rest': false}) }}
 
 
-						</div>
+						</div> 
+						<!--  -->
+
+{% else %}
+						<p>Vous devez vous connecter pour poster des commentaires</p>
+						<p><a href="{{ path('login') }}">Connectez-vous</a> ou <a href="{{ path('inscription') }}">créez vous un compte</a>.</p>
+{% endif %}
 
 					</div>
 

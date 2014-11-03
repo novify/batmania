@@ -32,6 +32,7 @@ class Categories
     /**
      * @var string
      *
+     * penser à enlever le nullable true pour la prod !!!!!!!!!!!!!
      * @ORM\Column(name="cat_banniere_path", type="string", length=50, nullable=true)
      */
     private $catBannierePath;
@@ -137,9 +138,6 @@ class Categories
         return $this->catBanniere;
     }
 
-
-
-
     // Upload d'image
     public function getAbsolutePath()
     {
@@ -186,7 +184,7 @@ class Categories
     /**
      * Set catBannierePath
      *
-     * @param string $catBannierePath
+     * @param  string     $catBannierePath
      * @return Categories
      */
     public function setCatBannierePath($catBannierePath)
@@ -199,7 +197,7 @@ class Categories
     /**
      * Get catBannierePath
      *
-     * @return string 
+     * @return string
      */
     public function getCatBannierePath()
     {
