@@ -4,15 +4,15 @@ namespace Novify\FrontBundle\Controller;
 
 use Novify\ModelBundle\Entity\Commentaires;
 use Novify\ModelBundle\Form\CommentairesType;
-
 use Novify\ModelBundle\Form\UtilisateursType;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class FrontController extends Controller
 {
+    
     public function menuAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -40,6 +40,7 @@ class FrontController extends Controller
     public function panierAction()
     {
         // A faire fonctionner
+
 
         $em = $this->getDoctrine()->getManager();
         $suggestion_articles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
