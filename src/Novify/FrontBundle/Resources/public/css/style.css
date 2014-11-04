@@ -310,10 +310,6 @@ header .header_client .panier a:hover #bulle_panier {
 	border-radius: 10px;
 }
 
-header nav img {
-	display: none;
-}
-
 #bulle_compte:after, #bulle_compte:before {
 	right: 50%;
 	border: solid transparent; 
