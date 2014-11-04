@@ -47,7 +47,7 @@ class SecurityController extends Controller
             $em->persist($inscription);
             $em->flush();
             $session = $request->getSession();
-            $session->getFlashBag()->add('confirmation', 'Votre compte a bien été créé ! Veuillez vous <a href="{{ path(\'login\') }}">indentifier</a>');
+            $session->getFlashBag()->add('confirmation_inscription', 'Votre compte a bien été créé !');
 
             return $this->redirect($this->generateUrl('novify_front_homepage'));
         }
