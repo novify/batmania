@@ -8,10 +8,12 @@
 
 			<!-- Image choisie par l'utilisateur et modifiable dans le back office -->
 			<div class="banniere_catalogue"> <!-- Banniere a actualiser selon la catégorie -->
+{% if article.sousCategorie.categorie.catBannierePath is not null %}
 				<img src="{{ asset(article.sousCategorie.categorie.getWebPath) }}" alt=""/>
 
+{% endif %}
 				<div class="container"><!-- Fil d'ariane, liens et textes à générer depuis la bdd -->
-					<h1><a href="#">Livres</a> > Comics</h1>
+					<h1><a href="{{ path('novify_front_view_categorie', {'categorie': article.sousCategorie.categorie.catNom}) }}">{{ article.sousCategorie.categorie.catNom }}</a> > <a href="{{ path('novify_front_view_souscategorie', {'categorie': article.sousCategorie.categorie.catNom, 'sousCategorie': article.sousCategorie.souscatNom}) }}">{{article.sousCategorie.souscatNom}}</a></h1>
 				</div>
 
 			</div>

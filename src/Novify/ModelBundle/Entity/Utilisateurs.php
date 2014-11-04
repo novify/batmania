@@ -333,7 +333,11 @@ class Utilisateurs implements UserInterface
      */
     public function getRoles()
     {
-        return array('ROLE_USER');
+        if ($this->userMail == 'admin@batmania.com') {
+            return array('ROLE_ADMIN');
+        } else {
+            return array('ROLE_USER');
+        }
     }
 
     /**
