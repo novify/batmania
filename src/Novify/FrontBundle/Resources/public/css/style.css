@@ -965,6 +965,14 @@ nav input[type=checkbox]:checked ~ #menu{
 	font-weight: 400;
 }
 
+#bloc_ficheproduit .formulaire_commentaires{
+	border-radius: 10px;
+	padding: 20px;
+	background-color: rgb(245,245,245);
+	width: 500px;
+	box-shadow: 1px 1px 15px #b3b3b3;
+}
+
 /* -- pop-up pour la validation d'un produit -- */
 
 	#test-popup #produit_popup .popup_header {
@@ -1991,6 +1999,11 @@ form#formulaire input[type=submit]:hover {
 	form#formulaire label.ville {
 	 	width: 154px;
 	}	
+
+	form#formulaire label.commentaire {
+		color: #1a465c;
+	 	width: 250px;
+	}
 
 form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire input#novify_modelbundle_signup_userCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userLivCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userLivCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userFactCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userFactCivilite_1 {
 	margin-right: -125px;
