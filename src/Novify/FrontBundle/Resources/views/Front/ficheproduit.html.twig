@@ -185,8 +185,8 @@
 
 {% endfor %}
 
-{% if app.user.userID is defined %}
-								
+{% if app.user is defined %}
+
 						<!-- Formulaire seulement si on est connecté-->
 						<div class="formulaire_commentaires">
 							{{ form_start(form, {'method': 'POST'}) }}
@@ -196,10 +196,10 @@
 
 							    <input type="submit" value="Commenter"/>
 
-							{{ form_end(form, {'render_rest': false}) }}
+							{{ form_end(form) }}
 
 
-						</div> 
+						</div>
 						<!--  -->
 
 {% else %}
