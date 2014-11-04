@@ -26,25 +26,34 @@ class UtilisateursType extends AbstractType
                 'choices' => array('M' => 'Masculin', 'F' => 'Féminin'),
                 'expanded' => true
             ))
-            ->add('userFactCivilite')
+            ->add('userFactCivilite', 'choice', array(
+                'choices' => array('M' => 'Masculin', 'F' => 'Féminin'),
+                'expanded' => true
+            ))
             ->add('userFactNom')
             ->add('userFactPrenom')
             ->add('userFactSociete')
             ->add('userFactAdresse')
-            ->add('userFactPays')
+            ->add('userFactPays', 'country', array(
+                'preferred_choices' => array('FR'),
+            ))
             ->add('userFactCodep')
             ->add('userFactVille')
             ->add('userFactTel')
-            ->add('userLivCivilite')
+            ->add('userLivCivilite', 'choice', array(
+                'choices' => array('M' => 'Masculin', 'F' => 'Féminin'),
+                'expanded' => true
+            ))
             ->add('userLivNom')
             ->add('userLivPrenom')
             ->add('userLivSociete')
             ->add('userLivAdresse')
-            ->add('userLivPays')
+            ->add('userLivPays', 'country', array(
+                'preferred_choices' => array('FR'),
+            ))
             ->add('userLivCodep')
             ->add('userLivVille')
             ->add('userLivTel')
-            ->add('ok','submit')
         ;
     }
     

@@ -965,6 +965,14 @@ nav input[type=checkbox]:checked ~ #menu{
 	font-weight: 400;
 }
 
+#bloc_ficheproduit .formulaire_commentaires{
+	border-radius: 10px;
+	padding: 20px;
+	background-color: rgb(245,245,245);
+	width: 500px;
+	box-shadow: 1px 1px 15px #b3b3b3;
+}
+
 /* -- pop-up pour la validation d'un produit -- */
 
 	#test-popup #produit_popup .popup_header {
@@ -1466,10 +1474,15 @@ nav input[type=checkbox]:checked ~ #menu{
 
 }
 
-#bloc_compte #compte_infos #modifier_infos a:hover{
+#bloc_compte #compte_infos #modifier_infos a:hover {
 	background-color: #f2dc9a;
 }
 
+#bloc_compte #compte_infos h4 {
+	font-weight: 400;
+	color: #1a465c;
+	font-size: 16px;
+}
 /* -------- */
 
 
@@ -1946,7 +1959,8 @@ form#formulaire input:valid {
 }
 
 form#formulaire input[type=radio] {
-float:left;}
+	float:left;
+}
 
 form#formulaire input[type=checkbox] {
 	width: auto;
@@ -1954,14 +1968,14 @@ form#formulaire input[type=checkbox] {
 
 form#formulaire input[type=submit] {
 	background: none;
-	padding: 10px 5px;
+	padding: 6px 6px;
 	border: none;
 	display: block;
 	width: auto;
 	height: auto;
 	font-size: 20px;
 	color: #fff;
-	background-color: #e2c879;
+	background: #e2c879;
 	cursor: pointer;
 	-webkit-transform: scale(1);
 	transition: all 0.25s;
@@ -1969,8 +1983,8 @@ form#formulaire input[type=submit] {
 
 form#formulaire input[type=submit]:hover {
 	-webkit-transform: scale(1.02);
-	background-color: #f2dc9a;
-}		
+	background: #f2dc9a;
+}
 
 	/* CSS indépendant à chaque champs*/
 
@@ -1982,33 +1996,87 @@ form#formulaire input[type=submit]:hover {
 	 	width: 220px;
 	}
 
-	form#formulaire input#novify_modelbundle_signup_userCivilite_0 {
-		margin-right: -265px;
+	form#formulaire label.ville {
+	 	width: 154px;
+	}	
+
+	form#formulaire label.commentaire {
+		color: #1a465c;
+	 	width: 250px;
 	}
 
-	form#formulaire input#novify_modelbundle_signup_userCivilite_1 {
-		margin-right: -825px;
-	}
+form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire input#novify_modelbundle_signup_userCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userLivCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userLivCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userFactCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userFactCivilite_1 {
+	margin-right: -125px;
+}
 
-	form#formulaire input#novify_modelbundle_signup_userMail {
-		width: 200px;
-	}
+		/* Inscription */
+		form#formulaire input#novify_modelbundle_signup_userMail {
+			width: 200px;
+		}
 
-	form#formulaire input#tel {
-		width: 130px;
-	}
+		/* Modification compte */
+		form#formulaire input#novify_modelbundle_utilisateurs_userMail {
+			width: 200px;
+		}
+		
+		form#formulaire input#novify_modelbundle_utilisateurs_userFactTel {
+			width: 130px;
+		}
 
-	form#formulaire input#rue {
-		width: 250px;
-	}
+		form#formulaire input#novify_modelbundle_utilisateurs_userFactTel:valid {
+			background: none;
+			border: 1px solid #dedede;
+		}
 
-	form#formulaire input#postal {
-		width: 85px;
-	}
+		form#formulaire input#novify_modelbundle_utilisateurs_userFactTel:valid:focus:valid {
+			border-color: #56c93f;
+			background: url('../images/valid.png') 98% center no-repeat;
+		}
 
+		form#formulaire input#novify_modelbundle_utilisateurs_userLivTel {
+			width: 130px;
+		}
+
+		form#formulaire input.non_obligatoire:valid {
+			background: none;
+			border: 1px solid #dedede;
+		}
+
+		form#formulaire input.non_obligatoire:focus:valid {
+			border-color: #56c93f;
+			background: url('../images/valid.png') 98% center no-repeat;
+		}
+
+		form#formulaire input.non_obligatoire:focus:valid + span {
+			display: inline;
+			color: #ff0000;
+			margin-right: 10px;
+		}
+
+		form#formulaire input#novify_modelbundle_utilisateurs_userLivAdresse {
+			width: 250px;
+		}
+
+		form#formulaire input#novify_modelbundle_utilisateurs_userLivCodep {
+			width: 85px;
+		}
+
+		form#formulaire input#novify_modelbundle_utilisateurs_userFactAdresse {
+			width: 250px;
+		}
+
+		form#formulaire input#novify_modelbundle_utilisateurs_userFactCodep {
+			width: 85px;
+		}
+
+	/* Boutton du formulaire */	
 	form#formulaire input#creer_compte {
-		margin-left: 70%;
+		float: right;
 		margin-bottom: 15px;
+	}
+
+	form#formulaire input#valider_les_modifs {
+		float: right;
 	}
 	/* ---- */
 
