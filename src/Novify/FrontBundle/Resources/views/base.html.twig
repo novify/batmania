@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="no-js">
 	<head>
 
 
@@ -17,6 +17,11 @@
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/style.css')}}"/>
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/magnific-popup.css')}}">
 
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyfront/css/normalize.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyfront/css/demo.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyfront/css/ns-default.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyfront/css/ns-style-growl.css')}}" />
+
 		<!-- Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,6 +37,9 @@
 		<!-- Js -->
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
+		<script src="{{ asset('bundles/novifyfront/js/modernizr.custom.js')}}"></script>
+
+
 		<script src="{{ asset('bundles/novifyfront/js/sticky.js')}}"></script>
 
 		<script>
@@ -43,6 +51,9 @@
 
 		<script src="{{ asset('bundles/novifyfront/js/jquery.magnific-popup.js')}}"></script>
 
+
+
+
 	</head>
 {% block body %}
 
@@ -50,9 +61,7 @@
 {% block header %}
 		<!-- Header -->
 		<header>
-{% for msg in app.session.flashbag.get('confirmation') %}
-			{{ msg }}
-{% endfor %}
+
 
 				<!-- Si l'administrateur est connecté, on affiche la bar en haut -->
 				{% if app.user is not null %}
@@ -61,7 +70,7 @@
 							<p>
 								<a href="{{ path('novify_back_index') }}">Accéder à l'interface d'administration</a>
 
-								<span style="text-align:right;float:right">Salutations, {{app.user.username}}</span>
+								<span style="text-align:right;float:right">Salutations, {{app.user.userprenom}}</span>
 							</p>
 						</div>
 					{% endif %}
@@ -208,6 +217,9 @@
 			</header>
 		<!-- Fin Header -->
 
+
+	
+
 {% endblock %}
 {% block main %}
 {% endblock %}
@@ -287,7 +299,8 @@
 
 
 
-
+	<script src="{{ asset('bundles/novifyfront/js/notificationFx.js')}}"></script>
+	<script src="{{ asset('bundles/novifyfront/js/classie.js')}}"></script>
 	<!-- Caroussel -->
     <script>
     $(function() {
@@ -311,6 +324,170 @@
         }, 4000);
     });
     </script>
+
+
+
+{% for msg in app.session.flashbag.get('confirmation_inscription') %}
+
+    <script>
+			(function() {
+				// var bttn = document.getElementById( 'notification-trigger' );
+
+				// make sure..
+				// bttn.disabled = false;
+				
+				// bttn.addEventListener( 'click', function() {
+					// simulate loading (for demo purposes only)
+					// classie.add( bttn, 'active' );
+					setTimeout( function() {
+
+						// classie.remove( bttn, 'active' );
+						
+						// create the notification
+						var notification = new NotificationFx({
+							message : '<p>{{ msg }} <a href="{{path('login')}}">Connexion</a></p>',
+							layout : 'growl',
+							effect : 'scale',
+							type : 'notice', // notice, warning, error or success
+							onClose : function() {
+								// bttn.disabled = false;
+							}
+						});
+
+						// show the notification
+						notification.show();
+
+					}, 600 );
+					
+					// disable the button (for demo purposes only)
+					// this.disabled = true;
+				// } );
+			})();
+		</script>
+
+{% endfor %}
+
+
+{% for msg in app.session.flashbag.get('modif_compte') %}
+
+    <script>
+			(function() {
+				// var bttn = document.getElementById( 'notification-trigger' );
+
+				// make sure..
+				// bttn.disabled = false;
+				
+				// bttn.addEventListener( 'click', function() {
+					// simulate loading (for demo purposes only)
+					// classie.add( bttn, 'active' );
+					setTimeout( function() {
+
+						// classie.remove( bttn, 'active' );
+						
+						// create the notification
+						var notification = new NotificationFx({
+							message : '<p>{{ msg }}, {{app.user.userPrenom}}.</p>',
+							layout : 'growl',
+							effect : 'scale',
+							type : 'notice', // notice, warning, error or success
+							onClose : function() {
+								// bttn.disabled = false;
+							}
+						});
+
+						// show the notification
+						notification.show();
+
+					}, 600 );
+					
+					// disable the button (for demo purposes only)
+					// this.disabled = true;
+				// } );
+			})();
+		</script>
+
+{% endfor %}
+
+{% for msg in app.session.flashbag.get('logout') %}
+
+    <script>
+			(function() {
+				// var bttn = document.getElementById( 'notification-trigger' );
+
+				// make sure..
+				// bttn.disabled = false;
+				
+				// bttn.addEventListener( 'click', function() {
+					// simulate loading (for demo purposes only)
+					// classie.add( bttn, 'active' );
+					setTimeout( function() {
+
+						// classie.remove( bttn, 'active' );
+						
+						// create the notification
+						var notification = new NotificationFx({
+							message : '<p>{{ msg }}.</p>',
+							layout : 'growl',
+							effect : 'scale',
+							type : 'notice', // notice, warning, error or success
+							onClose : function() {
+								// bttn.disabled = false;
+							}
+						});
+
+						// show the notification
+						notification.show();
+
+					}, 600 );
+					
+					// disable the button (for demo purposes only)
+					// this.disabled = true;
+				// } );
+			})();
+		</script>
+
+{% endfor %}
+
+{% for msg in app.session.flashbag.get('login') %}
+
+    <script>
+			(function() {
+				// var bttn = document.getElementById( 'notification-trigger' );
+
+				// make sure..
+				// bttn.disabled = false;
+				
+				// bttn.addEventListener( 'click', function() {
+					// simulate loading (for demo purposes only)
+					// classie.add( bttn, 'active' );
+					setTimeout( function() {
+
+						// classie.remove( bttn, 'active' );
+						
+						// create the notification
+						var notification = new NotificationFx({
+							message : '<p>{{ msg }}, {{app.user.userPrenom}}.</p>',
+							layout : 'growl',
+							effect : 'scale',
+							type : 'notice', // notice, warning, error or success
+							onClose : function() {
+								// bttn.disabled = false;
+							}
+						});
+
+						// show the notification
+						notification.show();
+
+					}, 600 );
+					
+					// disable the button (for demo purposes only)
+					// this.disabled = true;
+				// } );
+			})();
+		</script>
+
+{% endfor %}
+
 
     <!-- Fin Body -->
 
