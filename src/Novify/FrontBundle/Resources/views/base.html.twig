@@ -56,7 +56,7 @@
 
 				<!-- Si l'administrateur est connecté, on affiche la bar en haut -->
 				{% if app.user is not null %}
-					{% if app.user.username == 'admin' %}
+					{% if is_granted('ROLE_ADMIN')  %}
 						<div id="barre_administration">
 							<p>
 								<a href="{{ path('novify_back_index') }}">Accéder à l'interface d'administration</a>
@@ -132,6 +132,10 @@
 											<div class="faux_liens">mot de passe oublié ?</div>
 									</div> -->
 								</a>
+								
+								<div class="sous_texte">
+									<a href="{{ path('logout') }}">Déconnexion</a>
+								</div>
 
 								{% else %}
 
