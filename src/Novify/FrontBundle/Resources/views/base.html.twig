@@ -51,6 +51,23 @@
 {% block header %}
 		<!-- Header -->
 		<header>
+
+				<!-- Si l'administrateur est connecté, on affiche la bar en haut -->
+				{% if app.user is not null %}
+					{% if app.user.username == 'admin' %}
+						<div id="barre_administration">
+							<p>
+								<a href="{{ path('novify_back_index') }}">Accéder à l'interface d'administration</a>
+
+								<span style="text-align:right;float:right">Salutations, {{app.user.username}}</span>
+							</p>
+						</div>
+					{% endif %} 
+				{% endif %}
+				<!--  -->
+
+
+
 				<!-- Barre de réseaux sociaux-->
 				<div id="barre_rs">
 					<div class="langue">
@@ -96,20 +113,42 @@
 
 						<div class="header_client">
 							<div class="col-md-3 col-sm-3 col-xs-12 compte">
-								<a href="{{ path('login') }}">
+
+								{% if app.user is not null %}
+
+								<a href="{{ path('novify_front_compte') }}">
 									<img src="{{ asset('bundles/novifyfront/images/pictogrammes/compte.png')}}" alt="picto tête de batman">Mon compte
 									<div class="sous_texte">
-										Connectez vous
+
+										Bonjour {{app.user.userPrenom}}
+											
 									</div>
-									<div class="sous_texte_connecte">
-										Bonjour, Jean-jack<img src="{{ asset('bundles/novifyfront/images/valid.png')}}" alt="picto tête de batman" style="width:29px;">
-									</div>
-									<div id="bulle_compte">
+									
+									<!-- <div id="bulle_compte">
 										connectez vous :
 											<div class="boutton">Se connecter</div>
 											<div class="faux_liens">mot de passe oublié ?</div>
-									</div>
+									</div> -->
 								</a>
+
+								{% else %}
+								
+								<a href="{{ path('login') }}">
+									<img src="{{ asset('bundles/novifyfront/images/pictogrammes/compte.png')}}" alt="picto tête de batman">Mon compte
+									<div class="sous_texte">
+
+										Connectez-vous
+											
+									</div>
+									
+									<!-- <div id="bulle_compte">
+										connectez vous :
+											<div class="boutton">Se connecter</div>
+											<div class="faux_liens">mot de passe oublié ?</div>
+									</div> -->
+								</a>
+
+								{% endif %}
 							</div>
 
 
@@ -119,12 +158,12 @@
 									<div class="sous_texte_panier">
 										47,00 €
 									</div>
-									<div id="bulle_panier">
+									<!-- <div id="bulle_panier">
 										<strong>La somme de votre panier est de :</strong>
 										<div class="prix">47.00€</div>
 										<div class="boutton">Voir mon panier</div>
 										<div class="faux_liens">Pour voir la liste de vos articles cliquez ici !</div>
-									</div>
+									</div> -->
 								</a>
 							</div>
 						</div>

@@ -68,6 +68,28 @@ header {
 	background-color: #1a465c;
 }
 
+header #barre_administration{
+
+	width: 100%;
+	background-color: rgb(25,25,25);
+
+}
+
+header #barre_administration p{
+	font-size: 14px;
+	font-weight: 400;
+	margin:0;
+	padding: 7px;
+	color: white;
+}
+
+header #barre_administration p a{
+	padding: 10px;
+}
+
+
+
+
 #barre_rs {
 	background-color: #2f3036;
 	text-align: left;
@@ -212,12 +234,6 @@ header .sous_texte_panier {
 	display: block;
 	font-size: 15px;
 	color:#4f9649
-}
-
-header .sous_texte_connecte {
-	margin-left: 60px;
-	display: none;
-	font-size: 11px;
 }
 
 header .header_client img {
@@ -711,7 +727,7 @@ nav input[type=checkbox]:checked ~ #menu{
 
 #bloc_catalogue .container .article .article_image img{
 
-	height: 100%;
+	width: 100%;
 }
 
 #bloc_catalogue .container .article h5{
@@ -1267,7 +1283,7 @@ nav input[type=checkbox]:checked ~ #menu{
 
 #bloc_panier .container .article .article_image img{
 
-	height: 100%;
+	width: 100%;
 }
 
 #bloc_panier .container .article h5{
@@ -1929,9 +1945,8 @@ form#formulaire input:valid {
 	background: url('../images/valid.png') 98% center no-repeat;
 }
 
-form#formulaire input[type=checkbox] {
-	width: auto;
-}
+form#formulaire input[type=radio] {
+float:left;}
 
 form#formulaire input[type=checkbox] {
 	width: auto;
@@ -2087,7 +2102,6 @@ form#formulaire input[type=submit]:hover {
 
 
 
-
 	/*Menu pour Ipad & Iphone*/
 		/*Style du menu horizontal*/
 		ul {
@@ -2146,7 +2160,7 @@ form#formulaire input[type=submit]:hover {
 
 	#bloc_catalogue .container .article .article_image img{
 
-		width: 100%;
+		height: 100%;
 	}
 
 	#bloc_catalogue .container .pagination{
@@ -2156,6 +2170,20 @@ form#formulaire input[type=submit]:hover {
 
 	#bloc_panier {
 		margin-top: 41px;
+	}
+
+	#bloc_panier .container table img{display:none;}
+	#bloc_panier .container table .supprimer{
+		padding: 2px 1px;
+	}
+
+
+	#bloc_ficheproduit #bloc_produit h2{
+		
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 24px;
+
 	}
 }
 

@@ -43,7 +43,7 @@ class Commentaires
     private $commentDate;
 
     /**
-     * @ORM\OneToOne(targetEntity="Novify\ModelBundle\Entity\Utilisateurs", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Novify\ModelBundle\Entity\Utilisateurs", cascade={"persist"})
      */
     private $utilisateur;
 
