@@ -4,9 +4,9 @@ namespace Novify\SecurityBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
-use Symfony\Component\HttpFoundation\Request;
 use Novify\ModelBundle\Entity\Utilisateurs;
 use Novify\ModelBundle\Form\SignupType;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class SecurityController extends Controller
 {
@@ -17,6 +17,9 @@ class SecurityController extends Controller
 
     public function loginAction()
     {
+        if ($this->get('security.context')->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+            return $this->redirect($this->generateUrl('novify_front_homepage'));
+        }
         $request = $this->getRequest();
         $session = $request->getSession();
         // get the login error if there is one
@@ -34,14 +37,17 @@ class SecurityController extends Controller
         ));
     }
 
-    public function inscriptionAction(Request $request)
+    public function inscriptionAction()
     {
         $inscription = new Utilisateurs();
         $form = $this->createForm(new SignupType(), $inscription);
+        $request = $this->getRequest();
         if ($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($inscription);
             $em->flush();
+            $session = $request->getSession();
+            $session->getFlashBag()->add('confirmation', 'Votre compte a bien été créé ! Veuillez vous <a href="{{ path(\'login\') }}">indentifier</a>');
 
             return $this->redirect($this->generateUrl('novify_front_homepage'));
         }
