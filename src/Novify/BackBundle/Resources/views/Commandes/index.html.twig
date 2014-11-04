@@ -32,7 +32,7 @@
                         <td>{{ commandes.id }}</td>
                         <td>{{ commandes.utilisateur.userNom }}</td>
                         <td>{{ commandes.comPrix }} €</td>
-                        <td>{# {{ commandes.comDate }} #}</td>
+                        <td>{{ commandes.comDate|date("m/d/Y") }}</td>
 
                        
                     </tr>

@@ -8,10 +8,12 @@
 
 			<!-- Image choisie par l'utilisateur et modifiable dans le back office -->
 			<div class="banniere_catalogue"> <!-- Banniere a actualiser selon la catégorie -->
+{% if article.sousCategorie.categorie.catBannierePath is not null %}
 				<img src="{{ asset(article.sousCategorie.categorie.getWebPath) }}" alt=""/>
 
+{% endif %}
 				<div class="container"><!-- Fil d'ariane, liens et textes à générer depuis la bdd -->
-					<h1><a href="#">Livres</a> > Comics</h1>
+					<h1><a href="{{ path('novify_front_view_categorie', {'categorie': article.sousCategorie.categorie.catNom}) }}">{{ article.sousCategorie.categorie.catNom }}</a> > <a href="{{ path('novify_front_view_souscategorie', {'categorie': article.sousCategorie.categorie.catNom, 'sousCategorie': article.sousCategorie.souscatNom}) }}">{{article.sousCategorie.souscatNom}}</a></h1>
 				</div>
 
 			</div>
@@ -112,9 +114,9 @@
 								<p><b>Editeur: </b> {{article.artEditeur}}</p>
 							{% endif %}
 
-							{# {% if article.artDateSortie is not null %}
-								<p><b>Date de sortie: </b> {{article.artDateSortie}}</p>
-							{% endif %} #}
+							 {% if article.artDateSortie is not null %}
+								<p><b>Date de sortie: </b> {{article.artDateSortie|date("m/d/Y")}}</p>
+							{% endif %} 
 
 							{% if article.artIsbn is not null %}
 								<p><b>ISBN: </b> {{article.artIsbn}}</p>
@@ -173,6 +175,7 @@
 							<div class="col-sm-3">
 								<p><b>Note:</b> {{commentaire.commentNote}}/5</p> <!-- Note donnée dans ce commentaire-->
 								<p>Par {{commentaire.utilisateur.userPrenom}} {{commentaire.utilisateur.userNom}}</p> <!-- Auteur du comment-->
+								<p>Le {{commentaire.commentDate|date("m/d/Y")}}</p>
 							</div>
 
 							<div class="col-sm-9">

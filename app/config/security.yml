@@ -31,10 +31,6 @@ security:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        # the login page has to be accessible for everybody
-        login:
-            pattern:  /login$
-            security: false
 
         # secures part of the application
         secured_area:

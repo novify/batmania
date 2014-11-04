@@ -1,4 +1,3 @@
-<?php session_start(); ?> <!-- A écrire sur toutes la pages avant le code html-->
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -39,11 +38,11 @@
 		  $(document).ready(function(){
 		    $("#menu").sticky({topSpacing:0});
 		  });
-		</script> 
+		</script>
 
 
-		<script src="{{ asset('bundles/novifyfront/js/jquery.magnific-popup.js')}}"></script> 
-		
+		<script src="{{ asset('bundles/novifyfront/js/jquery.magnific-popup.js')}}"></script>
+
 	</head>
 {% block body %}
 
@@ -51,10 +50,13 @@
 {% block header %}
 		<!-- Header -->
 		<header>
+{% for msg in app.session.flashbag.get('confirmation') %}
+			{{ msg }}
+{% endfor %}
 
 				<!-- Si l'administrateur est connecté, on affiche la bar en haut -->
 				{% if app.user is not null %}
-					{% if app.user.username == 'admin' %}
+					{% if is_granted('ROLE_ADMIN')  %}
 						<div id="barre_administration">
 							<p>
 								<a href="{{ path('novify_back_index') }}">Accéder à l'interface d'administration</a>
@@ -62,7 +64,7 @@
 								<span style="text-align:right;float:right">Salutations, {{app.user.username}}</span>
 							</p>
 						</div>
-					{% endif %} 
+					{% endif %}
 				{% endif %}
 				<!--  -->
 
@@ -120,27 +122,36 @@
 									<img src="{{ asset('bundles/novifyfront/images/pictogrammes/compte.png')}}" alt="picto tête de batman">Mon compte
 									<div class="sous_texte">
 
+<<<<<<< HEAD
 										Bonjour, {{app.user.userPrenom}}
 											
+=======
+										Bonjour {{app.user.userPrenom}}
+
+>>>>>>> d6ad38883fddf9d15c554797aebbfa9bcc073bff
 									</div>
-									
+
 									<!-- <div id="bulle_compte">
 										connectez vous :
 											<div class="boutton">Se connecter</div>
 											<div class="faux_liens">mot de passe oublié ?</div>
 									</div> -->
 								</a>
+								
+								<div class="sous_texte">
+									<a href="{{ path('logout') }}">Déconnexion</a>
+								</div>
 
 								{% else %}
-								
+
 								<a href="{{ path('login') }}">
 									<img src="{{ asset('bundles/novifyfront/images/pictogrammes/compte.png')}}" alt="picto tête de batman">Mon compte
 									<div class="sous_texte">
 
 										Connectez-vous
-											
+
 									</div>
-									
+
 									<!-- <div id="bulle_compte">
 										connectez vous :
 											<div class="boutton">Se connecter</div>
@@ -278,9 +289,9 @@
 	</footer>
 	<!-- Fin Footer -->
 {% endblock %}
-	
 
-	
+
+
 
 
 	<!-- Caroussel -->

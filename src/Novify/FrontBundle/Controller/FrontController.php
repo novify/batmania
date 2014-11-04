@@ -8,7 +8,9 @@ use Novify\ModelBundle\Form\UtilisateursType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
+
 
 class FrontController extends Controller
 {
@@ -78,18 +80,14 @@ class FrontController extends Controller
         if ($form->handleRequest($request)->isValid()) {
             $em->persist($utilisateur);
             $em->flush();
-
+            
             return $this->redirect($this->generateUrl('novify_front_compte'));
         }
 
         return $this->render('NovifyFrontBundle:Front:compte_modif.html.twig', array('form' => $form->createView()));
 
 
-    
-
-
-        return $this->render('NovifyFrontBundle:Front:compte_modif.html.twig');
-    }
+        }
 
     public function contactAction()
     {
