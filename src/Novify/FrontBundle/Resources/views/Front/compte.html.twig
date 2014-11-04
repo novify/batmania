@@ -6,7 +6,7 @@
 		<div id="bloc_compte">
 
 			<div class="container">
-				
+
 				<div class="row">
 
 					<div class="col-sm-8" style="padding-right: 50px">
@@ -99,7 +99,7 @@
 					<div class="col-sm-4" id="compte_infos">
 						<div id="infos_generales">
 							<h3>Informations personnelles</h3>
-							<strong>{{app.user.userCivilite ~'. '~ app.user.userPrenom ~' '~ app.user.userNom}}</strong>
+							<strong>{{app.user.userPrenom ~' '~ app.user.userNom}}</strong>
 							<p>{{app.user.userMail}}</p>
 						</div>
 
@@ -109,7 +109,7 @@
 
 							{% if app.user.userLivNom is not null or app.user.userLivAdresse is not null %}
 
-								<p>{{app.user.userLivCivilite ~'. '~ app.user.userLivPrenom ~' '~ app.user.userLivNom}}</p>
+								<p>{{app.user.userLivPrenom ~' '~ app.user.userLivNom}}</p>
 								<p>{{app.user.userLivAdresse}}</p>
 								<p>{{app.user.userLivCodeP ~' '~ app.user.userLivVille}} </p>
 								<p>{{app.user.userLivPays}}</p>
@@ -123,7 +123,7 @@
 							<strong>Adresse de facturation</strong>
 
 							{% if app.user.userFactNom is not null or app.user.userFactAdresse is not null %}
-								<p>{{app.user.userFactCivilite ~'. '~ app.user.userFactPrenom ~' '~ app.user.userFactNom}}</p>
+								<p>{{app.user.userFactPrenom ~' '~ app.user.userFactNom}}</p>
 								<p>{{app.user.userFactAdresse}}</p>
 								<p>{{app.user.userFactCodeP ~' '~ app.user.userFactVille}} </p>
 								<p>{{app.user.userFactPays}}</p>
