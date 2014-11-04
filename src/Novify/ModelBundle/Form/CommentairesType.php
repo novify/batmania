@@ -10,7 +10,7 @@ class CommentairesType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -20,11 +20,9 @@ class CommentairesType extends AbstractType
                 'choices'   => array('0' => '0', '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5'),
                 'required'  => true,
             ))
-            ->add('commentDate')
-            ->add('Créer', 'submit')
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
