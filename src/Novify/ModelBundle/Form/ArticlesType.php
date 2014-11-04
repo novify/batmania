@@ -28,7 +28,10 @@ class ArticlesType extends AbstractType
             ->add('artPromo')
             ->add('artAuteur')
             ->add('artEditeur')
-            ->add('artDateSortie')
+            ->add('artDateSortie', 'date', array(
+                'years' => range(date('Y') - 100, date('Y'))
+                )
+            )
             ->add('artPublic')
             ->add('artIsbn')
             ->add('artPages')

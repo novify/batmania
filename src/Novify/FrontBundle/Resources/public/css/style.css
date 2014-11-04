@@ -68,6 +68,28 @@ header {
 	background-color: #1a465c;
 }
 
+header #barre_administration{
+
+	width: 100%;
+	background-color: rgb(25,25,25);
+
+}
+
+header #barre_administration p{
+	font-size: 14px;
+	font-weight: 400;
+	margin:0;
+	padding: 7px;
+	color: white;
+}
+
+header #barre_administration p a{
+	padding: 10px;
+}
+
+
+
+
 #barre_rs {
 	background-color: #2f3036;
 	text-align: left;
@@ -2150,6 +2172,20 @@ form#formulaire input[type=submit]:hover {
 
 	#bloc_panier {
 		margin-top: 41px;
+	}
+
+	#bloc_panier .container table img{display:none;}
+	#bloc_panier .container table .supprimer{
+		padding: 2px 1px;
+	}
+
+
+	#bloc_ficheproduit #bloc_produit h2{
+		
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 24px;
+
 	}
 }
 

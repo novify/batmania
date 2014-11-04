@@ -51,6 +51,23 @@
 {% block header %}
 		<!-- Header -->
 		<header>
+
+				<!-- Si l'administrateur est connecté, on affiche la bar en haut -->
+				{% if app.user is not null %}
+					{% if app.user.username == 'admin' %}
+						<div id="barre_administration">
+							<p>
+								<a href="{{ path('novify_back_index') }}">Accéder à l'interface d'administration</a>
+
+								<span style="text-align:right;float:right">Salutations, {{app.user.username}}</span>
+							</p>
+						</div>
+					{% endif %} 
+				{% endif %}
+				<!--  -->
+
+
+
 				<!-- Barre de réseaux sociaux-->
 				<div id="barre_rs">
 					<div class="langue">
