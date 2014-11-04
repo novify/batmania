@@ -159,7 +159,7 @@
 
 						<h3>Commentaires</h3>
 
-						<p>Moyenne des commentaires : <b>X/10</b></p> <!-- A calculer via calcul de la bdd -->
+						<p>Moyenne des commentaires : <b>X/5</b></p> <!-- A calculer via calcul de la bdd -->
 
 						<p style="margin-bottom: 40px">{{ commentaires|length }} commentaires rédigés</p> <!-- Nombre a récupérer selon le nombre d'entrées dans la bdd -->
 
@@ -171,7 +171,7 @@
 						<div class="row bloc_commentaire"> <!-- Commentaire le plus récent-->
 
 							<div class="col-sm-3">
-								<p><b>Note:</b> {{commentaire.commentNote}}/10</p> <!-- Note donnée dans ce commentaire-->
+								<p><b>Note:</b> {{commentaire.commentNote}}/5</p> <!-- Note donnée dans ce commentaire-->
 								<p>Par {{commentaire.utilisateur.userPrenom}} {{commentaire.utilisateur.userNom}}</p> <!-- Auteur du comment-->
 							</div>
 
