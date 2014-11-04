@@ -99,11 +99,15 @@
 								<a href="{{ path('login') }}">
 									<img src="{{ asset('bundles/novifyfront/images/pictogrammes/compte.png')}}" alt="picto tête de batman">Mon compte
 									<div class="sous_texte">
-										Connectez vous
+
+										{% if app.user is not null %}
+											
+											Bonjour {{app.user.userPrenom}}
+										{% else %}
+											Connectez-vous
+										{% endif %}
 									</div>
-									<div class="sous_texte_connecte">
-										Bonjour, Jean-jack<img src="{{ asset('bundles/novifyfront/images/valid.png')}}" alt="picto tête de batman" style="width:29px;">
-									</div>
+									
 									<div id="bulle_compte">
 										connectez vous :
 											<div class="boutton">Se connecter</div>

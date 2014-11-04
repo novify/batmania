@@ -214,12 +214,6 @@ header .sous_texte_panier {
 	color:#4f9649
 }
 
-header .sous_texte_connecte {
-	margin-left: 60px;
-	display: none;
-	font-size: 11px;
-}
-
 header .header_client img {
 	display:inline;
 	width: 43px;
@@ -711,7 +705,7 @@ nav input[type=checkbox]:checked ~ #menu{
 
 #bloc_catalogue .container .article .article_image img{
 
-	height: 100%;
+	width: 100%;
 }
 
 #bloc_catalogue .container .article h5{
@@ -1267,7 +1261,7 @@ nav input[type=checkbox]:checked ~ #menu{
 
 #bloc_panier .container .article .article_image img{
 
-	height: 100%;
+	width: 100%;
 }
 
 #bloc_panier .container .article h5{
@@ -2146,7 +2140,7 @@ form#formulaire input[type=submit]:hover {
 
 	#bloc_catalogue .container .article .article_image img{
 
-		width: 100%;
+		height: 100%;
 	}
 
 	#bloc_catalogue .container .pagination{

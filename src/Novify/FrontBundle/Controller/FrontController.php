@@ -67,10 +67,9 @@ class FrontController extends Controller
     public function compteModifAction(Request $request)
     {
 
-        $id = $this->getUser()->getId();
+        $utilisateur = $this->getUser();
 
         $em = $this->getDoctrine()->getManager();
-        $utilisateur = $em->getRepository('NovifyModelBundle:Utilisateurs')->find($id);
         if (!$utilisateur) {
             throw new NotFoundHttpException("Cet utilisateur n'existe pas.");
         }
@@ -159,10 +158,12 @@ class FrontController extends Controller
         $form = $this->createForm(new CommentairesType(), $commentaire);
         if ($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $commentaire->setArticle($article);
+            $commentaire->setUtilisateur($this->getUser());
             $em->persist($commentaire);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('novify_front_view_fiche'));
+            return $this->redirect($this->generateUrl('novify_front_homepage'));
         }
 
         return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article, 'suggestion_articles' => $suggestion_articles, 'commentaires' => $commentaires, 'form' => $form->createView()));
