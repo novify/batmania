@@ -1945,9 +1945,8 @@ form#formulaire input:valid {
 	background: url('../images/valid.png') 98% center no-repeat;
 }
 
-form#formulaire input[type=checkbox] {
-	width: auto;
-}
+form#formulaire input[type=radio] {
+float:left;}
 
 form#formulaire input[type=checkbox] {
 	width: auto;
