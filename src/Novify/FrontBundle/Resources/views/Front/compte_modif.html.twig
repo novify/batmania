@@ -68,7 +68,7 @@
 
 							<!-- Téléphone -->
 							{{ form_label(form.userLivTel, 'Téléphone') }}<br/>
-							{{ form_widget(form.userLivTel, {'attr': {'class': 'non_obligatoire', 'value': '+33', 'maxlength':'12'}}) }}
+							{{ form_widget(form.userLivTel, {'attr': {'value': '+33', 'maxlength':'12', 'type' : 'tel'}}) }}
 								<span>Vous devez entrer uniquement des numéros dans ce champs (à l'excéption du +)</span><br/><br/>
 							<!-- -->
 

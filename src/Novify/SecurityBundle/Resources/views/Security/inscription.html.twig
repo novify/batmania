@@ -43,11 +43,11 @@
 
 							<!-- Mot de passe -->
 							{{ form_label(form.userMdp.first, 'Entrez votre mot de passe', {'label_attr': {'class': 'pass'}}) }}<br/>
-							{{ form_widget(form.userMdp.first) }}<br/>
-								<span>Vous devez entrer un mot de passe d'au moins 6 caractères</span><br/>
+							{{ form_widget(form.userMdp.first, {'attr': {'pattern': '[a-zA-Z0-9]{6,}'}}) }}
+								<span>Vous devez entrer un mot de passe d'au moins 6 caractères</span><br/><br/>
 
 							{{ form_label(form.userMdp.second, 'Confirmez votre mot de passe', {'label_attr': {'class': 'pass'}}) }}<br/>
-							{{ form_widget(form.userMdp.second) }}
+							{{ form_widget(form.userMdp.second,  {'attr': {'pattern': '[a-zA-Z0-9]{6,}'}}) }}
 								<span>Votre mot de passe doit correspondre avec celui entré ci-dessus</span><br/><br/>
 							<!-- -->
 						</fieldset>

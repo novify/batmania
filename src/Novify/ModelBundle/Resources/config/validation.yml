@@ -1,0 +1,5 @@
+Novify\ModelBundle\Entity\Utilisateurs:
+    properties:
+        userMdp:
+            - Length:
+                min: 6

@@ -30,8 +30,8 @@
                         <td>{{ souscategorie.id }}</td>
                         <td>{{ souscategorie.souscatNom }}</td>
                         <td>{{ souscategorie.categorie.catNom }}</td>
-                        <td><a href="{{ path('novify_back_souscategorie_edit', {id: souscategorie.id}) }}">Modifier</a></td>
-                        <td><a href="{{ path('novify_back_souscategorie_remove', {id: souscategorie.id}) }}">Supprimer</a></td>
+                        <td><a href="{{ path('novify_back_souscategorie_edit', {id: souscategorie.id}) }}" class="modifier">Modifier</a></td>
+                        <td><a href="{{ path('novify_back_souscategorie_remove', {id: souscategorie.id}) }}" class="supprimer">Supprimer</a></td>
                     </tr>
 
 {% endfor %}

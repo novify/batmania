@@ -34,11 +34,21 @@ html, body{
 	padding: 20px;
 }
 
-.bloc_back_index{
-
+.bloc_back_index {
 	background-color:white;
 	border-radius:5px;
 	margin-bottom: 50px;
+	padding-bottom: 15px;
+}
+
+.bloc_back_notif {
+	border-radius:5px;
+	margin-bottom: 50px;
+	padding-bottom: 15px;
+}
+
+.bloc_back_notif table {
+	background-color:white;
 }
 
 .ajouter {
@@ -69,10 +79,45 @@ a {
 	font-weight: 400;
 	color: #3781b2;
 	text-decoration: underline;
+	transition: all 0.25s;
 }
 
 a:hover {
 	color: #245580;
+}
+
+/*Boutton modifier et supprimer*/
+
+a.supprimer {
+	text-decoration: none;
+	display: inline-block;
+	padding: 4px 0px;
+	background-color: #c0392b;
+	color: #fff;
+	 -webkit-transform: scale(1);
+  	transition: all 0.25s;
+  	width: 90px;
+}
+
+a.supprimer:hover {
+	background-color: #e74c3c;
+	-webkit-transform: scale(1.02);
+}
+
+a.modifier {
+	text-decoration: none;
+	display: inline-block;
+	padding: 4px 0px;
+	background-color: #eb6700;
+	color: #fff;
+	 -webkit-transform: scale(1);
+  	transition: all 0.25s;
+  	width: 75px;
+}
+
+a.modifier:hover {
+	background-color: #ff9646;
+	-webkit-transform: scale(1.02);
 }
 
 p{
@@ -252,42 +297,6 @@ article table tbody img{
 		color: #fff;
 		text-align: center;
 	}
-
-/*Boutton modifier et supprimer*/
-
-article table tbody td a.supprimer {
-	text-decoration: none;
-	display: block;
-	padding: 5px 10px;
-	background-color: #c0392b;
-	color: #fff;
-	 -webkit-transform: scale(1);
-  	transition: all 0.25s;
-  	width: 90px;
-	margin-left: 25px;
-}
-
-article table tbody td a.supprimer:hover {
-	background-color: #e74c3c;
-	-webkit-transform: scale(1.02);
-}
-
-article table tbody td a.modifier {
-	text-decoration: none;
-	display: block;
-	padding: 5px 10px;
-	background-color: #eb6700;
-	color: #fff;
-	 -webkit-transform: scale(1);
-  	transition: all 0.25s;
-  	width: 90px;
-  	margin-left: 25px;
-}
-
-article table tbody td a.modifier:hover {
-	background-color: #ff9646;
-	-webkit-transform: scale(1.02);
-}
 
 
 /*Pour la page de modif des articles*/

@@ -44,8 +44,8 @@ Pas d'image
 						<td>{{ article.artStock }}</td>
 						<td>{{ article.sousCategorie.souscatNom }}</td>
 						<td>{{ article.sousCategorie.categorie.catNom }}</td>
-						<td><a href="{{ path('novify_back_article_edit', {id: article.id}) }}">Modifier</a></td>
-						<td><a href="{{ path('novify_back_article_remove', {id: article.id}) }}">Supprimer</a></td>
+						<td><a href="{{ path('novify_back_article_edit', {id: article.id}) }}" class="modifier">Modifier</a></td>
+						<td><a href="{{ path('novify_back_article_remove', {id: article.id}) }}" class="supprimer">Supprimer</a></td>
 					</tr>
 
 {% endfor %}
