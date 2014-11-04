@@ -54,7 +54,7 @@
 
 				<!-- Si l'administrateur est connecté, on affiche la bar en haut -->
 				{% if app.user is not null %}
-					{% if app.user.username == 'admin' %}
+					{% if app.user.username == 'admin@batmania.com' %}
 						<div id="barre_administration">
 							<p>
 								<a href="{{ path('novify_back_index') }}">Accéder à l'interface d'administration</a>
