@@ -35,16 +35,19 @@
 				{{ form_widget(form.artDescript) }}<br/><br/>
 				<!-- -->
 
-				<!-- Label Prix/Référence/Stock -->
+				<!-- Label Prix/Référence -->
 	        	{{ form_label(form.artPrix, "Prix", {'label_attr': {'class':'prix'}}) }}
-	        	{{ form_label(form.artRef, "Référence", {'label_attr': {'class':'ref'}}) }}
-	        	{{ form_label(form.artStock, "Nombre d'articles disponibles à la vente sur le site", {'label_attr': {'class':'art'}}) }}<br/>
+	        	{{ form_label(form.artRef, "Référence", {'label_attr': {'class':'ref'}}) }}<br/>
 				<!-- -->
 
-				<!-- Input Prix/Référence/Stock -->
+				<!-- Input Prix/Référence -->
 				{{ form_widget(form.artPrix, {'attr': {'placeholder':'€'}}) }}
 				<span>Indiquez le prix en euros €.</span>
-				{{ form_widget(form.artRef) }}
+				{{ form_widget(form.artRef) }}<br/><br/>
+				<!-- -->
+
+				<!-- Stock -->
+				{{ form_label(form.artStock, "Nombre d'articles disponibles à la vente sur le site", {'label_attr': {'class':'art'}}) }}<br/>
 				{{ form_widget(form.artStock) }}
 				<span>Vous devez indiquer une valeur numérique, 1 est la valeur minimum.</span><br/><br/>
 				<!-- -->
@@ -62,16 +65,22 @@
 			<fieldset id="form_art">
 		        <legend><h4>Informations secondaires</h4></legend>
 				
-		        <!-- Label Auteur/Réalisateur/Editeur/Genre -->
+		        <!-- Label Auteur/Réalisateur -->
 	        	{{ form_label(form.artAuteur, "Auteur", {'label_attr': {'class':'auteur'}}) }}
-	        	{{ form_label(form.artRealisat, "Réalisateur", {'label_attr': {'class':'real'}}) }}
-	        	{{ form_label(form.artEditeur, "Éditeur", {'label_attr': {'class':'genre'}}) }}
+	        	{{ form_label(form.artRealisat, "Réalisateur", {'label_attr': {'class':'real'}}) }}<br/>
+				<!-- -->
+
+				<!-- Input Auteur/Réalisateur -->
+				{{ form_widget(form.artAuteur, {'attr': {'class': 'non_obligatoire'}}) }}
+				{{ form_widget(form.artRealisat, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
+				<!-- -->
+
+				<!-- Label Editeur/Genre -->
+				{{ form_label(form.artEditeur, "Éditeur", {'label_attr': {'class':'genre'}}) }}
 	        	{{ form_label(form.artGenre, "Genres") }}<br/>
 				<!-- -->
 
-				<!-- Input Auteur/Réalisateur/Editeur/Genre -->
-				{{ form_widget(form.artAuteur, {'attr': {'class': 'non_obligatoire'}}) }}
-				{{ form_widget(form.artRealisat, {'attr': {'class': 'non_obligatoire'}}) }}
+				<!-- Input Editeur/Genre -->
 				{{ form_widget(form.artEditeur, {'attr': {'class': 'non_obligatoire'}}) }}
 				{{ form_widget(form.artGenre, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
 				<!-- -->
@@ -98,16 +107,19 @@
 				<span>L'ISBN est le numéro d'identification d'un livre</span><br/><br/>
 				<!-- -->
 
-				<!-- Label Durée/Pages/Plateforme -->
+				<!-- Label Durée/Pages -->
 				{{ form_label(form.artDuree, "Durée du film", {'label_attr': {'class':'duree'}}) }}
-	        	{{ form_label(form.artPages, "Indiquez le nombre de pages", {'label_attr': {'class':'pages'}}) }}
-	        	{{ form_label(form.artPlateforme, "Plateforme/Console de jeux", {'label_attr': {'class':'art'}}) }}<br/>
+	        	{{ form_label(form.artPages, "Indiquez le nombre de pages", {'label_attr': {'class':'pages'}}) }}<br/>
 				<!-- -->
 
-				<!-- Input Durée/Pages/Plateforme -->
+				<!-- Input Durée/Pages -->
 				{{ form_widget(form.artDuree, {'attr': {'class': 'non_obligatoire'}}) }}
 				<span>Indiquez la durée du film en minute, exemple : 136min</span>
-				{{ form_widget(form.artPages, {'attr': {'class': 'non_obligatoire'}}) }}<span>Vous devez indiquer une valeur numérique, 1 est la valeur minimum.</span>
+				{{ form_widget(form.artPages, {'attr': {'class': 'non_obligatoire'}}) }}<span>Vous devez indiquer une valeur numérique, 1 est la valeur minimum.</span><br/><br/>
+				<!-- -->
+
+				<!-- Plateforme -->
+				{{ form_label(form.artPlateforme, "Plateforme/Console de jeux", {'label_attr': {'class':'art'}}) }}<br/>
 				{{ form_widget(form.artPlateforme, {'attr': {'class': 'non_obligatoire', 'placeholder':'PS4, Xbox One, ...'}}) }}<br/><br/>
 				<!-- -->
 
