@@ -27,15 +27,41 @@
                 <tbody>
 
 
-{% for caroussels in caroussels  %}
+{% for caroussel in caroussels  %}
 
                     <tr>
-                        <td>{{ caroussels.id }}</td>
-                        <td>{{ caroussels.carLien }}</td>
-                        <td><img src="{{ asset(caroussels.getWebPath)}}" alt=""></td>
-                        <td><a href="{{ path('novify_back_caroussel_edit', {id: caroussels.id}) }}" class="modifier">Modifier</a></td>
-                        <td><a href="{{ path('novify_back_caroussel_remove', {id: caroussels.id}) }}" class="supprimer">Supprimer</a></td>
+                        <td>{{ caroussel.id }}</td>
+                        <td>{{ caroussel.carLien }}</td>
+                        <td><img src="{{ asset(caroussel.getWebPath)}}" alt=""></td>
+                        <td><a href="{{ path('novify_back_caroussel_edit', {id: caroussel.id}) }}" class="modifier">Modifier</a></td>
+                        <td><a href="#test-popup-{{caroussel.id}}" class="open-popup-link">Supprimer</a></td>
+                        <!-- Popup -->
+                        <div id="test-popup-{{caroussel.id}}" class="white-popup mfp-hide">
+                            <div id="produit_popup">
+                                <div class="popup_header">
+                                    <h3>Suppression de l'image du carousel</h3>
+                                </div>
+
+                                <div class="popup_body">
+                                    <img src="{{ asset(caroussel.getWebPath)}}" alt="" width="60%">
+                                    <p>Êtes vous sur de vouloir supprimer cette image du carousel ?</p>
+                                </div>
+
+                                <div class="popup_footer">
+                                <a href="{{ path('novify_back_caroussel_index') }}" id="non" style="float:left;">Non</a>
+                                <a href="{{ path('novify_back_caroussel_remove', {id: caroussel.id}) }}" id="oui" style="float:right">Oui, je veux supprimer</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin popup -->
                     </tr>
+
+                    <script type="text/javascript">
+                        $('.open-popup-link').magnificPopup({
+                          type:'inline',
+                          midClick: true
+                        });
+                    </script>
 
 {% endfor %}
 
