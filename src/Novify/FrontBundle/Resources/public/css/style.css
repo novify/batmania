@@ -378,17 +378,7 @@ nav a:hover {
 	z-index: 9998;
 }
 
-
-
-
 nav .sticky li a{color:white;}
-
-/*.fix_menu {
-	z-index: 9998;
-	position: fixed;
-	top: 0;
-	width: 100%;
-}*/
 
 .compte_fix {
 	display: none;
@@ -720,12 +710,14 @@ nav input[type=checkbox]:checked ~ #menu{
 #bloc_catalogue .container .article .article_image{
 
 	height: 300px;
+	overflow:hidden;
 }
 
 
 #bloc_catalogue .container .article .article_image img{
 
 	width: 100%;
+	overflow:hidden;
 }
 
 #bloc_catalogue .container .article h5{
@@ -945,7 +937,8 @@ nav input[type=checkbox]:checked ~ #menu{
 
 
 #bloc_ficheproduit .container .article .article_image img{
-
+	
+	overflow:hidden;
 	width: 100%;
 }
 
@@ -1298,7 +1291,8 @@ nav input[type=checkbox]:checked ~ #menu{
 
 
 #bloc_panier .container .article .article_image img{
-
+	
+	overflow:hidden;
 	width: 100%;
 }
 
@@ -2111,7 +2105,6 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 @media only screen and (max-width: 1200px){
 		
 	nav {
-		padding-left: 5%;
 	}
 
 	nav li a {

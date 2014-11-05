@@ -30,7 +30,6 @@ class BackController extends Controller
 		$articles = $query->getResult();
 
 
-
 		// On compte le nombre d'articles sur le site
 		$query = $em->createQuery(
 			'SELECT COUNT(p.id)
@@ -38,7 +37,6 @@ class BackController extends Controller
 		);
 
 		$nb_articles = $query->getSingleScalarResult();
-
 
 
 		// On compte le nombre d'utilisateurs sur le site
@@ -49,6 +47,7 @@ class BackController extends Controller
 
 		$nb_utilisateurs = $query->getSingleScalarResult();
 
+
 		// On compte le nombre de commandes sur le site
 		$query = $em->createQuery(
 			'SELECT COUNT(p.id)
@@ -57,14 +56,27 @@ class BackController extends Controller
 
 		$nb_commandes = $query->getSingleScalarResult();
 
+
 		// On compte le nombre d'articles bientot en rupture de stock
 		$query = $em->createQuery(
 			'SELECT COUNT(p.id)
 			FROM NovifyModelBundle:Articles p
-			WHERE p.artStock <= 5'
+			WHERE p.artStock <= 10'
 		);
 
 		$nb_rupt_stock = $query->getSingleScalarResult();
+
+
+		// On va chercher tous les articles à la limite de la rupture de stock
+    	$query = $em->createQuery(
+			'SELECT p
+			FROM NovifyModelBundle:Articles p
+			WHERE p.artStock <= 10
+			ORDER BY p.artStock ASC'
+		);
+
+		$articles_rupt_stock = $query->getResult();
+
 
 		// On recupere tous les prix des commandes pour calculer le CA total
 		$query = $em->createQuery(
@@ -77,7 +89,7 @@ class BackController extends Controller
 
 
     
-        return $this->render('NovifyBackBundle:Back:index.html.twig', array('articles' => $articles, 'nb_articles' => $nb_articles, 'nb_utilisateurs' => $nb_utilisateurs, 'nb_commandes' => $nb_commandes, 'nb_rupt_stock' => $nb_rupt_stock, 'chiffre_affaire' => $chiffre_affaire));
+        return $this->render('NovifyBackBundle:Back:index.html.twig', array('articles' => $articles, 'nb_articles' => $nb_articles, 'nb_utilisateurs' => $nb_utilisateurs, 'nb_commandes' => $nb_commandes, 'nb_rupt_stock' => $nb_rupt_stock,'articles_rupt_stock' => $articles_rupt_stock, 'chiffre_affaire' => $chiffre_affaire));
     }
 
    

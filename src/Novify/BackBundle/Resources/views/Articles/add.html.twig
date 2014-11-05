@@ -53,6 +53,9 @@
 	        	{{ form_label(form.sousCategorie, "Sous Catégorie") }}<br/>
 	        	<p>Indiquez la sous Catégorie de l'article, il trouvera automatiquement la catgéorie qui lui est associé.<br/>
 				{{ form_widget(form.sousCategorie) }}</p><br/>
+
+				{{ form_label(form.artSelection, "Selection") }}<br/>
+				{{ form_widget(form.artSelection) }}<br/><br/>				
 				<!-- -->
 			</fieldset>
 
@@ -110,8 +113,8 @@
 
 				<!-- Promo -->
 	        	{{ form_label(form.artPromo, "Promotion sur l'article") }}<br/><p>
-	        	Si vous voulez que votre article ait une promotion, indiquez le ici, il sera alors directement intégré à la page "promotion", avec la promotion renseignée.<br/>
-				{{ form_widget(form.artPromo, {'attr': {'class': 'non_obligatoire'}}) }}</p><br/>
+	        	Si vous voulez que votre article ait une promotion, indiquez la ici.<br/>
+				{{ form_widget(form.artPromo, {'attr': {'class': 'non_obligatoire', 'placeholder':'%'}}) }}</p><br/>
 				<!-- -->
 			</fieldset>
 

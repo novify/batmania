@@ -155,6 +155,13 @@ class Articles
     private $sousCategorie;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="art_selection", type="boolean", nullable=true)
+     */
+    private $artSelection;
+
+    /**
      * Get id
      *
      * @return integer
@@ -664,5 +671,51 @@ class Articles
 
         // « nettoie » la propriété « artImg » comme vous n'en aurez plus besoin
         $this->artImg = null;
+    }
+
+    /**
+     * Set artImgPath
+     *
+     * @param string $artImgPath
+     * @return Articles
+     */
+    public function setArtImgPath($artImgPath)
+    {
+        $this->artImgPath = $artImgPath;
+
+        return $this;
+    }
+
+    /**
+     * Get artImgPath
+     *
+     * @return string 
+     */
+    public function getArtImgPath()
+    {
+        return $this->artImgPath;
+    }
+
+    /**
+     * Set artSelection
+     *
+     * @param boolean $artSelection
+     * @return Articles
+     */
+    public function setArtSelection($artSelection)
+    {
+        $this->artSelection = $artSelection;
+
+        return $this;
+    }
+
+    /**
+     * Get artSelection
+     *
+     * @return boolean 
+     */
+    public function getArtSelection()
+    {
+        return $this->artSelection;
     }
 }

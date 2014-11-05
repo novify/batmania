@@ -45,9 +45,13 @@
 							<p class="dispo_ficheproduit"> <!-- Stock du produit-->
 								Disponibilité : <div class="variable_dispo" {% if article.artStock <= '10' %} style="color: red;" {% endif %}> {{article.artStock}}</div>
 							</p>
-
+							
 							<p class="prix_ficheproduit"> <!-- Prix du produit-->
-								{{article.artPrix}} €
+								{% if article.artPromo is null %}
+									{{article.artPrix}} €
+								{% else %}
+									{{article.artPrix - article.artPromo / 100 * article.artPrix}} € <s style="font-size:18px;color:red;font-weight:300">{{article.artPrix}} €</s>
+								{% endif %}
 							</p>
 
 							<div id="ajout_panier">
