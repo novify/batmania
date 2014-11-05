@@ -40,3 +40,4 @@
 2.8.0
 Capfile
 app/config/deploy.rb
+/backups
