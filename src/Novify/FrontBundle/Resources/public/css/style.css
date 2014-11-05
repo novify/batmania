@@ -378,17 +378,7 @@ nav a:hover {
 	z-index: 9998;
 }
 
-
-
-
 nav .sticky li a{color:white;}
-
-/*.fix_menu {
-	z-index: 9998;
-	position: fixed;
-	top: 0;
-	width: 100%;
-}*/
 
 .compte_fix {
 	display: none;
@@ -2117,7 +2107,6 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 @media only screen and (max-width: 1200px){
 		
 	nav {
-		padding-left: 5%;
 	}
 
 	nav li a {
