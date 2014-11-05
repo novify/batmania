@@ -80,7 +80,7 @@ header #barre_administration p{
 	font-weight: 400;
 	margin:0;
 	padding: 7px;
-	color: white;
+	color: rgb(210,210,210);
 }
 
 header #barre_administration p a{
@@ -948,7 +948,7 @@ nav input[type=checkbox]:checked ~ #menu{
 
 #bloc_ficheproduit .container .article .article_image img{
 
-	height: 100%;
+	width: 100%;
 }
 
 #bloc_ficheproduit .container .article h5{
@@ -966,13 +966,23 @@ nav input[type=checkbox]:checked ~ #menu{
 }
 
 #bloc_ficheproduit .formulaire_commentaires{
-	border-radius: 10px;
-	padding: 20px;
-	background-color: rgb(245,245,245);
-	width: 500px;
-	box-shadow: 1px 1px 15px #b3b3b3;
+	border-radius: 0px;
+	padding: 30px;
+	width: 60%;
 }
 
+#bloc_ficheproduit .formulaire_commentaires textarea{
+	max-width: 100%;
+}
+
+#bloc_ficheproduit .formulaire_commentaires legend h4{
+
+	font-size: 20px;
+	padding: 0 10px;
+	font-weight: 400;
+	color:#1a465c;
+	
+}
 /* -- pop-up pour la validation d'un produit -- */
 
 	#test-popup #produit_popup .popup_header {
@@ -1478,7 +1488,7 @@ nav input[type=checkbox]:checked ~ #menu{
 	background-color: #f2dc9a;
 }
 
-#bloc_compte #compte_infos h4 {
+#bloc_compte #compte_infos h4{
 	font-weight: 400;
 	color: #1a465c;
 	font-size: 16px;

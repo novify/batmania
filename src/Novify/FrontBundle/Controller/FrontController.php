@@ -163,6 +163,8 @@ class FrontController extends Controller
             $em->persist($commentaire);
             $em->flush();
 
+            $session = $request->getSession();
+            $session->getFlashBag()->add('modif_compte', 'Votre commentaire a bien été ajouté');
             return $this->redirect($this->generateUrl('novify_front_homepage'));
         }
 

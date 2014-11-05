@@ -22,8 +22,6 @@ html, body{
 
 }
 
-
-
 .container_index{	
 
 	width: 90%;
@@ -231,7 +229,7 @@ article table thead{
 
 article table thead th{
 
-	font-size:17px;
+	font-size:14px;
 	font-weight: 400;
 	width: 10%;
 	text-transform: uppercase;	

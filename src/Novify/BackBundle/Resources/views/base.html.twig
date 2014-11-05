@@ -17,6 +17,9 @@
         <link rel="stylesheet" href="{{ asset('bundles/novifyback/css/style.css')}}"/>
         <link rel="stylesheet" href="{{ asset('bundles/novifyback/font/glyphicons.css')}}"/>
 
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyfront/css/ns-default.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyfront/css/ns-style-growl.css')}}" />
+
         <!-- Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,6 +29,11 @@
 
         <!-- Google Font -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+        <!-- Js -->
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+        <script src="{{ asset('bundles/novifyfront/js/modernizr.custom.js')}}"></script>
 
     </head>
 {% block body %}
@@ -78,6 +86,52 @@
     </footer>
     <!-- Fin Footer -->
 {% endblock %}
+    
+
+    <script src="{{ asset('bundles/novifyfront/js/notificationFx.js')}}"></script>
+    <script src="{{ asset('bundles/novifyfront/js/classie.js')}}"></script>
+
+
+
+    {% for msg in app.session.flashbag.get('confirmation') %}
+    <script>
+            (function() {
+                // var bttn = document.getElementById( 'notification-trigger' );
+
+                // make sure..
+                // bttn.disabled = false;
+                
+                // bttn.addEventListener( 'click', function() {
+                    // simulate loading (for demo purposes only)
+                    // classie.add( bttn, 'active' );
+                    setTimeout( function() {
+
+                        // classie.remove( bttn, 'active' );
+                        
+                        // create the notification
+                        var notification = new NotificationFx({
+                            message : '<p>{{ msg }}</p>',
+                            layout : 'growl',
+                            effect : 'scale',
+                            type : 'notice', // notice, warning, error or success
+                            onClose : function() {
+                                // bttn.disabled = false;
+                            }
+                        });
+
+                        // show the notification
+                        notification.show();
+
+                    }, 600 );
+                    
+                    // disable the button (for demo purposes only)
+                    // this.disabled = true;
+                // } );
+            })();
+        </script>
+
+{% endfor %}
+
 
     <!-- Fin Body -->
     </body>
