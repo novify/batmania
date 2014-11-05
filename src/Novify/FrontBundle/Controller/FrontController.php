@@ -4,6 +4,8 @@ namespace Novify\FrontBundle\Controller;
 
 use Novify\ModelBundle\Entity\Commentaires;
 use Novify\ModelBundle\Form\CommentairesType;
+use Novify\ModelBundle\Entity\Newsletter;
+use Novify\ModelBundle\Form\NewsletterType;
 use Novify\ModelBundle\Form\UtilisateursType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -24,13 +26,27 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:menu.html.twig', array('categories' => $categories));
     }
 
-    public function indexAction()
+    public function indexAction(Request $request)
     {
 
         $em = $this->getDoctrine()->getManager();
         $caroussels = $em->getRepository('NovifyModelBundle:Caroussel')->findAll();
 
-        return $this->render('NovifyFrontBundle:Front:index.html.twig', array('caroussels' => $caroussels));
+        
+        $newsletter_mail = new Newsletter();
+        $form = $this->createForm(new NewsletterType(), $newsletter_mail);
+        if ($form->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($newsletter_mail);
+            $em->flush();
+
+            $session = $request->getSession();
+            $session->getFlashBag()->add('confirmation_newsletter', 'Vous êtes inscrit à la newsletter');
+            return $this->redirect($this->generateUrl('novify_front_homepage'));
+        }
+
+        return $this->render('NovifyFrontBundle:Front:index.html.twig', array('caroussels' => $caroussels, 'form' => $form->createView()));
 
     }
 

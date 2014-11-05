@@ -271,9 +271,11 @@
 								<p>Et soyez les premiers informés des nouveautés et actualités de l’enseigne.</p>
 
 								<!-- Formulaire d'inscription à la newsletter -->
-								<form method="post" action="#">
-									<p><input type="text" name="mail" placeholder="Votre adresse e-mail"/></p>
-								</form>
+								{{ form_start(form, {'method': 'POST', 'attr': {'id': ''}}) }}
+								
+								{{ form_widget(form.newsMail, {'attr': {'placeholder':'Votre adresse e-mail'}})}}
+								<input type="submit" value="OK"/>
+								{{ form_end(form) }}
 
 							</div>
 
@@ -498,6 +500,46 @@
 {% endfor %}
 
 {% for msg in app.session.flashbag.get('login') %}
+
+    <script>
+			(function() {
+				// var bttn = document.getElementById( 'notification-trigger' );
+
+				// make sure..
+				// bttn.disabled = false;
+				
+				// bttn.addEventListener( 'click', function() {
+					// simulate loading (for demo purposes only)
+					// classie.add( bttn, 'active' );
+					setTimeout( function() {
+
+						// classie.remove( bttn, 'active' );
+						
+						// create the notification
+						var notification = new NotificationFx({
+							message : '<p>{{ msg }}, {{app.user.userPrenom}}.</p>',
+							layout : 'growl',
+							effect : 'scale',
+							type : 'notice', // notice, warning, error or success
+							onClose : function() {
+								// bttn.disabled = false;
+							}
+						});
+
+						// show the notification
+						notification.show();
+
+					}, 600 );
+					
+					// disable the button (for demo purposes only)
+					// this.disabled = true;
+				// } );
+			})();
+		</script>
+
+{% endfor %}
+
+{% for msg in app.session.flashbag.get('confirmation_newsletter') %}
 
     <script>
 			(function() {
