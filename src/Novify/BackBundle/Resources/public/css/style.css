@@ -88,6 +88,22 @@ a:hover {
 	color: #245580;
 }
 
+a#acces {
+	font-weight: 500;
+	color: #fff;
+	text-decoration: none;
+	float: right;
+	font-size: 18px;
+	padding-top: 20px;
+	padding-right: 20px;
+	transition: all 0.45s;
+	text-transform: none;
+}
+
+a#acces:hover {
+	color: #e2c879;
+}
+
 /*Boutton modifier et supprimer*/
 
 a.supprimer {
@@ -668,7 +684,7 @@ form#formulaire input[type=submit]:hover {
 }
 
 fieldset {
-	border-radius: 0px;
+	border-radius: 3px;
 	background-color: rgb(245,245,245);
 	padding: 20px;
 	border-color: #1a465c;
