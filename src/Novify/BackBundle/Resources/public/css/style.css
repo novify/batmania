@@ -425,6 +425,7 @@ form#formulaire fieldset {
 	margin-bottom: 20px;
 	padding: 20px;
 	border-color: #1a465c;
+	max-width: 100%;
 }
 
 form#formulaire span {
@@ -446,6 +447,11 @@ form#formulaire input {
 	border: 1px solid #dedede;
 	color: #54555A;
 	padding: 5px;
+}
+
+
+form#formulaire input, form#formulaire textarea {
+	max-width: 100%;
 }
 
 form#formulaire input:focus {
@@ -516,10 +522,26 @@ form#formulaire input[type=submit]:hover {
 	 	width: 360px;
 	}
 
+	form#formulaire label.prix {
+	 	margin-right: 53px;
+	}
 
-form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire input#novify_modelbundle_signup_userCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userLivCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userLivCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userFactCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userFactCivilite_1 {
-	margin-right: -125px;
-}
+	form#formulaire label.ref {
+	 	margin-right: 54px;
+	}
+
+	form#formulaire label.auteur {
+	 	margin-right: 104px;
+	}
+
+	form#formulaire label.auteur, form#formulaire label.real, form#formulaire label.genre, form#formulaire label.duree {
+	 	margin-right: 104px;
+	}
+
+	form#formulaire label.pages {
+		width: 200px;
+		margin-right: 53px;
+	}
 
 		/* catégorie */
 		form#formulaire input#novify_modelbundle_categories_catBanniere {
@@ -530,15 +552,27 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 		/* carousel */
 		form#formulaire input#novify_modelbundle_caroussel_carImg {
 			width: 500px;
+			max-width: 100%;
 		}
 		/* ---- */
 
 		/* article */
-		form#formulaire input#novify_modelbundle_articles_artImg {
-			width: 500px;
+		form#formulaire input#novify_modelbundle_articles_artNom {
+			width: 350px;
+			max-width: 100%;
 		}
 
-		form#formulaire input#novify_modelbundle_articles_artPrix, form#formulaire input#novify_modelbundle_articles_artRef, form#formulaire input#novify_modelbundle_articles_artStock, form#formulaire input#novify_modelbundle_articles_artPages, form#formulaire input#novify_modelbundle_articles_artDuree, form#formulaire input#novify_modelbundle_articles_artIsbn {
+		form#formulaire input#novify_modelbundle_articles_artImg {
+			width: 500px;
+			max-width: 100%;
+		}
+
+		form#formulaire input#novify_modelbundle_articles_artPrix, 
+		form#formulaire input#novify_modelbundle_articles_artRef, 
+		form#formulaire input#novify_modelbundle_articles_artStock, 
+		form#formulaire input#novify_modelbundle_articles_artPages, 
+		form#formulaire input#novify_modelbundle_articles_artDuree, 
+		form#formulaire input#novify_modelbundle_articles_artIsbn {
 			width: 100px;
 		}
 
@@ -548,6 +582,36 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 
 		form#formulaire input#novify_modelbundle_articles_artPages:focus {
 			background-image: none;
+		}
+
+		form#formulaire input#novify_modelbundle_articles_artPrix, 
+		form#formulaire input#novify_modelbundle_articles_artRef, 
+		form#formulaire input#novify_modelbundle_articles_artAuteur, 
+		form#formulaire input#novify_modelbundle_articles_artRealisat, 
+		form#formulaire input#novify_modelbundle_articles_artEditeur {
+			margin-right: 100px;
+		}
+
+		form#formulaire input#novify_modelbundle_articles_artDuree, 
+		form#formulaire input#novify_modelbundle_articles_artPages {
+			margin-right: 150px;
+		}
+
+		form#formulaire textarea#novify_modelbundle_articles_artDescript {
+			width: 500px;
+			height: 120px;
+			max-width: 100%;
+		}
+
+		form#formulaire textarea#novify_modelbundle_articles_artCasting {
+			width: 500px;
+			height: 80px;
+			max-width: 100%;
+		}
+
+		form#formulaire textarea#novify_modelbundle_articles_artPublic {
+			width: 500px;
+			max-width: 100%;
 		}
 		/* ---- */
 
@@ -630,4 +694,9 @@ legend {
 p#ajouter_cat {
 	float: right;
 	display: inline;
+}
+
+form p {
+	font-weight: 200;
+	font-style: italic;
 }
