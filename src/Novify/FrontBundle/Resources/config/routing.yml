@@ -34,6 +34,7 @@ novify_front_view_souscategorie:
 novify_front_view_one:
     path:     /{categorie}/{sousCategorie}/{id}
     defaults: { _controller: NovifyFrontBundle:Front:viewone }
+
     # requirements:
         # id: \d+
 

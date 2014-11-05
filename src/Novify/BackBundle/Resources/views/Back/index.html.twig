@@ -27,23 +27,40 @@
 					<table>
 						<thead>
 							<tr>
-								<th>Notifications</th>
+								<th>Récapitulatif</th>
 								<th></th>
 							</tr>
 						</thead>
 
 						<tbody>
+
 							<tr>
-								<td><a href="{{ path('novify_back_index') }}">Commandes en attentes</a></td>
-								<td class="nombre_notifs">2</td>
+								<td><a href="{{ path('novify_back_index') }}">Nombre d'articles sur le site</a></td>
+								<td class="nombre_notifs">{{nb_articles}}</td>
+							</tr>
+
+							<tr>
+								<td><a href="{{ path('novify_back_index') }}">Nombre d'utilisateurs inscrits</a></td>
+								<td class="nombre_notifs">{{nb_utilisateurs}}</td>
+							</tr>
+
+
+							<tr>
+								<td><a href="{{ path('novify_back_index') }}">Nombre de commandes passées</a></td>
+								<td class="nombre_notifs">{{nb_commandes}}</td>
 							</tr>
 							<tr>
-								<td><a href="{{ path('novify_back_article_index') }}">Articles bientôt en rupture</a></td>
-								<td class="nombre_notifs">3</td>
+								<td><a href="{{ path('novify_back_article_index') }}">Articles bientôt en rupture de stock</a></td>
+								<td class="nombre_notifs">{{nb_rupt_stock}}</td>
 							</tr>
 							<tr>
-								<td><a href="{{ path('novify_back_utilisateurs_index') }}">Nouveaux utilisateurs</a></td>
-								<td class="nombre_notifs">7</td>
+								<td><a href="{{ path('novify_back_utilisateurs_index') }}">Chiffre d'affaire total réalisé</a></td>
+								<td class="nombre_notifs">
+								
+									
+
+									{{chiffre_affaire}}
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -54,9 +71,7 @@
 			<div class="row">
 
 				<div class="col-sm-12 bloc_back_index">
-					<h1>Consultez vos articles</h1>
-					<p>Voici la liste des articles disponibles sur le site<br/>
-						N'hésitez pas à utiliser les filtres, et a vous rendre dans les pages concerné pour ajouter d'autres articles</p>
+					<h1>Derniers articles sur le site</h1>
 
 					<table>
 						
@@ -68,35 +83,32 @@
 								<th>Prix</th>
 								<th>Quantité</th>
 								<th>Catégorie</th>
-								<th>Modifier</th>
-								<th>Supprimer</th>
+								<th>Sous-catégorie</th>
+
 							</tr>
 						</thead>
 
 						<tbody>
 							
-							<tr>
-								<td>1</td>
-								<td><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></td>
-								<td>Nom article</td>
-								<td>17.00€</td>
-								<td>43</td>
-								<td>Comics</td>
-								<td><a href="#" class="modifier">Modifier</a></td>
-								<td><a href="#" class="supprimer">Supprimer</a></td>
-							</tr>
+							
+{% for article in articles %}
+					<tr>
+						<td>{{ article.id }}</td>
+						<td>
+{% if article.getWebPath is not null %}
+						<img src="{{ asset(article.getWebPath)}}" alt="">
+{% else %}
+Pas d'image
+{% endif %}
+</td>
+						<td>{{ article.artNom }}</td>
+						<td>{{ article.artPrix }} €</td>
+						<td>{{ article.artStock }}</td>
+						<td>{{ article.sousCategorie.souscatNom }}</td>
+						<td>{{ article.sousCategorie.categorie.catNom }}</td>
+					</tr>
 
-							<tr>
-								<td>2</td>
-								<td><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></td>
-								<td>Nom article</td>
-								<td>17.00€</td>
-								<td>43</td>
-								<td>Comics</td>
-								<td><a href="#" class="modifier">Modifier</a></td>
-								<td><a href="#" class="supprimer">Supprimer</a></td>
-							</tr>
-
+{% endfor %}
 						</tbody>
 
 					</table>

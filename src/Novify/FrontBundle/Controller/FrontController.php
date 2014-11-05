@@ -89,7 +89,7 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:compte_modif.html.twig', array('form' => $form->createView()));
 
 
-        }
+    }
 
     public function contactAction()
     {
