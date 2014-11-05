@@ -55,6 +55,10 @@
 	        	<p>Indiquez la sous Catégorie de l'article, il trouvera automatiquement la catgéorie qui lui est associé.<br/>
 				{{ form_widget(form.sousCategorie) }}</p><br/>
 				<!-- -->
+				
+				<!-- Coup de coeur -->
+				{{ form_label(form.artSelection, "Selection") }}<br/>
+				<p>{{ form_widget(form.artSelection) }}Selectionnez si vous souhaitez faire apparaitre le produit dans la categorie "Selection Batmania".</p>		
 			</fieldset>
 
 			<fieldset id="form_art">
@@ -111,8 +115,8 @@
 
 				<!-- Promo -->
 	        	{{ form_label(form.artPromo, "Promotion sur l'article") }}<br/><p>
-	        	Si vous voulez que votre article ait une promotion, indiquez le ici, il sera alors directement intégré à la page "promotion", avec la promotion renseignée.<br/>
-				{{ form_widget(form.artPromo, {'attr': {'class': 'non_obligatoire'}}) }}</p><br/>
+	        	Indiquez un pourcentage de remise sur cet article.<br/>
+				{{ form_widget(form.artPromo, {'attr': {'class': 'non_obligatoire', 'placeholder':'%'}}) }}</p><br/>
 				<!-- -->
 			</fieldset>
 

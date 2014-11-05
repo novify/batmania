@@ -42,6 +42,7 @@ class ArticlesType extends AbstractType
             ->add('artRealisat')
             ->add('artCasting')
             ->add('artDuree')
+            ->add('artSelection')
         ;
     }
 

@@ -34,6 +34,65 @@ class FrontController extends Controller
 
     }
 
+    public function nouveauteAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+        // On selectionne les 4 derniers articles ajoutés
+        $query = $em->createQuery(
+            'SELECT p
+            FROM NovifyModelBundle:Articles p
+            ORDER BY p.id DESC'
+        )->setMaxResults(8);
+
+        $nouveautes = $query->getResult();
+       
+        if (!$nouveautes) {
+            throw new NotFoundHttpException("Il n'y a pas de nouveautes");
+        }
+
+        return $this->render('NovifyFrontBundle:Front:nouveaute.html.twig', array('nouveautes' => $nouveautes));
+    }
+
+    public function promoAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+        $query = $em->createQuery(
+            'SELECT p
+            FROM NovifyModelBundle:Articles p
+            WHERE p.artPromo IS NOT NULL
+            ORDER BY p.id DESC'
+        );
+
+        $promos = $query->getResult();
+       
+        if (!$promos) {
+            throw new NotFoundHttpException("Il n'y a pas de promos actuellement");
+        }
+
+        return $this->render('NovifyFrontBundle:Front:promo.html.twig', array('promos' => $promos));
+    }
+
+    public function selectionAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+        $query = $em->createQuery(
+            'SELECT p
+            FROM NovifyModelBundle:Articles p
+            WHERE p.artSelection = 1'
+        );
+
+        $selections = $query->getResult();
+       
+        if (!$selections) {
+            throw new NotFoundHttpException("Il n'y a pas d'articles dans la selection actuellement");
+        }
+
+        return $this->render('NovifyFrontBundle:Front:selection.html.twig', array('selections' => $selections));
+    }
+
     public function loginAction()
     {
         return $this->render('NovifyFrontBundle:Front:connexion.html.twig');

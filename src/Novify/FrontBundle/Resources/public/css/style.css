@@ -722,12 +722,14 @@ nav input[type=checkbox]:checked ~ #menu{
 #bloc_catalogue .container .article .article_image{
 
 	height: 300px;
+	overflow:hidden;
 }
 
 
 #bloc_catalogue .container .article .article_image img{
 
 	width: 100%;
+	overflow:hidden;
 }
 
 #bloc_catalogue .container .article h5{
@@ -947,7 +949,8 @@ nav input[type=checkbox]:checked ~ #menu{
 
 
 #bloc_ficheproduit .container .article .article_image img{
-
+	
+	overflow:hidden;
 	width: 100%;
 }
 
@@ -1300,7 +1303,8 @@ nav input[type=checkbox]:checked ~ #menu{
 
 
 #bloc_panier .container .article .article_image img{
-
+	
+	overflow:hidden;
 	width: 100%;
 }
 

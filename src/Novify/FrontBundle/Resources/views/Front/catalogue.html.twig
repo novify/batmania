@@ -55,7 +55,13 @@
 								</div>
 
 								<h5><a href="{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': article.id}) }}">{{article.artNom}}</a></h5> <!-- Titre et prix de l'article -->
-								<p><a href="">{{article.artPrix}} €</a></p>
+								<p><a href="">
+									{% if article.artPromo is null %}
+									{{article.artPrix}} €
+								{% else %}
+									{{article.artPrix - article.artPromo / 100 * article.artPrix}} € <s style="font-size:15px;color:red;font-weight:300">{{article.artPrix}} €</s>
+								{% endif %}
+								</a></p>
 							</div> <!-- Fin de l'article -->
 
 
