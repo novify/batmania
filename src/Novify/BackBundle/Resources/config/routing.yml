@@ -14,6 +14,10 @@ novify_back_article_add:
     path:     /article/add
     defaults: { _controller: NovifyBackBundle:Articles:add }
 
+novify_back_article_comment:
+    path:     /article/comment/{id}
+    defaults: { _controller: NovifyBackBundle:Articles:comment }
+
 novify_back_article_edit:
     path:     /article/edit/{id}
     defaults: { _controller: NovifyBackBundle:Articles:edit }

@@ -1,0 +1,42 @@
+{% extends 'NovifyBackBundle::base.html.twig' %}
+{% block main %}
+
+
+
+
+    <article>
+        <div class="container">
+            <h1>Commentaires</h1>
+           
+
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Auteur</th>
+						<th>Note</th>
+						<th>Texte</th>
+						<th>Date</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					{% for commentaire in commentaires  %}
+						<tr>
+							<td>{{commentaire.id}}</td>
+							<td>{{commentaire.utilisateur.userPrenom}} {{commentaire.utilisateur.userNom}}</td>
+							<td>{{commentaire.commentNote}}</td>
+							<td>{{commentaire.commentTexte}}</td>
+							<td>{{commentaire.commentDate|date("m/d/Y")}}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+        </div>
+    </article>
+
+
+
+
+{% endblock %}

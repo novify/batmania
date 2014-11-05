@@ -4,6 +4,7 @@ namespace Novify\BackBundle\Controller;
 
 use Novify\ModelBundle\Form\ArticlesType;
 use Novify\ModelBundle\Entity\Articles;
+use Novify\ModelBundle\Entity\Commentaires;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -58,6 +59,19 @@ class ArticlesController extends Controller
         }
 
         return $this->render('NovifyBackBundle:Articles:edit.html.twig', array('form' => $form->createView()));
+    }
+
+    public function commentAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $article = $em->getRepository('NovifyModelBundle:Articles')->find($id);
+        $commentaires = $em->getRepository('NovifyModelBundle:Commentaires')->findByArticle($article);
+
+         if (!$commentaires) {
+            throw new NotFoundHttpException("Il n'y a pas de commentaires pour cet article");
+        }
+    
+        return $this->render('NovifyBackBundle:Articles:comment.html.twig', array('commentaires' => $commentaires));
     }
 
     public function removeAction($id)

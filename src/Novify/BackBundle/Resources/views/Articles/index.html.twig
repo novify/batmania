@@ -23,6 +23,7 @@
 						<th>Quantité</th>
 						<th>Catégorie</th>
 						<th>Sous-catégorie</th>
+						<th>Comments</th>
 						<th>Modifier</th>
 						<th>Supprimer</th>
 					</tr>
@@ -44,6 +45,7 @@ Pas d'image
 						<td>{{ article.artStock }}</td>
 						<td>{{ article.sousCategorie.souscatNom }}</td>
 						<td>{{ article.sousCategorie.categorie.catNom }}</td>
+						<td><a href="{{ path('novify_back_article_comment', {id: article.id}) }}">Commentaires</a></td>
 						<td><a href="{{ path('novify_back_article_edit', {id: article.id}) }}" class="modifier">Modifier</a></td>
 						<td><a href="{{ path('novify_back_article_remove', {id: article.id}) }}" class="supprimer">Supprimer</a></td>
 					</tr>
