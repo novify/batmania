@@ -36,8 +36,37 @@
                         <td>{{ utilisateurs.userMail }}</td>
 
                         <!-- <td><a href="{{ path('novify_back_utilisateurs_edit', {id: utilisateurs.id}) }}" class="modifier">Modifier</a></td> -->
-                        <td><a href="{{ path('novify_back_utilisateurs_remove', {id: utilisateurs.id}) }}" class="supprimer">Supprimer</a></td>
+                        <td><a href="#test-popup-{{utilisateurs.id}}" class="open-popup-link">Supprimer</a></td>
+                        <!-- Popup -->
+                        <div id="test-popup-{{utilisateurs.id}}" class="white-popup mfp-hide">
+                            <div id="produit_popup">
+                                <div class="popup_header">
+                                    <h3>Suppression de l'utilisateur</h3>
+                                </div>
+
+                                <div class="popup_body">
+                                    <h4 id="pad"> <!-- Titre du produit-->
+                                        {{ utilisateurs.userPrenom }} {{ utilisateurs.userNom }}
+                                    </h4> <br/><br/>
+                                    <p>Êtes vous sur de vouloir supprimer l'utilisateur ?</p>
+                                    <p><strong>Attention !</strong> Si vous supprimez l'utilisateur il n'aura plus accès à son compte, et ses commandes en cours seront annulé</p>
+                                </div>
+
+                                <div class="popup_footer">
+                                <a href="{{ path('novify_back_utilisateurs_index') }}" id="non" style="float:left;">Non</a>
+                                <a href="{{ path('novify_back_utilisateurs_remove', {id: utilisateurs.id}) }}" id="oui" style="float:right">Oui, je veux supprimer</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin popup -->
                     </tr>
+
+                    <script type="text/javascript">
+                        $('.open-popup-link').magnificPopup({
+                          type:'inline',
+                          midClick: true
+                        });
+                    </script>
 
 {% endfor %}
 
