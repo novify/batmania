@@ -16,7 +16,7 @@
 				</fieldset>
 			</div>
             
-			{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire', 'style':'padding-left: 20px;'}}) }}
+			{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire'}}) }}
 
 			<fieldset id="form_art">
 		        <legend><h4>Informations principales</h4></legend>
@@ -38,11 +38,6 @@
 				<!-- Prix -->
 	        	{{ form_label(form.artPrix, "Prix") }}<br/>
 				{{ form_widget(form.artPrix) }}<br/><br/>
-				<!-- -->
-
-				<!-- Date de sorie -->
-	        	{{ form_label(form.artDateSortie, "Date de sortie") }}<br/>
-				{{ form_widget(form.artDateSortie) }}<br/><br/>
 				<!-- -->
 
 				<!-- Référence -->
@@ -83,6 +78,11 @@
 				<!-- Genre -->
 	        	{{ form_label(form.artGenre, "Genres") }}<br/>
 				{{ form_widget(form.artGenre, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
+				<!-- -->
+
+				<!-- Date de sorie -->
+	        	{{ form_label(form.artDateSortie, "Date de sortie") }}<br/>
+				{{ form_widget(form.artDateSortie) }}<br/><br/>
 				<!-- -->
 
 				<!-- Casting -->

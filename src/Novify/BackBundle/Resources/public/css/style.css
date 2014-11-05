@@ -22,9 +22,7 @@ html, body{
 
 }
 
-.required::before{
-	content:'*';
-}
+
 
 .container_index{	
 
@@ -58,7 +56,6 @@ html, body{
 
 .ajouter a{
 	text-align: right;
-	display: inline-block;
 	padding: 6px 7px;
 	width: 100px;
 	font-size: 20px;
@@ -528,7 +525,7 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 
 		/* catégorie */
 		form#formulaire input#novify_modelbundle_categories_catBanniere {
-			width: 500px;
+			width: 100%;
 		}
 		/* ---- */
 
@@ -601,8 +598,6 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 /*- FIN FORMULAIRE -*/
 
 .info_form {
-	float: right;
-	width: 45%;
 }
 
 .info_restriction {
@@ -611,7 +606,7 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 }
 
 fieldset {
-	border-radius: 7px;
+	border-radius: 0px;
 	background-color: rgb(245,245,245);
 	padding: 20px;
 	border-color: #1a465c;

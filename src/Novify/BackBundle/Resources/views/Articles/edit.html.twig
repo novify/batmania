@@ -8,7 +8,7 @@
         <div class="container">
             <h1>Modifer un article</h1>
             
-			<div class="info_form" style="width:40%">
+			<div class="info_form">
             	<fieldset>
 		        <legend><h4>Pourquoi modifier un article ?</h4></legend>
 					<p>L'article est le point central du site, c'est la ou le visiteur doit être amené, vers l'article qu'il recherche.<br/>
@@ -17,9 +17,9 @@
 				</fieldset>
 			</div>
             
-			{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire', 'style':'padding-left: 20px;'}}) }}
+			{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire'}}) }}
 
-			<fieldset id="form_art" style="width:55%">
+			<fieldset id="form_art">
 		        <legend><h4>Informations principales</h4></legend>
 				<!-- Nom -->
 	        	{{ form_label(form.artNom, 'Nom du nouvel article', {'label_attr': {'class':'art'}}) }}<br/>
@@ -64,7 +64,7 @@
 				<!-- -->
 			</fieldset>
 
-			<fieldset id="form_art" style="width:75%">
+			<fieldset id="form_art">
 		        <legend><h4>Informations secondaires</h4></legend>
 				<!-- Auteur -->
 	        	{{ form_label(form.artAuteur, "Auteur") }}<br/>

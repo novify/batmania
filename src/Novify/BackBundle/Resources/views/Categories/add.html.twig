@@ -7,33 +7,42 @@
     <article>
         <div class="container catagories">
             <h1>Ajouter une catégorie</h1> <!-- Titre de la section -->
+			
+			<div class="row">
 
-            <div class="info_form">
-            	<fieldset>
-		        <legend><h4>Pourquoi créer une nouvelle catégorie ?</h4></legend>
-					<p>Créer une nouvelle catégorie, permet d'ajouter un onglet dans votre barre de navigation c'est un accès prioritaire à un type d'article que vous voulez mettre en avant. Exemple : Jeux/Livres/Vidéos ...<br/>
-					<strong>Attention !</strong> Il est toutefois déconseillé de mettre trop de catégorie, vous risqueriez de perdre votre visiteur. 7 Catégorie semble être le nombre optimal.<br/>
-					Vous pourrez cependent ajouter jusqu'à 8 catégories.</p>
-				</fieldset>
-			</div>
+				<div class="col-sm-6">
             
-			{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire', 'style':'padding-left: 20px;'}}) }}
+					{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire', 'style':'padding-left: 20px;'}}) }}
 
 
-			<!-- Nom de la catégorie -->
-        	{{ form_label(form.catNom, 'Nom de la nouvelle catégorie', {'label_attr': {'class': 'cat'}}) }}<br/>
-			{{ form_widget(form.catNom) }}<br/><br/>
-			<!-- -->
+					<!-- Nom de la catégorie -->
+		        	{{ form_label(form.catNom, 'Nom de la nouvelle catégorie', {'label_attr': {'class': 'cat'}}) }}<br/>
+					{{ form_widget(form.catNom) }}<br/><br/>
+					<!-- -->
 
-			<!-- Image-bannière de la catégorie -->
-        	{{ form_label(form.catBanniere, 'Image pour la bannière', {'label_attr': {'class': 'cat'}}) }}<br/>
-			{{ form_widget(form.catBanniere, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
-			<!-- -->
+					<!-- Image-bannière de la catégorie -->
+		        	{{ form_label(form.catBanniere, 'Image pour la bannière', {'label_attr': {'class': 'cat'}}) }}<br/>
+					{{ form_widget(form.catBanniere, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
+					<!-- -->
 
-			<input type="submit" id="valider" value="Valider"/>
+					<input type="submit" id="valider" value="Valider"/>
 
-			{# Rend le formulaire html #}
-			{{ form_end(form) }}
+					{# Rend le formulaire html #}
+					{{ form_end(form) }}
+				</div>
+
+				<div class="col-sm-6">
+		            <div class="info_form">
+		            	<fieldset>
+				        <legend><h4>Pourquoi créer une catégorie ?</h4></legend>
+							<p>Créer une nouvelle catégorie, permet d'ajouter un onglet dans votre barre de navigation. C'est un accès prioritaire à un type d'article que vous voulez mettre en avant.<br/>
+							<strong>Attention !</strong> Il est toutefois déconseillé de mettre trop de catégorie, vous risqueriez de perdre votre visiteur. Vous pouvez ajouter jusqu'à 8 catégories.</p>
+						</fieldset>
+					</div>
+				</div>
+
+
+			</div>
 
         </div>
     </article>
