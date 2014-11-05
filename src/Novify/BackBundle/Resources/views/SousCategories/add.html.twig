@@ -8,7 +8,30 @@
         <div class="container">
             <h1>Ajouter une sous-catégorie</h1>
             
-			{{ form(form) }} <!-- Génère le formulaire automatiquement-->
+            <div class="info_form">
+            	<fieldset>
+		        <legend><h4>Pourquoi créer une sous catégorie ?</h4></legend>
+					<p>Créer une sous catégorie permet au visiteur de mieux s'y retrouver, par exemple si l'utilisateur cherche un jeu et qu'il possède une Playstation, il trouvera plus facilement ce qu'il recherche si on lui propose une sous-catégorie "playstation" dans la catégorie "Jeux-Vidéos", et ne sera pas encombré par des articles venant d'autres plateformes.
+				</fieldset>
+			</div>
+
+			{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire', 'style':'padding-left: 20px;'}}) }}
+
+
+			<!-- Nom de la catégorie -->
+        	{{ form_label(form.souscatNom, 'Nom de la nouvelle Sous catégorie', {'label_attr': {'class': 'cat'}}) }}<br/>
+			{{ form_widget(form.souscatNom) }}<br/><br/>
+			<!-- -->
+
+			<!-- choix de la catégorie -->
+        	{{ form_label(form.categorie, 'Catégorie associé', {'label_attr': {'class': 'cat'}}) }}<br/>
+			{{ form_widget(form.categorie) }}<br/><br/>
+			<!-- -->
+
+			<input type="submit" id="valider" value="Valider"/>
+
+			{# Rend le formulaire html #}
+			{{ form_end(form) }}
 
         </div>
     </article>
