@@ -188,18 +188,19 @@
 
 {% endfor %}
 
-{% if app.user is not null %}
+{% if app.user is not null %}	<!-- Formulaire seulement si on est connecté-->
+					
+						<fieldset class="formulaire_commentaires">
 
-						<!-- Formulaire seulement si on est connecté-->
-						<div class="formulaire_commentaires">
+							<legend><h4>Laisser un commentaire</h4></legend>
 							{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire'}}) }}
 
 							<!-- Commentaire -->
-							{{ form_label(form.commentTexte, 'Laisser un commentaire', {'label_attr': {'class':'commentaire'}}) }}<br/>
+							{{ form_label(form.commentTexte, 'Texte', {'label_attr': {'class':'commentaire'}}) }}<br/>
 							{{ form_widget(form.commentTexte) }}<br/><br/>
 							<!-- -->
 							<!-- Note -->
-							{{ form_label(form.commentNote, 'Laisser une note', {'label_attr': {'class':'commentaire'}}) }}<br/>
+							{{ form_label(form.commentNote, 'Note', {'label_attr': {'class':'commentaire'}}) }}<br/>
 							{{ form_widget(form.commentNote) }}<br/><br/>
 							<!-- -->
 
@@ -208,7 +209,7 @@
 							{{ form_end(form) }}
 
 
-						</div>
+						</fieldset>
 						<!--  -->
 
 {% else %}

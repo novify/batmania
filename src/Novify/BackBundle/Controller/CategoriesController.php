@@ -34,6 +34,8 @@ class CategoriesController extends Controller
             $em->persist($categorie);
             $em->flush();
 
+            $session = $request->getSession();
+            $session->getFlashBag()->add('confirmation', "La catégorie a bien été ajouté.");
             return $this->redirect($this->generateUrl('novify_back_categorie_index'));
         }
 
@@ -54,6 +56,8 @@ class CategoriesController extends Controller
             $em->persist($categorie);
             $em->flush();
 
+            $session = $request->getSession();
+            $session->getFlashBag()->add('confirmation', "La catégorie a bien été mise à jour.");
             return $this->redirect($this->generateUrl('novify_back_categorie_index'));
         }
 

@@ -33,6 +33,8 @@ class SousCategoriesController extends Controller
             $em->persist($souscategorie);
             $em->flush();
 
+            $session = $request->getSession();
+            $session->getFlashBag()->add('confirmation', "La sous-catégorie a bien été ajoutée.");
             return $this->redirect($this->generateUrl('novify_back_souscategorie_index'));
         }
 
@@ -52,6 +54,8 @@ class SousCategoriesController extends Controller
             $em->persist($souscategorie);
             $em->flush();
 
+            $session = $request->getSession();
+            $session->getFlashBag()->add('confirmation', "La sous-catégorie a bien été mise à jour.");
             return $this->redirect($this->generateUrl('novify_back_souscategorie_index'));
         }
 

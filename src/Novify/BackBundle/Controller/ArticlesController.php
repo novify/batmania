@@ -35,6 +35,8 @@ class ArticlesController extends Controller
             $em->persist($article);
             $em->flush();
 
+            $session = $request->getSession();
+            $session->getFlashBag()->add('confirmation', "L'article a bien été ajouté.");
             return $this->redirect($this->generateUrl('novify_back_article_index'));
         }
 
@@ -55,6 +57,8 @@ class ArticlesController extends Controller
             $em->persist($article);
             $em->flush();
 
+            $session = $request->getSession();
+            $session->getFlashBag()->add('confirmation', "L'article a bien été mis à jour.");
             return $this->redirect($this->generateUrl('novify_back_article_index'));
         }
 

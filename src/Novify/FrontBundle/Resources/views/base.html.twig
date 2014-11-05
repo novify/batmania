@@ -17,8 +17,6 @@
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/style.css')}}"/>
 		<link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/magnific-popup.css')}}">
 
-		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyfront/css/normalize.css')}}" />
-		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyfront/css/demo.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyfront/css/ns-default.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyfront/css/ns-style-growl.css')}}" />
 
@@ -70,7 +68,7 @@
 							<p>
 								<a href="{{ path('novify_back_index') }}">Accéder à l'interface d'administration</a>
 
-								<span style="text-align:right;float:right">Salutations, {{app.user.userprenom}}</span>
+								<span style="text-align:right;float:right">Bonjour, {{app.user.userprenom}}</span>
 							</p>
 						</div>
 					{% endif %}
@@ -346,6 +344,46 @@
 						// create the notification
 						var notification = new NotificationFx({
 							message : '<p>{{ msg }} <a href="{{path('login')}}">Connexion</a></p>',
+							layout : 'growl',
+							effect : 'scale',
+							type : 'notice', // notice, warning, error or success
+							onClose : function() {
+								// bttn.disabled = false;
+							}
+						});
+
+						// show the notification
+						notification.show();
+
+					}, 600 );
+					
+					// disable the button (for demo purposes only)
+					// this.disabled = true;
+				// } );
+			})();
+		</script>
+
+{% endfor %}
+
+{% for msg in app.session.flashbag.get('confirmation_commentaire') %}
+
+    <script>
+			(function() {
+				// var bttn = document.getElementById( 'notification-trigger' );
+
+				// make sure..
+				// bttn.disabled = false;
+				
+				// bttn.addEventListener( 'click', function() {
+					// simulate loading (for demo purposes only)
+					// classie.add( bttn, 'active' );
+					setTimeout( function() {
+
+						// classie.remove( bttn, 'active' );
+						
+						// create the notification
+						var notification = new NotificationFx({
+							message : '<p>{{ msg }}, {{app.user.userPrenom}}.</p>',
 							layout : 'growl',
 							effect : 'scale',
 							type : 'notice', // notice, warning, error or success
