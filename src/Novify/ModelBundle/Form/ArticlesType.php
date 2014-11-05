@@ -16,7 +16,9 @@ class ArticlesType extends AbstractType
     {
         $builder
             ->add('artNom')
-            ->add('artImg', 'file')
+            ->add('artImg', 'file', array(
+                'required' => false
+            ))
             ->add('artDescript')
             ->add('artPrix')
             ->add('artRef')
