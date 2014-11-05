@@ -675,6 +675,21 @@ nav input[type=checkbox]:checked ~ #menu{
 	margin: 30px 0;
 }
 
+#bloc_catalogue .container .barre_tri button.sort{
+	text-transform: uppercase;
+	font-weight:300;
+	font-size:12px;
+	border-radius: 0px;
+	border: 1px solid rgb(170,170,170);
+	background:none;
+}
+
+
+#bloc_catalogue .container .barre_tri button.sort:hover{
+
+	border: 1px solid #1A465C;
+}
+
 #bloc_catalogue .container .pagination{
 
 	text-align:right;

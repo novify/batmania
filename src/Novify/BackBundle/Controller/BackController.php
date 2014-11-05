@@ -88,8 +88,20 @@ class BackController extends Controller
 
 
 
-    
-        return $this->render('NovifyBackBundle:Back:index.html.twig', array('articles' => $articles, 'nb_articles' => $nb_articles, 'nb_utilisateurs' => $nb_utilisateurs, 'nb_commandes' => $nb_commandes, 'nb_rupt_stock' => $nb_rupt_stock,'articles_rupt_stock' => $articles_rupt_stock, 'chiffre_affaire' => $chiffre_affaire));
+
+		// On recupere toutes les commandes pour les afficher dans le graphique
+		$query = $em->createQuery(
+			'SELECT p
+			FROM NovifyModelBundle:Commandes p
+			ORDER BY p.comDate ASC'
+		);
+
+		$commandes_graphe = $query->getResult();
+
+
+
+
+        return $this->render('NovifyBackBundle:Back:index.html.twig', array('articles' => $articles, 'nb_articles' => $nb_articles, 'nb_utilisateurs' => $nb_utilisateurs, 'nb_commandes' => $nb_commandes, 'nb_rupt_stock' => $nb_rupt_stock,'articles_rupt_stock' => $articles_rupt_stock, 'chiffre_affaire' => $chiffre_affaire, 'commandes_graphe' => $commandes_graphe));
     }
 
    

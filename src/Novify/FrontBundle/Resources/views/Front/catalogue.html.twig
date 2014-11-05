@@ -24,15 +24,18 @@
 {% for souscat in souscats %}
 				<!-- Ligne de tri et pagination -->
 				<div class="row barre_tri"> <!-- Ligne de la barre de tri-->
-					<div class="col-sm-2 col-xs-4">
-						{{ souscat.souscatNom|capitalize }}
-					</div>
-					<div class="col-sm-2 col-xs-4"> <!-- Nombre d'articles sur la page-->
+					<div class="col-sm-2 col-xs-12">
 						{{ souscat.articles|length }} articles
 					</div>
 
-					<div class="col-sm-6 col-xs-4"> <!-- Tri -->
-						Du - au + cher
+
+					<div class="col-sm-8 col-xs-12"> <!-- Tri -->
+						Trier par : 
+						<button class="sort" data-sort="prix:asc">Prix croissant</button>
+						<button class="sort" data-sort="prix:desc">Prix décroissant</button>
+
+						<button class="sort" data-sort="date:asc">Article les plus anciens</button>
+						<button class="sort" data-sort="date:desc">Articles les plus récents</button>
 					</div>
 
 					<div class="col-sm-2 col-xs-12 pagination"> <!-- Pagination -->
@@ -48,7 +51,8 @@
 
 						<div class="row">
 {% for article in souscat.articles %}
-							<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
+
+							<div class="col-md-3 col-sm-6 col-xs-12 article mix" data-prix="{{article.artPrix}}" data-date="{{article.id}}"> <!-- 1 article -->
 
 								<div class="article_image"> <!-- Image article -->
 									<a href="{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': article.id}) }}"><img src="{{ asset(article.getWebPath) }}" alt=""></a>
