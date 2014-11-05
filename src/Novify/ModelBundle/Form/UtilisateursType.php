@@ -28,6 +28,7 @@ class UtilisateursType extends AbstractType
             ))
             ->add('userFactCivilite', 'choice', array(
                 'choices' => array('M' => 'Masculin', 'F' => 'Féminin'),
+                // 'required' => false,
                 'expanded' => true
             ))
             ->add('userFactNom')
