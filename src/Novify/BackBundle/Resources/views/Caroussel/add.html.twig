@@ -8,7 +8,31 @@
         <div class="container">
             <h1>Ajouter une slide du carrousel</h1>
             
-			{{ form(form) }} <!-- Génère le formulaire automatiquement-->
+			<div class="info_form">
+            	<fieldset>
+		        <legend><h4>Qu'est ce que le carousel ?</h4></legend>
+					<p>Le carousel est un ensemble d'image, défilent dynamiquement sur la page d'accueil, il permet de mettre en avant des informations importante, de plus, si vous le désirez, les images peuvent être cliquables, et renvoyer vers la page de votre choix.</p>
+				</fieldset>
+			</div>
+
+			{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire', 'style':'padding-left: 20px;'}}) }}
+
+
+			<!-- Image du carousel -->
+        	{{ form_label(form.carImg, "Selectionnez l'image", {'label_attr': {'class': 'cat'}}) }}<br/>
+			{{ form_widget(form.carImg, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
+			<!-- -->
+
+			<!-- Lien de l'image -->
+        	{{ form_label(form.carLien, "Lien de l'image", {'label_attr': {'class': 'cat'}}) }}<br/>
+			{{ form_widget(form.carLien, {'attr': {'class': 'non_obligatoire', 'style': 'width:500px;'}}) }}
+				<span><br/>Vous devez renseigner la page vers laquelle le visiteur est redirigé si il clique sur l'image. le lien doit se présenter sous cette forme "http://batmania.com/boutique/catégorie/sous-catégorie"</span><br/><br/>
+			<!-- -->
+
+			<input type="submit" id="valider" value="Valider"/>
+
+			{# Rend le formulaire html #}
+			{{ form_end(form) }}
 
         </div>
     </article>

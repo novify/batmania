@@ -17,7 +17,6 @@ class CarousselType extends AbstractType
         $builder
             ->add('carImg', 'file')
             ->add('carLien')
-            ->add('Créer', 'submit')
         ;
     }
     

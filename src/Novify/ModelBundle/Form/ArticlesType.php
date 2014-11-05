@@ -16,7 +16,7 @@ class ArticlesType extends AbstractType
     {
         $builder
             ->add('artNom')
-            ->add('artImg')
+            ->add('artImg', 'file')
             ->add('artDescript')
             ->add('artPrix')
             ->add('artRef')
@@ -37,11 +37,9 @@ class ArticlesType extends AbstractType
             ->add('artPages')
             ->add('artGenre')
             ->add('artPlateforme')
-            ->add('artImg', 'file')
             ->add('artRealisat')
             ->add('artCasting')
             ->add('artDuree')
-            ->add('Valider', 'submit')
         ;
     }
 

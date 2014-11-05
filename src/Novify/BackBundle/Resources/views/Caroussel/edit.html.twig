@@ -8,7 +8,31 @@
         <div class="container">
             <h1>Modifer une slide du carrousel</h1>
             
-			{{ form(form) }} <!-- Génère le formulaire automatiquement-->
+			<div class="info_form">
+            	<fieldset>
+		        <legend><h4>Pourquoi modifier le carousel ?</h4></legend>
+				<p>En modifiant le carousel vous pourrez changer l'image, ou encore le lien cliquable qui lui est associée.<br/>
+				</fieldset>
+			</div>
+
+			{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire', 'style':'padding-left: 20px;'}}) }}
+
+
+			<!-- Image du carousel -->
+        	{{ form_label(form.carImg, "Modifier l'image", {'label_attr': {'class': 'cat'}}) }}<br/>
+			{{ form_widget(form.carImg, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
+			<!-- -->
+
+			<!-- Lien de l'image -->
+        	{{ form_label(form.carLien, "Modifier le lien associé à l'image", {'label_attr': {'class': 'cat'}}) }}<br/>
+			{{ form_widget(form.carLien, {'attr': {'class': 'non_obligatoire', 'style': 'width:500px;'}}) }}
+				<span><br/>Vous devez renseigner la page vers laquelle le visiteur est redirigé si il clique sur l'image. le lien doit se présenter sous cette forme "http://batmania.com/boutique/catégorie/sous-catégorie"</span><br/><br/>
+			<!-- -->
+
+			<input type="submit" id="valider" value="Valider"/>
+
+			{# Rend le formulaire html #}
+			{{ form_end(form) }}
 
         </div>
     </article>

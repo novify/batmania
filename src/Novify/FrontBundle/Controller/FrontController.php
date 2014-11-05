@@ -81,6 +81,8 @@ class FrontController extends Controller
             $em->persist($utilisateur);
             $em->flush();
             
+            $session = $request->getSession();
+            $session->getFlashBag()->add('modif_compte', 'Votre compte a bien été modifié');
             return $this->redirect($this->generateUrl('novify_front_compte'));
         }
 

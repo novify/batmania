@@ -32,7 +32,7 @@
         /**
          * @var string
          *
-         * @ORM\Column(name="car_lien", type="string", length=255)
+         * @ORM\Column(name="car_lien", type="string", length=255, nullable=true)
          */
         private $carLien;
      

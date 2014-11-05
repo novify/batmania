@@ -19,7 +19,6 @@ class CategoriesType extends AbstractType
             ->add('catBanniere', 'file', array(
                     'required' => false
                 ))
-            ->add('Valider', 'submit')
         ;
     }
 

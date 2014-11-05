@@ -20,7 +20,6 @@ class SouscategoriesType extends AbstractType
                     'class' => 'NovifyModelBundle:Categories',
                     'property' => 'catNom'
                 ))
-            ->add('Valider', 'submit')
         ;
     }
 

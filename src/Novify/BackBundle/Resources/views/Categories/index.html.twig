@@ -9,7 +9,16 @@
             <h1>Catégories</h1> <!-- Titre de la section -->
             
             <!-- Ajouter une catégorie -->
-            <p class="ajouter"><a href="{{ path('novify_back_categorie_add') }}"><i class="glyphicon-plus"></i> Ajouter</a></p>
+            
+            <div class="info_restriction">
+                <fieldset id="restriction">
+                <legend><h4>Attention</h4></legend>
+                <p>Le nombre de catégorie est limité à 8 !<br/>
+                </fieldset>
+            </div>
+
+
+            <p class="ajouter" id="ajouter_cat"><a href="{{ path('novify_back_categorie_add') }}"><i class="glyphicon-plus"></i> Ajouter</a></p>
 
 
             <table>
@@ -39,8 +48,8 @@
                         </td>
 
 
-                        <td><a href="{{ path('novify_back_categorie_edit', {id: categorie.id}) }}">Modifier</a></td>
-                        <td><a href="{{ path('novify_back_categorie_remove', {id: categorie.id}) }}">Supprimer</a></td>
+                        <td><a href="{{ path('novify_back_categorie_edit', {id: categorie.id}) }}" class="modifier">Modifier</a></td>
+                        <td><a href="{{ path('novify_back_categorie_remove', {id: categorie.id}) }}" class="supprimer">Supprimer</a></td>
                     </tr>
 
 {% endfor %}

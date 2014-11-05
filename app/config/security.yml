@@ -42,6 +42,7 @@ security:
             form_login: ~
             logout:
                 path:   logout
+                invalidate_session: false
                 target: novify_front_homepage
             #anonymous: ~
             #http_basic:

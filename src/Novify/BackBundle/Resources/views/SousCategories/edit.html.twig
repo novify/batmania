@@ -7,8 +7,31 @@
     <article>
         <div class="container">
             <h1>Modifer une sous-catégorie</h1>
+
+            <div class="info_form">
+            	<fieldset>
+		        <legend><h4>Pourquoi modifier une sous catégorie ?</h4></legend>
+				<p>En modifiant la sous catégorie vous pourrez changer son nom, ou encore la catégorie qui lui est associé.<br/>
+				</fieldset>
+			</div>
             
-			{{ form(form) }} <!-- Génère le formulaire automatiquement-->
+			{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire', 'style':'padding-left: 20px;'}}) }}
+
+
+			<!-- Nom de la sous-catégorie -->
+        	{{ form_label(form.souscatNom, 'Nom de la Sous catégorie', {'label_attr': {'class': 'cat'}}) }}<br/>
+			{{ form_widget(form.souscatNom) }}<br/><br/>
+			<!-- -->
+
+			<!-- choix de la catégorie associé -->
+        	{{ form_label(form.categorie, 'Catégorie associé', {'label_attr': {'class': 'cat'}}) }}<br/>
+			{{ form_widget(form.categorie) }}<br/><br/>
+			<!-- -->
+
+			<input type="submit" id="valider_les_modifs" value="Valider les modifications"/>
+
+			{# Rend le formulaire html #}
+			{{ form_end(form) }}
 
         </div>
     </article>

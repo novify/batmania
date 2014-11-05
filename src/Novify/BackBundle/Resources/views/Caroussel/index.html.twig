@@ -33,8 +33,8 @@
                         <td>{{ caroussels.id }}</td>
                         <td>{{ caroussels.carLien }}</td>
                         <td><img src="{{ asset(caroussels.getWebPath)}}" alt=""></td>
-                        <td><a href="{{ path('novify_back_caroussel_edit', {id: caroussels.id}) }}">Modifier</a></td>
-                        <td><a href="{{ path('novify_back_caroussel_remove', {id: caroussels.id}) }}">Supprimer</a></td>
+                        <td><a href="{{ path('novify_back_caroussel_edit', {id: caroussels.id}) }}" class="modifier">Modifier</a></td>
+                        <td><a href="{{ path('novify_back_caroussel_remove', {id: caroussels.id}) }}" class="supprimer">Supprimer</a></td>
                     </tr>
 
 {% endfor %}
