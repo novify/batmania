@@ -42,6 +42,10 @@ novify_front_resetpanier:
     path:     /reset-panier/
     defaults: { _controller: NovifyFrontBundle:Front:resetPanier }
 
+# novify_front_commande:
+#     path:     /commander
+#     defaults: { _controller: NovifyFrontBundle:Front:commande }
+
 novify_front_compte:
     path:     /compte
     defaults: { _controller: NovifyFrontBundle:Front:compte }
@@ -71,10 +75,3 @@ novify_front_view_one:
 novify_front_hello:
     path:     /hello/{name}
     defaults: { _controller: NovifyFrontBundle:Front:hello }
-
-remove_trailing_slash:
-    path: /{url}
-    defaults: { _controller: NovifyFrontBundle:Redirecting:removeTrailingSlash }
-    requirements:
-        url: .*/$
-    methods: [GET]
