@@ -14,6 +14,10 @@ novify_back_article_add:
     path:     /article/add
     defaults: { _controller: NovifyBackBundle:Articles:add }
 
+novify_back_article_comment:
+    path:     /article/comment/{id}
+    defaults: { _controller: NovifyBackBundle:Articles:comment }
+
 novify_back_article_edit:
     path:     /article/edit/{id}
     defaults: { _controller: NovifyBackBundle:Articles:edit }
@@ -109,3 +113,11 @@ novify_back_caroussel_edit:
 novify_back_caroussel_remove:
     path:     /caroussel/remove/{id}
     defaults: { _controller: NovifyBackBundle:Caroussel:remove }
+
+novify_back_newsletter_hello:
+    path:     /newsletter/hello/{name}
+    defaults: { _controller: NovifyBackBundle:Newsletter:hello }
+
+novify_back_newsletter_index:
+    path:     /newsletter
+    defaults: { _controller: NovifyBackBundle:Newsletter:index }

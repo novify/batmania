@@ -64,13 +64,17 @@ $(function() {
 							<p class="dispo_ficheproduit"> <!-- Stock du produit-->
 								Disponibilité : <div class="variable_dispo" {% if article.artStock <= '10' %} style="color: red;" {% endif %}> {{article.artStock}}</div>
 							</p>
-
+							
 							<p class="prix_ficheproduit"> <!-- Prix du produit-->
-								{{article.artPrix}} €
+								{% if article.artPromo is null %}
+									{{article.artPrix}} €
+								{% else %}
+									{{article.artPrix - article.artPromo / 100 * article.artPrix}} € <s style="font-size:18px;color:red;font-weight:300">{{article.artPrix}} €</s>
+								{% endif %}
 							</p>
 
 							<div id="ajout_panier">
-								<div class="lien_popup"><a href="#test-popup" class="open-popup-link">Ajouter au panier</a></div> <!--Ce lien ajoute en SESSION l'article au panier -->
+								<a href="#test-popup" class="open-popup-link">Ajouter au panier</a></div> <!--Ce lien ajoute en SESSION l'article au panier -->
 							</div>
 
 								<!-- Popup -->
@@ -110,7 +114,7 @@ $(function() {
 								</script>
 
 							<div id="retrait_magasin">
-								<a href="">Retrait en magasin</a>
+								<a href="#">Retrait en magasin</a>
 							</div>
 
 							<p><a href="commentaires_article">Voir les commentaires sur ce produit</a></p>
@@ -207,18 +211,19 @@ $(function() {
 
 {% endfor %}
 
-{% if app.user is not null %}
+{% if app.user is not null %}	<!-- Formulaire seulement si on est connecté-->
+					
+						<fieldset class="formulaire_commentaires">
 
-						<!-- Formulaire seulement si on est connecté-->
-						<div class="formulaire_commentaires">
+							<legend><h4>Laisser un commentaire</h4></legend>
 							{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire'}}) }}
 
 							<!-- Commentaire -->
-							{{ form_label(form.commentTexte, 'Laisser un commentaire', {'label_attr': {'class':'commentaire'}}) }}<br/>
+							{{ form_label(form.commentTexte, 'Texte', {'label_attr': {'class':'commentaire'}}) }}<br/>
 							{{ form_widget(form.commentTexte) }}<br/><br/>
 							<!-- -->
 							<!-- Note -->
-							{{ form_label(form.commentNote, 'Laisser une note', {'label_attr': {'class':'commentaire'}}) }}<br/>
+							{{ form_label(form.commentNote, 'Note', {'label_attr': {'class':'commentaire'}}) }}<br/>
 							{{ form_widget(form.commentNote) }}<br/><br/>
 							<!-- -->
 
@@ -227,7 +232,7 @@ $(function() {
 							{{ form_end(form) }}
 
 
-						</div>
+						</fieldset>
 						<!--  -->
 
 {% else %}

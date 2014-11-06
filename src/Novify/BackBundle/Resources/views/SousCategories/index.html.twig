@@ -31,8 +31,37 @@
                         <td>{{ souscategorie.souscatNom }}</td>
                         <td>{{ souscategorie.categorie.catNom }}</td>
                         <td><a href="{{ path('novify_back_souscategorie_edit', {id: souscategorie.id}) }}" class="modifier">Modifier</a></td>
-                        <td><a href="{{ path('novify_back_souscategorie_remove', {id: souscategorie.id}) }}" class="supprimer">Supprimer</a></td>
+                        <td><a href="#test-popup-{{souscategorie.id}}" class="open-popup-link">Supprimer</a></td>
+                        <!-- Popup -->
+                        <div id="test-popup-{{souscategorie.id}}" class="white-popup mfp-hide">
+                            <div id="produit_popup">
+                                <div class="popup_header">
+                                    <h3>Suppression de la sous catégorie</h3>
+                                </div>
+
+                                <div class="popup_body">
+                                    <h4 id="pad"> <!-- Titre du produit-->
+                                        {{souscategorie.souscatNom}}
+                                    </h4> <br/><br/>
+                                    <p>Êtes vous sur de vouloir supprimer cette sous catégorie ?
+                                    <p><strong>Attention !</strong> Si vous supprimez cette sous catégorie, les articles qui lui sont associés seront également supprimés.</p>
+                                </div>
+
+                                <div class="popup_footer">
+                                    <a href="{{ path('novify_back_souscategorie_index') }}" id="non" style="float:left;">Non</a>
+                                    <a href="{{ path('novify_back_souscategorie_remove', {id: souscategorie.id}) }}" id="oui" style="float:right">Oui, je veux supprimer</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin popup -->
                     </tr>
+
+                    <script type="text/javascript">
+                        $('.open-popup-link').magnificPopup({
+                          type:'inline',
+                          midClick: true
+                        });
+                    </script>
 
 {% endfor %}
 

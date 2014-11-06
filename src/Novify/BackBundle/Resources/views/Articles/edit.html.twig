@@ -8,7 +8,7 @@
         <div class="container">
             <h1>Modifer un article</h1>
             
-			<div class="info_form" style="width:40%">
+			<div class="info_form">
             	<fieldset>
 		        <legend><h4>Pourquoi modifier un article ?</h4></legend>
 					<p>L'article est le point central du site, c'est la ou le visiteur doit être amené, vers l'article qu'il recherche.<br/>
@@ -17,12 +17,12 @@
 				</fieldset>
 			</div>
             
-			{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire', 'style':'padding-left: 20px;'}}) }}
+			{{ form_start(form, {'method': 'POST', 'attr': {'id': 'formulaire'}}) }}
 
-			<fieldset id="form_art" style="width:55%">
+			<fieldset id="form_art">
 		        <legend><h4>Informations principales</h4></legend>
 				<!-- Nom -->
-	        	{{ form_label(form.artNom, 'Nom du nouvel article', {'label_attr': {'class':'art'}}) }}<br/>
+	        	{{ form_label(form.artNom, "Nom de l'article", {'label_attr': {'class':'art'}}) }}<br/>
 				{{ form_widget(form.artNom) }}<br/><br/>
 				<!-- -->
 
@@ -36,9 +36,55 @@
 				{{ form_widget(form.artDescript) }}<br/><br/>
 				<!-- -->
 
-				<!-- Prix -->
-	        	{{ form_label(form.artPrix, "Prix") }}<br/>
-				{{ form_widget(form.artPrix) }}<br/><br/>
+				<!-- Label Prix/Référence -->
+	        	{{ form_label(form.artPrix, "Prix", {'label_attr': {'class':'prix'}}) }}
+	        	{{ form_label(form.artRef, "Référence", {'label_attr': {'class':'ref'}}) }}<br/>
+				<!-- -->
+
+				<!-- Input Prix/Référence -->
+				{{ form_widget(form.artPrix, {'attr': {'placeholder':'€'}}) }}
+				<span>Indiquez le prix en euros €.</span>
+				{{ form_widget(form.artRef) }}<br/><br/>
+				<!-- -->
+
+				<!-- Stock -->
+				{{ form_label(form.artStock, "Nombre d'articles disponibles à la vente sur le site", {'label_attr': {'class':'art'}}) }}<br/>
+				{{ form_widget(form.artStock) }}
+				<span>Vous devez indiquer une valeur numérique, 1 est la valeur minimum.</span><br/><br/>
+				<!-- -->
+
+				<!-- Sous catégorie -->
+	        	{{ form_label(form.sousCategorie, "Sous Catégorie") }}<br/>
+	        	<p>Indiquez la sous Catégorie de l'article, il trouvera automatiquement la catgéorie qui lui est associé.<br/>
+				{{ form_widget(form.sousCategorie) }}</p><br/>
+				<!-- -->
+				
+				<!-- Coup de coeur -->
+				{{ form_label(form.artSelection, "Selection") }}<br/>
+				<p>{{ form_widget(form.artSelection) }}Selectionnez si vous souhaitez faire apparaitre le produit dans la categorie "Selection Batmania".</p>		
+			</fieldset>
+
+			<fieldset id="form_art">
+		        <legend><h4>Informations secondaires</h4></legend>
+				
+		        <!-- Label Auteur/Réalisateur -->
+	        	{{ form_label(form.artAuteur, "Auteur", {'label_attr': {'class':'auteur'}}) }}
+	        	{{ form_label(form.artRealisat, "Réalisateur", {'label_attr': {'class':'real'}}) }}<br/>
+				<!-- -->
+
+				<!-- Input Auteur/Réalisateur -->
+				{{ form_widget(form.artAuteur, {'attr': {'class': 'non_obligatoire'}}) }}
+				{{ form_widget(form.artRealisat, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
+				<!-- -->
+
+				<!-- Label Editeur/Genre -->
+				{{ form_label(form.artEditeur, "Éditeur", {'label_attr': {'class':'genre'}}) }}
+	        	{{ form_label(form.artGenre, "Genres") }}<br/>
+				<!-- -->
+
+				<!-- Input Editeur/Genre -->
+				{{ form_widget(form.artEditeur, {'attr': {'class': 'non_obligatoire'}}) }}
+				{{ form_widget(form.artGenre, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
 				<!-- -->
 
 				<!-- Date de sorie -->
@@ -46,55 +92,15 @@
 				{{ form_widget(form.artDateSortie) }}<br/><br/>
 				<!-- -->
 
-				<!-- Référence -->
-	        	{{ form_label(form.artRef, "Référence") }}<br/>
-				{{ form_widget(form.artRef) }}<br/><br/>
-				<!-- -->
-
-				<!-- Stock -->
-	        	{{ form_label(form.artStock, "Nombre d'articles disponibles à la vente sur le site", {'label_attr': {'class':'art'}}) }}<br/>
-				{{ form_widget(form.artStock) }}
-				<span>Vous devez indiquer une valeur numérique, 1 étant la valeur minimum.</span><br/><br/>
-				<!-- -->
-
-				<!-- Sous catégorie -->
-	        	{{ form_label(form.sousCategorie, "Sous Catégorie") }}<br/>
-	        	Indiquez la sous Catégorie de l'article, il trouvera automatiquement la catgéorie qui lui est associé.<br/>
-				{{ form_widget(form.sousCategorie) }}<br/><br/>
-				<!-- -->
-			</fieldset>
-
-			<fieldset id="form_art" style="width:75%">
-		        <legend><h4>Informations secondaires</h4></legend>
-				<!-- Auteur -->
-	        	{{ form_label(form.artAuteur, "Auteur") }}<br/>
-				{{ form_widget(form.artAuteur, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
-				<!-- -->
-
-				<!-- Réalisateur -->
-	        	{{ form_label(form.artRealisat, "Réalisateur") }}<br/>
-				{{ form_widget(form.artRealisat, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
-				<!-- -->
-
-				<!-- Éditeur -->
-	        	{{ form_label(form.artEditeur, "Éditeur") }}<br/>
-				{{ form_widget(form.artEditeur, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
-				<!-- -->
-
-				<!-- Genre -->
-	        	{{ form_label(form.artGenre, "Genres") }}<br/>
-				{{ form_widget(form.artGenre, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
-				<!-- -->
-
 				<!-- Casting -->
 	        	{{ form_label(form.artCasting, "Casting") }}<br/>
 				{{ form_widget(form.artCasting, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
 				<!-- -->
 
-				<!-- Type de public -->
+				<!-- Type de public-->
 	        	{{ form_label(form.artPublic, "Type de public") }}<br/>
-				{{ form_widget(form.artPublic, {'attr': {'class': 'non_obligatoire'}}) }}
-				<span>Indiquez le type de public sous cette forme : -12, -16 …</span><br/><br/>
+				{{ form_widget(form.artPublic, {'attr': {'class': 'non_obligatoire', 'placeholder':'  -16, Interdit au moins de 16 ans, 6 et +, 6+ ...'}}) }}
+				<span>Indiquez le type de public sous le forme que vous voulez …</span><br/><br/>
 				<!-- -->
 
 				<!-- ISBN -->
@@ -103,33 +109,35 @@
 				<span>L'ISBN est le numéro d'identification d'un livre</span><br/><br/>
 				<!-- -->
 
-				<!-- Durée -->
-	        	{{ form_label(form.artDuree, "Durée du film") }}<br/>
-				{{ form_widget(form.artDuree, {'attr': {'class': 'non_obligatoire'}}) }}
-				<span>Indiquez la durée du film en minute, exemple : 136min</span><br/><br/>
+				<!-- Label Durée/Pages -->
+				{{ form_label(form.artDuree, "Durée du film", {'label_attr': {'class':'duree'}}) }}
+	        	{{ form_label(form.artPages, "Indiquez le nombre de pages", {'label_attr': {'class':'pages'}}) }}<br/>
 				<!-- -->
 
-				<!-- Pages -->
-	        	{{ form_label(form.artPages, "Indiquez le nombre de pages", {'label_attr': {'class':'art'}}) }}<br/>
-				{{ form_widget(form.artPages, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
+				<!-- Input Durée/Pages -->
+				{{ form_widget(form.artDuree, {'attr': {'class': 'non_obligatoire'}}) }}
+				<span>Indiquez la durée du film en minute, exemple : 136min</span>
+				{{ form_widget(form.artPages, {'attr': {'class': 'non_obligatoire'}}) }}<span>Vous devez indiquer une valeur numérique, 1 est la valeur minimum.</span><br/><br/>
 				<!-- -->
 
 				<!-- Plateforme -->
-	        	{{ form_label(form.artPlateforme, "Plateforme/Console de jeux", {'label_attr': {'class':'art'}}) }}<br/>
-				{{ form_widget(form.artPlateforme, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
-				<!-- -->	
+				{{ form_label(form.artPlateforme, "Plateforme/Console de jeux", {'label_attr': {'class':'art'}}) }}<br/>
+				{{ form_widget(form.artPlateforme, {'attr': {'class': 'non_obligatoire', 'placeholder':'PS4, Xbox One, ...'}}) }}<br/><br/>
+				<!-- -->
 
 				<!-- Promo -->
-	        	{{ form_label(form.artPromo, "Promotion sur l'article") }}<br/>
-	        	Si vous voulez que votre article ait une promotion, indiquez le ici, il sera alors directement intégré à la page "promotion", avec la promotion renseigner.<br/>
-				{{ form_widget(form.artPromo, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
+	        	{{ form_label(form.artPromo, "Promotion sur l'article") }}<br/><p>
+	        	Indiquez un pourcentage de remise sur cet article.<br/>
+				{{ form_widget(form.artPromo, {'attr': {'class': 'non_obligatoire', 'placeholder':'%'}}) }}</p><br/>
 				<!-- -->
 			</fieldset>
 
-			<input type="submit" id="valider_les_modifs" value="Valider les modifications"/>
+			<input type="submit" id="valider_les_modifs" value="Valider les modifications" style="float:right;"/>
 
 			{# Rend le formulaire html #}
 			{{ form_end(form) }}
+
+			<a href="{{ path('novify_back_article_index') }}" id="retourArt">Retour</a>
 
         </div>
     </article>

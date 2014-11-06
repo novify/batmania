@@ -22,10 +22,6 @@ html, body{
 
 }
 
-.required::before{
-	content:'*';
-}
-
 .container_index{	
 
 	width: 90%;
@@ -58,7 +54,6 @@ html, body{
 
 .ajouter a{
 	text-align: right;
-	display: inline-block;
 	padding: 6px 7px;
 	width: 100px;
 	font-size: 20px;
@@ -66,12 +61,12 @@ html, body{
 	background-color: #e2c879;
 	cursor: pointer;
 	-webkit-transform: scale(1);
-	transition: all 0.30s;
+	transition: all 0.25s;
 	text-decoration: none;
 }
 
 .ajouter a:hover{
-	-webkit-transform: scale(1.08);
+	-webkit-transform: scale(1.02);
 	background-color: #f2dc9a;
 	color: #fff;
 }
@@ -91,6 +86,22 @@ a {
 
 a:hover {
 	color: #245580;
+}
+
+a#acces {
+	font-weight: 500;
+	color: #fff;
+	text-decoration: none;
+	float: right;
+	font-size: 18px;
+	padding-top: 20px;
+	padding-right: 20px;
+	transition: all 0.45s;
+	text-transform: none;
+}
+
+a#acces:hover {
+	color: #e2c879;
 }
 
 /*Boutton modifier et supprimer*/
@@ -234,7 +245,7 @@ article table thead{
 
 article table thead th{
 
-	font-size:17px;
+	font-size:14px;
 	font-weight: 400;
 	width: 10%;
 	text-transform: uppercase;	
@@ -430,6 +441,7 @@ form#formulaire fieldset {
 	margin-bottom: 20px;
 	padding: 20px;
 	border-color: #1a465c;
+	max-width: 100%;
 }
 
 form#formulaire span {
@@ -451,6 +463,11 @@ form#formulaire input {
 	border: 1px solid #dedede;
 	color: #54555A;
 	padding: 5px;
+}
+
+
+form#formulaire input, form#formulaire textarea {
+	max-width: 100%;
 }
 
 form#formulaire input:focus {
@@ -503,11 +520,11 @@ form#formulaire input[type=submit] {
 	background: #e2c879;
 	cursor: pointer;
 	-webkit-transform: scale(1);
-	transition: all 0.25s;
+	transition: all 0.35s;
 }
 
 form#formulaire input[type=submit]:hover {
-	-webkit-transform: scale(1.02);
+	-webkit-transform: scale(1.05);
 	background: #f2dc9a;
 }
 
@@ -521,29 +538,57 @@ form#formulaire input[type=submit]:hover {
 	 	width: 360px;
 	}
 
+	form#formulaire label.prix {
+	 	margin-right: 53px;
+	}
 
-form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire input#novify_modelbundle_signup_userCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userLivCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userLivCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userCivilite_1, form#formulaire input#novify_modelbundle_utilisateurs_userFactCivilite_0, form#formulaire input#novify_modelbundle_utilisateurs_userFactCivilite_1 {
-	margin-right: -125px;
-}
+	form#formulaire label.ref {
+	 	margin-right: 54px;
+	}
+
+	form#formulaire label.auteur {
+	 	margin-right: 104px;
+	}
+
+	form#formulaire label.auteur, form#formulaire label.real, form#formulaire label.genre, form#formulaire label.duree {
+	 	margin-right: 104px;
+	}
+
+	form#formulaire label.pages {
+		width: 200px;
+		margin-right: 53px;
+	}
 
 		/* catégorie */
 		form#formulaire input#novify_modelbundle_categories_catBanniere {
-			width: 500px;
+			width: 100%;
 		}
 		/* ---- */
 
 		/* carousel */
 		form#formulaire input#novify_modelbundle_caroussel_carImg {
 			width: 500px;
+			max-width: 100%;
 		}
 		/* ---- */
 
 		/* article */
-		form#formulaire input#novify_modelbundle_articles_artImg {
-			width: 500px;
+		form#formulaire input#novify_modelbundle_articles_artNom {
+			width: 350px;
+			max-width: 100%;
 		}
 
-		form#formulaire input#novify_modelbundle_articles_artPrix, form#formulaire input#novify_modelbundle_articles_artRef, form#formulaire input#novify_modelbundle_articles_artStock, form#formulaire input#novify_modelbundle_articles_artPages, form#formulaire input#novify_modelbundle_articles_artDuree, form#formulaire input#novify_modelbundle_articles_artIsbn {
+		form#formulaire input#novify_modelbundle_articles_artImg {
+			width: 500px;
+			max-width: 100%;
+		}
+
+		form#formulaire input#novify_modelbundle_articles_artPrix, 
+		form#formulaire input#novify_modelbundle_articles_artRef, 
+		form#formulaire input#novify_modelbundle_articles_artStock, 
+		form#formulaire input#novify_modelbundle_articles_artPages, 
+		form#formulaire input#novify_modelbundle_articles_artDuree, 
+		form#formulaire input#novify_modelbundle_articles_artIsbn {
 			width: 100px;
 		}
 
@@ -553,6 +598,36 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 
 		form#formulaire input#novify_modelbundle_articles_artPages:focus {
 			background-image: none;
+		}
+
+		form#formulaire input#novify_modelbundle_articles_artPrix, 
+		form#formulaire input#novify_modelbundle_articles_artRef, 
+		form#formulaire input#novify_modelbundle_articles_artAuteur, 
+		form#formulaire input#novify_modelbundle_articles_artRealisat, 
+		form#formulaire input#novify_modelbundle_articles_artEditeur {
+			margin-right: 100px;
+		}
+
+		form#formulaire input#novify_modelbundle_articles_artDuree, 
+		form#formulaire input#novify_modelbundle_articles_artPages {
+			margin-right: 150px;
+		}
+
+		form#formulaire textarea#novify_modelbundle_articles_artDescript {
+			width: 500px;
+			height: 120px;
+			max-width: 100%;
+		}
+
+		form#formulaire textarea#novify_modelbundle_articles_artCasting {
+			width: 500px;
+			height: 80px;
+			max-width: 100%;
+		}
+
+		form#formulaire textarea#novify_modelbundle_articles_artPublic {
+			width: 500px;
+			max-width: 100%;
 		}
 		/* ---- */
 
@@ -601,8 +676,6 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 /*- FIN FORMULAIRE -*/
 
 .info_form {
-	float: right;
-	width: 45%;
 }
 
 .info_restriction {
@@ -611,7 +684,7 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 }
 
 fieldset {
-	border-radius: 7px;
+	border-radius: 3px;
 	background-color: rgb(245,245,245);
 	padding: 20px;
 	border-color: #1a465c;
@@ -638,3 +711,157 @@ p#ajouter_cat {
 	float: right;
 	display: inline;
 }
+
+form p {
+	font-weight: 200;
+	font-style: italic;
+}
+
+/*-- Fenêtre Pop-up Supprimer--*/
+.white-popup {
+	position: relative;
+  	padding: 30px;
+  	width: auto;
+  	max-width: 550px;
+  	margin: 20px auto;
+	height: auto;
+	color: #2f3036;
+	font-size: 16px;
+	background: #fff;
+	border-radius: 3px;
+	border: 1px solid;
+}
+
+a.open-popup-link {
+	text-decoration: none;
+	display: inline-block;
+	padding: 4px 0px;
+	background-color: #c0392b;
+	color: #fff;
+	 -webkit-transform: scale(1);
+  	transition: all 0.25s;
+  	width: 90px;
+}
+
+a.open-popup-link:hover {
+	background-color: #e74c3c;
+	-webkit-transform: scale(1.02);
+}
+
+	#produit_popup .popup_header {
+		border-bottom: #dedede 1px solid; 
+		padding-bottom: 5px;
+	}
+
+	#produit_popup .popup_header h3 {
+		color: #1a465c;
+		font-size: 22px;
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+
+	#produit_popup .popup_body {
+		padding-top: 25px;
+	}
+
+	#produit_popup .popup_body h4 {
+		display: inline;
+		position: absolute;
+		color: #1a465c;
+		font-size: 20px;
+		padding-left: 15px;
+	}
+
+	#produit_popup .popup_body h4#pad {
+		padding-left: 0px;
+	}
+
+	#produit_popup .popup_body p {
+		font-size: 16px;
+		font-weight: 500;
+		color: #c0392b;
+		padding-top: 15px;
+		padding-bottom: 10px;
+	}
+
+	#produit_popup .popup_footer {
+		padding-top: 10px;
+		border-top: #dedede 1px solid;
+		height: 40px;
+	}
+
+	#produit_popup .popup_footer a {
+		display: block;
+		text-align: center;
+		padding: 5px 13px;
+		width: auto;
+		color: #fff;
+		cursor: pointer;
+		-webkit-transform: scale(1);
+		transition: all 0.25s;
+		text-decoration: none;
+	}
+
+	#produit_popup .popup_footer a:hover {
+	  	-webkit-transform: scale(1.02);
+	}
+
+	#produit_popup .popup_footer a#oui {
+		background: #c0392b;
+	}
+
+	#produit_popup .popup_footer a#non {
+		background: rgb(70,70,70);
+	}
+
+	#produit_popup .popup_footer a#oui:hover {
+		background: #e74c3c;
+	}
+
+	#produit_popup .popup_footer a#non:hover {
+		background: rgb(90,90,90);
+	}
+
+	a#retour {
+		display: block;
+		padding: 6px 8px;
+		float: right;
+		width: auto;
+		color: #fff;
+		font-size: 20px;
+		cursor: pointer;
+		background: rgb(70,70,70);
+		-webkit-transform: scale(1);
+		transition: all 0.35s;
+		text-decoration: none;
+		margin-top: 5px;
+		margin-right: 20px;
+	}
+
+	a#retour:hover {
+	  	-webkit-transform: scale(1.05);
+	  	background: rgb(90,90,90);
+	}
+
+	a#retourArt {
+		display: block;
+		padding: 6px 8px;
+		float: right;
+		width: auto;
+		color: #fff;
+		font-size: 20px;
+		cursor: pointer;
+		background: rgb(70,70,70);
+		-webkit-transform: scale(1);
+		transition: all 0.35s;
+		text-decoration: none;
+		margin-top: 5px;
+		margin-right: 20px;
+	}
+
+	a#retourArt:hover {
+	  	-webkit-transform: scale(1.05);
+	  	background: rgb(90,90,90);
+	}
+
+/* -- Fin Pop-up -- */

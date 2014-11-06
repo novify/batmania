@@ -10,8 +10,8 @@
             
 			<div class="info_form">
             	<fieldset>
-		        <legend><h4>Qu'est ce que le carousel ?</h4></legend>
-					<p>Le carousel est un ensemble d'image, défilent dynamiquement sur la page d'accueil, il permet de mettre en avant des informations importante, de plus, si vous le désirez, les images peuvent être cliquables, et renvoyer vers la page de votre choix.</p>
+		        <legend><h4>Qu'est ce que le carrousel ?</h4></legend>
+					<p>Le carrousel est un ensemble d'images, défilant dynamiquement sur la page d'accueil. Il permet de mettre en avant des informations importantes. De plus, si vous le désirez, les images peuvent être cliquables, et renvoyer vers la page de votre choix.</p>
 				</fieldset>
 			</div>
 
@@ -25,14 +25,16 @@
 
 			<!-- Lien de l'image -->
         	{{ form_label(form.carLien, "Lien de l'image", {'label_attr': {'class': 'cat'}}) }}<br/>
-			{{ form_widget(form.carLien, {'attr': {'class': 'non_obligatoire', 'style': 'width:500px;'}}) }}
-				<span><br/>Vous devez renseigner la page vers laquelle le visiteur est redirigé si il clique sur l'image. le lien doit se présenter sous cette forme "http://batmania.com/boutique/catégorie/sous-catégorie"</span><br/><br/>
+			{{ form_widget(form.carLien, {'attr': {'class': 'non_obligatoire', 'placeholder':'http://batmania.com/boutique/catégorie/sous-catégorie', 'style': 'width:500px;'}}) }}
+				<span><br/>Vous devez renseigner la page vers laquelle le visiteur est redirigé si il clique sur l'image. le lien doit se présenter sous cette forme "http://batmania.com/boutique/catégorie/sous-catégorie", pour connaître le lien il vous suffit de vous rendre sur la page et recopier l'url.</span><br/><br/>
 			<!-- -->
 
 			<input type="submit" id="valider" value="Valider"/>
 
 			{# Rend le formulaire html #}
 			{{ form_end(form) }}
+
+			<a href="{{ path('novify_back_caroussel_index') }}" id="retour">Retour</a>
 
         </div>
     </article>

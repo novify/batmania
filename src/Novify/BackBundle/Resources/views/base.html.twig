@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html lang="fr">
     <head>
 
@@ -6,7 +6,6 @@
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-
 
         <meta charset="utf-8">
         <title>Batmania - Administration</title>
@@ -16,6 +15,10 @@
         <link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/bootstrap.css')}}"/>
         <link rel="stylesheet" href="{{ asset('bundles/novifyback/css/style.css')}}"/>
         <link rel="stylesheet" href="{{ asset('bundles/novifyback/font/glyphicons.css')}}"/>
+        <link rel="stylesheet" href="{{ asset('bundles/novifyfront/css/magnific-popup.css')}}">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyback/css/ns-default.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/novifyback/css/ns-style-growl.css')}}" />
 
         <!-- Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +29,14 @@
 
         <!-- Google Font -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+        <!-- Js -->
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+        <script src="{{ asset('bundles/novifyback/js/modernizr.custom.js')}}"></script>
+         <script src="{{ asset('bundles/novifyback/js/Chart.js')}}"></script>
+
+        <script src="{{ asset('bundles/novifyfront/js/jquery.magnific-popup.js')}}"></script>
 
     </head>
 {% block body %}
@@ -38,7 +49,7 @@
         <header>
             <p>
                 <a href="{{ path('novify_front_homepage') }}"><img src="{{ asset('bundles/novifyfront/images/logo.png')}}" alt="Logo Batmania" style="width:100px;"></a>
-                <a href="{{ path('novify_front_homepage') }}" style="float:right;padding-top:20px;padding-right:20px;">Accéder au site - Batmania</a>
+                <a href="{{ path('novify_front_homepage') }}" id="acces">Accéder au site - Batmania</a>
             </p>
         </header>
         <!-- Fin Header -->
@@ -57,7 +68,8 @@
                         <li><a href="{{ path('novify_back_article_index') }}"><i class="glyphicon-t-shirt"></i> Articles</a></li>
                         <li><a href="{{ path('novify_back_utilisateurs_index') }}"><i class="glyphicon-group"></i> Clients</a></li>
                         <li><a href="{{ path('novify_back_commandes_index') }}"><i class="glyphicon-eye_open"></i> Commandes</a></li>
-                        <li><a href="{{ path('novify_back_caroussel_index') }}"><i class="glyphicon-film"></i> Carousel</a></li>
+                        <li><a href="{{ path('novify_back_caroussel_index') }}"><i class="glyphicon-film"></i> Carrousel</a></li>
+                        <li><a href="{{ path('novify_back_newsletter_index') }}"><i class="glyphicon-envelope"></i> Newsletter</a></li>
                    </ul>
             </aside>
 
@@ -78,6 +90,52 @@
     </footer>
     <!-- Fin Footer -->
 {% endblock %}
+    
+
+    <script src="{{ asset('bundles/novifyback/js/notificationFx.js')}}"></script>
+    <script src="{{ asset('bundles/novifyback/js/classie.js')}}"></script>
+
+
+
+    {% for msg in app.session.flashbag.get('confirmation') %}
+    <script>
+            (function() {
+                // var bttn = document.getElementById( 'notification-trigger' );
+
+                // make sure..
+                // bttn.disabled = false;
+                
+                // bttn.addEventListener( 'click', function() {
+                    // simulate loading (for demo purposes only)
+                    // classie.add( bttn, 'active' );
+                    setTimeout( function() {
+
+                        // classie.remove( bttn, 'active' );
+                        
+                        // create the notification
+                        var notification = new NotificationFx({
+                            message : '<p>{{ msg }}</p>',
+                            layout : 'growl',
+                            effect : 'scale',
+                            type : 'notice', // notice, warning, error or success
+                            onClose : function() {
+                                // bttn.disabled = false;
+                            }
+                        });
+
+                        // show the notification
+                        notification.show();
+
+                    }, 600 );
+                    
+                    // disable the button (for demo purposes only)
+                    // this.disabled = true;
+                // } );
+            })();
+        </script>
+
+{% endfor %}
+
 
     <!-- Fin Body -->
     </body>

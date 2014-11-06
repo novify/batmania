@@ -34,6 +34,8 @@ class CarousselController extends Controller
             $em->persist($caroussel);
             $em->flush();
 
+            $session = $request->getSession();
+            $session->getFlashBag()->add('confirmation', "La slide du carrousel a bien été ajoutée.");
             return $this->redirect($this->generateUrl('novify_back_caroussel_index'));
         }
 
@@ -54,6 +56,8 @@ class CarousselController extends Controller
             $em->persist($caroussel);
             $em->flush();
 
+            $session = $request->getSession();
+            $session->getFlashBag()->add('confirmation', "La slide du carrousel a bien été mise à jour.");
             return $this->redirect($this->generateUrl('novify_back_caroussel_index'));
         }
 

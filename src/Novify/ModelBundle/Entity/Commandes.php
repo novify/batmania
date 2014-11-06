@@ -31,7 +31,7 @@ class Commandes
     /**
      * @var string
      *
-     * @ORM\Column(name="com_prix", type="decimal")
+     * @ORM\Column(name="com_prix", type="decimal", precision=7, scale=2)
      */
     private $comPrix;
 

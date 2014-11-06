@@ -80,7 +80,7 @@ header #barre_administration p{
 	font-weight: 400;
 	margin:0;
 	padding: 7px;
-	color: white;
+	color: rgb(210,210,210);
 }
 
 header #barre_administration p a{
@@ -378,17 +378,7 @@ nav a:hover {
 	z-index: 9998;
 }
 
-
-
-
 nav .sticky li a{color:white;}
-
-/*.fix_menu {
-	z-index: 9998;
-	position: fixed;
-	top: 0;
-	width: 100%;
-}*/
 
 .compte_fix {
 	display: none;
@@ -685,6 +675,21 @@ nav input[type=checkbox]:checked ~ #menu{
 	margin: 30px 0;
 }
 
+#bloc_catalogue .container .barre_tri button.sort{
+	text-transform: uppercase;
+	font-weight:300;
+	font-size:12px;
+	border-radius: 0px;
+	border: 1px solid rgb(170,170,170);
+	background:none;
+}
+
+
+#bloc_catalogue .container .barre_tri button.sort:hover{
+
+	border: 1px solid #1A465C;
+}
+
 #bloc_catalogue .container .pagination{
 
 	text-align:right;
@@ -701,12 +706,6 @@ nav input[type=checkbox]:checked ~ #menu{
 }
 
 
-#bloc_catalogue .ligne_articles{
-
-	margin: 30px 0;
-}
-
-
 #bloc_catalogue .container .col-md-3{
 
 	padding: 0px;
@@ -716,18 +715,21 @@ nav input[type=checkbox]:checked ~ #menu{
 #bloc_catalogue .container .article{
 
 	padding: 0 60px;
+	margin-top: 100px;
 }
 
 
 #bloc_catalogue .container .article .article_image{
 
 	height: 300px;
+	overflow:hidden;
 }
 
 
 #bloc_catalogue .container .article .article_image img{
 
 	width: 100%;
+	overflow:hidden;
 }
 
 #bloc_catalogue .container .article h5{
@@ -947,8 +949,9 @@ nav input[type=checkbox]:checked ~ #menu{
 
 
 #bloc_ficheproduit .container .article .article_image img{
-
-	height: 100%;
+	
+	overflow:hidden;
+	width: 100%;
 }
 
 #bloc_ficheproduit .container .article h5{
@@ -966,13 +969,23 @@ nav input[type=checkbox]:checked ~ #menu{
 }
 
 #bloc_ficheproduit .formulaire_commentaires{
-	border-radius: 10px;
-	padding: 20px;
-	background-color: rgb(245,245,245);
-	width: 500px;
-	box-shadow: 1px 1px 15px #b3b3b3;
+	border-radius: 0px;
+	padding: 30px;
+	width: 60%;
 }
 
+#bloc_ficheproduit .formulaire_commentaires textarea{
+	max-width: 100%;
+}
+
+#bloc_ficheproduit .formulaire_commentaires legend h4{
+
+	font-size: 20px;
+	padding: 0 10px;
+	font-weight: 400;
+	color:#1a465c;
+	
+}
 /* -- pop-up pour la validation d'un produit -- */
 
 	#test-popup #produit_popup .popup_header {
@@ -1290,7 +1303,8 @@ nav input[type=checkbox]:checked ~ #menu{
 
 
 #bloc_panier .container .article .article_image img{
-
+	
+	overflow:hidden;
 	width: 100%;
 }
 
@@ -1478,7 +1492,7 @@ nav input[type=checkbox]:checked ~ #menu{
 	background-color: #f2dc9a;
 }
 
-#bloc_compte #compte_infos h4 {
+#bloc_compte #compte_infos h4{
 	font-weight: 400;
 	color: #1a465c;
 	font-size: 16px;
@@ -2103,7 +2117,6 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 @media only screen and (max-width: 1200px){
 		
 	nav {
-		padding-left: 5%;
 	}
 
 	nav li a {
@@ -2259,4 +2272,39 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 
 
 
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+	#bloc_catalogue .container .article .article_image{
 
+		height: 400px;
+		overflow:hidden;
+	}
+
+	#bloc_ficheproduit .container .article .article_image{
+
+	height: 400px
+	}
+
+	#bloc_panier .container .article .article_image{
+
+	height: 400px;
+	}
+}
+
+
+@media only screen and (min-width: 1500px) {
+	#bloc_catalogue .container .article .article_image{
+
+		height: 600px;
+		overflow:hidden;
+	}
+
+	#bloc_ficheproduit .container .article .article_image{
+
+	height: 600px
+	}
+
+	#bloc_panier .container .article .article_image{
+
+	height: 600px;
+	}
+}

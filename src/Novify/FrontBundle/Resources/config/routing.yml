@@ -2,6 +2,18 @@ novify_front_homepage:
     path:     /
     defaults: { _controller: NovifyFrontBundle:Front:index }
 
+novify_front_nouveaute:
+    path:     /nouveaute
+    defaults: { _controller: NovifyFrontBundle:Front:nouveaute }
+
+novify_front_promo:
+    path:     /promo
+    defaults: { _controller: NovifyFrontBundle:Front:promo }
+
+novify_front_selection:
+    path:     /selection
+    defaults: { _controller: NovifyFrontBundle:Front:selection }
+
 novify_front_panier:
     path:     /panier
     defaults: { _controller: NovifyFrontBundle:Front:panier }

@@ -1,0 +1,34 @@
+{% extends 'NovifyFrontBundle::base.html.twig' %}
+{% block main %}
+		<!-- Body -->
+
+		<div id="bloc_catalogue">
+
+			<div class="container" style="width:100%">
+
+				<!-- affichage en grille des articles -->
+
+				<h1 style="font-size:32px;border-bottom:1px solid black;margin:30px">Toutes les promotions</h1>
+				<div class="row ligne_articles"> <!-- Ligne 1-->
+
+{% for promo in promos %}
+							<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
+
+								<div class="article_image"> <!-- Image article -->
+									<a href="{#{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': promo.id}) }} #}"><img src="{{ asset(promo.getWebPath) }}" alt=""></a>
+								</div>
+
+								<h5><a href="{#{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': promo.id}) }}#}">{{promo.artNom}}</a></h5> <!-- Titre et prix de l'article -->
+								<p><a href="">{{promo.artPrix - promo.artPromo / 100 * promo.artPrix}} € <s style="font-size:15px;color:red;font-weight:300">{{promo.artPrix}} €</s></a></p>
+							</div> <!-- Fin de l'promo -->
+
+
+{% endfor %}
+
+						
+				</div>
+
+			</div>
+
+		</div>
+{% endblock %}

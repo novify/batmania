@@ -10,8 +10,8 @@
             
 			<div class="info_form">
             	<fieldset>
-		        <legend><h4>Pourquoi modifier le carousel ?</h4></legend>
-				<p>En modifiant le carousel vous pourrez changer l'image, ou encore le lien cliquable qui lui est associée.<br/>
+		        <legend><h4>Pourquoi modifier le carrousel ?</h4></legend>
+				<p>En modifiant le carousel vous pourrez changer l'image, ou encore le lien cliquable qui lui est associé.<br/>
 				</fieldset>
 			</div>
 
@@ -25,14 +25,16 @@
 
 			<!-- Lien de l'image -->
         	{{ form_label(form.carLien, "Modifier le lien associé à l'image", {'label_attr': {'class': 'cat'}}) }}<br/>
-			{{ form_widget(form.carLien, {'attr': {'class': 'non_obligatoire', 'style': 'width:500px;'}}) }}
+			{{ form_widget(form.carLien, {'attr': {'class': 'non_obligatoire', 'placeholder':'http://batmania.com/boutique/catégorie/sous-catégorie', 'style': 'width:500px;'}}) }}
 				<span><br/>Vous devez renseigner la page vers laquelle le visiteur est redirigé si il clique sur l'image. le lien doit se présenter sous cette forme "http://batmania.com/boutique/catégorie/sous-catégorie"</span><br/><br/>
 			<!-- -->
 
-			<input type="submit" id="valider" value="Valider"/>
+			<input type="submit" id="valider_les_modifs" value="Valider les modifications"/>
 
 			{# Rend le formulaire html #}
 			{{ form_end(form) }}
+
+			<a href="{{ path('novify_back_caroussel_index') }}" id="retour">Retour</a>
 
         </div>
     </article>
