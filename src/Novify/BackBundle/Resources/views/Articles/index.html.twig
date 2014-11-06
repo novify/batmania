@@ -43,8 +43,8 @@ Pas d'image
 						<td>{{ article.artNom }}</td>
 						<td>{{ article.artPrix }} €</td>
 						<td>{{ article.artStock }}</td>
-						<td>{{ article.sousCategorie.souscatNom }}</td>
 						<td>{{ article.sousCategorie.categorie.catNom }}</td>
+						<td>{{ article.sousCategorie.souscatNom }}</td>
 						<td><a href="{{ path('novify_back_article_comment', {id: article.id}) }}">Commentaires</a></td>
 						<td><a href="{{ path('novify_back_article_edit', {id: article.id}) }}" class="modifier">Modifier</a></td>
 						<td><a href="#test-popup-{{article.id}}" class="open-popup-link">Supprimer</a></td>

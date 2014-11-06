@@ -27,7 +27,7 @@
 							    <tr>
 							    	<!-- Premier article -->
 							    	<!-- Image du produit -->
-							    	<td style="width:10%"><img src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></td>
+							    	<td style="width:10%"><img src="{{asset(article.getWebPath)}}" alt=""></td>
 
 									<!-- Nom du produit -->
 								    <td style="width:50%"><a href="">{{ article.artNom }}</a></td>
@@ -72,6 +72,25 @@
 							<p id="sous_total">47.00€</p>
 
 							<div class="lien_popup"><a href="#test-popup" class="open-popup-link">Passez la commande</a></div>
+
+
+
+
+
+								<!-- ************************************* -->
+
+									{% if app.user is not null %}
+										<!-- Ici : pop up quand l'utilisateur est connecté -->
+									{% else %}
+										<!-- Ici : pop up quand l'utilisateur est pas connecté  -->
+									{% endif %}
+								<!-- ************************************* -->
+
+
+
+
+
+
 
 
 								<!-- Popup -->

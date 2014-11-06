@@ -35,7 +35,7 @@ class CategoriesController extends Controller
             $em->flush();
 
             $session = $request->getSession();
-            $session->getFlashBag()->add('confirmation', "La catégorie a bien été ajouté.");
+            $session->getFlashBag()->add('confirmation', "La catégorie a bien été ajoutée.");
             return $this->redirect($this->generateUrl('novify_back_categorie_index'));
         }
 
