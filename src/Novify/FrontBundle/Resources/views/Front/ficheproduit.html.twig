@@ -1,4 +1,23 @@
 {% extends 'NovifyFrontBundle::base.html.twig' %}
+{% block js %}
+    {{ parent() }}
+    <script>
+$(function() {
+    $('.open-popup-link').click(function() {
+        $.ajax({
+            // type: 'GET'
+            url: "{{ url('novify_front_addtopanier', {id: article.id}) }}",
+            success: function(data) {
+                $('.confirmation_produit_popup').show();
+            },
+            error: function(data) {
+                $('.confirmation_produit_popup').css('color', 'red').html('Non.').show();
+            }
+        });
+    });
+});
+    </script>
+{% endblock %}
 {% block main %}
 
 
@@ -72,7 +91,7 @@
 											<p class="quantite_produit_popup"> <!-- Quantité choisi par l'internaute -->
 												Quantité : 1
 											</p>
-											<p class="confirmation_produit_popup">L'article à bien été ajouté au panier !</p>
+											<p class="confirmation_produit_popup" style="display:none;">L'article à bien été ajouté au panier !</p>
 										</div>
 
 										<div class="popup_footer">
@@ -116,7 +135,7 @@
 
 							 {% if article.artDateSortie is not null %}
 								<p><b>Date de sortie: </b> {{article.artDateSortie|date("m/d/Y")}}</p>
-							{% endif %} 
+							{% endif %}
 
 							{% if article.artIsbn is not null %}
 								<p><b>ISBN: </b> {{article.artIsbn}}</p>

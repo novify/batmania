@@ -6,6 +6,22 @@ novify_front_panier:
     path:     /panier
     defaults: { _controller: NovifyFrontBundle:Front:panier }
 
+novify_front_addtopanier:
+    path:     /ajouteraupanier/{id}
+    defaults: { _controller: NovifyFrontBundle:Front:addToPanier }
+    requirements:
+        id: \d+
+
+novify_front_removeinpanier:
+    path:     /supprimerdanslepanier/{id}
+    defaults: { _controller: NovifyFrontBundle:Front:removePanier }
+    requirements:
+        id: \d+
+
+novify_front_resetpanier:
+    path:     /reset-panier/
+    defaults: { _controller: NovifyFrontBundle:Front:resetPanier }
+
 novify_front_compte:
     path:     /compte
     defaults: { _controller: NovifyFrontBundle:Front:compte }
@@ -18,11 +34,6 @@ novify_front_contact:
     path:     /contact
     defaults: { _controller: NovifyFrontBundle:Front:contact }
 
-# temporaire
-novify_front_view_fiche:
-    path:     /fiche
-    defaults: { _controller: NovifyFrontBundle:Front:fiche }
-
 novify_front_view_categorie:
     path:     /{categorie}
     defaults: { _controller: NovifyFrontBundle:Front:viewCat }
@@ -34,8 +45,8 @@ novify_front_view_souscategorie:
 novify_front_view_one:
     path:     /{categorie}/{sousCategorie}/{id}
     defaults: { _controller: NovifyFrontBundle:Front:viewone }
-    # requirements:
-        # id: \d+
+    requirements:
+        id: \d+
 
 novify_front_hello:
     path:     /hello/{name}

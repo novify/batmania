@@ -8,13 +8,12 @@ use Novify\ModelBundle\Form\UtilisateursType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
-
+use Symfony\Component\HttpFoundation\Response;
 
 class FrontController extends Controller
 {
-    
+
     public function menuAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -34,16 +33,35 @@ class FrontController extends Controller
 
     }
 
-    public function loginAction()
+    public function resetPanierAction(Request $request)
     {
-        return $this->render('NovifyFrontBundle:Front:connexion.html.twig');
+        $session = $request->getSession();
+        $session->clear();
+
+        return $this->redirect($this->generateUrl('novify_front_panier'));
     }
 
-    public function panierAction()
+    public function addToPanierAction(Request $request, $id)
     {
-        // A faire fonctionner
+        if ($request->isXmlHttpRequest()) {
+            $session = $request->getSession();
+            // $num = max(array_keys($session->get('panier')))+1;
+            $session->set('panier/'.$id, $id);
 
+            return new Response();
+        }
+    }
 
+    public function removePanierAction(Request $request, $id)
+    {
+        $session = $request->getSession();
+        $session->remove('panier/'.$id);
+
+        return $this->redirect($this->generateUrl('novify_front_panier'));
+    }
+
+    public function panierAction(Request $request)
+    {
         $em = $this->getDoctrine()->getManager();
         $suggestion_articles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
             array('sousCategorie' => ''), // Critere
@@ -51,8 +69,20 @@ class FrontController extends Controller
             4, // Limite
             0 // Offset
         );
+        // A faire fonctionner
 
-        return $this->render('NovifyFrontBundle:Front:panier.html.twig', array('suggestion_articles' => $suggestion_articles));
+        // $panier = array('panier' => array(
+        //         8
+        //     ));
+        $session = $request->getSession();
+        // $session->set('panier', $panier);
+        $panier = $session->get('panier');
+        // foreach ($arts as $art) {
+        //     $arts = $art;
+        // }
+        $articles = $em->getRepository('NovifyModelBundle:Articles')->findById($panier);
+        // $art = array_combine(array_keys($arts), $articles);
+        return $this->render('NovifyFrontBundle:Front:panier.html.twig', array('suggestion_articles' => $suggestion_articles, 'panier' => $articles));
     }
 
     public function compteAction()
@@ -80,16 +110,16 @@ class FrontController extends Controller
         if ($form->handleRequest($request)->isValid()) {
             $em->persist($utilisateur);
             $em->flush();
-            
+
             $session = $request->getSession();
             $session->getFlashBag()->add('modif_compte', 'Votre compte a bien été modifié');
+
             return $this->redirect($this->generateUrl('novify_front_compte'));
         }
 
         return $this->render('NovifyFrontBundle:Front:compte_modif.html.twig', array('form' => $form->createView()));
 
-
-        }
+    }
 
     public function contactAction()
     {
