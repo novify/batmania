@@ -32,7 +32,7 @@ $(function() {
 
 {% endif %}
 				<div class="container"><!-- Fil d'ariane, liens et textes à générer depuis la bdd -->
-					<h1><a href="{{ path('novify_front_view_categorie', {'categorie': article.sousCategorie.categorie.catNom}) }}">{{ article.sousCategorie.categorie.catNom }}</a> > <a href="{{ path('novify_front_view_souscategorie', {'categorie': article.sousCategorie.categorie.catNom, 'sousCategorie': article.sousCategorie.souscatNom}) }}">{{article.sousCategorie.souscatNom}}</a></h1>
+					<h1><a href="{{ path('novify_front_view_categorie', {'categorie': article.sousCategorie.categorie.catNom}) }}"></a> <a href="{{ path('novify_front_view_souscategorie', {'categorie': article.sousCategorie.categorie.catNom, 'sousCategorie': article.sousCategorie.souscatNom}) }}">{{article.sousCategorie.souscatNom}}</a></h1>
 				</div>
 
 			</div>
@@ -100,7 +100,7 @@ $(function() {
 
 										<div class="popup_footer">
 											<a href="{{ path('novify_front_panier') }}">Voir mon panier</a>
-											<a href="{{ path('novify_front_compte', {id: article.id}) }}" class="boutique">Retournez à la boutique</a>
+											<a href="{{ path('novify_front_view_one', {'categorie': article.souscategorie.categorie.catNom, 'sousCategorie': article.souscategorie.souscatNom, 'id': article.id}) }}" id="boutique">Retournez à la boutique</a>
 										</div>
 									</div>
 								</div>
@@ -186,7 +186,7 @@ $(function() {
 
 						<p>Moyenne des commentaires : <b>X/5</b></p> <!-- A calculer via calcul de la bdd -->
 
-						<p style="margin-bottom: 40px">{{ commentaires|length }} commentaires rédigés</p> <!-- Nombre a récupérer selon le nombre d'entrées dans la bdd -->
+						<p style="margin-bottom: 40px; color:#1a465c; font-wieght: 600; font-size: 16px;">{{ commentaires|length }} commentaires rédigés</p> <!-- Nombre a récupérer selon le nombre d'entrées dans la bdd -->
 
 
 						<!-- Boucle des commentaires -->
@@ -197,7 +197,7 @@ $(function() {
 
 							<div class="col-sm-3">
 								<p><b>Note:</b> {{commentaire.commentNote}}/5</p> <!-- Note donnée dans ce commentaire-->
-								<p>Par {{commentaire.utilisateur.userPrenom}} {{commentaire.utilisateur.userNom}}</p> <!-- Auteur du comment-->
+								<p style="color:#1a465c;"><strong>Par {{commentaire.utilisateur.userPrenom}} {{commentaire.utilisateur.userNom}}</strong></p> <!-- Auteur du comment-->
 								<p>Le {{commentaire.commentDate|date("m/d/Y")}}</p>
 							</div>
 
