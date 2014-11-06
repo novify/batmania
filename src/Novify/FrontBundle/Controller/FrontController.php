@@ -80,6 +80,26 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:nouveaute.html.twig', array('nouveautes' => $nouveautes));
     }
 
+    public function topAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        // On selectionne les 8 articles en top
+        $query = $em->createQuery(
+            'SELECT p
+            FROM NovifyModelBundle:Articles p
+            ORDER BY p.artDescript DESC'
+        )->setMaxResults(8);
+
+        $tops = $query->getResult();
+
+        if (!$tops) {
+            throw new NotFoundHttpException("Il n'y a pas de tops des ventes");
+        }
+
+        return $this->render('NovifyFrontBundle:Front:top.html.twig', array('tops' => $tops));
+    }
+
     public function promoAction()
     {
         $em = $this->getDoctrine()->getManager();

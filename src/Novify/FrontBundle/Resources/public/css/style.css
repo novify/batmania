@@ -85,13 +85,7 @@ header #barre_administration p{
 
 header #barre_administration p a{
 	padding: 10px;
-	transition: all 0.45s;
 }
-
-header #barre_administration p a:hover{
-	color: #e2c879;
-}
-
 
 
 
@@ -723,6 +717,12 @@ nav input[type=checkbox]:checked ~ #menu{
 	margin-top: 100px;
 }
 
+.container .article h5, .container .article p{
+
+	height: 30px;
+
+}
+
 
 #bloc_catalogue .container .article .article_image{
 
@@ -991,12 +991,6 @@ nav input[type=checkbox]:checked ~ #menu{
 	color:#1a465c;
 	
 }
-
-b {
-	color: #e2c879;
-	font-size: 16px;
-}
-
 /* -- pop-up pour la validation d'un produit -- */
 
 	#test-popup #produit_popup .popup_header {
@@ -1068,12 +1062,12 @@ b {
 	  	background-color: #f2dc9a;
 	}
 
-	#test-popup #produit_popup .popup_footer a#boutique {
+	#test-popup #produit_popup .popup_footer a.boutique {
 		margin-top: 2px;
 		background-color: #1a465c;
 	}
 
-	#test-popup #produit_popup .popup_footer a#boutique:hover {
+	#test-popup #produit_popup .popup_footer a.boutique:hover {
 	  	background-color: #215975;
 	}
 
@@ -1120,8 +1114,7 @@ b {
 
 #bloc_panier .container table{
 	
-	margin-top: 50px;
-	margin-bottom: 20px;
+	margin: 50px 0;
 	width: 100%;
 }
 
@@ -1349,8 +1342,7 @@ b {
 }
 
 #bloc_panier a.reinitialiser {
-	float: right;
-	display: inline-block;
+	float:right;
 	padding: 5px 10px;
 	background-color: #c0392b;
 	color: #fff;
@@ -1358,11 +1350,10 @@ b {
   	transition: all 0.25s;
 }
 
-#bloc_panier a.reinitialiser:hover {
+#bloc_panier a.reinitialiser:hover  {
 	background-color: #e74c3c;
 	-webkit-transform: scale(1.02);
 }
-
 
 /* -------- */
 

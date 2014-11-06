@@ -14,6 +14,10 @@ novify_front_promo:
     path:     /promo
     defaults: { _controller: NovifyFrontBundle:Front:promo }
 
+novify_front_top:
+    path:     /top
+    defaults: { _controller: NovifyFrontBundle:Front:top }
+
 novify_front_selection:
     path:     /selection
     defaults: { _controller: NovifyFrontBundle:Front:selection }

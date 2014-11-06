@@ -1,0 +1,35 @@
+{% extends 'NovifyFrontBundle::base.html.twig' %}
+{% block main %}
+		<!-- Body -->
+
+		<div id="bloc_catalogue">
+
+
+			<div class="container" style="width:100%">
+
+				<!-- affichage en grille des articles -->
+
+				<h1 style="font-size:32px;border-bottom:1px solid black;margin:30px">Le top des ventes</h1>
+				<div class="row ligne_articles"> <!-- Ligne 1-->
+
+{% for top in tops %}
+							<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
+
+								<div class="article_image"> <!-- Image article -->
+									<a href="{{ path('novify_front_view_one', {'categorie': top.souscategorie.categorie.catNom, 'sousCategorie': top.souscategorie.souscatNom, 'id': top.id}) }}"><img src="{{ asset(top.getWebPath) }}" alt=""></a>
+								</div>
+
+								<h5><a href="{{ path('novify_front_view_one', {'categorie': top.souscategorie.categorie.catNom, 'sousCategorie': top.souscategorie.souscatNom, 'id': top.id}) }}">{{top.artNom}}</a></h5> <!-- Titre et prix de l'article -->
+								<p><a href="{{ path('novify_front_view_one', {'categorie': top.souscategorie.categorie.catNom, 'sousCategorie': top.souscategorie.souscatNom, 'id': top.id}) }}">{{top.artPrix}} €</a></p>
+							</div> <!-- Fin des top -->
+
+
+{% endfor %}
+
+						
+				</div>
+
+			</div>
+
+		</div>
+{% endblock %}

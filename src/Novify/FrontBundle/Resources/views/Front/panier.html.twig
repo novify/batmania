@@ -278,11 +278,11 @@
 									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- Un article -->
 
 										<div class="article_image"> <!-- Image de l'article-->
-											<a href=""><img src="{{ asset(suggestion_article.getWebPath) }}" alt=""></a>
+											<a href="{{ path('novify_front_view_one', {'categorie': suggestion_article.souscategorie.categorie.catNom, 'sousCategorie': suggestion_article.souscategorie.souscatNom, 'id': suggestion_article.id}) }}"><img src="{{ asset(suggestion_article.getWebPath) }}" alt=""></a>
 										</div>
 
-										<h5><a href="#">{{suggestion_article.artNom}}</a></h5> <!-- Prix et nom de l'article -->
-										<p><a href="">{{suggestion_article.artPrix}}</a></p>
+										<h5><a href="{{ path('novify_front_view_one', {'categorie': suggestion_article.souscategorie.categorie.catNom, 'sousCategorie': suggestion_article.souscategorie.souscatNom, 'id': suggestion_article.id}) }}">{{suggestion_article.artNom}}</a></h5> <!-- Prix et nom de l'article -->
+										<p><a href="{{ path('novify_front_view_one', {'categorie': suggestion_article.souscategorie.categorie.catNom, 'sousCategorie': suggestion_article.souscategorie.souscatNom, 'id': suggestion_article.id}) }}">{{suggestion_article.artPrix}}</a></p>
 									</div> <!-- Fin du premier article-->
 
 {% endfor %}
