@@ -49,7 +49,7 @@
 				<div class="row ligne_articles"> <!-- Ligne 1-->
 
 {% for article in souscat.articles %}
-							<div class="col-md-3 col-sm-6 col-xs-12 article" data-prix="{{article.artPrix}}" data-date="{{article.id}}"> <!-- 1 article -->
+							<div class="col-md-3 col-sm-6 col-xs-12 article mix" data-prix="{{article.artPrix}}" data-date="{{article.id}}"> <!-- 1 article -->
 
 								<div class="article_image"> <!-- Image article -->
 									<a href="{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': article.id}) }}"><img src="{{ asset(article.getWebPath) }}" alt=""></a>
