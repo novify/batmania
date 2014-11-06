@@ -179,7 +179,7 @@ Pas d'image
 	<script>
 		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 		var lineChartData = {
-			labels : [{% for commande_graphe in commandes_graphe %}"{{commande_graphe.comDate|date("m/Y")}}",{% endfor %}],
+			labels : ["Nov 2013", "Dec 2013", "Janv 2014", "Fev 2014", "Mars 2014", "Avr 2014", "Mai 2014", "Juin 2014", "Juil 2014", "Aout 2014", "Sept 2014", "Oct 2014"],
 			datasets : [
 				
 				{
@@ -190,7 +190,7 @@ Pas d'image
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(151,187,205,1)",
-					data : [{% for commande_graphe in commandes_graphe %}{{commande_graphe.comPrix}}, {% endfor %}]
+					data : [2054.44, 2839.38, 3129.48, 2941.33, 3394.93, 3821.44, 3728.32, 4399.33, 3499,21, 4022.94, 4182.22, 4391.23]
 					
 					
 					

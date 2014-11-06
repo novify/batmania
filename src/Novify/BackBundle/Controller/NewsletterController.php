@@ -69,7 +69,7 @@ class NewsletterController extends Controller
         if($this->get('mailer')->send($message)){
             // On affiche un petit message pour dire que le mail s'est bien envoyé
             $session = $request->getSession();
-            $session->getFlashBag()->add('confirmation_newsletter', 'La newsletter a bien été envoyé.');
+            $session->getFlashBag()->add('confirmation_newsletter', 'La newsletter a bien été envoyée.');
         }
 
         else{
