@@ -184,8 +184,6 @@ $(function() {
 
 						<h3>Commentaires</h3>
 
-						<p>Moyenne des commentaires : <b>X/5</b></p> <!-- A calculer via calcul de la bdd -->
-
 						<p style="margin-bottom: 40px; color:#1a465c; font-wieght: 600; font-size: 16px;">{{ commentaires|length }} commentaires rédigés</p> <!-- Nombre a récupérer selon le nombre d'entrées dans la bdd -->
 
 
@@ -262,13 +260,13 @@ $(function() {
 									<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- Premier article de la ligne-->
 
 										<div class="article_image"> <!-- Image de l'article-->
-											<a href="#">
+											<a href="{{ path('novify_front_view_one', {'categorie': suggestion_article.souscategorie.categorie.catNom, 'sousCategorie': suggestion_article.souscategorie.souscatNom, 'id': suggestion_article.id}) }}">
 												<img src="{{ asset(suggestion_article.getWebPath) }}" alt="">
 											</a>
 										</div>
 
-										<h5><a href="#">{{suggestion_article.artNom}}</a></h5> <!-- Prix et nom de l'article -->
-										<p><a href="">{{suggestion_article.artPrix}} €</a></p>
+										<h5><a href="{{ path('novify_front_view_one', {'categorie': suggestion_article.souscategorie.categorie.catNom, 'sousCategorie': suggestion_article.souscategorie.souscatNom, 'id': suggestion_article.id}) }}">{{suggestion_article.artNom}}</a></h5> <!-- Prix et nom de l'article -->
+										<p><a href="{{ path('novify_front_view_one', {'categorie': suggestion_article.souscategorie.categorie.catNom, 'sousCategorie': suggestion_article.souscategorie.souscatNom, 'id': suggestion_article.id}) }}">{{suggestion_article.artPrix}} €</a></p>
 									</div> <!-- Fin du premier article-->
 
 
