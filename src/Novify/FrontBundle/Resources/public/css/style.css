@@ -900,11 +900,14 @@ nav input[type=checkbox]:checked ~ #menu{
 }
 
 #bloc_ficheproduit #bloc_produit p a {
-	
 	font-weight: 400;
 	color: #3781b2;
+	transition: all 0.25s;
 	text-decoration: underline;
+}
 
+#bloc_ficheproduit #bloc_produit p a:hover {
+	color: #245580;
 }
 
 #bloc_ficheproduit #bloc_produit #details_produit, #bloc_ficheproduit #bloc_produit #commentaires_article, #bloc_ficheproduit #bloc_produit #suggestions_produits{
@@ -1955,12 +1958,13 @@ form#formulaire h5 {
 form#formulaire a {
 	font-size: 14px;
 	color: #3781b2;
+	transition: all 0.25s;
 	text-decoration: underline;
 }
 
 form#formulaire a:hover {
 	font-size: 14px;
-	color: #3781b2;
+	color: #245580;
 	text-decoration: underline;
 }
 
