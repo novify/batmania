@@ -37,6 +37,7 @@ class ArticlesController extends Controller
 
             $session = $request->getSession();
             $session->getFlashBag()->add('confirmation', "L'article a bien été ajouté.");
+
             return $this->redirect($this->generateUrl('novify_back_article_index'));
         }
 
@@ -59,6 +60,7 @@ class ArticlesController extends Controller
 
             $session = $request->getSession();
             $session->getFlashBag()->add('confirmation', "L'article a bien été mis à jour.");
+
             return $this->redirect($this->generateUrl('novify_back_article_index'));
         }
 
@@ -74,7 +76,7 @@ class ArticlesController extends Controller
          if (!$commentaires) {
             throw new NotFoundHttpException("Il n'y a pas de commentaires pour cet article");
         }
-    
+
         return $this->render('NovifyBackBundle:Articles:comment.html.twig', array('commentaires' => $commentaires));
     }
 
