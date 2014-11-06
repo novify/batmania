@@ -1,0 +1,33 @@
+{% extends 'NovifyBackBundle::base.html.twig' %}
+{% block main %}
+
+
+
+
+    <article>
+        <div class="container">
+            <h1>Newsletter</h1> <!-- Titre de la section -->
+            
+
+
+            <div class="info_form">
+                <fieldset>
+                <legend><h4>Envoyez votre newsletter</h4></legend>
+                    <p>Ici, vous pourrez personnaliser et envoyer un e-mail automatiquement à toutes les personnes qui ont accepté de recevoir la newsletter.<br/>
+                    Remplissez simplement les champs ci-dessous pour envoyer votre newsletter.</p>
+                </fieldset>
+            </div>
+            
+            <div>
+                <!-- Ajouter un article -->
+                <p class="ajouter"><a href="{{ path('novify_back_newsletter_envoi') }}"><i style="font-size:17px" class="glyphicon-new_window"></i> Envoyer</a></p>
+            </div>
+
+
+        </div>
+    </article>
+
+
+
+
+{% endblock %}

@@ -31,7 +31,7 @@
 		<!-- Google Font -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,900' rel='stylesheet' type='text/css'>
-
+{% block js %}
 		<!-- Js -->
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
@@ -49,6 +49,7 @@
 
 		<script src="{{ asset('bundles/novifyfront/js/jquery.magnific-popup.js')}}"></script>
 		<script src="{{ asset('bundles/novifyfront/js/jquery.mixitup.min.js')}}"></script>
+{% endblock %}
 
 
 
@@ -130,7 +131,7 @@
 									<img src="{{ asset('bundles/novifyfront/images/pictogrammes/compte.png')}}" alt="picto tête de batman">Mon compte
 									<div class="sous_texte">
 										Bonjour, {{app.user.userPrenom}}
-										
+
 									</div>
 
 									<!-- <div id="bulle_compte">
@@ -139,7 +140,7 @@
 											<div class="faux_liens">mot de passe oublié ?</div>
 									</div> -->
 								</a>
-								
+
 								<div class="sous_texte">
 									<a href="{{ path('logout') }}">Déconnexion</a>
 								</div>
@@ -217,7 +218,7 @@
 		<!-- Fin Header -->
 
 
-	
+
 
 {% endblock %}
 {% block main %}
@@ -269,11 +270,8 @@
 
 								<h6>Recevez notre newsletter</h6>
 								<p>Et soyez les premiers informés des nouveautés et actualités de l’enseigne.</p>
-
-								<!-- Formulaire d'inscription à la newsletter -->
-								<form method="post" action="#">
-									<p><input type="text" name="mail" placeholder="Votre adresse e-mail"/></p>
-								</form>
+								
+								{{ render(controller('NovifyFrontBundle:Front:newsletter')) }}
 
 							</div>
 
@@ -304,7 +302,7 @@
 	<!-- tri -->
 	<script>
 	$(function(){
-    	$('.container').mixItUp();  
+    	$('.container').mixItUp();
 	});
 	</script>
 
@@ -344,14 +342,14 @@
 
 				// make sure..
 				// bttn.disabled = false;
-				
+
 				// bttn.addEventListener( 'click', function() {
 					// simulate loading (for demo purposes only)
 					// classie.add( bttn, 'active' );
 					setTimeout( function() {
 
 						// classie.remove( bttn, 'active' );
-						
+
 						// create the notification
 						var notification = new NotificationFx({
 							message : '<p>{{ msg }} <a href="{{path('login')}}">Connexion</a></p>',
@@ -367,7 +365,7 @@
 						notification.show();
 
 					}, 600 );
-					
+
 					// disable the button (for demo purposes only)
 					// this.disabled = true;
 				// } );
@@ -384,14 +382,14 @@
 
 				// make sure..
 				// bttn.disabled = false;
-				
+
 				// bttn.addEventListener( 'click', function() {
 					// simulate loading (for demo purposes only)
 					// classie.add( bttn, 'active' );
 					setTimeout( function() {
 
 						// classie.remove( bttn, 'active' );
-						
+
 						// create the notification
 						var notification = new NotificationFx({
 							message : '<p>{{ msg }}, {{app.user.userPrenom}}.</p>',
@@ -407,7 +405,7 @@
 						notification.show();
 
 					}, 600 );
-					
+
 					// disable the button (for demo purposes only)
 					// this.disabled = true;
 				// } );
@@ -425,14 +423,14 @@
 
 				// make sure..
 				// bttn.disabled = false;
-				
+
 				// bttn.addEventListener( 'click', function() {
 					// simulate loading (for demo purposes only)
 					// classie.add( bttn, 'active' );
 					setTimeout( function() {
 
 						// classie.remove( bttn, 'active' );
-						
+
 						// create the notification
 						var notification = new NotificationFx({
 							message : '<p>{{ msg }}, {{app.user.userPrenom}}.</p>',
@@ -448,7 +446,7 @@
 						notification.show();
 
 					}, 600 );
-					
+
 					// disable the button (for demo purposes only)
 					// this.disabled = true;
 				// } );
@@ -465,14 +463,14 @@
 
 				// make sure..
 				// bttn.disabled = false;
-				
+
 				// bttn.addEventListener( 'click', function() {
 					// simulate loading (for demo purposes only)
 					// classie.add( bttn, 'active' );
 					setTimeout( function() {
 
 						// classie.remove( bttn, 'active' );
-						
+
 						// create the notification
 						var notification = new NotificationFx({
 							message : '<p>{{ msg }}.</p>',
@@ -488,7 +486,7 @@
 						notification.show();
 
 					}, 600 );
-					
+
 					// disable the button (for demo purposes only)
 					// this.disabled = true;
 				// } );
@@ -505,14 +503,14 @@
 
 				// make sure..
 				// bttn.disabled = false;
-				
+
 				// bttn.addEventListener( 'click', function() {
 					// simulate loading (for demo purposes only)
 					// classie.add( bttn, 'active' );
 					setTimeout( function() {
 
 						// classie.remove( bttn, 'active' );
-						
+
 						// create the notification
 						var notification = new NotificationFx({
 							message : '<p>{{ msg }}, {{app.user.userPrenom}}.</p>',
@@ -528,7 +526,47 @@
 						notification.show();
 
 					}, 600 );
-					
+
+					// disable the button (for demo purposes only)
+					// this.disabled = true;
+				// } );
+			})();
+		</script>
+
+{% endfor %}
+
+{% for msg in app.session.flashbag.get('confirmation_newsletter') %}
+
+    <script>
+			(function() {
+				// var bttn = document.getElementById( 'notification-trigger' );
+
+				// make sure..
+				// bttn.disabled = false;
+
+				// bttn.addEventListener( 'click', function() {
+					// simulate loading (for demo purposes only)
+					// classie.add( bttn, 'active' );
+					setTimeout( function() {
+
+						// classie.remove( bttn, 'active' );
+
+						// create the notification
+						var notification = new NotificationFx({
+							message : '<p>{{ msg }}</p>',
+							layout : 'growl',
+							effect : 'scale',
+							type : 'notice', // notice, warning, error or success
+							onClose : function() {
+								// bttn.disabled = false;
+							}
+						});
+
+						// show the notification
+						notification.show();
+
+					}, 600 );
+
 					// disable the button (for demo purposes only)
 					// this.disabled = true;
 				// } );

@@ -113,3 +113,19 @@ novify_back_caroussel_edit:
 novify_back_caroussel_remove:
     path:     /caroussel/remove/{id}
     defaults: { _controller: NovifyBackBundle:Caroussel:remove }
+
+novify_back_newsletter_hello:
+    path:     /newsletter/hello/{name}
+    defaults: { _controller: NovifyBackBundle:Newsletter:hello }
+
+novify_back_newsletter_index:
+    path:     /newsletter
+    defaults: { _controller: NovifyBackBundle:Newsletter:index }
+
+novify_back_newsletter_envoi:
+    path:     /newsletter/envoi
+    defaults: { _controller: NovifyBackBundle:Newsletter:envoi }
+
+novify_back_newsletter_email:
+    path:     /newsletter/email
+    defaults: { _controller: NovifyBackBundle:Newsletter:email }

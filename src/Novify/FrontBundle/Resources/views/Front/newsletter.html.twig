@@ -1,0 +1,6 @@
+<!-- Formulaire d'inscription à la newsletter -->
+{{ form_start(form, {'method': 'POST', 'attr': {'id': ''}}) }}
+
+{{ form_widget(form.newsMail, {'attr': {'placeholder':'Votre adresse e-mail'}})}}
+<input type="submit" value="OK"/>
+{{ form_end(form) }}
