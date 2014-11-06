@@ -503,7 +503,6 @@ nav input[type=checkbox]:checked ~ #menu{
 **************************/
 
 #carrousel {
-	margin-bottom: 50px;
 	width: 100%;
 }
 
@@ -534,7 +533,7 @@ nav input[type=checkbox]:checked ~ #menu{
 
 
 .bloc {
-	margin-top: 60px;
+	margin-top: 2%;
 	margin-bottom: 2%;
 }
 
