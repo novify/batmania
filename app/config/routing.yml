@@ -1,9 +1,7 @@
-novify_security:
-    resource: "@NovifySecurityBundle/Resources/config/routing.yml"
-    prefix:   /
 home:
     pattern: /
     defaults:  { _controller: NovifyFrontBundle:Redirecting:redirectHome }
+
 novify_back:
     resource: "@NovifyBackBundle/Resources/config/routing.yml"
     prefix:   /back
@@ -11,3 +9,15 @@ novify_back:
 novify_front:
     resource: "@NovifyFrontBundle/Resources/config/routing.yml"
     prefix:   /boutique
+
+remove_trailing_slash:
+    path: /{url}
+    defaults: { _controller: NovifyFrontBundle:Redirecting:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]
+
+novify_security:
+    resource: "@NovifySecurityBundle/Resources/config/routing.yml"
+    prefix:   /
+
