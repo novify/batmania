@@ -2335,6 +2335,11 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 
 	.banniere_catalogue{display:none;}
 
+	/* #bloc_catalogue .container .article #article_fond {
+		border: 1px solid #dedede;
+		background-color: #fafafa;
+	} */
+
 	#bloc_catalogue .container .article p{
 		/*Prix*/
 		text-align: left;
@@ -2352,8 +2357,7 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 		height: 100%;
 	}
 
-	#bloc_catalogue .container .pagination{
-
+	#bloc_catalogue .container .pagination {
 	text-align:left;
 	}
 
@@ -2368,11 +2372,9 @@ form#formulaire input#novify_modelbundle_signup_userCivilite_0, form#formulaire 
 
 
 	#bloc_ficheproduit #bloc_produit h2{
-		
 		text-transform: uppercase;
 		font-weight: 400;
 		font-size: 24px;
-
 	}
 }
 

@@ -46,23 +46,25 @@
 				<!-- affichage en grille des articles -->
 
 
-				<div class="row ligne_articles"> <!-- Ligne 1-->
+				<div class="row ligne_articles"> <!-- En Ligne de 4 articles -->
 
 {% for article in souscat.articles %}
 							<div class="col-md-3 col-sm-6 col-xs-12 article mix" data-prix="{{article.artPrix}}" data-date="{{article.id}}"> <!-- 1 article -->
 
-								<div class="article_image"> <!-- Image article -->
-									<a href="{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': article.id}) }}"><img src="{{ asset(article.getWebPath) }}" alt=""></a>
-								</div>
+								<div id="article_fond">
+									<div class="article_image"> <!-- Image article -->
+										<a href="{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': article.id}) }}"><img src="{{ asset(article.getWebPath) }}" alt=""></a>
+									</div>
 
-								<h5><a href="{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': article.id}) }}">{{article.artNom}}</a></h5> <!-- Titre et prix de l'article -->
-								<p><a href="">
-									{% if article.artPromo is null %}
-									{{article.artPrix}} €
-								{% else %}
-									{{article.artPrix - article.artPromo / 100 * article.artPrix}} € <s style="font-size:15px;color:red;font-weight:300">{{article.artPrix}} €</s>
-								{% endif %}
-								</a></p>
+									<h5><a href="{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': article.id}) }}">{{article.artNom}}</a></h5> <!-- Titre et prix de l'article -->
+									<p><a href="">
+										{% if article.artPromo is null %}
+										{{article.artPrix}} €
+									{% else %}
+										{{article.artPrix - article.artPromo / 100 * article.artPrix}} € <s style="font-size:15px;color:red;font-weight:300">{{article.artPrix}} €</s>
+									{% endif %}
+									</a></p>
+								</div>
 							</div> <!-- Fin de l'article -->
 
 {% endfor %}
