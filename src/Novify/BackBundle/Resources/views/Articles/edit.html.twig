@@ -28,7 +28,7 @@
 
 				<!-- Image de l'article -->
 	        	{{ form_label(form.artImg, "Image de présentation de l'article", {'label_attr': {'class':'art'}}) }}<br/>
-				{{ form_widget(form.artImg) }}<br/><br/>
+				{{ form_widget(form.artImg, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
 				<!-- -->
 
 				<!-- Description -->
@@ -59,9 +59,11 @@
 				{{ form_widget(form.sousCategorie) }}</p><br/>
 				<!-- -->
 				
-				<!-- Coup de coeur -->
+				<!-- Notre selection -->
 				{{ form_label(form.artSelection, "Selection") }}<br/>
-				<p>{{ form_widget(form.artSelection) }}Selectionnez si vous souhaitez faire apparaitre le produit dans la categorie "Selection Batmania".</p>		
+				<p>Selectionner cette case si vous désirez que l'article soit intégré dans la page "Notre Séléction".<br/>
+				{{ form_widget(form.artSelection) }}<br/><br/>	
+				<!-- -->
 			</fieldset>
 
 			<fieldset id="form_art">

@@ -265,8 +265,9 @@ article table tbody img{
 
 	/*Corps de page (tableau de bord) - Partie droite */
 
-	.info{
+	.info {
 		padding: 20px;
+		padding-top: 0;
 		margin-left: 20px;
 	}
 

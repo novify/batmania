@@ -279,8 +279,6 @@ class FrontController extends Controller
 
             $session = $request->getSession();
             $session->getFlashBag()->add('modif_compte', 'Votre commentaire a bien été ajouté');
-
-            return $this->redirect($this->generateUrl('novify_front_homepage'));
         }
 
         return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article, 'suggestion_articles' => $suggestion_articles, 'commentaires' => $commentaires, 'form' => $form->createView()));
