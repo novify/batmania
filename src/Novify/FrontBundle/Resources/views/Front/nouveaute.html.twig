@@ -16,11 +16,11 @@
 							<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
 
 								<div class="article_image"> <!-- Image article -->
-									<a href="{#{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': nouveaute.id}) }} #}"><img src="{{ asset(nouveaute.getWebPath) }}" alt=""></a>
+									<a href="{{ path('novify_front_view_one', {'categorie': nouveaute.souscategorie.categorie.catNom, 'sousCategorie': nouveaute.souscategorie.souscatNom, 'id': nouveaute.id}) }}"><img src="{{ asset(nouveaute.getWebPath) }}" alt=""></a>
 								</div>
 
-								<h5><a href="{#{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': nouveaute.id}) }}#}">{{nouveaute.artNom}}</a></h5> <!-- Titre et prix de l'article -->
-								<p><a href="">{{nouveaute.artPrix}} €</a></p>
+								<h5><a href="{{ path('novify_front_view_one', {'categorie': nouveaute.souscategorie.categorie.catNom, 'sousCategorie': nouveaute.souscategorie.souscatNom, 'id': nouveaute.id}) }}">{{nouveaute.artNom}}</a></h5> <!-- Titre et prix de l'article -->
+								<p><a href="{{ path('novify_front_view_one', {'categorie': nouveaute.souscategorie.categorie.catNom, 'sousCategorie': nouveaute.souscategorie.souscatNom, 'id': nouveaute.id}) }}">{{nouveaute.artPrix}} €</a></p>
 							</div> <!-- Fin de l'nouveaute -->
 
 

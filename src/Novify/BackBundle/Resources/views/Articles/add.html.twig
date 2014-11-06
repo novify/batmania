@@ -27,7 +27,7 @@
 
 				<!-- Image de l'article -->
 	        	{{ form_label(form.artImg, "Image de présentation de l'article", {'label_attr': {'class':'art'}}) }}<br/>
-				{{ form_widget(form.artImg) }}<br/><br/>
+				{{ form_widget(form.artImg, {'attr': {'class': 'non_obligatoire'}}) }}<br/><br/>
 				<!-- -->
 
 				<!-- Description -->
@@ -42,7 +42,7 @@
 
 				<!-- Input Prix/Référence -->
 				{{ form_widget(form.artPrix, {'attr': {'placeholder':'€'}}) }}
-				<span>Indiquez le prix en euros €.</span>
+				<span>Indiquez le prix sans mettre € à la fin.</span>
 				{{ form_widget(form.artRef) }}<br/><br/>
 				<!-- -->
 
@@ -55,10 +55,13 @@
 				<!-- Sous catégorie -->
 	        	{{ form_label(form.sousCategorie, "Sous Catégorie") }}<br/>
 	        	<p>Indiquez la sous Catégorie de l'article, il trouvera automatiquement la catgéorie qui lui est associé.<br/>
-				{{ form_widget(form.sousCategorie) }}</p><br/>
+				{{ form_widget(form.sousCategorie) }}</p><br/>			
+				<!-- -->
 
+				<!-- Notre selection -->
 				{{ form_label(form.artSelection, "Selection") }}<br/>
-				{{ form_widget(form.artSelection) }}<br/><br/>				
+				<p>Selectionner cette case si vous désirez que l'article soit intégré dans la page "Notre Séléction".<br/>
+				{{ form_widget(form.artSelection) }}<br/><br/>	
 				<!-- -->
 			</fieldset>
 

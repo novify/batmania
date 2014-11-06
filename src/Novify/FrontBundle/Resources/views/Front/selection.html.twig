@@ -16,11 +16,11 @@
 							<div class="col-md-3 col-sm-6 col-xs-12 article"> <!-- 1 article -->
 
 								<div class="article_image"> <!-- Image article -->
-									<a href="{#{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': selection.id}) }} #}"><img src="{{ asset(selection.getWebPath) }}" alt=""></a>
+									<a href="{{ path('novify_front_view_one', {'categorie': selection.souscategorie.categorie.catNom, 'sousCategorie': selection.souscategorie.souscatNom, 'id': selection.id}) }}"><img src="{{ asset(selection.getWebPath) }}" alt=""></a>
 								</div>
 
-								<h5><a href="{#{{ path('novify_front_view_one', {'categorie': categorie.catNom, 'sousCategorie': souscat.souscatNom, 'id': selection.id}) }}#}">{{selection.artNom}}</a></h5> <!-- Titre et prix de l'article -->
-								<p><a href="">{{selection.artPrix}} €</a></p>
+								<h5><a href="{{ path('novify_front_view_one', {'categorie': selection.souscategorie.categorie.catNom, 'sousCategorie': selection.souscategorie.souscatNom, 'id': selection.id}) }}">{{selection.artNom}}</a></h5> <!-- Titre et prix de l'article -->
+								<p><a href="{{ path('novify_front_view_one', {'categorie': selection.souscategorie.categorie.catNom, 'sousCategorie': selection.souscategorie.souscatNom, 'id': selection.id}) }}">{{selection.artPrix}} €</a></p>
 							</div> <!-- Fin de l'selection -->
 
 

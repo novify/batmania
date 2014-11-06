@@ -80,6 +80,26 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:nouveaute.html.twig', array('nouveautes' => $nouveautes));
     }
 
+    public function topAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        // On selectionne les 8 articles en top
+        $query = $em->createQuery(
+            'SELECT p
+            FROM NovifyModelBundle:Articles p
+            ORDER BY p.artDescript DESC'
+        )->setMaxResults(8);
+
+        $tops = $query->getResult();
+
+        if (!$tops) {
+            throw new NotFoundHttpException("Il n'y a pas de tops des ventes");
+        }
+
+        return $this->render('NovifyFrontBundle:Front:top.html.twig', array('tops' => $tops));
+    }
+
     public function promoAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -149,17 +169,16 @@ class FrontController extends Controller
     public function panierAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $suggestion_articles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
-            array('sousCategorie' => ''), // Critere
-            array('id' => 'desc'), // Tri
-            4, // Limite
-            0 // Offset
-        );
-        // A faire fonctionner
+        
+        $query = $em->createQuery(
+            'SELECT p
+            FROM NovifyModelBundle:Articles p
+            ORDER BY p.artNom DESC'
+        )->setMaxResults(4);
 
-        // $panier = array('panier' => array(
-        //         8
-        //     ));
+        $suggestion_articles = $query->getResult();
+
+
         $session = $request->getSession();
         // $session->set('panier', $panier);
         $panier = $session->get('panier');
@@ -280,8 +299,6 @@ class FrontController extends Controller
 
             $session = $request->getSession();
             $session->getFlashBag()->add('modif_compte', 'Votre commentaire a bien été ajouté');
-
-            return $this->redirect($this->generateUrl('novify_front_homepage'));
         }
 
         return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article, 'suggestion_articles' => $suggestion_articles, 'commentaires' => $commentaires, 'form' => $form->createView()));
