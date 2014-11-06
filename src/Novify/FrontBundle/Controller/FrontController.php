@@ -49,6 +49,14 @@ class FrontController extends Controller
 
     }
 
+    public function searchAction($request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $results = $em->getRepository('NovifyModelBundle:Articles')->search($request);
+
+        return $this->render('NovifyFrontBundle:Front:recherche.html.twig', array('articles' => $results));
+    }
 
     public function indexAction()
     {
@@ -169,7 +177,7 @@ class FrontController extends Controller
     public function panierAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        
+
         $query = $em->createQuery(
             'SELECT p
             FROM NovifyModelBundle:Articles p
@@ -177,7 +185,6 @@ class FrontController extends Controller
         )->setMaxResults(4);
 
         $suggestion_articles = $query->getResult();
-
 
         $session = $request->getSession();
         // $session->set('panier', $panier);

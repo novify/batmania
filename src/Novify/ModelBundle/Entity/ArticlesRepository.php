@@ -12,8 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class ArticlesRepository extends EntityRepository
 {
-	// public function findAllWithLimit($limit)
-	// {
-	// 	// return $this->createQueryBuilder('a')->ge
-	// }
+    public function search($value)
+    {
+        $queryBuilder = $this
+                                     ->createQueryBuilder('a')
+                                     ->where('a.artNom LIKE :request')
+                                     ->setParameter('request', '%'.$value.'%')
+                                     ->getQuery()
+                                 ;
+
+        return $queryBuilder->getResult();
+    }
 }

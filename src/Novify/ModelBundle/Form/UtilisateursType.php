@@ -10,7 +10,7 @@ class UtilisateursType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -57,15 +57,14 @@ class UtilisateursType extends AbstractType
             ->add('userLivTel')
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Novify\ModelBundle\Entity\Utilisateurs',
-            'csrf_protection'   => false
+            'data_class' => 'Novify\ModelBundle\Entity\Utilisateurs'
         ));
     }
 

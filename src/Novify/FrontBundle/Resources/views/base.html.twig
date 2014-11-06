@@ -82,7 +82,7 @@
 							<p>
 								<a href="{{ path('novify_back_index') }}">Accéder à l'interface d'administration</a>
 
-								<span style="text-align:right;float:right">Bonjour, {{app.user.userprenom}}</span>
+								<span style="text-align:right;float:right">Bonjour, {{app.user.userPrenom}}</span>
 							</p>
 						</div>
 					{% endif %}
@@ -283,7 +283,7 @@
 
 								<h6>Recevez notre newsletter</h6>
 								<p>Et soyez les premiers informés des nouveautés et actualités de l’enseigne.</p>
-								
+
 								{{ render(controller('NovifyFrontBundle:Front:newsletter')) }}
 
 							</div>

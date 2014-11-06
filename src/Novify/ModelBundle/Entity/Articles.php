@@ -676,7 +676,7 @@ class Articles
     /**
      * Set artImgPath
      *
-     * @param string $artImgPath
+     * @param  string   $artImgPath
      * @return Articles
      */
     public function setArtImgPath($artImgPath)
@@ -689,7 +689,7 @@ class Articles
     /**
      * Get artImgPath
      *
-     * @return string 
+     * @return string
      */
     public function getArtImgPath()
     {
@@ -699,7 +699,7 @@ class Articles
     /**
      * Set artSelection
      *
-     * @param boolean $artSelection
+     * @param  boolean  $artSelection
      * @return Articles
      */
     public function setArtSelection($artSelection)
@@ -712,7 +712,7 @@ class Articles
     /**
      * Get artSelection
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getArtSelection()
     {
