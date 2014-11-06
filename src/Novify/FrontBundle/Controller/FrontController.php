@@ -26,15 +26,13 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:menu.html.twig', array('categories' => $categories));
     }
 
-    public function indexAction(Request $request)
+    public function newsletterAction(Request $request)
     {
-
-        $em = $this->getDoctrine()->getManager();
-        $caroussels = $em->getRepository('NovifyModelBundle:Caroussel')->findAll();
-
-        
         $newsletter_mail = new Newsletter();
-        $form = $this->createForm(new NewsletterType(), $newsletter_mail);
+        $form = $this->createForm(new NewsletterType(), $newsletter_mail, array(
+            'action' => $this->generateUrl('novify_front_newsletter')
+        ));
+
         if ($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
 
@@ -42,11 +40,22 @@ class FrontController extends Controller
             $em->flush();
 
             $session = $request->getSession();
-            $session->getFlashBag()->add('confirmation_newsletter', 'Vous êtes inscrit à la newsletter');
+            $session->getFlashBag()->add('confirmation_newsletter', 'Vous êtes désormais inscrit à la newsletter.');
             return $this->redirect($this->generateUrl('novify_front_homepage'));
         }
 
-        return $this->render('NovifyFrontBundle:Front:index.html.twig', array('caroussels' => $caroussels, 'form' => $form->createView()));
+        return $this->render('NovifyFrontBundle:Front:newsletter.html.twig', array('form' => $form->createView()));
+
+    }
+
+
+    public function indexAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $caroussels = $em->getRepository('NovifyModelBundle:Caroussel')->findAll();
+
+        return $this->render('NovifyFrontBundle:Front:index.html.twig', array('caroussels' => $caroussels));
 
     }
 

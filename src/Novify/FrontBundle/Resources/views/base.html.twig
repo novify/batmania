@@ -269,13 +269,8 @@
 
 								<h6>Recevez notre newsletter</h6>
 								<p>Et soyez les premiers informés des nouveautés et actualités de l’enseigne.</p>
-
-								<!-- Formulaire d'inscription à la newsletter -->
-								{{ form_start(form, {'method': 'POST', 'attr': {'id': ''}}) }}
 								
-								{{ form_widget(form.newsMail, {'attr': {'placeholder':'Votre adresse e-mail'}})}}
-								<input type="submit" value="OK"/>
-								{{ form_end(form) }}
+								{{ render(controller('NovifyFrontBundle:Front:newsletter')) }}
 
 							</div>
 
@@ -557,7 +552,7 @@
 						
 						// create the notification
 						var notification = new NotificationFx({
-							message : '<p>{{ msg }}, {{app.user.userPrenom}}.</p>',
+							message : '<p>{{ msg }}</p>',
 							layout : 'growl',
 							effect : 'scale',
 							type : 'notice', // notice, warning, error or success

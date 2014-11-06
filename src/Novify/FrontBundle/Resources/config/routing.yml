@@ -2,6 +2,10 @@ novify_front_homepage:
     path:     /
     defaults: { _controller: NovifyFrontBundle:Front:index }
 
+novify_front_newsletter:
+    path:     /newsletter
+    defaults: { _controller: NovifyFrontBundle:Front:newsletter }
+
 novify_front_nouveaute:
     path:     /nouveaute
     defaults: { _controller: NovifyFrontBundle:Front:nouveaute }
