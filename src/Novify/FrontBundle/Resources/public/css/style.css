@@ -828,7 +828,8 @@ nav input[type=checkbox]:checked ~ #menu{
 #bloc_ficheproduit #bloc_produit .prix_ficheproduit{
 	
 	font-size: 45px;
-	font-weight: bold;
+	font-weight: 500;
+	color: #62995d;
 
 }
 
@@ -931,7 +932,7 @@ nav input[type=checkbox]:checked ~ #menu{
 
 	width: 100%;
 	border-top: 1px solid rgb(210,210,210);
-	margin-bottom: 30px;
+	background-color: #fafafa;
 }
 
 
@@ -985,6 +986,7 @@ nav input[type=checkbox]:checked ~ #menu{
 	border-radius: 0px;
 	padding: 30px;
 	width: 60%;
+	margin-top: 30px;
 }
 
 #bloc_ficheproduit .formulaire_commentaires textarea{
