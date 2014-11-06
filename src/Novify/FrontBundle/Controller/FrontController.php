@@ -149,17 +149,16 @@ class FrontController extends Controller
     public function panierAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $suggestion_articles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
-            array('sousCategorie' => ''), // Critere
-            array('id' => 'desc'), // Tri
-            4, // Limite
-            0 // Offset
-        );
-        // A faire fonctionner
+        
+        $query = $em->createQuery(
+            'SELECT p
+            FROM NovifyModelBundle:Articles p
+            ORDER BY p.artNom DESC'
+        )->setMaxResults(4);
 
-        // $panier = array('panier' => array(
-        //         8
-        //     ));
+        $suggestion_articles = $query->getResult();
+
+
         $session = $request->getSession();
         // $session->set('panier', $panier);
         $panier = $session->get('panier');
