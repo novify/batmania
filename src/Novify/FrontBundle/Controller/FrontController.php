@@ -18,6 +18,7 @@ class FrontController extends Controller
 
     public function menuAction()
     {
+        $em = $this->getDoctrine()->getManager();
         // pour l'affichage du menu : récupère les catégories
         $categories = $em->getRepository('NovifyModelBundle:Categories')->findAll();
 
