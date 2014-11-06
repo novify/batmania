@@ -74,6 +74,25 @@
 							<div class="lien_popup"><a href="#test-popup" class="open-popup-link">Passez la commande</a></div>
 
 
+
+
+
+								<!-- ************************************* -->
+
+									{% if app.user is not null %}
+										<!-- Ici : pop up quand l'utilisateur est connecté -->
+									{% else %}
+										<!-- Ici : pop up quand l'utilisateur est pas connecté  -->
+									{% endif %}
+								<!-- ************************************* -->
+
+
+
+
+
+
+
+
 								<!-- Popup -->
 								<div id="test-popup" class="white-popup mfp-hide">
 									<div id="panier_popup">
