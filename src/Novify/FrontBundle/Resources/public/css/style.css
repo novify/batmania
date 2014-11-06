@@ -85,6 +85,11 @@ header #barre_administration p{
 
 header #barre_administration p a{
 	padding: 10px;
+	transition: all 0.45s;
+}
+
+header #barre_administration p a:hover{
+	color: #e2c879;
 }
 
 
@@ -991,6 +996,14 @@ nav input[type=checkbox]:checked ~ #menu{
 	color:#1a465c;
 	
 }
+
+
+b {
+	color: #e2c879;
+	font-size: 16px;
+}
+
+
 /* -- pop-up pour la validation d'un produit -- */
 
 	#test-popup #produit_popup .popup_header {
@@ -1053,12 +1066,16 @@ nav input[type=checkbox]:checked ~ #menu{
 		background-color: #e2c879;
 		cursor: pointer;
 		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
 		transition: all 0.25s;
 		text-decoration: none;
 	}
 
 	#test-popup #produit_popup .popup_footer a:hover {
 	  	-webkit-transform: scale(1.02);
+	  	-moz-transform: scale(1.02);
+	  	-o-transform: scale(1.02);
 	  	background-color: #f2dc9a;
 	}
 
@@ -1114,7 +1131,8 @@ nav input[type=checkbox]:checked ~ #menu{
 
 #bloc_panier .container table{
 	
-	margin: 50px 0;
+	margin-top: 50px;
+	margin-bottom: 20px;
 	width: 100%;
 }
 
@@ -1165,12 +1183,16 @@ nav input[type=checkbox]:checked ~ #menu{
 		background-color: #e2c879;
 		cursor: pointer;
 		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
 		transition: all 0.25s;
 	}
 
 
 	#bloc_panier .lien_popup a:hover {
 	  	-webkit-transform: scale(1.02);
+	  	-moz-transform: scale(1.02);
+	  	-o-transform: scale(1.02);
 	  	background-color: #f2dc9a;
 	}
 
@@ -1257,12 +1279,16 @@ nav input[type=checkbox]:checked ~ #menu{
 		background-color: #e2c879;
 		cursor: pointer;
 		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
 		transition: all 0.25s;
 		text-decoration: none;
 	}
 
 	#test-popup #panier_popup .popup_body a.commandez:hover {
 	  	-webkit-transform: scale(1.02);
+	  	-moz-transform: scale(1.02);
+	  	-o-transform: scale(1.02);
 	  	background-color: #f2dc9a;
 	}
 
@@ -1332,13 +1358,17 @@ nav input[type=checkbox]:checked ~ #menu{
 	padding: 5px 10px;
 	background-color: #c0392b;
 	color: #fff;
-	 -webkit-transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
   	transition: all 0.25s;
 }
 
 #bloc_panier a.supprimer:hover  {
 	background-color: #e74c3c;
 	-webkit-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+	-o-transform: scale(1.02);
 }
 
 #bloc_panier a.reinitialiser {
@@ -1346,13 +1376,17 @@ nav input[type=checkbox]:checked ~ #menu{
 	padding: 5px 10px;
 	background-color: #c0392b;
 	color: #fff;
-	 -webkit-transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
   	transition: all 0.25s;
 }
 
 #bloc_panier a.reinitialiser:hover  {
 	background-color: #e74c3c;
 	-webkit-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+	-o-transform: scale(1.02);
 }
 
 /* -------- */
@@ -1709,6 +1743,8 @@ nav input[type=checkbox]:checked ~ #menu{
 
 form#formulaire a#inscription_connex:hover {
 	-webkit-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+	-o-transform: scale(1.02);
 	background-color: #276b8c;
 }		
 
@@ -1973,6 +2009,8 @@ form#formulaire input:focus:invalid {
 	border-color: #ff0000;
 	background: url('../images/invalid.png') 98% center no-repeat;
 	-webkit-box-shadow : (#d45252,0,0,5px);
+	-moz-box-shadow : (#d45252,0,0,5px);
+	-o-box-shadow : (#d45252,0,0,5px);
 }
 
 form#formulaire input:focus:invalid + span {
@@ -2011,11 +2049,15 @@ form#formulaire input[type=submit] {
 	background: #e2c879;
 	cursor: pointer;
 	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
 	transition: all 0.25s;
 }
 
 form#formulaire input[type=submit]:hover {
 	-webkit-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+	-o-transform: scale(1.02);
 	background: #f2dc9a;
 }
 
