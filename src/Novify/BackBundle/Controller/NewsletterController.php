@@ -16,7 +16,10 @@ class NewsletterController extends Controller
     }
 
     public function indexAction(){
-        return $this->render('NovifyBackBundle:Newsletter:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $newsletters = $em->getRepository('NovifyModelBundle:Newsletter')->findAll();
+
+        return $this->render('NovifyBackBundle:Newsletter:index.html.twig', array('newsletters' => $newsletters));
     }  
 
     public function envoiAction(Request $request)

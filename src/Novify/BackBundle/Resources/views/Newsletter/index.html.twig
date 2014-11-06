@@ -24,6 +24,22 @@
             </div>
 
 
+            <h1>Les inscrits à la newsletter</h1>
+
+            <table>
+                <tbody>
+                   
+                        
+                            {% for newsletter in newsletters %}
+                                 <tr style="border-bottom:1px solid rgb(210,210,210)"><td>{{ newsletter.newsMail }}</td></tr>
+                            {% endfor %}
+                           
+                        
+                   
+                </tbody>
+            </table>
+
+
         </div>
     </article>
 
