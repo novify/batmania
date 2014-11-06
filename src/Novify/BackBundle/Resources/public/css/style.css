@@ -525,7 +525,7 @@ form#formulaire input[type=checkbox] {
 }
 
 form#formulaire input[type=submit] {
-	background: none;
+	background-image: none;
 	padding: 6px 6px;
 	border: none;
 	display: block;
@@ -546,6 +546,7 @@ form#formulaire input[type=submit]:hover {
 	-moz-transform: scale(1.05);
 	-o-transform: scale(1.05);
 	background: #f2dc9a;
+	background-image: none;
 }
 
 	/* CSS indépendant à chaque champs*/

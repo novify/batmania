@@ -41,9 +41,21 @@
 		<script src="{{ asset('bundles/novifyfront/js/sticky.js')}}"></script>
 
 		<script>
-		  $(document).ready(function(){
-		    $("#menu").sticky({topSpacing:0});
-		  });
+			$(document).ready(function(){
+		    	$("#menu").sticky({topSpacing:0});
+			});
+
+			$(document).ready(function() {
+			    $('.popup-youtube').magnificPopup({
+			        disableOn: 700,
+			        type: 'iframe',
+			        mainClass: 'mfp-fade',
+			        removalDelay: 160,
+			        preloader: false,
+
+			        fixedContentPos: false
+			    });
+			});
 		</script>
 
 
@@ -243,9 +255,8 @@
 									<a href="#"> > Carte cadeau<br/></a>
 									<a href="#"> > Paiement sécurisé<br/></a>
 									<a href="#"> > Retour et échanges<br/></a>
-									<a href="#"> > Site mobile</a>
+									<a class="popup-youtube" href="https://www.youtube.com/watch?v=ZTZIpnRZQiE&feature=youtu.be">> Site mobile</a>
 								</p>
-
 							</div>
 
 

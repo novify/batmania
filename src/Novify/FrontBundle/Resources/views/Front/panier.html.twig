@@ -81,59 +81,82 @@
 
 									{% if app.user is not null %}
 										<!-- Ici : pop up quand l'utilisateur est connecté -->
+											<!-- Popup -->
+											<div id="test-popup" class="white-popup mfp-hide">
+												<div id="panier_popup">
+												  	<div class="popup_header">
+														<h1><span class="actif"> COMMANDEZ! >></span></h1>
+													</div>
+
+													<div class="popup_body">
+														<h3>Voici votre commande : </h3>
+
+														<!-- On organise les articles en tableau -->
+														<table>
+															<thead> <!-- En-tête du tableau -->
+															    <tr>
+																    <th colspan="2">Produit</th>
+																    <th>Prix</th>
+																    <th colspan="2">Quantité</th>
+															    </tr>
+															</thead>
+
+															<tbody>
+																<tr>
+																<!-- Article -->
+															    	<!-- Image du produit -->
+															    	<td style="width:10%">{#<img src="{{asset(article.getWebPath)}}#}" alt=""></td>
+
+																	<!-- Nom du produit -->
+																    <td style="width:50%">{#{{ article.artNom }}#}</a></td>
+
+																	<!-- Prix du produit -->
+																    <td style="width:20%; color:#4f9649;">{#{{ article.artPrix }}#} €</td>
+
+																	<!-- Quantité choisie -->
+																    <td style="width:10%"><p style="text-align:center;">1</p></td>
+															    </tr>
+
+															</tbody>
+														</table>
+
+														<a href="{{ path('novify_front_panier') }}" class="commandez">VALIDEZ LA COMMANDE !</a>
+													</div>
+
+													<div class="popup_footer">
+														<a href="{{ path('novify_front_panier') }}" id="retour">Retour</a>
+													</div>
+												</div>
+											</div>
+											<!-- Fin popup -->
 									{% else %}
 										<!-- Ici : pop up quand l'utilisateur est pas connecté  -->
+											<!-- Popup -->
+											<div id="test-popup" class="white-popup mfp-hide">
+												<div id="panier_popup">
+												  	<div class="popup_header">
+														<h1><span class="actif">CONNEXION >></span></h1>
+													</div>
+
+													<div class="popup_body">
+
+														<p>Vous avez besoin de vous connecter pour continuer</p>
+														<a href="{{ path('login') }}" class="seconnecter">Se connecter</a>
+
+													</div>
+
+													<div class="popup_footer">
+														<a href="{{ path('novify_front_panier') }}" id="retour">Retour</a>
+													</div>
+												</div>
+											</div>
+											<!-- Fin popup -->
+
 									{% endif %}
 								<!-- ************************************* -->
 
-
-
-
-
-
-
-
-								<!-- Popup -->
-								<div id="test-popup" class="white-popup mfp-hide">
-									<div id="panier_popup">
-										<div class="etape1">
-										  	<div class="popup_header">
-												<h1><span class="actif">CONNEXION</span> >> PAIEMENT >> COMMANDEZ!</h1>
-											</div>
-
-											<div class="popup_body">
-												<form id="formulaire" method="post" action="#">
-													<strong>J'ai déjà un compte</strong>
-													<input type="radio" name="teakts" value="oui" id="oui" onClick="afficher();" /> <br />
-													<strong>Je n'ai pas encore de compte</strong>
-													<input type="radio" name="teakts" value="non" onClick="afficher2();" id="non"/><br/>
-
-
-
-													<p id="champ_cache" style="margin-top: 30px;">
-													<label for="identifiant">Adresse Mail</label><br/>
-													<input type="text" name="identifiant"/ required><br/>
-													<label for="identifiant">Mot de passe</label><br/>
-													<input type="text" name="mdp" required/><br/><br/>
-													<a href="#">mot de passe oublié ?</a><br/>
-													<input type="submit" value="Se connecter" />
-													</p>
-
-													<p id="champ_cache2" style="margin-top: 30px;">
-													Pas encore de compte :
-													<input type="submit" value="Inscrivez-vous" />
-													</p>
-												</form>
-											</div>
-
-											<div class="popup_footer">
-												<a href="#" id="suivante_1" style="float:right;">Etape suivante >></a>
-											</div>
-										</div>
-
-
-
-										<div class="etape2">
+										<!-- Formulaire carte Bancaire ! -->
+										<!-- <div class="etape2">
 										  	<div class="popup_header">
 												<h1>CONNEXION >> <span class="actif">PAIEMENT</span> >> COMMANDEZ!</h1>
 											</div>
@@ -184,78 +207,12 @@
 												<a href="#" id="precedente_1" style="float:left;"><< Etape Précédente</a>
 												<a href="#" id="suivante_2" style="float:right">Etape suivante >></a>
 											</div>
-										</div>
-
-
-
-										<div class="etape3">
-										  	<div class="popup_header">
-												<h1>CONNEXION >> PAIEMENT >> <span class="actif"> COMMANDEZ! </span></h1>
-											</div>
-
-											<div class="popup_body">
-												<h3>Voici votre commande : </h3>
-
-												<!-- On organise les articles en tableau -->
-												<table>
-													<thead> <!-- En-tête du tableau -->
-													    <tr>
-														    <th colspan="2">Produit</th>
-														    <th>Prix</th>
-														    <th colspan="2">Quantité</th>
-													    </tr>
-													</thead>
-
-													<tbody>
-														<tr>
-													    	<!-- Premier article -->
-													    	<!-- Image du produit -->
-													    	<td style="width:10%"><img style="width:50px;" src="{{ asset('bundles/novifyfront/images/article1.jpg')}}" alt=""></td>
-
-															<!-- Nom du produit -->
-														    <td style="width:80%">Batman tome 2 - La nuit des hiboux</td>
-
-															<!-- Prix du produit -->
-														    <td style="width:10%; color:#4f9649;">19.00€</td>
-
-															<!-- Quantité choisie -->
-														    <td style="width:10%"><p style="text-align:center;">1</p></td>
-													    </tr>
-
-
-
-													    <tr>
-													    	<!-- deuxième article -->
-													    	<!-- Image du produit -->
-													    	<td style="width:10%;"><img style="width:50px;margin-right:2px;" src="{{ asset('bundles/novifyfront/images/article2.jpg')}}" alt="image de l'article"></td>
-
-															<!-- Nom du produit -->
-														    <td style="width:80%">Batman tome 3 - La nuit de Pimolo</td><!-- Lien vers l'article -->
-
-															<!-- Prix du produit -->
-														    <td style="width:20%; color:#4f9649;">14.00€</td>
-
-															<!-- Quantité choisie -->
-														    <td style="width:10%"><p style="text-align:center;">1</p></td>
-													    </tr>
-
-													</tbody>
-												</table>
-
-												<a href="{{ asset('app_dev.php/boutique/')}}" class="commandez">VALIDEZ LA COMMANDE !</a>
-											</div>
-
-											<div class="popup_footer">
-												<a href="#" id="precedente_2" style="float:left;"><< Etape Précédente</a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Fin popup -->
+										</div> -->
 
 								<script type="text/javascript">
 
-								document.getElementById("champ_cache").style.display = "none";
+								/* A conserver Si on veut cacher un champ (pour adresse livraison/facturation par exemple) */
+								/* document.getElementById("champ_cache").style.display = "none";
 										function afficher()
 										{
 										    document.getElementById("champ_cache").style.display = "block";
@@ -266,7 +223,7 @@
 										{
 										    document.getElementById("champ_cache2").style.display = "block";
 										    document.getElementById("champ_cache").style.display = "none";
-										}
+										} */
 
 									$('.open-popup-link').magnificPopup({
 									    type:'inline',
