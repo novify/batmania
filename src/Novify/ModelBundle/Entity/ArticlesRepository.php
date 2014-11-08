@@ -12,15 +12,43 @@ use Doctrine\ORM\EntityRepository;
  */
 class ArticlesRepository extends EntityRepository
 {
+    // pour la recherche
     public function search($value)
     {
         $queryBuilder = $this
-                                     ->createQueryBuilder('a')
-                                     ->where('a.artNom LIKE :request')
-                                     ->setParameter('request', '%'.$value.'%')
-                                     ->getQuery()
-                                 ;
+            ->createQueryBuilder('a')
+            ->where('a.artNom LIKE :request')
+            ->setParameter('request', '%'.$value.'%')
+            ->getQuery()
+        ;
 
         return $queryBuilder->getResult();
+    }
+
+    //pour récupérer les derniers articles publiés
+    public function findLastArticles($num)
+    {
+        $qb = $this
+            ->createQueryBuilder('a')
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults($num)
+            ->getQuery()
+        ;
+
+        return $qb->getResult();
+    }
+
+    // pour récupérer les dernières sélections
+    public function findLastSelections($num)
+    {
+        $qb = $this
+            ->createQueryBuilder('a')
+            ->where('a.artSelection = 1')
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults($num)
+            ->getQuery()
+        ;
+
+        return $qb->getResult();
     }
 }

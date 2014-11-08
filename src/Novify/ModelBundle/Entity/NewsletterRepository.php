@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class NewsletterRepository extends EntityRepository
 {
+    public function findRecipients()
+    {
+        $qb = $this
+            ->getEntityManager()
+            ->createQuery(
+                'SELECT n.newsMail FROM Novify\ModelBundle\Entity\Newsletter n'
+            )
+            ->getArrayResult()
+        ;
+
+        return $qb;
+    }
 }

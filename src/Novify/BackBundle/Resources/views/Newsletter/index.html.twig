@@ -7,7 +7,7 @@
     <article>
         <div class="container">
             <h1>Newsletter</h1> <!-- Titre de la section -->
-            
+
 
 
             <div class="info_form">
@@ -17,7 +17,7 @@
                     Remplissez simplement les champs ci-dessous pour envoyer votre newsletter.</p>
                 </fieldset>
             </div>
-            
+
             <div>
                 <!-- Ajouter un article -->
                 <p class="ajouter"><a href="{{ path('novify_back_newsletter_envoi') }}"><i style="font-size:17px" class="glyphicon-new_window"></i> Envoyer</a></p>
@@ -28,14 +28,14 @@
 
             <table>
                 <tbody>
-                   
-                        
+
+
                             {% for newsletter in newsletters %}
                                  <tr style="border-bottom:1px solid rgb(210,210,210)"><td>{{ newsletter.newsMail }}</td></tr>
                             {% endfor %}
-                           
-                        
-                   
+
+
+
                 </tbody>
             </table>
 
