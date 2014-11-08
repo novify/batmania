@@ -44,6 +44,7 @@ class NewsletterController extends Controller
         ->setBody($this->renderView('NovifyBackBundle:Newsletter:email.html.twig', array('articles' => $articles, 'selections' => $selections)))
         ;
 
+        // gestion des erreurs
         if ($this->get('mailer')->send($message)) {
             // On affiche un petit message pour dire que le mail s'est bien envoyé
             $session = $request->getSession();

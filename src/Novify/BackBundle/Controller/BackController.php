@@ -15,7 +15,7 @@ class BackController extends Controller
         return $this->render('NovifyBackBundle:Back:hello.html.twig', array('name' => $name));
     }
 
-    public function indexAction()
+    public function indexAction() //page d'accueil du back office
     {
     	$em = $this->getDoctrine()->getManager();
 
