@@ -1,29 +1,28 @@
 {% extends 'NovifyBackBundle::base.html.twig' %}
-{% block main %}
+{% block main %} <!-- La base contient les élements identiques à toutes les pages tel que header ou sidebar -->
 
+	<!-- Les données de cette page sont selectionnées dynamiquement et calculées dans BackController -->
 
-
-
+	<!-- Corps de la page -->
 	<article>
         <div class="container_index">
 
 			<div class="row">
-	        	<div class="col-sm-7 bloc_back_index">
-					<h1>Tableau de Bord</h1> <!-- Titre de la section -->
+	        	<div class="col-sm-7 bloc_back_index"> <!-- Petite intro au tableau de bord-->
+					<h1>Tableau de Bord</h1>
 
 					<p> Bienvenue dans la Partie <strong>Administration</strong> de votre site de vente en ligne. Il s'agit d'une partie privée de votre site à laquelle aucun client n'a accès. Ici vous pourrez suivre l'intégralité des actions réalisées sur votre site, que ça soit par les clients ou par l'administrateur.</p><br/><br/>
 
 					<h4>A quoi ça sert ?</h4>
 					<p><strong>1) A mettre à jour votre site.</strong><br/>
-					C'est ici que vous ajouterez de nouveaux articles ou de nouvelles catégories à votre site de vente en ligne.<p/><br/>
+					C'est ici que vous ajouterez de nouveaux articles ou de nouvelles catégories à votre site de vente en ligne. Tout est personnalisable.<p/><br/>
 					<p><strong>2) A suivre vos commandes, et les articles présent en ligne.</strong><br/>
 					Grâce à cet espace dédié à l'organisation du site, vous serez informés lorsqu'un client commande un article, lorsqu'un article est proche de sa rupture de stock, et vous pourrez consulter l'intégralité de vos articles.</p>
 
-					<p>Pour plus d'informations, nous vous invitons à lire le document que nous vous avons remis en main propre et qui fait office de notice pour la partie administration de votre site. Ce document est également consultable ici : <a href="#">télécharger le pdf</a></p>
 				</div>
 
 				<div class="col-sm-4 info bloc_back_notif">
-						
+						<!-- Bloc récapitulatif : toutes les statistiques du site -->
 					<table>
 						<thead>
 							<tr>
@@ -33,7 +32,7 @@
 						</thead>
 
 						<tbody>
-
+							<!-- Les données sont sélectionnées dans BackController -->
 							<tr>
 								<td>Nombre d'articles ajoutés sur le site</td>
 								<td class="nombre_notifs">{{nb_articles}}</td>
@@ -67,7 +66,7 @@
 
 			<div class="row">
 
-        		<!-- Graphique en lignes -->
+        		<!-- Graphique. Les données sont dans le <script> en bas de page -->
 				<div class="col-sm-11" style="margin: 50px 0">
 					<h1>Évolution du chiffre d'affaire par mois</h1>
 						<canvas id="canvas"></canvas>
@@ -77,7 +76,7 @@
 			</div>
 
 			<div class="row">
-
+				<!-- Affichage des articles bientot en rupture de stock. ArtStock <= 10 -->
 				<div class="col-sm-12 bloc_back_index">
 					<h1>Articles bientôt en rupture de stock</h1>
 
@@ -128,7 +127,7 @@ Pas d'image
 
 				<div class="col-sm-12 bloc_back_index">
 					<h1>Derniers articles ajoutés sur le site</h1>
-
+					<!-- Les 4 derniers articles ajoutés sur le site -->
 					<table>
 						
 						<thead>
@@ -148,21 +147,21 @@ Pas d'image
 							
 							
 {% for article in articles %}
-					<tr>
-						<td>{{ article.id }}</td>
-						<td>
-{% if article.getWebPath is not null %}
-						<img src="{{ asset(article.getWebPath)}}" alt="">
+							<tr>
+								<td>{{ article.id }}</td>
+								<td>
+{% if article.getWebPath is not null %} <!-- Sécurité -->
+								<img src="{{ asset(article.getWebPath)}}" alt="">
 {% else %}
 Pas d'image
 {% endif %}
 </td>
-						<td>{{ article.artNom }}</td>
-						<td>{{ article.artPrix }} €</td>
-						<td>{{ article.artStock }}</td>
-						<td>{{ article.sousCategorie.souscatNom }}</td>
-						<td>{{ article.sousCategorie.categorie.catNom }}</td>
-					</tr>
+								<td>{{ article.artNom }}</td>
+								<td>{{ article.artPrix }} €</td>
+								<td>{{ article.artStock }}</td>
+								<td>{{ article.sousCategorie.souscatNom }}</td>
+								<td>{{ article.sousCategorie.categorie.catNom }}</td>
+							</tr>
 
 {% endfor %}
 						</tbody>
@@ -191,9 +190,10 @@ Pas d'image
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(151,187,205,1)",
 					data : [2054.44, 2839.38, 3129.48, 2941.33, 3394.93, 3821.44, 3728.32, 4399.33, 3499.21, 4022.94, 4182.22, 4391.23]
-					
-					
-					
+					// Ces données sont fausses pour être cohérent lors de la presentation au client
+
+					// data:[{% for commande_graphe in commandes_graphe %}{{ commande_graphe.comPrix }}, {% endfor %}]
+					// data:[{% for commande_graphe in commandes_graphe %}{{ commande_graphe.comDate|date("m/Y")}}, {% endfor %}]
 					
 				}
 			]

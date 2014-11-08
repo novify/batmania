@@ -109,24 +109,5 @@ class NewsletterController extends Controller
         return $this->render('NovifyBackBundle:Newsletter:email.html.twig', array('articles' => $articles, 'selections' => $selections));
     }
 
-    // public function addAction(Request $request)
-    // {
-    //     $caroussel = new Caroussel();
-    //     $form = $this->createForm(new CarousselType(), $caroussel);
-
-    //     if ($form->handleRequest($request)->isValid()) {
-    //         $em = $this->getDoctrine()->getManager();
-    //         $caroussel->upload();
-    //         $em->persist($caroussel);
-    //         $em->flush();
-
-    //         $session = $request->getSession();
-    //         $session->getFlashBag()->add('confirmation', "La slide du carrousel a bien été ajoutée.");
-    //         return $this->redirect($this->generateUrl('novify_back_caroussel_index'));
-    //     }
-
-    //     return $this->render('NovifyBackBundle:Caroussel:add.html.twig', array('form' => $form->createView()));
-    // }
-
    
 }
