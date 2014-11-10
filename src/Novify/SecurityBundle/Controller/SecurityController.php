@@ -15,6 +15,7 @@ class SecurityController extends Controller
         return $this->render('NovifySecurityBundle:Default:index.html.twig', array('name' => $name));
     }
 
+    // Se connecter
     public function loginAction()
     {
         if ($this->get('security.context')->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
@@ -38,6 +39,7 @@ class SecurityController extends Controller
         ));
     }
 
+    // inscription
     public function inscriptionAction()
     {
         $inscription = new Utilisateurs();
@@ -47,6 +49,8 @@ class SecurityController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($inscription);
             $em->flush();
+
+            // Confirmation ne flashbag (notification)
             $session = $request->getSession();
             $session->getFlashBag()->add('confirmation_inscription', 'Votre compte a bien été créé !');
 

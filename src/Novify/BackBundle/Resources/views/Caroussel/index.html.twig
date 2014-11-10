@@ -3,6 +3,7 @@
 
 
 
+<!-- Controller : CarousselController -->
 
     <article>
         <div class="container catagories">
@@ -26,7 +27,7 @@
 
                 <tbody>
 
-
+<!-- Affichage de chaque slide du caroussel dans un tableau -->
 {% for caroussel in caroussels  %}
 
                     <tr>
@@ -35,7 +36,8 @@
                         <td><img src="{{ asset(caroussel.getWebPath)}}" alt=""></td>
                         <td><a href="{{ path('novify_back_caroussel_edit', {id: caroussel.id}) }}" class="modifier">Modifier</a></td>
                         <td><a href="#test-popup-{{caroussel.id}}" class="open-popup-link">Supprimer</a></td>
-                        <!-- Popup -->
+                        
+                        <!-- Popup de validation de la suppression-->
                         <div id="test-popup-{{caroussel.id}}" class="white-popup mfp-hide">
                             <div id="produit_popup">
                                 <div class="popup_header">

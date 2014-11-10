@@ -2,6 +2,7 @@
 {% block main %}
 
 
+<!-- Controller : UtilisateursController -->
 
 
     <article>
@@ -25,7 +26,8 @@
                         <th>Supprimer</th>
                     </tr>
                 </thead>
-
+                
+                <!-- Affichage dans le corps du tableau -->
                 <tbody>
 {% for utilisateurs in utilisateurs %}
                     <tr>
@@ -37,7 +39,9 @@
 
                         <!-- <td><a href="{{ path('novify_back_utilisateurs_edit', {id: utilisateurs.id}) }}" class="modifier">Modifier</a></td> -->
                         <td><a href="#test-popup-{{utilisateurs.id}}" class="open-popup-link">Supprimer</a></td>
-                        <!-- Popup -->
+
+
+                        <!-- Popup pour confirmer la suppression-->
                         <div id="test-popup-{{utilisateurs.id}}" class="white-popup mfp-hide">
                             <div id="produit_popup">
                                 <div class="popup_header">

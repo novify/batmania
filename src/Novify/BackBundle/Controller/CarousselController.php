@@ -15,6 +15,7 @@ class CarousselController extends Controller
         return $this->render('NovifyBackBundle:Caroussel:hello.html.twig', array('name' => $name));
     }
 
+    // affichage des slides du carousel
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -23,6 +24,7 @@ class CarousselController extends Controller
         return $this->render('NovifyBackBundle:Caroussel:index.html.twig', array('caroussels' => $caroussels));
     }
 
+    // Ajouter une slide
     public function addAction(Request $request)
     {
         $caroussel = new Caroussel();
@@ -34,6 +36,7 @@ class CarousselController extends Controller
             $em->persist($caroussel);
             $em->flush();
 
+            // OK
             $session = $request->getSession();
             $session->getFlashBag()->add('confirmation', "La slide du carrousel a bien été ajoutée.");
             return $this->redirect($this->generateUrl('novify_back_caroussel_index'));
@@ -42,6 +45,7 @@ class CarousselController extends Controller
         return $this->render('NovifyBackBundle:Caroussel:add.html.twig', array('form' => $form->createView()));
     }
 
+    // Modifier une slide du carousel
     public function editAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -56,6 +60,7 @@ class CarousselController extends Controller
             $em->persist($caroussel);
             $em->flush();
 
+            // OK
             $session = $request->getSession();
             $session->getFlashBag()->add('confirmation', "La slide du carrousel a bien été mise à jour.");
             return $this->redirect($this->generateUrl('novify_back_caroussel_index'));
@@ -64,6 +69,7 @@ class CarousselController extends Controller
         return $this->render('NovifyBackBundle:Caroussel:edit.html.twig', array('form' => $form->createView()));
     }
 
+    // Suppression d'une slide
     public function removeAction($id)
     {
         $em = $this->getDoctrine()->getManager();

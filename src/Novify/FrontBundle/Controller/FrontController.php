@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class FrontController extends Controller
 {
-
+    // affichage du menu
     public function menuAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -25,6 +25,8 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:menu.html.twig', array('categories' => $categories));
     }
 
+    // recuperation de l'adresse e-mail saisie dans le footer de la newsletter
+    // Et enregistrement dans la bdd
     public function newsletterAction(Request $request)
     {
 
@@ -39,6 +41,7 @@ class FrontController extends Controller
             $em->persist($newsletter_mail);
             $em->flush();
 
+            // Message flashbaf de confirmation
             $session = $request->getSession();
             $session->getFlashBag()->add('confirmation_newsletter', 'Vous êtes désormais inscrit à la newsletter.');
 
@@ -49,6 +52,7 @@ class FrontController extends Controller
 
     }
 
+    // barre de recherche
     public function searchAction($request)
     {
 
@@ -58,6 +62,7 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:recherche.html.twig', array('articles' => $results));
     }
 
+    // page d'accueil , affichage du caroussel
     public function indexAction()
     {
 
@@ -68,6 +73,7 @@ class FrontController extends Controller
 
     }
 
+    // Recuperation des produits de la section nouveautés
     public function nouveauteAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -81,6 +87,7 @@ class FrontController extends Controller
 
         $nouveautes = $query->getResult();
 
+        // Sécurité:
         if (!$nouveautes) {
             throw new NotFoundHttpException("Il n'y a pas de nouveautes");
         }
@@ -88,11 +95,13 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:nouveaute.html.twig', array('nouveautes' => $nouveautes));
     }
 
+    // récuperation des articles top des ventes
     public function topAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         // On selectionne les 8 articles en top
+        // resultats falsifiés pour presenter un produit cohérent
         $query = $em->createQuery(
             'SELECT p
             FROM NovifyModelBundle:Articles p
@@ -101,6 +110,7 @@ class FrontController extends Controller
 
         $tops = $query->getResult();
 
+        // Sécurité
         if (!$tops) {
             throw new NotFoundHttpException("Il n'y a pas de tops des ventes");
         }
@@ -108,6 +118,7 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:top.html.twig', array('tops' => $tops));
     }
 
+    // affichage des produits de la section promotion
     public function promoAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -128,10 +139,12 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:promo.html.twig', array('promos' => $promos));
     }
 
+    // Affichage des produits de la section "Selection"
     public function selectionAction()
     {
         $em = $this->getDoctrine()->getManager();
 
+        // On récupère tous les articles où la case 'selection' a été cochée
         $query = $em->createQuery(
             'SELECT p
             FROM NovifyModelBundle:Articles p
@@ -140,6 +153,7 @@ class FrontController extends Controller
 
         $selections = $query->getResult();
 
+        // sécurité
         if (!$selections) {
             throw new NotFoundHttpException("Il n'y a pas d'articles dans la selection actuellement");
         }
@@ -147,6 +161,7 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:selection.html.twig', array('selections' => $selections));
     }
 
+    // réinitialiser le panier
     public function resetPanierAction(Request $request)
     {
         $session = $request->getSession();
@@ -155,6 +170,7 @@ class FrontController extends Controller
         return $this->redirect($this->generateUrl('novify_front_panier'));
     }
 
+    // Ajouter un article au panier
     public function addToPanierAction(Request $request, $id)
     {
         if ($request->isXmlHttpRequest()) {
@@ -166,6 +182,7 @@ class FrontController extends Controller
         }
     }
 
+    // Supprimer un article du panier (en fonction de l'ID)
     public function removePanierAction(Request $request, $id)
     {
         $session = $request->getSession();
@@ -174,10 +191,12 @@ class FrontController extends Controller
         return $this->redirect($this->generateUrl('novify_front_panier'));
     }
 
+    // Afficher le panier
     public function panierAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
+        // Articles suggérés en bas de page
         $query = $em->createQuery(
             'SELECT p
             FROM NovifyModelBundle:Articles p
@@ -197,10 +216,13 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:panier.html.twig', array('suggestion_articles' => $suggestion_articles, 'panier' => $articles));
     }
 
+    // Afficher les informations de l'utilisateur dans "mon compte"
     public function compteAction()
     {
+        // Session User
         $user = $this->getUser();
 
+        // Sécurité
         if (!$user) {
             throw new NotFoundHttpException("Cet utilisateur n'existe pas.");
         }
@@ -208,21 +230,27 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:compte.html.twig');
     }
 
+    // modifier les informations de l'utilisateur
     public function compteModifAction(Request $request)
     {
 
+        // session user
         $utilisateur = $this->getUser();
 
         $em = $this->getDoctrine()->getManager();
+
+        // Sécurité
         if (!$utilisateur) {
             throw new NotFoundHttpException("Cet utilisateur n'existe pas.");
         }
+        // On génère le bon formulaire
         $form = $this->createForm(new UtilisateursType(), $utilisateur);
 
         if ($form->handleRequest($request)->isValid()) {
             $em->persist($utilisateur);
             $em->flush();
 
+            // flashbag de validation
             $session = $request->getSession();
             $session->getFlashBag()->add('modif_compte', 'Votre compte a bien été modifié');
 
@@ -232,11 +260,13 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:compte_modif.html.twig', array('form' => $form->createView()));
     }
 
+    // page contact
     public function contactAction()
     {
         return $this->render('NovifyFrontBundle:Front:contact.html.twig');
     }
 
+    // giche produit
     public function ficheAction()
     {
         return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig');
@@ -247,6 +277,7 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:hello.html.twig', array('name' => $name));
     }
 
+    // Afichage des articles quand une catégorie est selectionnée
     public function viewCatAction($categorie)
     {
         $em = $this->getDoctrine()->getManager();
@@ -259,6 +290,7 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:catalogue.html.twig', array('souscats' => $souscats, 'categorie' => $cat));
     }
 
+    // affichage des produits quand une sous cat est choisie
     public function viewSousCatAction($categorie, $sousCategorie)
     {
         $em = $this->getDoctrine()->getManager();
@@ -272,6 +304,9 @@ class FrontController extends Controller
         return $this->render('NovifyFrontBundle:Front:catalogue.html.twig', array('categorie' => $cat, 'souscats' => $souscat));
     }
 
+    // Afficher un produit dans la fiche produit
+    // Affichage des commentaire
+    // Ecriture d'un commentaire
     public function viewoneAction(Request $request, $categorie, $sousCategorie, $id)
     {
         $em = $this->getDoctrine()->getManager();

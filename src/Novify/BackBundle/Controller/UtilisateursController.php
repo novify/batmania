@@ -15,6 +15,7 @@ class UtilisateursController extends Controller
         return $this->render('NovifyBackBundle:Utilisateurs:hello.html.twig', array('name' => $name));
     }
 
+    // affichage des utilisateurs
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -23,6 +24,7 @@ class UtilisateursController extends Controller
         return $this->render('NovifyBackBundle:Utilisateurs:index.html.twig', array('utilisateurs' => $utilisateurs));
     }
 
+    // Ajouter un utilisateur
     public function addAction(Request $request)
     {
         $utilisateur = new Utilisateurs();
@@ -39,6 +41,7 @@ class UtilisateursController extends Controller
         return $this->render('NovifyBackBundle:Utilisateurs:add.html.twig', array('form' => $form->createView()));
     }
 
+    // Supprimer
     public function editAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();

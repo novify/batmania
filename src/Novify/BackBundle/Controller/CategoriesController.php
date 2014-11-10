@@ -15,6 +15,7 @@ class CategoriesController extends Controller
         return $this->render('NovifyBackBundle:Categories:hello.html.twig', array('name' => $name));
     }
 
+    // Index des categories
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -23,6 +24,7 @@ class CategoriesController extends Controller
         return $this->render('NovifyBackBundle:Categories:index.html.twig', array('categories' => $categories));
     }
 
+    // ajouter une catégorie
     public function addAction(Request $request)
     {
         $categorie = new Categories();
@@ -34,6 +36,7 @@ class CategoriesController extends Controller
             $em->persist($categorie);
             $em->flush();
 
+            // flashbag de validation
             $session = $request->getSession();
             $session->getFlashBag()->add('confirmation', "La catégorie a bien été ajoutée.");
             return $this->redirect($this->generateUrl('novify_back_categorie_index'));
@@ -42,6 +45,7 @@ class CategoriesController extends Controller
         return $this->render('NovifyBackBundle:Categories:add.html.twig', array('form' => $form->createView()));
     }
 
+    // Modifier une catégorie
     public function editAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -56,6 +60,7 @@ class CategoriesController extends Controller
             $em->persist($categorie);
             $em->flush();
 
+            // validation en flashbag (notification)
             $session = $request->getSession();
             $session->getFlashBag()->add('confirmation', "La catégorie a bien été mise à jour.");
             return $this->redirect($this->generateUrl('novify_back_categorie_index'));
@@ -64,6 +69,7 @@ class CategoriesController extends Controller
         return $this->render('NovifyBackBundle:Categories:edit.html.twig', array('form' => $form->createView()));
     }
 
+    // supprimer une catégorie
     public function removeAction($id)
     {
         $em = $this->getDoctrine()->getManager();

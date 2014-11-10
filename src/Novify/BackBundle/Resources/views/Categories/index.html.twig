@@ -2,6 +2,7 @@
 {% block main %}
 
 
+<!-- Controller : CategoriesController -->
 
 
     <article>
@@ -38,7 +39,8 @@
                         <th>Supprimer</th>
                     </tr>
                 </thead>
-
+                
+                <!-- Affichage des catégories dans le corps du tableau -->
                 <tbody>
 {% for categorie in categories %}
                     <tr>
@@ -56,7 +58,8 @@
 
                         <td><a href="{{ path('novify_back_categorie_edit', {id: categorie.id}) }}" class="modifier">Modifier</a></td>
                         <td><a href="#test-popup-{{categorie.id}}" class="open-popup-link">Supprimer</a></td>
-                        <!-- Popup -->
+
+                        <!-- Popup qui s'affiche pour confirmer la suppression d'un article-->
                         <div id="test-popup-{{categorie.id}}" class="white-popup mfp-hide">
                             <div id="produit_popup">
                                 <div class="popup_header">
