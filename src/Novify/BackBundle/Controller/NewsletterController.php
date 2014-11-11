@@ -24,7 +24,7 @@ class NewsletterController extends Controller
         $em = $this->getDoctrine()->getManager();
         $articles = $em->getRepository('NovifyModelBundle:Articles')->findLastArticles(2);// 2 derniers articles
         $selections = $em->getRepository('NovifyModelBundle:Articles')->findLastSelections(2);// 2 dernières sélections
-        $destinataires = $em->getRepository('NovifyModelBundle:Newsletter')->findRecipients();// les inscripts à la newsletter
+        $destinataires = $em->getRepository('NovifyModelBundle:Newsletter')->findRecipients();// les inscrits à la newsletter
         // voir dans les *Repository pour plus d'infos sur les requêtes
 
         // pour avoir un tableau avec les adresses mail des inscrits (je n'ai pas trovué d'autre solution...)

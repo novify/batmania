@@ -41,3 +41,9 @@
 Capfile
 app/config/deploy.rb
 /backups
+
+
+#Bulles de notification
+!vendor/symfony/symfony/src/Symfony/Component/Security/Http/Authentication/DefaultAuthenticationSuccessHandler.php
+!vendor/symfony/symfony/src/Symfony/Component/Security/Http/Logout/DefaultAuthenticationSuccessHandler.php
+

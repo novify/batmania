@@ -234,6 +234,7 @@ $(function() {
 						<!--  -->
 
 {% else %}
+<!-- Si l'utilisateur est pas connecté, on lui propose -->
 						<p>Vous devez vous connecter pour poster des commentaires</p>
 						<p><a href="{{ path('login') }}">Connectez-vous</a> ou <a href="{{ path('inscription') }}">créez vous un compte</a>.</p>
 {% endif %}

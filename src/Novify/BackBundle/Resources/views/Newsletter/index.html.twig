@@ -1,6 +1,7 @@
 {% extends 'NovifyBackBundle::base.html.twig' %}
 {% block main %}
 
+<!-- Controller : NewsletterController -->
 
 
 
@@ -13,13 +14,12 @@
             <div class="info_form">
                 <fieldset>
                 <legend><h4>Envoyez votre newsletter</h4></legend>
-                    <p>Ici, vous pourrez personnaliser et envoyer un e-mail automatiquement à toutes les personnes qui ont accepté de recevoir la newsletter.<br/>
-                    Remplissez simplement les champs ci-dessous pour envoyer votre newsletter.</p>
+                    <p>Ici, vous pourrez envoyer un e-mail automatiquement à toutes les personnes qui ont accepté de recevoir la newsletter. Cette newsletter envoie un mail mettant en avant des articles de votre site.</p>
                 </fieldset>
             </div>
 
             <div>
-                <!-- Ajouter un article -->
+                <!-- Envoyer la newsletter -->
                 <p class="ajouter"><a href="{{ path('novify_back_newsletter_envoi') }}"><i style="font-size:17px" class="glyphicon-new_window"></i> Envoyer</a></p>
             </div>
 
@@ -29,7 +29,7 @@
             <table>
                 <tbody>
 
-
+                            <!-- Affichage des inscrits à la newsletter  -->
                             {% for newsletter in newsletters %}
                                  <tr style="border-bottom:1px solid rgb(210,210,210)"><td>{{ newsletter.newsMail }}</td></tr>
                             {% endfor %}

@@ -15,6 +15,7 @@ class CommandesController extends Controller
         return $this->render('NovifyBackBundle:Commandes:hello.html.twig', array('name' => $name));
     }
 
+    // affichage des commandes
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -22,6 +23,13 @@ class CommandesController extends Controller
 
         return $this->render('NovifyBackBundle:Commandes:index.html.twig', array('commandes' => $commandes));
     }
+
+
+    // 
+    // Décommenter les lignes suivantes pour permettre l'ajouter, la modification ou la suppression de commandes directement depuis le back office
+    // 
+
+
 
     // public function addAction(Request $request)
     // {

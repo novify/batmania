@@ -1,6 +1,7 @@
 {% extends 'NovifyBackBundle::base.html.twig' %}
 {% block main %}
 
+<!-- Controller : SousCategoriesController -->
 
 
 
@@ -23,7 +24,8 @@
                         <th>Supprimer</th>
                     </tr>
                 </thead>
-
+                
+                <!-- Affichage des sous categories dans le corps du tableau -->
                 <tbody>
 {% for souscategorie in souscategories %}
                     <tr>
@@ -32,7 +34,9 @@
                         <td>{{ souscategorie.categorie.catNom }}</td>
                         <td><a href="{{ path('novify_back_souscategorie_edit', {id: souscategorie.id}) }}" class="modifier">Modifier</a></td>
                         <td><a href="#test-popup-{{souscategorie.id}}" class="open-popup-link">Supprimer</a></td>
-                        <!-- Popup -->
+
+
+                        <!-- Popup pour valider la suppression-->
                         <div id="test-popup-{{souscategorie.id}}" class="white-popup mfp-hide">
                             <div id="produit_popup">
                                 <div class="popup_header">

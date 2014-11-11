@@ -1,6 +1,7 @@
 {% extends 'NovifyBackBundle::base.html.twig' %}
 {% block main %}
 
+<!-- Controller : ArticlesController -->
 
 
 
@@ -11,7 +12,7 @@
 			<!-- Ajouter un article -->
 			<p class="ajouter"><a href="{{ path('novify_back_article_add') }}"><i class="glyphicon-plus"></i> Ajouter</a></p>
 
-
+			<!-- En tete du tableau des articles -->
 			<table>
 
 				<thead>
@@ -28,7 +29,8 @@
 						<th>Supprimer</th>
 					</tr>
 				</thead>
-
+				
+				<!-- Affichage de tous les articles dans le corps du tableau -->
 				<tbody>
 {% for article in articles %}
 					<tr>
