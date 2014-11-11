@@ -2,6 +2,8 @@
 
 namespace Novify\FrontBundle\Controller;
 
+use Novify\ModelBundle\Entity\Commandes;
+use Novify\ModelBundle\Entity\CommandeArticle;
 use Novify\ModelBundle\Entity\Commentaires;
 use Novify\ModelBundle\Form\CommentairesType;
 use Novify\ModelBundle\Entity\Newsletter;
@@ -151,25 +153,74 @@ class FrontController extends Controller
     {
         $session = $request->getSession();
         $session->clear();
+        if (!$session->has('panier')) {
+            $session->set('panier', array(
+                'ids' => array(),
+                'quantite' => array(),
+                'prixtotal' => 0
+            ));
+        }
 
         return $this->redirect($this->generateUrl('novify_front_panier'));
     }
 
     public function addToPanierAction(Request $request, $id)
     {
+        // vérifie si la requête est une xhr (ajax)
         if ($request->isXmlHttpRequest()) {
             $session = $request->getSession();
-            // $num = max(array_keys($session->get('panier')))+1;
-            $session->set('panier/'.$id, $id);
+            $panier = $session->get('panier');
+            // si l'aticle est déjà dans le panier, alors on incrémente sa quantité
+            if (array_search($id, $session->get('panier/ids')) !== false) {
+                $key = array_search($id, $session->get('panier/ids'));
+                $quantite = $session->get('panier/quantite/'.$key);
+                $panier['quantite'][$key]++;
+                $session->set('panier', $panier);
+            // sinon on l'y ajoute et on initialise sa quantité à 1
+            } else {
+                $panier['ids'][] = $id;
+                $panier['quantite'][] = 1;
+                // ces manières de faire correspondent à un array_push()
+                // les méthodes apportées par l'AttributeBagInterface ne permettent pas de le faire, alors on est obligé d'y aller un peu salement
+                $session->set('panier', $panier);
+            }
+
+            $em = $this->getDoctrine()->getManager();
+
+            $prixtotal = 0;
+            // parcourt le panier pour récupérer le prix total en additionnant celui de chaque article
+            foreach ($session->get('panier/ids') as $idPanier => $idArticle) {
+                if ($idArticle) {
+                    $artPrix = $em->getRepository('NovifyModelBundle:Articles')->find($idArticle)->getArtPrix();
+                    $prixtotal += $session->get('panier/quantite/'.$idPanier)*$artPrix;
+                }
+            }
+            $session->set('panier/prixtotal', $prixtotal);
 
             return new Response();
+            // par défaut, cette réponse renvoie 200 d'après le constructeur de l'objet (voir http://api.symfony.com/master/Symfony/Component/HttpFoundation/Response.html#method___construct)
         }
     }
 
     public function removePanierAction(Request $request, $id)
     {
+        // supprime les entrées correspondant à l'article dans le panier
         $session = $request->getSession();
-        $session->remove('panier/'.$id);
+        // il faut chercher à quelle clé correspond la valeur de l'id
+        $key = array_search($id, $session->get('panier/ids'));
+        $session->remove('panier/ids/'.$key);
+        $session->remove('panier/quantite/'.$key);
+
+        $prixtotal = 0;
+        // parcourt le panier pour récupérer le prix total en additionnant celui de chaque article
+        foreach ($session->get('panier/ids') as $idPanier => $idArticle) {
+            if ($idArticle) {
+                $artPrix = $em->getRepository('NovifyModelBundle:Articles')->find($idArticle)->getArtPrix();
+                $prixtotal += $session->get('panier/quantite/'.$idPanier)*$artPrix;
+            }
+        }
+
+        $session->set('panier/prixtotal', $prixtotal);
 
         return $this->redirect($this->generateUrl('novify_front_panier'));
     }
@@ -178,39 +229,108 @@ class FrontController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $query = $em->createQuery(
-            'SELECT p
-            FROM NovifyModelBundle:Articles p
-            ORDER BY p.artNom DESC'
-        )->setMaxResults(4);
+        // récupère 4 articles au hasard pour les suggérer en bas de page
+        // récupère 4 id d'articles au hasard
+        // la fonction RAND() n'est pas prise en charge par DQL (requète Doctrine), on fait donc une requète SQL
+        $id = $em
+            ->getConnection()
+            ->query('SELECT id FROM Articles ORDER BY RAND() LIMIT 4')
+            ->fetchAll()
+        ;
 
-        $suggestion_articles = $query->getResult();
+        // récupère les articles qui correspondent aux id ci-dessus
+        $suggestionAricles = $em
+            ->createQueryBuilder('a')
+            ->select('a')
+            ->from('NovifyModelBundle:Articles', 'a')
+            ->where('a.id IN(:ids)')
+            ->setParameter('ids', $id)
+            ->getQuery()
+            ->getResult()
+        ;
 
         $session = $request->getSession();
-        // $session->set('panier', $panier);
-        $panier = $session->get('panier');
-        // foreach ($arts as $art) {
-        //     $arts = $art;
-        // }
-        $articles = $em->getRepository('NovifyModelBundle:Articles')->findById($panier);
-        // $art = array_combine(array_keys($arts), $articles);
-        return $this->render('NovifyFrontBundle:Front:panier.html.twig', array('suggestion_articles' => $suggestion_articles, 'panier' => $articles));
+
+        // construit un tableau avec les id des articles contenus dans la session
+        $articlesList = array();
+        foreach ($session->get('panier/ids') as $art) {
+            array_push($articlesList, $art);
+        }
+        $articles = $em->getRepository('NovifyModelBundle:Articles')->findById($articlesList);
+
+        return $this->render('NovifyFrontBundle:Front:panier.html.twig', array('suggestion_articles' => $suggestionAricles, 'panier' => $articles));
+    }
+
+    public function addCommandeAction(Request $request)
+    {
+        $session = $request->getSession();
+
+        // vérifie si le panier contient quelque chose avant de commander
+        if ($session->get('panier/ids')) {
+            $em = $this->getDoctrine()->getManager();
+
+            $prixtotal = 0;
+            // parcourt le panier pour récupérer le prix total en additionnant celui de chaque article
+            foreach ($session->get('panier/ids') as $idPanier => $idArticle) {
+                if ($idArticle) {
+                    $artPrix = $em->getRepository('NovifyModelBundle:Articles')->find($idArticle)->getArtPrix();
+                    $prixtotal += $session->get('panier/quantite/'.$idPanier)*$artPrix;
+                }
+            }
+            $commande = new Commandes();
+            $commande->setUtilisateur($this->getUser());
+            $commande->setComPrix($prixtotal);
+
+            $panier = $session->get('panier');
+            $articles = $em->getRepository('NovifyModelBundle:Articles')->findById($session->get('panier/ids'));
+            foreach ($articles as $key => $article) {
+                $commandearticle = new CommandeArticle();
+                $commandearticle->setCommande($commande);
+                $commandearticle->setArticle($article);
+                $commandearticle->setAchQte($session->get('panier/quantite/'.$key));
+                $em->persist($commandearticle);
+            }
+
+            $em->persist($commande);
+            $em->flush();
+
+            // reset du panier
+            $session = $request->getSession();
+            $session->clear();
+            $session->set('panier', array(
+                    'ids' => array(),
+                    'quantite' => array(),
+                    'prixtotal' => 0
+                ));
+        }
+
+        return $this->redirect($this->generateUrl('novify_front_compte'));
     }
 
     public function compteAction()
     {
         $user = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
 
         if (!$user) {
             throw new NotFoundHttpException("Cet utilisateur n'existe pas.");
         }
+        $commandes = $em->getRepository('NovifyModelBundle:Commandes')->findByUtilisateur($user);
+        $commandesarticles = $em->getRepository('NovifyModelBundle:CommandeArticle')->findByCommande($commandes);
 
-        return $this->render('NovifyFrontBundle:Front:compte.html.twig');
+        return $this->render('NovifyFrontBundle:Front:compte.html.twig', array('commandes' => $commandes, 'commandesarticles' => $commandesarticles));
     }
 
+    public function showCommandeAction($commande)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $commandesarticles = $em->getRepository('NovifyModelBundle:CommandeArticle')->findByCommande($commande);
+
+        return $this->render('NovifyFrontBundle:Front:commande.html.twig', array('commandesarticles' => $commandesarticles));
+
+    }
     public function compteModifAction(Request $request)
     {
-
         $utilisateur = $this->getUser();
 
         $em = $this->getDoctrine()->getManager();
@@ -219,6 +339,7 @@ class FrontController extends Controller
         }
         $form = $this->createForm(new UtilisateursType(), $utilisateur);
 
+        // persiste les nouvelles données en bdd
         if ($form->handleRequest($request)->isValid()) {
             $em->persist($utilisateur);
             $em->flush();
@@ -278,7 +399,7 @@ class FrontController extends Controller
         $cat = $em->getRepository('NovifyModelBundle:Categories')->findOneBycatNom($categorie);
         $souscat = $em->getRepository('NovifyModelBundle:Souscategories')->findOneBy(array('categorie' => $cat, 'souscatNom' => $sousCategorie));
         $article = $em->getRepository('NovifyModelBundle:Articles')->findOneBy(array('sousCategorie' => $souscat, 'id' => $id));
-        $suggestion_articles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
+        $suggestionAricles = $em->getRepository('NovifyModelBundle:Articles')->findBy(
             array('sousCategorie' => $souscat), // Critere
             array('id' => 'desc'), // Tri
             4, // Limite
@@ -291,7 +412,7 @@ class FrontController extends Controller
             throw new NotFoundHttpException("Cet article n'existe pas.");
         }
 
-        if (!$suggestion_articles) {
+        if (!$suggestionAricles) {
             throw new NotFoundHttpException("Cet article suggeré n'existe pas.");
         }
 
@@ -308,6 +429,6 @@ class FrontController extends Controller
             $session->getFlashBag()->add('modif_compte', 'Votre commentaire a bien été ajouté');
         }
 
-        return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article, 'suggestion_articles' => $suggestion_articles, 'commentaires' => $commentaires, 'form' => $form->createView()));
+        return $this->render('NovifyFrontBundle:Front:ficheproduit.html.twig', array('article' => $article, 'suggestion_articles' => $suggestionAricles, 'commentaires' => $commentaires, 'form' => $form->createView()));
     }
 }

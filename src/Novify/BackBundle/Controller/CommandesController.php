@@ -25,18 +25,24 @@ class CommandesController extends Controller
 
     // public function addAction(Request $request)
     // {
+    //     $em = $this->getDoctrine()->getManager();
+
     //     $commande = new Commandes();
-    //     $form = $this->createForm(new CommandesType(), $commande);
+    //     $commande->setUtilisateur($this->getUser());
+    //     $commande->setPrix('3');
 
-    //     if ($form->handleRequest($request)->isValid()) {
-    //         $em = $this->getDoctrine()->getManager();
-    //         $em->persist($commande);
-    //         $em->flush();
-
-    //         return $this->redirect($this->generateUrl('novify_back_commande_index'));
+    //     $panier = $session->get('panier');
+    //     $articles = $em->getRepository('NovifyModelBundle:Articles')->findById($panier);
+    //     foreach ($articles as $article) {
+    //         $commandearticle = new CommandeArticle();
+    //         $commandearticle->setCommande($commande);
+    //         $commandearticle->setArticle($article);
     //     }
 
-    //     return $this->render('NovifyBackBundle:Commandes:add.html.twig', array('form' => $form->createView()));
+    //     $em->persist($commande);
+    //     $em->flush();
+
+    //     return $this->redirect($this->generateUrl('novify_front_compte_modif'));
     // }
 
     // public function editAction(Request $request, $id)

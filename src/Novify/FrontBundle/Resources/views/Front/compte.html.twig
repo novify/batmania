@@ -11,65 +11,28 @@
 
 					<div class="col-sm-8" style="padding-right: 50px">
 						<h3>Vos commandes</h3>
-						
+
 						<!-- On organise les articles en tableau -->
+{% for commande in commandes if commandes is not null %}
 
 
 						<table> <!-- Premiere commande -->
 							<thead> <!-- En-tête du tableau -->
-							    <tr>
-								    <th class="commande_numero">Commande n°3943</th>
-								    <th class="commande_date">Du vendredi 24 octobre 2014</th>
-								    <th class="commande_prix">87,43€</th>
-							    </tr>
+								<tr>
+									<th class="commande_numero">Commande n°{{ commande.id }}</th>
+									<th class="commande_date">Du {{ commande.comDate|date("d/m/Y", "Europe/Paris") }}</th>
+									<th class="commande_prix">{{ commande.comPrix }}€</th>
+								</tr>
 							</thead>
 
 							<tbody> <!-- Détail de la commande-->
-							    <tr>
-							    	
-							    	<td colspan="3">1 x Batman tome 1 - Le commencement</td>
-							    </tr>
-							    <tr>
-							    	<td colspan="3">1 x Batman contre le Jocker</td>
-								
-							    </tr>
-							    
+{# Affiche les articles commandés pour chaque commande #}
+{{ render(controller('NovifyFrontBundle:Front:showCommande', {'commande': commande})) }}
 							</tbody>
 						</table> <!-- Fin de la première commande-->
-
-
-						<table> <!-- 3e commande -->
-							<thead> <!-- En-tête du tableau -->
-							    <tr>
-								    <th class="commande_numero">Commande n°4943</th>
-								    <th class="commande_date">Du lundi 21 decembre 2013</th>
-								    <th class="commande_prix">182,33€</th>
-							    </tr>
-							</thead>
-
-							<tbody> <!-- Détail de la commande-->
-							    <tr>
-							    	
-							    	<td colspan="3">1 x Batman - The Dark Knight</td>
-							    </tr>
-
-							    <tr>
-							    	<td colspan="3">1 x The Dark Knight Rises - Collector Edition</td>
-								
-							    </tr>
-
-							    <tr>
-							    	<td colspan="3">5 x Masque de chauve souris</td>
-								
-							    </tr>
-
-							    <tr>
-							    	<td colspan="3">1 x Batman tome 9 - La resurrection </td>
-								
-							    </tr>
-							    
-							</tbody>
-						</table> <!-- Fin de la 3e commande-->
+{% else %}
+						<h2>Vous n'avez pas encore passé de commande...</h2>
+{% endfor %}
 
 
 
@@ -80,19 +43,19 @@
 					<div class="col-sm-4" id="compte_infos">
 						<div id="infos_generales">
 							<h3>Informations personnelles</h3>
-							<strong>{{app.user.userPrenom ~' '~ app.user.userNom}}</strong>
+							<strong>{{app.user.userPrenom ~ ' ' ~ app.user.userNom}}</strong>
 							<p>{{app.user.userMail}}</p>
 						</div>
 
 						<div id="adresse_livraison">
-							
+
 							<strong>Adresse de livraison</strong>
 
 							{% if app.user.userLivNom is not null or app.user.userLivAdresse is not null %}
 
-								<p>{{app.user.userLivPrenom ~' '~ app.user.userLivNom}}</p>
+								<p>{{app.user.userLivPrenom ~ ' ' ~ app.user.userLivNom}}</p>
 								<p>{{app.user.userLivAdresse}}</p>
-								<p>{{app.user.userLivCodeP ~' '~ app.user.userLivVille}} </p>
+								<p>{{app.user.userLivCodeP ~ ' ' ~ app.user.userLivVille}} </p>
 								<p>{{app.user.userLivPays}}</p>
 
 							{% else %}
@@ -104,9 +67,9 @@
 							<strong>Adresse de facturation</strong>
 
 							{% if app.user.userFactNom is not null or app.user.userFactAdresse is not null %}
-								<p>{{app.user.userFactPrenom ~' '~ app.user.userFactNom}}</p>
+								<p>{{app.user.userFactPrenom ~ ' ' ~ app.user.userFactNom}}</p>
 								<p>{{app.user.userFactAdresse}}</p>
-								<p>{{app.user.userFactCodeP ~' '~ app.user.userFactVille}} </p>
+								<p>{{app.user.userFactCodeP ~ ' ' ~ app.user.userFactVille}} </p>
 								<p>{{app.user.userFactPays}}</p>
 
 							{% else %}
@@ -123,7 +86,7 @@
 				</div>
 
 			</div>
-			
+
 		</div>
 
 {% endblock %}

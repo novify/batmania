@@ -40,6 +40,10 @@ class Commandes
      */
     private $utilisateur;
 
+    public function __construct()
+    {
+        $this->comDate = new \DateTime();
+    }
     /**
      * Get id
      *
@@ -99,7 +103,7 @@ class Commandes
     /**
      * Set utilisateur
      *
-     * @param \Novify\ModelBundle\Entity\Utilisateurs $utilisateur
+     * @param  \Novify\ModelBundle\Entity\Utilisateurs $utilisateur
      * @return Commandes
      */
     public function setUtilisateur(\Novify\ModelBundle\Entity\Utilisateurs $utilisateur = null)
@@ -112,7 +116,7 @@ class Commandes
     /**
      * Get utilisateur
      *
-     * @return \Novify\ModelBundle\Entity\Utilisateurs 
+     * @return \Novify\ModelBundle\Entity\Utilisateurs
      */
     public function getUtilisateur()
     {

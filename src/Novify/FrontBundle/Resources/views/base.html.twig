@@ -181,17 +181,9 @@
 							<div class="col-md-3 col-sm-3 col-xs-12 panier">
 								<a href="{{ path('novify_front_panier') }}">
 									<img src="{{ asset('bundles/novifyfront/images/pictogrammes/panier.png')}}" alt="picto panier">Mon panier
-								<!-- 	<div class="sous_texte_panier">
-										47,00 €
-									</div> -->
-
-									
-									<!-- <div id="bulle_panier">
-										<strong>La somme de votre panier est de :</strong>
-										<div class="prix">47.00€</div>
-										<div class="boutton">Voir mon panier</div>
-										<div class="faux_liens">Pour voir la liste de vos articles cliquez ici !</div>
-									</div> -->
+									<div class="sous_texte_panier">
+										{{ app.session.get('panier/prixtotal') }} €
+									</div>
 								</a>
 							</div>
 						</div>
@@ -216,16 +208,7 @@
 {{ render(controller('NovifyFrontBundle:Front:menu')) }}
 						<li><a href="{{ path('novify_front_contact') }}">Contact</a></li>
 					</ul>
-
-
-
-					<!-- <div class="compte_fix">
-						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto2.png')}}" alt="picto tête de batman"></a>
-						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto1.png')}}" alt="picto panier"></a>
-						<a href=""><img src="{{ asset('bundles/novifyfront/images/picto3.png')}}" alt="picto barre de recherche"></a>
-					</div> -->
-
-        		</nav>
+        				</nav>
 				<!-- Fin Nav -->
 
 			</header>

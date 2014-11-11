@@ -23,14 +23,14 @@
 							</thead>
 
 							<tbody>
-{% for keys, article in panier %}
+{% for article in panier %}
 							    <tr>
 							    	<!-- Premier article -->
 							    	<!-- Image du produit -->
-							    	<td style="width:10%"><img src="{{asset(article.getWebPath)}}" alt=""></td>
+							    	<td style="width:10%"><a href="{{ path('novify_front_view_one', {'categorie': article.souscategorie.categorie.catNom, 'sousCategorie': article.souscategorie.souscatNom, 'id': article.id}) }}"><img src="{{ asset(article.getWebPath) }}" alt=""></a></td>
 
 									<!-- Nom du produit -->
-								    <td style="width:50%"><a href="">{{ article.artNom }}</a></td>
+								    <td style="width:50%"><a href="{{ path('novify_front_view_one', {'categorie': article.souscategorie.categorie.catNom, 'sousCategorie': article.souscategorie.souscatNom, 'id': article.id}) }}">{{ article.artNom }}</a></td>
 
 									<!-- Prix du produit -->
 								    <td style="width:20%; color:#4f9649;">{{ article.artPrix }} €</td>
@@ -68,8 +68,8 @@
 					<!-- Bloc latéral de validation du panier -->
 					<div class="col-sm-4">
 						<div id="panier_total">
-							<p>Sous total :</p>
-							<p id="sous_total">47.00€</p>
+							<p>Prix TTC :</p>
+							<p id="sous_total">{{ app.session.get('panier/prixtotal') }} €</p>
 
 							<div class="lien_popup"><a href="#test-popup" class="open-popup-link">Passez la commande</a></div>
 
@@ -109,7 +109,7 @@
 															</thead>
 
 															<tbody>
-																{% for keys, article in panier %}
+																{% for article in panier %}
 																    <tr>
 																    	<!-- Premier article -->
 																    	<!-- Image du produit -->
@@ -134,7 +134,7 @@
 															</tbody>
 														</table>
 
-														<a href="{{ path('novify_front_panier') }}" class="commandez">VALIDEZ LA COMMANDE !</a>
+														<a href="{{ path('novify_front_commande') }}" class="commandez">VALIDEZ LA COMMANDE !</a>
 													</div>
 
 													<div class="popup_footer">

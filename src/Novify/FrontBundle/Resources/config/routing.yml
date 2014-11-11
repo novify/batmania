@@ -46,9 +46,9 @@ novify_front_resetpanier:
     path:     /reset-panier/
     defaults: { _controller: NovifyFrontBundle:Front:resetPanier }
 
-# novify_front_commande:
-#     path:     /commander
-#     defaults: { _controller: NovifyFrontBundle:Front:commande }
+novify_front_commande:
+    path:     /commander
+    defaults: { _controller: NovifyFrontBundle:Front:addCommande }
 
 novify_front_compte:
     path:     /compte

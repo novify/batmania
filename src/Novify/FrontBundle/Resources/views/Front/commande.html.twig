@@ -1,0 +1,8 @@
+{% for commandearticle in commandesarticles %}
+								<tr>
+									<td>{{ commandearticle.achQte }} x {{ commandearticle.article.artNom }}</td>
+									<td>= {{ commandearticle.achQte }} x {{ commandearticle.article.artPrix }} €</td>
+									<td>= {{ commandearticle.achQte * commandearticle.article.artPrix }} €</td>
+								</tr>
+
+{% endfor %}
