@@ -168,13 +168,11 @@ class FrontController extends Controller
     {
         $session = $request->getSession();
         $session->clear();
-        if (!$session->has('panier')) {
-            $session->set('panier', array(
-                'ids' => array(),
-                'quantite' => array(),
-                'prixtotal' => 0
-            ));
-        }
+        $session->set('panier', array(
+            'ids' => array(),
+            'quantite' => array(),
+            'prixtotal' => 0
+        ));
 
         return $this->redirect($this->generateUrl('novify_front_panier'));
     }
@@ -185,6 +183,20 @@ class FrontController extends Controller
         // vérifie si la requête est une xhr (ajax)
         if ($request->isXmlHttpRequest()) {
             $session = $request->getSession();
+            if ($session->get('panier') == null) {
+                $session->set('panier', array(
+                    'ids' => array(),
+                    'quantite' => array(),
+                    'prixtotal' => 0
+                ));
+            }
+            if (!$session->has('panier')) {
+                $session->set('panier', array(
+                    'ids' => array(),
+                    'quantite' => array(),
+                    'prixtotal' => 0
+                ));
+            }
             $panier = $session->get('panier');
             // si l'aticle est déjà dans le panier, alors on incrémente sa quantité
             if (array_search($id, $session->get('panier/ids')) !== false) {
