@@ -22,4 +22,6 @@ php composer.phar install
 ```
 
 - C'est fini ! Rendez vous sur `http://localhost(:8888 sur MAMP)/batmania/web/app_dev.php`
+- Pour accéder au compte admin les identifiants sont :
+email : admin@batmania.com, mot de passe : admin
 - N'hésitez pas à marquer un bug sur GitHub au moindre problème...
